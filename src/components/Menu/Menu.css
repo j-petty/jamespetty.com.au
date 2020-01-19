@@ -1,0 +1,14 @@
+nav.primaryNav {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background: #161616;
+  z-index: 1;
+}
+
+.menuList {
+  margin: 0 15%;
+  padding: 0;
+  list-style: none;
+}

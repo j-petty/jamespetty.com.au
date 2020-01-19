@@ -1,8 +1,13 @@
+/*global document */
+
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import App from './components/App/App';
 import * as serviceWorker from './serviceWorker';
+import WebFont from 'webfontloader';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './index.css';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
@@ -10,3 +15,10 @@ ReactDOM.render(<App />, document.getElementById('root'));
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
+
+// load fonts dynamically
+WebFont.load({
+  custom: {
+    families: ['Open Sans', 'Chronicle Display']
+  }
+});

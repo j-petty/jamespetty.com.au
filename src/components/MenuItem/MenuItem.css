@@ -1,0 +1,7 @@
+.menuItem {
+  margin: 50px 0;
+}
+
+.menuItem a {
+  cursor: pointer;
+}
