@@ -13,7 +13,6 @@ class MenuButton extends React.Component {
         onClick={handleClick
           ? handleClick.bind(this)
           : this.handleClick.bind(this)}>
-        {/*<div>the menu is {isOpen ? 'open' : 'closed'}</div>*/}
         <span />
         <span />
       </button>
