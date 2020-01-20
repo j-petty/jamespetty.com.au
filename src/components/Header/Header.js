@@ -21,8 +21,8 @@ class Header extends React.Component {
     const { skillsArray } = this.state;
 
     return (
-      <header>
-        <Container>
+      <header className="fullHeight mainHeader text-center">
+        {/*<Container>
           <Row className="align-items-center text-center fullHeight">
             <Col>
               <h1 className="mainTitle">Hi I&apos;m James.</h1>
@@ -38,9 +38,26 @@ class Header extends React.Component {
                   )}
                 </TextLoop>
               </div>
+
+              <div className="nudge">see my work</div>
             </Col>
           </Row>
-        </Container>
+        </Container>*/}
+        <h1 className="mainTitle">Hi I&apos;m James.</h1>
+
+        <div className="subTitle">
+          <span>I build </span>
+
+          <TextLoop
+            delay={500}
+            interval={1500}>
+            {skillsArray.map(skill =>
+              <span key={skill} className="skills">{skill}</span>
+            )}
+          </TextLoop>
+        </div>
+
+        <a className="nudge">see my work</a>
       </header>
     );
   }

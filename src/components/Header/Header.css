@@ -1,9 +1,12 @@
-header {
-  
+header.mainHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .mainTitle {
-  margin: 5% 0 10% 0;;
+  margin: auto 0 10% 0;;
   font-size: 100px;
   font-weight: 300;
 }
@@ -14,4 +17,33 @@ header {
 
 .skills {
   font-weight: 600;
+}
+
+.nudge {
+  margin: auto 0 50px 0;
+  position: relative;
+  color: #888888 !important;
+  transition: color 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.nudge:hover {
+  color: #FFFFFF !important;
+}
+
+.nudge:after {
+  content: '';
+  position: absolute;
+  border: solid #888888;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 8px;
+  transform: rotateZ(45deg) translate(0, 0);
+  top: 100%;
+  left: calc(50% - 12px);
+  transition: transform 0.3s ease-in-out;
+}
+
+.nudge:hover:after {
+  transform: rotateZ(45deg) translate(5px, 5px);
 }
