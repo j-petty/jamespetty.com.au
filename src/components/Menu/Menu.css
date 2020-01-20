@@ -5,10 +5,23 @@ nav.primaryNav {
   align-items: center;
   background: #161616;
   z-index: 1;
+  animation-name: fadeIn;
+  animation-fill-mode: both;
+  animation-duration: 0.2s;
+  animation-timing-function: ease-out;
 }
 
 .menuList {
   margin: 0 15%;
   padding: 0;
   list-style: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

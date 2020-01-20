@@ -37,8 +37,6 @@ class Header extends React.Component {
                     <span key={skill} className="skills">{skill}</span>
                   )}
                 </TextLoop>
-
-                <span>.</span>
               </div>
             </Col>
           </Row>

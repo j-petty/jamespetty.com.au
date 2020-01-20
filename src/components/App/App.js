@@ -12,7 +12,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      isOpen: true
+      isOpen: false
     };
 
     this.handleMenuOpen = this.handleMenuOpen.bind(this);
@@ -34,11 +34,9 @@ class App extends React.Component {
           handleClick={this.handleMenuOpen} />
 
         <Menu isOpen={isOpen}>
-          <MenuItem
-            label="test1"
-            href="test" />
-          <MenuItem label="test2" />
-          <MenuItem label="test3" />
+          <MenuItem label="projects" />
+          <MenuItem label="work" />
+          <MenuItem label="contact" />
         </Menu>
 
         <Header />
