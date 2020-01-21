@@ -1,4 +1,4 @@
-.primaryNav {
+:global(.primaryNav) {
   position: fixed;
   width: 100%;
   align-items: center;
@@ -8,7 +8,7 @@
   background: #161616;
 }
 
-.primaryNav.closed {
+:global(.primaryNav.closed) {
   animation-name: fadeOut;
   animation-fill-mode: both;
   animation-duration: 0.3s;
@@ -16,7 +16,7 @@
   animation-delay: 0.4s;
 }
 
-.primaryNav.opened {
+:global(.primaryNav.opened) {
   animation-name: fadeIn;
   animation-fill-mode: both;
   animation-duration: 0.3s;

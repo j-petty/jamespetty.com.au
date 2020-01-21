@@ -1,11 +1,7 @@
 import React from 'react';
 import TextLoop from 'react-text-loop';
 
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-
-import './Header.css';
+import styles from './Header.module.css';
 
 class Header extends React.Component {
   constructor (props) {
@@ -21,43 +17,22 @@ class Header extends React.Component {
     const { skillsArray } = this.state;
 
     return (
-      <header className="fullHeight mainHeader text-center">
-        {/*<Container>
-          <Row className="align-items-center text-center fullHeight">
-            <Col>
-              <h1 className="mainTitle">Hi I&apos;m James.</h1>
+      <header className={`${styles.mainHeader} fullHeight`}>
+        <h1 className={styles.mainTitle}>Hi I&apos;m James.</h1>
 
-              <div className="subTitle">
-                <span>I build </span>
-
-                <TextLoop
-                  delay={500}
-                  interval={1500}>
-                  {skillsArray.map(skill =>
-                    <span key={skill} className="skills">{skill}</span>
-                  )}
-                </TextLoop>
-              </div>
-
-              <div className="nudge">see my work</div>
-            </Col>
-          </Row>
-        </Container>*/}
-        <h1 className="mainTitle">Hi I&apos;m James.</h1>
-
-        <div className="subTitle">
+        <div className={styles.subTitle}>
           <span>I build </span>
 
           <TextLoop
             delay={500}
             interval={1500}>
             {skillsArray.map(skill =>
-              <span key={skill} className="skills">{skill}</span>
+              <span key={skill} className={styles.skills}>{skill}</span>
             )}
           </TextLoop>
         </div>
 
-        <a className="nudge">see my work</a>
+        <a className={styles.nudge}>see my work</a>
       </header>
     );
   }

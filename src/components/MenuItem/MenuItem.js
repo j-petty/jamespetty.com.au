@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './MenuItem.css';
+import styles from './MenuItem.module.css';
 
 class MenuItem extends React.Component {
   render () {
-    const { label, link, additionalClass } = this.props;
+    const { label, link } = this.props;
+
     return (
-      <li className={'menuItem ' + additionalClass}>
+      <li className={styles.menuItem}>
         <a href={link}>{label}</a>
       </li>
     );

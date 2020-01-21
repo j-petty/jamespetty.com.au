@@ -5,7 +5,7 @@ import MenuItem from '../MenuItem/MenuItem';
 import MenuButton from '../MenuButton/MenuButton';
 import Header from '../Header/Header';
 
-import './App.css';
+import styles from './App.module.css';
 
 class App extends React.Component {
   constructor (props) {

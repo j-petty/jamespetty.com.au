@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './Menu.css';
+import styles from './Menu.module.css';
 
 class Menu extends React.Component {
   constructor (props) {
@@ -28,18 +28,18 @@ class Menu extends React.Component {
     const { hasOpened } = this.state;
     const { isOpen } = this.props;
 
-    let navClasses = 'primaryNav fullHeight';
+    let extraClasses = '';
 
     if (isOpen) {
-      navClasses += ' opened';
+      extraClasses = 'opened';
     }
     else if (!isOpen && hasOpened) {
-      navClasses += ' closed';
+      extraClasses = 'closed';
     }
 
     return (
-      <nav className={navClasses}>
-        <ul className="menuList">
+      <nav className={`primaryNav fullHeight ${extraClasses}`}>
+        <ul className={styles.menuList}>
           {this.props.children}
         </ul>
       </nav>
@@ -49,7 +49,7 @@ class Menu extends React.Component {
 
 Menu.propTypes = {
   isOpen: PropTypes.bool.isRequired,
-  children: PropTypes.array
+  children: PropTypes.array.isRequired
 };
 
 export default Menu;

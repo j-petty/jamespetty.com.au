@@ -4,14 +4,14 @@
   font-weight: 400;
 }
 
-.primaryNav.opened .menuItem {
+:global(.primaryNav.opened) .menuItem {
   animation-name: fadeInUp;
   animation-fill-mode: both;
   animation-duration: 0.4s;
   animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-.primaryNav.closed .menuItem {
+:global(.primaryNav.closed) .menuItem {
   animation-name: fadeOutDown;
   animation-fill-mode: both;
   animation-duration: 0.3s;

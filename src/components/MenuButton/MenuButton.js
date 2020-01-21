@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './MenuButton.css';
+import styles from './MenuButton.module.css';
 
 class MenuButton extends React.Component {
   render () {
@@ -9,7 +9,7 @@ class MenuButton extends React.Component {
 
     return (
       <button
-        className={isOpen ? 'navButton active' : 'navButton'}
+        className={isOpen ? `${styles.navButton} ${styles.active}` : `${styles.navButton}`}
         onClick={handleClick
           ? handleClick.bind(this)
           : this.handleClick.bind(this)}>
