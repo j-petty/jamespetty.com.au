@@ -20,6 +20,11 @@
 
 .menuItem a {
   cursor: pointer;
+  color: #A0A0A0;
+  transition: color 0.2s ease-in-out;
+}
+
+.menuItem a:hover {
   color: #FFFFFF;
 }
 
@@ -29,10 +34,10 @@
   width: 0;
   height: 4px;
   left: 0;
-  bottom: 0;
+  bottom: -6px;
   opacity: 0;
   background: #FFFFFF;
-  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: all 0.2s ease-in-out;
 }
 
 .menuItem a:hover:after {
