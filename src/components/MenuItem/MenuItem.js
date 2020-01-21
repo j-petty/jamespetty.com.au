@@ -5,9 +5,9 @@ import './MenuItem.css';
 
 class MenuItem extends React.Component {
   render () {
-    const { label, link } = this.props;
+    const { label, link, additionalClass } = this.props;
     return (
-      <li className="menuItem">
+      <li className={'menuItem ' + additionalClass}>
         <a href={link}>{label}</a>
       </li>
     );
@@ -16,7 +16,8 @@ class MenuItem extends React.Component {
 
 MenuItem.propTypes = {
   label: PropTypes.string,
-  link: PropTypes.string
+  link: PropTypes.string,
+  additionalClass: PropTypes.string
 };
 
 export default MenuItem;

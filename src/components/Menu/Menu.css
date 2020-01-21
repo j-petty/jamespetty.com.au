@@ -1,14 +1,27 @@
-nav.primaryNav {
+.primaryNav {
   position: fixed;
   width: 100%;
-  display: flex;
   align-items: center;
+  z-index: -1;
+  display: flex;
+  opacity: 0;
   background: #161616;
-  z-index: 1;
+}
+
+.primaryNav.closed {
+  animation-name: fadeOut;
+  animation-fill-mode: both;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-out;
+  animation-delay: 0.4s;
+}
+
+.primaryNav.opened {
   animation-name: fadeIn;
   animation-fill-mode: both;
-  animation-duration: 0.2s;
-  animation-timing-function: ease-out;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-in-out;
+  animation-delay: 0s;
 }
 
 .menuList {
@@ -20,8 +33,21 @@ nav.primaryNav {
 @keyframes fadeIn {
   from {
     opacity: 0;
+    z-index: -1;
   }
   to {
     opacity: 1;
+    z-index: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    z-index: 1;
+  }
+  to {
+    opacity: 0;
+    z-index: -1;
   }
 }

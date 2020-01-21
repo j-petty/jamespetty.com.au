@@ -4,16 +4,41 @@ import PropTypes from 'prop-types';
 import './Menu.css';
 
 class Menu extends React.Component {
-  render () {
+  constructor (props) {
+    super(props);
+
+    this.state = {
+      hasOpened: false
+    };
+  }
+
+  componentDidUpdate (prevProps) {
+    const { hasOpened } = this.state;
     const { isOpen } = this.props;
 
-    // don't render menu if it hasn't been opened
-    if (!isOpen) {
-      return null;
+    // capture update to IsOpen to prevent the Menu rendering on initial page load
+    if (prevProps.isOpen !== isOpen && isOpen && !hasOpened) {
+      this.setState({
+        hasOpened: isOpen
+      });
+    }
+  }
+
+  render () {
+    const { hasOpened } = this.state;
+    const { isOpen } = this.props;
+
+    let navClasses = 'primaryNav fullHeight';
+
+    if (isOpen) {
+      navClasses += ' opened';
+    }
+    else if (!isOpen && hasOpened) {
+      navClasses += ' closed';
     }
 
     return (
-      <nav className="primaryNav fullHeight">
+      <nav className={navClasses}>
         <ul className="menuList">
           {this.props.children}
         </ul>
