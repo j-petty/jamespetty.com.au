@@ -4,6 +4,7 @@ import Menu from '../Menu/Menu';
 import MenuItem from '../MenuItem/MenuItem';
 import MenuButton from '../MenuButton/MenuButton';
 import Header from '../Header/Header';
+import Section from '../Section/Section';
 
 import styles from './App.module.css';
 
@@ -40,6 +41,12 @@ class App extends React.Component {
         </Menu>
 
         <Header />
+
+        <Section
+          id='projects'
+          title='projects'>
+          <div>test 123</div>
+        </Section>
       </div>
     );
   }
