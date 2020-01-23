@@ -1,5 +1,6 @@
 import React from 'react';
 import TextLoop from 'react-text-loop';
+import { Link } from 'react-scroll';
 
 import styles from './Header.module.css';
 
@@ -32,7 +33,12 @@ class Header extends React.Component {
           </TextLoop>
         </div>
 
-        <a className={styles.nudge}>see my work</a>
+        <Link
+          className={styles.nudge}
+          smooth={true}
+          to='projects'>
+          see my work
+        </Link>
       </header>
     );
   }

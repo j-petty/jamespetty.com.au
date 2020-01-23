@@ -10,6 +10,7 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-scripts": "3.3.0",
+    "react-scroll": "^1.7.16",
     "react-text-loop": "^2.3.0",
     "webfontloader": "^1.6.28"
   },

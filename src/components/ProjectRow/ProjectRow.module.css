@@ -1,0 +1,38 @@
+.projectContainer {
+  align-self: flex-start;
+  width: 100%;
+  padding: 100px 70px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  color: #FFFFFF;
+  margin: 20px 0;
+  cursor: pointer;
+}
+
+.projectTitle {
+  font-size: 25px;
+  font-weight: 700;
+  margin: 0 0 20px 0;
+}
+
+.projectDescription {
+  font-weight: 300;
+  font-size: 18px;
+  margin: 0;
+}
+
+.projectImage {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  transition: opacity .4s ease-in-out;
+}
+
+.projectContainer:hover .projectImage {
+  opacity: 1;
+}

@@ -5,6 +5,7 @@ import MenuItem from '../MenuItem/MenuItem';
 import MenuButton from '../MenuButton/MenuButton';
 import Header from '../Header/Header';
 import Section from '../Section/Section';
+import ProjectRow from '../ProjectRow/ProjectRow';
 
 import styles from './App.module.css';
 
@@ -45,7 +46,20 @@ class App extends React.Component {
         <Section
           id='projects'
           title='projects'>
-          <div>test 123</div>
+          <ProjectRow
+            title='First Project'
+            description='This is my very first project.'
+            image={require('../../assets/images/project01.jpg')} />
+
+          <ProjectRow
+            title='Second Project'
+            description='This is my second project.'
+            image={require('../../assets/images/project01.jpg')} />
+
+          <ProjectRow
+            title='Third Project'
+            description='This is my third project.'
+            image={require('../../assets/images/project01.jpg')} />
         </Section>
       </div>
     );
