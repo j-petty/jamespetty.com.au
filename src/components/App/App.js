@@ -6,6 +6,7 @@ import MenuButton from '../MenuButton/MenuButton';
 import Header from '../Header/Header';
 import Section from '../Section/Section';
 import ProjectRow from '../ProjectRow/ProjectRow';
+import TimelineRow from '../TimelineRow/TimelineRow';
 
 import styles from './App.module.css';
 
@@ -60,6 +61,25 @@ class App extends React.Component {
             title='Third Project'
             description='This is my third project.'
             image={require('../../assets/images/project01.jpg')} />
+        </Section>
+
+        <Section
+          id='work'
+          title='work'>
+          <TimelineRow
+            date='today'
+            title='Timeline 01'
+            description='This is the latest thing on my timeline' />
+
+          <TimelineRow
+            date='2018'
+            title='Timeline 02'
+            description='This is the second thing on my timeline' />
+
+          <TimelineRow
+            date='2016'
+            title='Timeline 03'
+            description='This is the final thing on my timeline' />
         </Section>
       </div>
     );

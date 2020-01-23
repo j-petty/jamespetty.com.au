@@ -9,6 +9,11 @@ a {
   text-decoration: none;
 }
 
+h3 {
+  font-size: 25px;
+  font-weight: 700;
+}
+
 .fullHeight {
   min-height: 100vh;
 }

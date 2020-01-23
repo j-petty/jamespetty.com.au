@@ -27,13 +27,13 @@
   margin: auto 0 50px 0;
   align-self: center;
   position: relative;
-  color: #888888 !important;
+  color: #888888;
   transition: color 0.3s ease-in-out;
   cursor: pointer;
 }
 
 .nudge:hover {
-  color: #FFFFFF !important;
+  color: #FFFFFF;
 }
 
 .nudge:after {
