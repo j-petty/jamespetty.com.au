@@ -5,30 +5,20 @@ import { Link } from 'react-scroll';
 import styles from './Header.module.css';
 
 class Header extends React.Component {
-  constructor (props) {
-    super(props);
-
-    // TODO: remove from state?
-    this.state = {
-      skillsArray: ['stuff', 'websites', 'games', 'apps']
-    };
-  }
-
   render () {
-    const { skillsArray } = this.state;
+    const skillsArray = ['full stack developer', 'web designer', 'front end developer', 'technical consultant', 'entrepreneur'];
 
     return (
       <header id='home' className={`${styles.mainHeader} fullHeight`}>
         <h1 className={styles.mainTitle}>Hi I&apos;m James.</h1>
 
         <div className={styles.subTitle}>
-          <span>I build </span>
-
           <TextLoop
             delay={500}
-            interval={1500}>
+            interval={2500}
+            mask={true}>
             {skillsArray.map(skill =>
-              <span key={skill} className={styles.skills}>{skill}</span>
+              <span key={skill}>{skill}</span>
             )}
           </TextLoop>
         </div>

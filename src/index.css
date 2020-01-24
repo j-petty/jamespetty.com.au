@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background: #1D1D1D;
+  background: #1F1F1F;
   color: white;
   font-family: 'Lato';
 }
@@ -58,4 +58,10 @@ a:hover {
   font-family: 'Lato';
   src: url("assets/fonts/Lato-Bold.ttf");
   font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  src: url("assets/fonts/Merriweather-Light.ttf");
+  font-weight: 300;
 }

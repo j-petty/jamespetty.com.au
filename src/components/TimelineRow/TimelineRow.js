@@ -11,23 +11,25 @@ class TimelineRow extends React.Component {
       <div className={styles.timelineRow}>
         <span className={styles.timelineDate}>{date}</span>
 
-        <div className={styles.timelineText}>
-          {title &&
-            <h3>{title}</h3>
-          }
+        {description &&
+          <div className={styles.timelineText}>
+            {title &&
+              <h3>{title}</h3>
+            }
 
-          {image &&
-            <a href={imageLink} target='_blank' rel='noopener noreferrer'>
-              <img src={image} alt={imageAlt} />
-            </a>
-          }
+            {image &&
+              <a href={imageLink} target='_blank' rel='noopener noreferrer'>
+                <img src={image} alt={imageAlt} />
+              </a>
+            }
 
-          <p>{description}</p>
+            <p>{description}</p>
 
-          {link &&
-            <a href={link}>see more</a>
-          }
-        </div>
+            {link &&
+              <a href={link}>see more</a>
+            }
+          </div>
+        }
       </div>
     );
   }

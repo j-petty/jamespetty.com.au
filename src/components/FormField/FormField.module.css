@@ -23,6 +23,7 @@
   color: #FFFFFF;
   border: 2px solid transparent;
   transition: all .3s ease-in-out;
+  resize: none;
 }
 
 .fieldGroup input:active,

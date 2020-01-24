@@ -1,0 +1,12 @@
+.container {
+  position: relative;
+}
+
+.copy {
+  color: #888888;
+  position: absolute;
+  bottom: -90px;
+  width: 100%;
+  text-align: center;
+  margin: auto;
+}

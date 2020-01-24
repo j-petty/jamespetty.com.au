@@ -12,6 +12,8 @@ import TimelineRow from '../TimelineRow/TimelineRow';
 import Form from '../Form/Form';
 import FormField from '../FormField/FormField';
 
+import styles from './App.module.css';
+
 class App extends React.Component {
   constructor (props) {
     super(props);
@@ -45,7 +47,7 @@ class App extends React.Component {
     const { isMenuOpen, currentSection } = this.state;
 
     return (
-      <div>
+      <div className={styles.container}>
         <MenuButton
           isOpen={isMenuOpen}
           handleClick={this.handleMenuOpen} />
@@ -81,7 +83,7 @@ class App extends React.Component {
           <Section
             id='projects'
             title='projects'
-            subTitle="checkout what I've been working on">
+            subTitle="what I've been working on">
             <ProjectRow
               title='First Project'
               description='This is my very first project.'
@@ -114,10 +116,10 @@ class App extends React.Component {
               imageLink='https://www.deloittedigital.com.au/'
               link='#'
               description={`
-              Donec sollicitudin molestie malesuada. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. 
-              Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. 
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus.
-              Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.
+                Donec sollicitudin molestie malesuada. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. 
+                Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. 
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus.
+                Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.
               `} />
 
             <TimelineRow
@@ -127,9 +129,9 @@ class App extends React.Component {
               imageLink='https://spinify.com/'
               link='#'
               description={`
-              Donec rutrum congue leo eget malesuada. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. 
-              Nulla quis lorem ut libero malesuada feugiat. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. 
-              Donec sollicitudin molestie malesuada. Donec sollicitudin molestie malesuada.
+                Donec rutrum congue leo eget malesuada. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. 
+                Nulla quis lorem ut libero malesuada feugiat. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. 
+                Donec sollicitudin molestie malesuada. Donec sollicitudin molestie malesuada.
               `} />
 
             <TimelineRow
@@ -138,11 +140,15 @@ class App extends React.Component {
               imageAlt='Made for Me'
               link='#'
               description={`
-              Donec rutrum congue leo eget malesuada. 
-              Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. 
-              Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; 
-              Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. 
-              Cras ultricies ligula sed magna dictum porta.`} />
+                Donec rutrum congue leo eget malesuada. 
+                Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. 
+                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; 
+                Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. 
+                Cras ultricies ligula sed magna dictum porta.
+              `} />
+
+            <TimelineRow
+              date='2015' />
           </Section>
         </Observer>
 
@@ -179,6 +185,8 @@ class App extends React.Component {
             </Form>
           </Section>
         </Observer>
+
+        <div className={styles.copy}>&copy; {new Date().getFullYear()} James Petty</div>
       </div>
     );
   }
