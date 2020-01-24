@@ -1,8 +1,9 @@
 import React from 'react';
 import Observer from '@researchgate/react-intersection-observer';
 
-import Menu from '../Menu/Menu';
 import MenuButton from '../MenuButton/MenuButton';
+import Menu from '../Menu/Menu';
+import MenuItem from '../MenuItem/MenuItem';
 import ScrollMenu from '../ScrollMenu/ScrollMenu';
 import ScrollMenuItem from '../ScrollMenuItem/ScrollMenuItem';
 import Header from '../Header/Header';
@@ -52,26 +53,43 @@ class App extends React.Component {
           isOpen={isMenuOpen}
           handleClick={this.handleMenuOpen} />
 
-        <Menu
-          isOpen={isMenuOpen}
-          items={['projects', 'work', 'contact']}
-          toggleMenu={this.handleMenuOpen} />
+        <Menu isOpen={isMenuOpen}>
+          <MenuItem
+            label='home'
+            link='#home'
+            toggleMenu={this.handleMenuOpen} />
+
+          <MenuItem
+            label='projects'
+            link='#projects'
+            toggleMenu={this.handleMenuOpen} />
+
+          <MenuItem
+            label='work'
+            link='#work'
+            toggleMenu={this.handleMenuOpen} />
+
+          <MenuItem
+            label='contact'
+            link='#contact'
+            toggleMenu={this.handleMenuOpen} />
+        </Menu>
 
         <ScrollMenu>
           <ScrollMenuItem
-            link='home'
+            link='#home'
             inView={currentSection === 'home'} />
 
           <ScrollMenuItem
-            link='projects'
+            link='#projects'
             inView={currentSection === 'projects'} />
 
           <ScrollMenuItem
-            link='work'
+            link='#work'
             inView={currentSection === 'work'} />
 
           <ScrollMenuItem
-            link='contact'
+            link='#contact'
             inView={currentSection === 'contact'} />
         </ScrollMenu>
 

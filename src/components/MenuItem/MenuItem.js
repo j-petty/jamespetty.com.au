@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-scroll';
 
 import styles from './MenuItem.module.css';
 
@@ -10,12 +9,7 @@ class MenuItem extends React.Component {
 
     return (
       <li className={styles.menuItem}>
-        <Link
-          smooth={true}
-          to={link}
-          onClick={toggleMenu}>
-          {label}
-        </Link>
+        <a href={link} onClick={toggleMenu}>{label}</a>
       </li>
     );
   }

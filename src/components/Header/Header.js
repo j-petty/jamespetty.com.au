@@ -1,6 +1,4 @@
 import React from 'react';
-import TextLoop from 'react-text-loop';
-import { Link } from 'react-scroll';
 
 import styles from './Header.module.css';
 
@@ -9,26 +7,16 @@ class Header extends React.Component {
     const skillsArray = ['full stack developer', 'web designer', 'front end developer', 'technical consultant', 'entrepreneur'];
 
     return (
-      <header id='home' className={`${styles.mainHeader} fullHeight`}>
+      <header id='home' className={`${styles.mainHeader} fullHeight textCenter`}>
         <h1 className={styles.mainTitle}>Hi I&apos;m James.</h1>
 
-        <div className={styles.subTitle}>
-          <TextLoop
-            delay={500}
-            interval={2500}
-            mask={true}>
-            {skillsArray.map(skill =>
-              <span key={skill}>{skill}</span>
-            )}
-          </TextLoop>
-        </div>
+        <ul className={styles.subTitle}>
+          {skillsArray.map(skill =>
+            <li key={skill}>{skill}</li>
+          )}
+        </ul>
 
-        <Link
-          className={styles.nudge}
-          smooth={true}
-          to='projects'>
-          see my work
-        </Link>
+        <a className={styles.nudge} href='#projects'>see my work</a>
       </header>
     );
   }

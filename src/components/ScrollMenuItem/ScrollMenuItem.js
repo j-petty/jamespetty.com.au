@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-scroll';
 
 import styles from './ScrollMenuItem.module.css';
 
@@ -10,9 +9,7 @@ class ScrollMenuItem extends React.Component {
 
     return (
       <li className={inView ? `${styles.menuItem} ${styles.active}` : styles.menuItem}>
-        <Link
-          smooth={true}
-          to={link} />
+        <a href={link} />
       </li>
     );
   }

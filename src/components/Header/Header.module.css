@@ -17,11 +17,37 @@
   font-family: 'Merriweather';
   font-size: 30px;
   font-weight: 300;
-  margin: 0 7px;
+  overflow: hidden;
+  height: 40px;
+}
+
+.subTitle li {
+  animation: vertLoop 8s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
 }
 
 .skills {
   font-weight: 400;
+}
+
+@keyframes vertLoop {
+  0%, 10% {
+    transform: translateY(0%);
+  }
+  15%, 30% {
+    transform: translateY(-100%);
+  }
+  35%, 50% {
+    transform: translateY(-200%);
+  }
+  55%, 70% {
+    transform: translateY(-300%);
+  }
+  75%, 90% {
+    transform: translateY(-400%);
+  }
+  95%, 100% {
+    transform: translateY(0%);
+  }
 }
 
 .nudge {
