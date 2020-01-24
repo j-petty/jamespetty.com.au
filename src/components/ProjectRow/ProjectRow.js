@@ -5,7 +5,7 @@ import styles from './ProjectRow.module.css';
 
 class ProjectRow extends React.Component {
   render () {
-    const { title, description, image, pageUrl } = this.props;
+    const { title, description, image, imageAlt, pageUrl } = this.props;
 
     return (
       <a className={styles.projectContainer} href={pageUrl}>
@@ -14,7 +14,7 @@ class ProjectRow extends React.Component {
         <p className={styles.projectDescription}>{description}</p>
 
         {image &&
-          <img className={styles.projectImage} src={image} />
+          <img className={styles.projectImage} src={image} alt={imageAlt} />
         }
       </a>
     );
@@ -25,6 +25,7 @@ ProjectRow.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   image: PropTypes.string,
+  imageAlt: PropTypes.string,
   pageUrl: PropTypes.string
 };
 

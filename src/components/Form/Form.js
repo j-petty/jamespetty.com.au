@@ -14,7 +14,6 @@ class Form extends React.Component {
 }
 
 Form.propTypes = {
-  isOpen: PropTypes.bool.isRequired,
   children: PropTypes.array.isRequired
 };
 

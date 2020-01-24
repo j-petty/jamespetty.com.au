@@ -26,6 +26,7 @@
 
 .menuItem a:hover {
   color: #FFFFFF;
+  text-decoration: none;
 }
 
 .menuItem a:after {

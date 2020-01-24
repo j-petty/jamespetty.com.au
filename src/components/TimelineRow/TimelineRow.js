@@ -5,15 +5,28 @@ import styles from './TimelineRow.module.css';
 
 class TimelineRow extends React.Component {
   render () {
-    const { date, title, description } = this.props;
+    const { date, title, description, image, imageAlt, imageLink, link } = this.props;
 
     return (
       <div className={styles.timelineRow}>
         <span className={styles.timelineDate}>{date}</span>
 
         <div className={styles.timelineText}>
-          <h3>{title}</h3>
+          {title &&
+            <h3>{title}</h3>
+          }
+
+          {image &&
+            <a href={imageLink} target='_blank' rel='noopener noreferrer'>
+              <img src={image} alt={imageAlt} />
+            </a>
+          }
+
           <p>{description}</p>
+
+          {link &&
+            <a href={link}>see more</a>
+          }
         </div>
       </div>
     );
@@ -23,7 +36,11 @@ class TimelineRow extends React.Component {
 TimelineRow.propTypes = {
   date: PropTypes.string,
   title: PropTypes.string,
-  description: PropTypes.string
+  description: PropTypes.string,
+  image: PropTypes.string,
+  imageAlt: PropTypes.string,
+  imageLink: PropTypes.string,
+  link: PropTypes.string
 };
 
 export default TimelineRow;

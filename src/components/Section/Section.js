@@ -26,7 +26,10 @@ class Section extends React.Component {
 }
 
 Section.propTypes = {
-  children: PropTypes.array,
+  children: PropTypes.oneOfType([
+    PropTypes.array,
+    PropTypes.object
+  ]),
   id: PropTypes.string,
   title: PropTypes.string,
   subTitle: PropTypes.string

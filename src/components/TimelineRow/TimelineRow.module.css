@@ -1,38 +1,51 @@
 .timelineRow {
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-    margin: 10px 0;
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: relative;
+	margin: 10px 0;
 }
 
-
 .timelineDate {
-    text-align: center;
-    color: #888888;
+	text-align: center;
+	color: #888888;
 }
 
 .timelineDate:after {
-    content: '';
-    position: absolute;
-    width: 1px;
-    left: 50%;
-    background: #888888;
-    bottom: 0;
-    top: 40px;
+	content: '';
+	position: absolute;
+	width: 1px;
+	left: 50%;
+	background: #888888;
+	bottom: 0;
+	top: 40px;
 }
 
 .timelineText {
-    align-self: flex-end;
+	align-self: flex-end;
+	width: 35%;
 }
 
 .timelineRow:nth-child(2n+1) .timelineText {
-    align-self: flex-start;
-    text-align: right;
+	align-self: flex-start;
+	text-align: right;
 }
 
 .timelineText p {
-    font-weight: 300;
-    font-size: 18px;
+	font-weight: 300;
+	font-size: 18px;
+}
+
+.timelineText img {
+	width: 150px;
+}
+
+.timelineText a {
+	color: #888888;
+	transition: color .1s ease-in-out;
+}
+
+.timelineText a:hover {
+	color: #FFFFFF;
 }

@@ -20,6 +20,14 @@ ul {
   list-style: none;
 }
 
+a {
+  color: #FFFFFF;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 .fullHeight {
   min-height: 100vh;
 }

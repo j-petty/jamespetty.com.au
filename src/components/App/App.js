@@ -2,7 +2,6 @@ import React from 'react';
 import Observer from '@researchgate/react-intersection-observer';
 
 import Menu from '../Menu/Menu';
-import MenuItem from '../MenuItem/MenuItem';
 import MenuButton from '../MenuButton/MenuButton';
 import ScrollMenu from '../ScrollMenu/ScrollMenu';
 import ScrollMenuItem from '../ScrollMenuItem/ScrollMenuItem';
@@ -12,8 +11,6 @@ import ProjectRow from '../ProjectRow/ProjectRow';
 import TimelineRow from '../TimelineRow/TimelineRow';
 import Form from '../Form/Form';
 import FormField from '../FormField/FormField';
-
-import styles from './App.module.css';
 
 class App extends React.Component {
   constructor (props) {
@@ -53,20 +50,10 @@ class App extends React.Component {
           isOpen={isMenuOpen}
           handleClick={this.handleMenuOpen} />
 
-        <Menu isOpen={isMenuOpen}>
-          <MenuItem
-            label='projects'
-            link='projects'
-            toggleMenu={this.handleMenuOpen} />
-          <MenuItem
-            label='work'
-            link='work'
-            toggleMenu={this.handleMenuOpen} />
-          <MenuItem
-            label='contact'
-            link='contact'
-            toggleMenu={this.handleMenuOpen} />
-        </Menu>
+        <Menu
+          isOpen={isMenuOpen}
+          items={['projects', 'work', 'contact']}
+          toggleMenu={this.handleMenuOpen} />
 
         <ScrollMenu>
           <ScrollMenuItem
@@ -87,85 +74,111 @@ class App extends React.Component {
         </ScrollMenu>
 
         <Observer onChange={(e) => this.handleScroll('home', e)}>
-          <Header inView={currentSection === 'home'} />
+          <Header />
         </Observer>
 
-        <main>
-          <Observer onChange={(e) => this.handleScroll('projects', e)}>
-            <Section
-              id='projects'
-              title='projects'
-              subTitle="checkout what I've been working on">
-              <ProjectRow
-                title='First Project'
-                description='This is my very first project.'
-                image={require('../../assets/images/project01.jpg')} />
+        <Observer onChange={(e) => this.handleScroll('projects', e)}>
+          <Section
+            id='projects'
+            title='projects'
+            subTitle="checkout what I've been working on">
+            <ProjectRow
+              title='First Project'
+              description='This is my very first project.'
+              image={require('../../assets/images/project01.jpg')}
+              imageAlt='project 01' />
 
-              <ProjectRow
-                title='Second Project'
-                description='This is my second project.'
-                image={require('../../assets/images/project01.jpg')} />
+            <ProjectRow
+              title='Second Project'
+              description='This is my second project.'
+              image={require('../../assets/images/project01.jpg')}
+              imageAlt='project 02' />
 
-              <ProjectRow
-                title='Third Project'
-                description='This is my third project.'
-                image={require('../../assets/images/project01.jpg')} />
-            </Section>
-          </Observer>
+            <ProjectRow
+              title='Third Project'
+              description='This is my third project.'
+              image={require('../../assets/images/project01.jpg')}
+              imageAlt='project 03' />
+          </Section>
+        </Observer>
 
-          <Observer onChange={(e) => this.handleScroll('work', e)}>
-            <Section
-              id='work'
-              title='work'
-              subTitle='my most recent experience'>
-              <TimelineRow
-                date='today'
-                title='Timeline 01'
-                description='This is the latest thing on my timeline' />
+        <Observer onChange={(e) => this.handleScroll('work', e)}>
+          <Section
+            id='work'
+            title='work'
+            subTitle='most recent experience'>
+            <TimelineRow
+              date='today'
+              image={require('../../assets/images/deloitte-digital-w.png')}
+              imageAlt='Deloitte Digital'
+              imageLink='https://www.deloittedigital.com.au/'
+              link='#'
+              description={`
+              Donec sollicitudin molestie malesuada. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. 
+              Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. 
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus.
+              Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.
+              `} />
 
-              <TimelineRow
-                date='2018'
-                title='Timeline 02'
-                description='This is the second thing on my timeline' />
+            <TimelineRow
+              date='2018'
+              image={require('../../assets/images/spinify-w.png')}
+              imageAlt='Spinify'
+              imageLink='https://spinify.com/'
+              link='#'
+              description={`
+              Donec rutrum congue leo eget malesuada. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. 
+              Nulla quis lorem ut libero malesuada feugiat. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. 
+              Donec sollicitudin molestie malesuada. Donec sollicitudin molestie malesuada.
+              `} />
 
-              <TimelineRow
-                date='2016'
-                title='Timeline 03'
-                description='This is the final thing on my timeline' />
-            </Section>
-          </Observer>
+            <TimelineRow
+              date='2016'
+              image={require('../../assets/images/made-for-me-w.png')}
+              imageAlt='Made for Me'
+              link='#'
+              description={`
+              Donec rutrum congue leo eget malesuada. 
+              Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. 
+              Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; 
+              Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. 
+              Cras ultricies ligula sed magna dictum porta.`} />
+          </Section>
+        </Observer>
 
-          <Observer onChange={(e) => this.handleScroll('contact', e)}>
-            <Section
-              id='contact'
-              title='contact'
-              subTitle='reach out for more info'>
-              <Form>
-                <FormField
-                  name='name'
-                  label='name'
-                  type='text'
-                  isRequired={false} />
+        <Observer onChange={(e) => this.handleScroll('contact', e)}>
+          <Section
+            id='contact'
+            title='contact'
+            subTitle='reach out for more info'>
+            <Form>
+              <FormField
+                name='name'
+                label='name'
+                type='text'
+                maxLength={255}
+                isRequired={false} />
 
-                <FormField
-                  name='email'
-                  label='email'
-                  type='email'
-                  isRequired={true} />
+              <FormField
+                name='email'
+                label='email'
+                type='email'
+                maxLength={255}
+                isRequired={true} />
 
-                <FormField
-                  name='message'
-                  label='message'
-                  type='textarea'
-                  isRequired={true} />
+              <FormField
+                name='message'
+                label='message'
+                type='textarea'
+                maxLength={255}
+                isRequired={true} />
 
-                <FormField
-                  name='submit'
-                  type='submit' />
-              </Form>
-            </Section>
-          </Observer>
-        </main>
+              <FormField
+                name='submit'
+                type='submit' />
+            </Form>
+          </Section>
+        </Observer>
       </div>
     );
   }

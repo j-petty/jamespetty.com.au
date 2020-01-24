@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import MenuItem from '../MenuItem/MenuItem';
+
 import styles from './Menu.module.css';
 
 class Menu extends React.Component {
@@ -26,7 +28,7 @@ class Menu extends React.Component {
 
   render () {
     const { hasOpened } = this.state;
-    const { isOpen } = this.props;
+    const { isOpen, items, toggleMenu } = this.props;
 
     let extraClasses = '';
 
@@ -40,7 +42,14 @@ class Menu extends React.Component {
     return (
       <nav className={`primaryNav fullHeight ${extraClasses}`}>
         <ul className={styles.menuList}>
-          {this.props.children}
+          {/*this.props.children*/}
+          {items && items.map((item) =>
+            <MenuItem
+              key={item}
+              label={item}
+              link={item}
+              toggleMenu={toggleMenu} />
+          )}
         </ul>
       </nav>
     );
@@ -48,8 +57,9 @@ class Menu extends React.Component {
 }
 
 Menu.propTypes = {
-  isOpen: PropTypes.bool.isRequired,
-  children: PropTypes.array.isRequired
+  isOpen: PropTypes.bool,
+  items: PropTypes.array,
+  toggleMenu: PropTypes.func
 };
 
 export default Menu;
