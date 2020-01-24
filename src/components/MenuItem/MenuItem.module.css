@@ -20,7 +20,7 @@
 
 .menuItem a {
   cursor: pointer;
-  color: #A0A0A0;
+  color: #888888;
   transition: color 0.2s ease-in-out;
 }
 

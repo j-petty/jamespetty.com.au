@@ -10,6 +10,8 @@ import Header from '../Header/Header';
 import Section from '../Section/Section';
 import ProjectRow from '../ProjectRow/ProjectRow';
 import TimelineRow from '../TimelineRow/TimelineRow';
+import Form from '../Form/Form';
+import FormField from '../FormField/FormField';
 
 import styles from './App.module.css';
 
@@ -118,6 +120,36 @@ class App extends React.Component {
               date='2016'
               title='Timeline 03'
               description='This is the final thing on my timeline' />
+          </Section>
+        </Observer>
+
+        <Observer onChange={(e) => this.handleScroll('contact', e)}>
+          <Section
+            id='contact'
+            title='contact'>
+            <Form>
+              <FormField
+                name='name'
+                label='name'
+                type='text'
+                isRequired={false} />
+
+              <FormField
+                name='email'
+                label='email'
+                type='email'
+                isRequired={true} />
+
+              <FormField
+                name='message'
+                label='message'
+                type='textarea'
+                isRequired={true} />
+
+              <FormField
+                name='submit'
+                type='submit' />
+            </Form>
           </Section>
         </Observer>
       </div>
