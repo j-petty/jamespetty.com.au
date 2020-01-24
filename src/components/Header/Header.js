@@ -18,7 +18,7 @@ class Header extends React.Component {
     const { skillsArray } = this.state;
 
     return (
-      <header className={`${styles.mainHeader} fullHeight`}>
+      <header id='home' className={`${styles.mainHeader} fullHeight`}>
         <h1 className={styles.mainTitle}>Hi I&apos;m James.</h1>
 
         <div className={styles.subTitle}>

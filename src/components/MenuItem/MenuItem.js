@@ -17,8 +17,7 @@ class MenuItem extends React.Component {
 
 MenuItem.propTypes = {
   label: PropTypes.string,
-  link: PropTypes.string,
-  additionalClass: PropTypes.string
+  link: PropTypes.string
 };
 
 export default MenuItem;

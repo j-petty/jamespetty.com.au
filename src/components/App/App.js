@@ -1,8 +1,11 @@
 import React from 'react';
+import Observer from '@researchgate/react-intersection-observer';
 
 import Menu from '../Menu/Menu';
 import MenuItem from '../MenuItem/MenuItem';
 import MenuButton from '../MenuButton/MenuButton';
+import ScrollMenu from '../ScrollMenu/ScrollMenu';
+import ScrollMenuItem from '../ScrollMenuItem/ScrollMenuItem';
 import Header from '../Header/Header';
 import Section from '../Section/Section';
 import ProjectRow from '../ProjectRow/ProjectRow';
@@ -15,7 +18,8 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      isOpen: false
+      isMenuOpen: false,
+      currentSection: null
     };
 
     this.handleMenuOpen = this.handleMenuOpen.bind(this);
@@ -23,64 +27,99 @@ class App extends React.Component {
 
   handleMenuOpen () {
     this.setState({
-      isOpen: !this.state.isOpen
+      isMenuOpen: !this.state.isMenuOpen
+    });
+  }
+
+  handleScroll (senderLocation, { isIntersecting }) {
+    if (!isIntersecting) {
+      return;
+    }
+
+    // update state to reference the currently intersected view
+    this.setState({
+      currentSection: senderLocation
     });
   }
 
   render () {
-    const { isOpen } = this.state;
+    const { isMenuOpen, currentSection } = this.state;
 
     return (
       <div>
         <MenuButton
-          isOpen={isOpen}
+          isOpen={isMenuOpen}
           handleClick={this.handleMenuOpen} />
 
-        <Menu isOpen={isOpen}>
-          <MenuItem label="projects" />
-          <MenuItem label="work" />
-          <MenuItem label="contact" />
+        <Menu isOpen={isMenuOpen}>
+          <MenuItem label='projects' />
+          <MenuItem label='work' />
+          <MenuItem label='contact' />
         </Menu>
 
-        <Header />
+        <ScrollMenu>
+          <ScrollMenuItem
+            link='home'
+            inView={currentSection === 'home'} />
 
-        <Section
-          id='projects'
-          title='projects'>
-          <ProjectRow
-            title='First Project'
-            description='This is my very first project.'
-            image={require('../../assets/images/project01.jpg')} />
+          <ScrollMenuItem
+            link='projects'
+            inView={currentSection === 'projects'} />
 
-          <ProjectRow
-            title='Second Project'
-            description='This is my second project.'
-            image={require('../../assets/images/project01.jpg')} />
+          <ScrollMenuItem
+            link='work'
+            inView={currentSection === 'work'} />
 
-          <ProjectRow
-            title='Third Project'
-            description='This is my third project.'
-            image={require('../../assets/images/project01.jpg')} />
-        </Section>
+          <ScrollMenuItem
+            link='contact'
+            inView={currentSection === 'contact'} />
+        </ScrollMenu>
 
-        <Section
-          id='work'
-          title='work'>
-          <TimelineRow
-            date='today'
-            title='Timeline 01'
-            description='This is the latest thing on my timeline' />
+        <Observer onChange={(e) => this.handleScroll('home', e)}>
+          <Header inView={currentSection === 'home'} />
+        </Observer>
 
-          <TimelineRow
-            date='2018'
-            title='Timeline 02'
-            description='This is the second thing on my timeline' />
+        <Observer onChange={(e) => this.handleScroll('projects', e)}>
+          <Section
+            id='projects'
+            title='projects'>
+            <ProjectRow
+              title='First Project'
+              description='This is my very first project.'
+              image={require('../../assets/images/project01.jpg')} />
 
-          <TimelineRow
-            date='2016'
-            title='Timeline 03'
-            description='This is the final thing on my timeline' />
-        </Section>
+            <ProjectRow
+              title='Second Project'
+              description='This is my second project.'
+              image={require('../../assets/images/project01.jpg')} />
+
+            <ProjectRow
+              title='Third Project'
+              description='This is my third project.'
+              image={require('../../assets/images/project01.jpg')} />
+          </Section>
+        </Observer>
+
+        <Observer onChange={(e) => this.handleScroll('work', e)}>
+          <Section
+            id='work'
+            title='work'>
+            <TimelineRow
+              date='today'
+              title='Timeline 01'
+              description='This is the latest thing on my timeline' />
+
+            <TimelineRow
+              date='2018'
+              title='Timeline 02'
+              description='This is the second thing on my timeline' />
+
+            <TimelineRow
+              date='2016'
+              title='Timeline 03'
+              description='This is the final thing on my timeline' />
+          </Section>
+        </Observer>
       </div>
     );
   }
