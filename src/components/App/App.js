@@ -54,9 +54,18 @@ class App extends React.Component {
           handleClick={this.handleMenuOpen} />
 
         <Menu isOpen={isMenuOpen}>
-          <MenuItem label='projects' />
-          <MenuItem label='work' />
-          <MenuItem label='contact' />
+          <MenuItem
+            label='projects'
+            link='projects'
+            toggleMenu={this.handleMenuOpen} />
+          <MenuItem
+            label='work'
+            link='work'
+            toggleMenu={this.handleMenuOpen} />
+          <MenuItem
+            label='contact'
+            link='contact'
+            toggleMenu={this.handleMenuOpen} />
         </Menu>
 
         <ScrollMenu>
@@ -81,77 +90,82 @@ class App extends React.Component {
           <Header inView={currentSection === 'home'} />
         </Observer>
 
-        <Observer onChange={(e) => this.handleScroll('projects', e)}>
-          <Section
-            id='projects'
-            title='projects'>
-            <ProjectRow
-              title='First Project'
-              description='This is my very first project.'
-              image={require('../../assets/images/project01.jpg')} />
+        <main>
+          <Observer onChange={(e) => this.handleScroll('projects', e)}>
+            <Section
+              id='projects'
+              title='projects'
+              subTitle="checkout what I've been working on">
+              <ProjectRow
+                title='First Project'
+                description='This is my very first project.'
+                image={require('../../assets/images/project01.jpg')} />
 
-            <ProjectRow
-              title='Second Project'
-              description='This is my second project.'
-              image={require('../../assets/images/project01.jpg')} />
+              <ProjectRow
+                title='Second Project'
+                description='This is my second project.'
+                image={require('../../assets/images/project01.jpg')} />
 
-            <ProjectRow
-              title='Third Project'
-              description='This is my third project.'
-              image={require('../../assets/images/project01.jpg')} />
-          </Section>
-        </Observer>
+              <ProjectRow
+                title='Third Project'
+                description='This is my third project.'
+                image={require('../../assets/images/project01.jpg')} />
+            </Section>
+          </Observer>
 
-        <Observer onChange={(e) => this.handleScroll('work', e)}>
-          <Section
-            id='work'
-            title='work'>
-            <TimelineRow
-              date='today'
-              title='Timeline 01'
-              description='This is the latest thing on my timeline' />
+          <Observer onChange={(e) => this.handleScroll('work', e)}>
+            <Section
+              id='work'
+              title='work'
+              subTitle='my most recent experience'>
+              <TimelineRow
+                date='today'
+                title='Timeline 01'
+                description='This is the latest thing on my timeline' />
 
-            <TimelineRow
-              date='2018'
-              title='Timeline 02'
-              description='This is the second thing on my timeline' />
+              <TimelineRow
+                date='2018'
+                title='Timeline 02'
+                description='This is the second thing on my timeline' />
 
-            <TimelineRow
-              date='2016'
-              title='Timeline 03'
-              description='This is the final thing on my timeline' />
-          </Section>
-        </Observer>
+              <TimelineRow
+                date='2016'
+                title='Timeline 03'
+                description='This is the final thing on my timeline' />
+            </Section>
+          </Observer>
 
-        <Observer onChange={(e) => this.handleScroll('contact', e)}>
-          <Section
-            id='contact'
-            title='contact'>
-            <Form>
-              <FormField
-                name='name'
-                label='name'
-                type='text'
-                isRequired={false} />
+          <Observer onChange={(e) => this.handleScroll('contact', e)}>
+            <Section
+              id='contact'
+              title='contact'
+              subTitle='reach out for more info'>
+              <Form>
+                <FormField
+                  name='name'
+                  label='name'
+                  type='text'
+                  isRequired={false} />
 
-              <FormField
-                name='email'
-                label='email'
-                type='email'
-                isRequired={true} />
+                <FormField
+                  name='email'
+                  label='email'
+                  type='email'
+                  isRequired={true} />
 
-              <FormField
-                name='message'
-                label='message'
-                type='textarea'
-                isRequired={true} />
+                <FormField
+                  name='message'
+                  label='message'
+                  type='textarea'
+                  isRequired={true} />
 
-              <FormField
-                name='submit'
-                type='submit' />
-            </Form>
-          </Section>
-        </Observer>
+                <FormField
+                  name='submit'
+                  type='submit' />
+              </Form>
+            </Section>
+          </Observer>
+        </main>
       </div>
     );
   }

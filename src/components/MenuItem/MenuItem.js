@@ -1,15 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-scroll';
 
 import styles from './MenuItem.module.css';
 
 class MenuItem extends React.Component {
   render () {
-    const { label, link } = this.props;
+    const { label, link, toggleMenu } = this.props;
 
     return (
       <li className={styles.menuItem}>
-        <a href={link}>{label}</a>
+        <Link
+          smooth={true}
+          to={link}
+          onClick={toggleMenu}>
+          {label}
+        </Link>
       </li>
     );
   }
@@ -17,7 +23,8 @@ class MenuItem extends React.Component {
 
 MenuItem.propTypes = {
   label: PropTypes.string,
-  link: PropTypes.string
+  link: PropTypes.string,
+  toggleMenu: PropTypes.func
 };
 
 export default MenuItem;

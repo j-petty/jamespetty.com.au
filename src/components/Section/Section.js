@@ -5,12 +5,18 @@ import styles from './Section.module.css';
 
 class Section extends React.Component {
   render () {
-    const { id, title } = this.props;
+    const { id, title, subTitle } = this.props;
 
     return (
       <section id={id}>
         {title &&
-          <h2 className={styles.sectionTitle}>{title}</h2>
+          <div className={`${styles.sectionTitle} textCenter`}>
+            <h2>{title}</h2>
+
+            {subTitle &&
+              <p >{subTitle}</p>
+            }
+          </div>
         }
 
         {this.props.children}
@@ -22,7 +28,8 @@ class Section extends React.Component {
 Section.propTypes = {
   children: PropTypes.array,
   id: PropTypes.string,
-  title: PropTypes.string
+  title: PropTypes.string,
+  subTitle: PropTypes.string
 };
 
 export default Section;
