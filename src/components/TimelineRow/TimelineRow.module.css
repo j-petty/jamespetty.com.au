@@ -40,12 +40,3 @@
 .timelineText img {
 	width: 150px;
 }
-
-.timelineText a {
-	color: #888888;
-	transition: color .1s ease-in-out;
-}
-
-.timelineText a:hover {
-	color: #FFFFFF;
-}

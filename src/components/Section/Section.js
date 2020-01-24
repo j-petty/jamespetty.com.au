@@ -5,17 +5,13 @@ import styles from './Section.module.css';
 
 class Section extends React.Component {
   render () {
-    const { id, title, subTitle } = this.props;
+    const { id, title } = this.props;
 
     return (
       <section id={id}>
         {title &&
           <div className={`${styles.sectionTitle} textCenter`}>
             <h2>{title}</h2>
-
-            {subTitle &&
-              <p >{subTitle}</p>
-            }
           </div>
         }
 
@@ -31,8 +27,7 @@ Section.propTypes = {
     PropTypes.object
   ]),
   id: PropTypes.string,
-  title: PropTypes.string,
-  subTitle: PropTypes.string
+  title: PropTypes.string
 };
 
 export default Section;

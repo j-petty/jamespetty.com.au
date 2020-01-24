@@ -10,3 +10,11 @@
   text-align: center;
   margin: auto;
 }
+
+.copy a {
+  color: #888888;
+}
+
+.copy a:hover {
+  color: #FFFFFF;
+}

@@ -13,7 +13,7 @@
   cursor: pointer;
   text-decoration: none;
   margin: auto;
-  transition: all .1s;
+  transition: all .1s ease-in-out;
 }
 
 .menuItem.active a {

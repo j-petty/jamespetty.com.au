@@ -26,10 +26,20 @@ ul {
 
 a {
   color: #FFFFFF;
+  transition: color .1s ease-in-out;
+  cursor: pointer;
 }
 
 a:hover {
   text-decoration: underline;
+}
+
+a.dark {
+	color: #888888;
+}
+
+a.dark:hover {
+	color: #FFFFFF;
 }
 
 .fullHeight {

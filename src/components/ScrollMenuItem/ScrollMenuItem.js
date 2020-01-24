@@ -9,7 +9,7 @@ class ScrollMenuItem extends React.Component {
 
     return (
       <li className={inView ? `${styles.menuItem} ${styles.active}` : styles.menuItem}>
-        <a href={link} />
+        <a href={link}><span></span></a>
       </li>
     );
   }

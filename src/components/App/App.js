@@ -100,21 +100,23 @@ class App extends React.Component {
         <Observer onChange={(e) => this.handleScroll('projects', e)}>
           <Section
             id='projects'
-            title='projects'
-            subTitle="what I've been working on">
+            title='projects'>
             <ProjectRow
+              index={1}
               title='First Project'
-              description='This is my very first project.'
+              themes={['web design', 'development', 'dev']}
               image={require('../../assets/images/project01.jpg')}
               imageAlt='project 01' />
 
             <ProjectRow
+              index={2}
               title='Second Project'
               description='This is my second project.'
               image={require('../../assets/images/project01.jpg')}
               imageAlt='project 02' />
 
             <ProjectRow
+              index={3}
               title='Third Project'
               description='This is my third project.'
               image={require('../../assets/images/project01.jpg')}
@@ -125,8 +127,7 @@ class App extends React.Component {
         <Observer onChange={(e) => this.handleScroll('work', e)}>
           <Section
             id='work'
-            title='work'
-            subTitle='most recent experience'>
+            title='work'>
             <TimelineRow
               date='today'
               image={require('../../assets/images/deloitte-digital-w.png')}
@@ -173,8 +174,7 @@ class App extends React.Component {
         <Observer onChange={(e) => this.handleScroll('contact', e)}>
           <Section
             id='contact'
-            title='contact'
-            subTitle='reach out for more info'>
+            title='contact'>
             <Form>
               <FormField
                 name='name'
@@ -204,7 +204,7 @@ class App extends React.Component {
           </Section>
         </Observer>
 
-        <div className={styles.copy}>&copy; {new Date().getFullYear()} James Petty</div>
+        <div className={styles.copy}>&copy; {new Date().getFullYear()} <a href='/'>James Petty</a></div>
       </div>
     );
   }
