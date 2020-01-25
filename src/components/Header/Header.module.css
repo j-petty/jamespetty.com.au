@@ -1,4 +1,4 @@
-.mainHeader {
+header {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -7,21 +7,22 @@
   margin: auto;
 }
 
-.mainTitle {
+header h1 {
   margin: auto 0 15vh 0;
   font-size: 100px;
   font-weight: 300;
 }
 
-.subTitle {
+.skillLoop {
   font-family: 'Merriweather';
   font-size: 30px;
   font-weight: 300;
   overflow: hidden;
   height: 58px;
+  white-space: nowrap;
 }
 
-.subTitle li {
+.skillLoop li {
   animation: vertLoop 8s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
   padding: 10px;
   color: #888888;
@@ -80,4 +81,36 @@
 
 .nudge:hover:after {
   transform: rotateZ(45deg) translate(5px, 5px);
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  header {
+    width: 85%;
+  }
+  
+  header h1 {
+    font-size: 75px;
+  }
+
+  .skillLoop {
+    font-size: 25px;
+    height: 52px;
+  }
+}
+
+/* Mobiles */
+@media (max-width: 576px) {
+  header {
+    width: 100%;
+  }
+
+  header h1 {
+    font-size: 60px;
+  }
+
+  .skillLoop {
+    font-size: 20px;
+    height: 45px;
+  }
 }

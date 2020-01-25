@@ -51,3 +51,11 @@
     z-index: -1;
   }
 }
+
+
+/* Mobiles */
+@media (max-width: 576px) {
+  .menuList {
+    margin: 0 20%;
+  }
+}

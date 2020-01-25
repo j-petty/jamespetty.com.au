@@ -79,3 +79,11 @@
 .menuItem:nth-child(4) {
   animation-delay: 0.3s;
 }
+
+
+/* Mobiles */
+@media (max-width: 576px) {
+  .menuItem {
+    font-size: 45px;
+  }
+}

@@ -1,4 +1,13 @@
 .formContainer {
   width: 50%;
+  max-width: 512px;
   position: relative;
+}
+
+
+/* Tablets */
+@media (max-width: 768px) {
+  .formContainer {
+    width: 85%;
+  }
 }

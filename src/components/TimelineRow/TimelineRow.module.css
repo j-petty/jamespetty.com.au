@@ -40,3 +40,29 @@
 .timelineText img {
 	width: 150px;
 }
+
+
+/* Tablets */
+@media (max-width: 768px) {
+  .timelineDate {
+    margin-bottom: 30px;
+    font-size: 18px;
+  }
+
+  .timelineDate:after {
+    content: none;
+  }
+
+	.timelineText {
+    align-self: center;
+    width: 100%;
+  }
+
+  .timelineRow:nth-child(2n+1) .timelineText {
+    text-align: left;
+  }
+
+  .timelineText img {
+    width: 100px;
+  }
+}

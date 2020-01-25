@@ -6,11 +6,9 @@ import styles from './ScrollMenu.module.css';
 class ScrollMenu extends React.Component {
   render () {
     return (
-      <div className={styles.scrollMenu}>
-        <ul className={styles.menuList}>
-          {this.props.children}
-        </ul>
-      </div>
+      <ul className={styles.scrollMenu}>
+        {this.props.children}
+      </ul>
     );
   }
 }

@@ -48,3 +48,22 @@
 .projectContainer:hover .projectImage {
   opacity: 1;
 }
+
+
+/* Tablets */
+@media (max-width: 768px) {
+  .projectContainer {
+    margin: 0;
+  }
+}
+
+/* Mobiles */
+@media (max-width: 576px) {
+  .projectContainer {
+    height: 250px;
+  }
+
+  .themeList {
+    display: none;
+  }
+}

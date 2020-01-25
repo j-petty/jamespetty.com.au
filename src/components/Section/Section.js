@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './Section.module.css';
+import './Section.module.css';
 
 class Section extends React.Component {
   render () {
@@ -10,9 +10,7 @@ class Section extends React.Component {
     return (
       <section id={id}>
         {title &&
-          <div className={`${styles.sectionTitle} textCenter`}>
-            <h2>{title}</h2>
-          </div>
+          <h2>{title}</h2>
         }
 
         {this.props.children}

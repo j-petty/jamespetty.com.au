@@ -7,10 +7,10 @@ class Header extends React.Component {
     const skillsArray = ['full stack developer', 'web designer', 'front end developer', 'technical consultant', 'entrepreneur'];
 
     return (
-      <header id='home' className={`${styles.mainHeader} fullHeight textCenter`}>
-        <h1 className={styles.mainTitle}>Hi I&apos;m James.</h1>
+      <header id='home' className='fullHeight textCenter'>
+        <h1>Hi I&apos;m James.</h1>
 
-        <ul className={styles.subTitle}>
+        <ul className={styles.skillLoop}>
           {skillsArray.map(skill =>
             <li key={skill}>{skill}</li>
           )}
