@@ -1,10 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import styles from './Header.module.css';
 
 class Header extends React.Component {
   render () {
-    const skillsArray = ['full stack developer', 'web designer', 'front end developer', 'technical consultant', 'entrepreneur'];
+    const { skillsArray } = this.props;
 
     return (
       <header id='home' className='fullHeight textCenter'>
@@ -21,5 +22,9 @@ class Header extends React.Component {
     );
   }
 }
+
+Header.propTypes = {
+  skillsArray: PropTypes.array
+};
 
 export default Header;

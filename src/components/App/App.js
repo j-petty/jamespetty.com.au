@@ -94,7 +94,12 @@ class App extends React.Component {
         </ScrollMenu>
 
         <Observer onChange={(e) => this.handleScroll('home', e)}>
-          <Header />
+          <Header skillsArray={[
+            'full stack developer',
+            'web designer',
+            'front end developer',
+            'technical consultant',
+            'entrepreneur']} />
         </Observer>
 
         <Observer onChange={(e) => this.handleScroll('projects', e)}>

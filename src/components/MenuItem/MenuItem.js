@@ -3,16 +3,14 @@ import PropTypes from 'prop-types';
 
 import styles from './MenuItem.module.css';
 
-class MenuItem extends React.Component {
-  render () {
-    const { label, link, toggleMenu } = this.props;
+function MenuItem (props) {
+  const { label, link, toggleMenu } = props;
 
-    return (
-      <li className={styles.menuItem}>
-        <a href={link} onClick={toggleMenu}>{label}</a>
-      </li>
-    );
-  }
+  return (
+    <li className={styles.menuItem}>
+      <a href={link} onClick={toggleMenu}>{label}</a>
+    </li>
+  );
 }
 
 MenuItem.propTypes = {

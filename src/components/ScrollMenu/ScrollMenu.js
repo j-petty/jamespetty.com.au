@@ -3,14 +3,12 @@ import PropTypes from 'prop-types';
 
 import styles from './ScrollMenu.module.css';
 
-class ScrollMenu extends React.Component {
-  render () {
-    return (
-      <ul className={styles.scrollMenu}>
-        {this.props.children}
-      </ul>
-    );
-  }
+function ScrollMenu (props) {
+  return (
+    <ul className={styles.scrollMenu}>
+      {props.children}
+    </ul>
+  );
 }
 
 ScrollMenu.propTypes = {

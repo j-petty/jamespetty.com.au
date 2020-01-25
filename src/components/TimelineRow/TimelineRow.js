@@ -3,36 +3,34 @@ import PropTypes from 'prop-types';
 
 import styles from './TimelineRow.module.css';
 
-class TimelineRow extends React.Component {
-  render () {
-    const { date, title, description, image, imageAlt, imageLink, link } = this.props;
+function TimelineRow (props) {
+  const { date, title, description, image, imageAlt, imageLink, link } = props;
 
-    return (
-      <div className={styles.timelineRow}>
-        <span className={styles.timelineDate}>{date}</span>
+  return (
+    <div className={styles.timelineRow}>
+      <span className={styles.timelineDate}>{date}</span>
 
-        {description &&
-          <div className={styles.timelineText}>
-            {title &&
-              <h3>{title}</h3>
-            }
+      {description &&
+        <div className={styles.timelineText}>
+          {title &&
+            <h3>{title}</h3>
+          }
 
-            {image &&
-              <a href={imageLink} target='_blank' rel='noopener noreferrer'>
-                <img src={image} alt={imageAlt} />
-              </a>
-            }
+          {image &&
+            <a href={imageLink} target='_blank' rel='noopener noreferrer'>
+              <img src={image} alt={imageAlt} />
+            </a>
+          }
 
-            <p>{description}</p>
+          <p>{description}</p>
 
-            {link &&
-              <a href={link} className='dark'>see more</a>
-            }
-          </div>
-        }
-      </div>
-    );
-  }
+          {link &&
+            <a href={link} className='dark'>see more</a>
+          }
+        </div>
+      }
+    </div>
+  );
 }
 
 TimelineRow.propTypes = {

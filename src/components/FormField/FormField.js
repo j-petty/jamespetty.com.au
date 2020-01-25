@@ -3,47 +3,45 @@ import PropTypes from 'prop-types';
 
 import styles from './FormField.module.css';
 
-class FormField extends React.Component {
-  render () {
-    const { name, label, type, isRequired, maxLength } =  this.props;
+function FormField (props) {
+  const { name, label, type, isRequired, maxLength } =  props;
 
-    switch (type) {
-      case 'submit':
-        return (
-          <div className={`${styles.fieldGroup} textCenter`}>
-            <input
-              name={name}
-              type={type} />
-          </div>
-        );
+  switch (type) {
+    case 'submit':
+      return (
+        <div className={`${styles.fieldGroup} textCenter`}>
+          <input
+            name={name}
+            type={type} />
+        </div>
+      );
 
-      case 'textarea':
-        return (
-          <div className={styles.fieldGroup}>
-            <label htmlFor={name}>{label}</label>
-            <textarea
-              name={name}
-              type={type}
-              required={isRequired}
-              rows={4}
-              maxLength={maxLength} />
-          </div>
-        );
+    case 'textarea':
+      return (
+        <div className={styles.fieldGroup}>
+          <label htmlFor={name}>{label}</label>
+          <textarea
+            name={name}
+            type={type}
+            required={isRequired}
+            rows={4}
+            maxLength={maxLength} />
+        </div>
+      );
 
-      case 'text':
-      case 'email':
-      default:
-        return (
-          <div className={styles.fieldGroup}>
-            <label htmlFor={name}>{label}</label>
-            <input
-              name={name}
-              type={type}
-              required={isRequired}
-              maxLength={maxLength} />
-          </div>
-        );
-    }
+    case 'text':
+    case 'email':
+    default:
+      return (
+        <div className={styles.fieldGroup}>
+          <label htmlFor={name}>{label}</label>
+          <input
+            name={name}
+            type={type}
+            required={isRequired}
+            maxLength={maxLength} />
+        </div>
+      );
   }
 }
 

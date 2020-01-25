@@ -3,16 +3,14 @@ import PropTypes from 'prop-types';
 
 import styles from './ScrollMenuItem.module.css';
 
-class ScrollMenuItem extends React.Component {
-  render () {
-    const { link, inView } = this.props;
+function ScrollMenuItem (props) {
+  const { link, inView } = props;
 
-    return (
-      <li className={inView ? `${styles.menuItem} ${styles.active}` : styles.menuItem}>
-        <a href={link}><span></span></a>
-      </li>
-    );
-  }
+  return (
+    <li className={inView ? `${styles.menuItem} ${styles.active}` : styles.menuItem}>
+      <a href={link}><span></span></a>
+    </li>
+  );
 }
 
 ScrollMenuItem.propTypes = {

@@ -3,34 +3,30 @@ import PropTypes from 'prop-types';
 
 import styles from './ProjectRow.module.css';
 
-class ProjectRow extends React.Component {
-  generateNumber (index) {
-    return ('0' + index).slice(-2);
-  }
+function ProjectRow (props) {
+  const { index, title, themes, image, imageAlt, pageUrl } = props;
 
-  render () {
-    const { index, title, themes, image, imageAlt, pageUrl } = this.props;
+  const number = ('0' + index).slice(-2) + '.';
 
-    return (
-      <a className={styles.projectContainer} href={pageUrl}>
-        <div>{this.generateNumber(index)}.</div>
+  return (
+    <a className={styles.projectContainer} href={pageUrl}>
+      <div>{number}</div>
 
-        <h3>{title}</h3>
+      <h3>{title}</h3>
 
-        {themes &&
-          <ul className={styles.themeList}>
-            {themes.map((theme) =>
-              <li key={theme}>{theme}</li>
-            )}
-          </ul>
-        }
+      {themes &&
+        <ul className={styles.themeList}>
+          {themes.map((theme) =>
+            <li key={theme}>{theme}</li>
+          )}
+        </ul>
+      }
 
-        {image &&
-          <img className={styles.projectImage} src={image} alt={imageAlt} />
-        }
-      </a>
-    );
-  }
+      {image &&
+        <img className={styles.projectImage} src={image} alt={imageAlt} />
+      }
+    </a>
+  );
 }
 
 ProjectRow.propTypes = {
