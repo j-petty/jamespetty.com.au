@@ -24,6 +24,7 @@ header h1 {
 
 .skillLoop li {
   animation: vertLoop 8s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+  animation-fill-mode: both;
   padding: 10px;
   color: #888888;
 }
@@ -49,7 +50,7 @@ header h1 {
     transform: translateY(-400%);
   }
   95%, 100% {
-    transform: translateY(0%);
+    transform: translateY(-500%);
   }
 }
 

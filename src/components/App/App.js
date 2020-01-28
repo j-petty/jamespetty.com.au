@@ -99,7 +99,8 @@ class App extends React.Component {
             'web designer',
             'front end developer',
             'technical consultant',
-            'entrepreneur']} />
+            'entrepreneur',
+            'full stack developer']} />
         </Observer>
 
         <Observer onChange={(e) => this.handleScroll('projects', e)}>
