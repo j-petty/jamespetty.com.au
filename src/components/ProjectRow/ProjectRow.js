@@ -10,7 +10,7 @@ function ProjectRow (props) {
 
   return (
     <a className={styles.projectContainer} href={pageUrl}>
-      <div>{number}</div>
+      <div className={styles.counter}>{number}</div>
 
       <h3>{title}</h3>
 

@@ -5,7 +5,7 @@
 .fieldGroup label {
   display: block;
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 .fieldGroup input,
@@ -18,8 +18,8 @@
   margin: 10px 0;
   box-sizing: border-box;
   background: #444444;
-  font-weight: 300;
-  font-family: Lato;
+  font-weight: 200;
+  font-family: 'Montserrat', sans-serif;
   color: #FFFFFF;
   border: 2px solid transparent;
   transition: all .3s ease-in-out;

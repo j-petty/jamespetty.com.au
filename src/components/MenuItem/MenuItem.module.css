@@ -1,7 +1,7 @@
 .menuItem {
   margin: 90px 0;
   font-size: 55px;
-  font-weight: 400;
+  font-weight: 700;
 }
 
 :global(.primaryNav.opened) .menuItem {
@@ -36,7 +36,7 @@
   width: 100%;
   height: 4px;
   left: 0;
-  bottom: -10px;
+  bottom: -15px;
   opacity: 0;
   border-radius: 1px;
   background: #FFFFFF;
@@ -45,7 +45,7 @@
 
 .menuItem a:hover:after {
   opacity: 1;
-  bottom: -6px;
+  bottom: -10px;
 }
 
 @keyframes fadeInUp {

@@ -17,6 +17,11 @@
 
 .projectContainer h3 {
   margin: 0;
+  font-weight: 200;
+}
+
+.projectContainer .counter {
+  font-weight: 700;
 }
 
 .themeList {
@@ -25,13 +30,13 @@
 
 .themeList li {
   vertical-align: middle;
-  padding: 4px 8px;
+  padding: 5px 10px;
   margin: 0px 10px 10px 0;
   background: #444444;
   border-radius: 6px;
   display: inline-block;
   white-space: nowrap;
-  font-weight: 300;
+  font-weight: 200;
 }
 
 .projectImage {
