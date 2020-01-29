@@ -7,6 +7,10 @@ section {
   width: 75%;
 }
 
+section:last-of-type {
+  margin: 20vh auto 10vh auto;
+}
+
 section h2 {
   margin: 45px 0;
   font-size: 42px;

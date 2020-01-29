@@ -1,0 +1,17 @@
+footer {
+  text-align: center;
+  margin: 10vh auto;
+}
+
+.copy {
+  color: #888888;
+  margin: auto;
+}
+
+.copy a {
+  color: #888888;
+}
+
+.copy a:hover {
+  color: #FFFFFF;
+}

@@ -12,6 +12,7 @@ import ProjectRow from '../ProjectRow/ProjectRow';
 import TimelineRow from '../TimelineRow/TimelineRow';
 import Form from '../Form/Form';
 import FormField from '../FormField/FormField';
+import Footer from '../Footer/Footer';
 
 import styles from './App.module.css';
 
@@ -111,22 +112,19 @@ class App extends React.Component {
               index={1}
               title='First Project'
               themes={['web design', 'development', 'dev']}
-              image={require('../../assets/images/project01.jpg')}
-              imageAlt='project 01' />
+              image={require('../../assets/images/project01.jpg')} />
 
             <ProjectRow
               index={2}
               title='Second Project'
               description='This is my second project.'
-              image={require('../../assets/images/project01.jpg')}
-              imageAlt='project 02' />
+              image={require('../../assets/images/project01.jpg')} />
 
             <ProjectRow
               index={3}
               title='Third Project'
               description='This is my third project.'
-              image={require('../../assets/images/project01.jpg')}
-              imageAlt='project 03' />
+              image={require('../../assets/images/project01.jpg')} />
           </Section>
         </Observer>
 
@@ -210,7 +208,9 @@ class App extends React.Component {
           </Section>
         </Observer>
 
-        <div className={styles.copy}>&copy; {new Date().getFullYear()} <a href='/'>James Petty</a></div>
+        <Footer
+          link='#'
+          name='James Petty' />
       </div>
     );
   }

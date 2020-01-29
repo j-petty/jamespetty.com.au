@@ -25,9 +25,14 @@
 }
 
 .menuList {
-  margin: 0 15%;
+  margin: 5vh 15%;
   padding: 0;
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 90vh;
+  max-height: 700px;
 }
 
 @keyframes fadeIn {

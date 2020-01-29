@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import styles from './ProjectRow.module.css';
 
 function ProjectRow (props) {
-  const { index, title, themes, image, imageAlt, pageUrl } = props;
+  const { index, title, themes, image, pageUrl } = props;
 
   const number = ('0' + index).slice(-2) + '.';
 
@@ -22,8 +22,12 @@ function ProjectRow (props) {
         </ul>
       }
 
+      {/* NOTE: using span here, not image so that CSS background-image
+      property can be used to maintain aspect ratio */}
       {image &&
-        <img className={styles.projectImage} src={image} alt={imageAlt} />
+        <span
+          className={styles.projectImage}
+          style={{backgroundImage: `url(${image})`}} />
       }
     </a>
   );
@@ -34,7 +38,6 @@ ProjectRow.propTypes = {
   title: PropTypes.string,
   themes: PropTypes.array,
   image: PropTypes.string,
-  imageAlt: PropTypes.string,
   pageUrl: PropTypes.string
 };
 
