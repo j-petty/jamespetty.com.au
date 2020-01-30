@@ -9,9 +9,12 @@ footer {
 }
 
 .copy a {
+  outline: none;
   color: #888888;
 }
 
-.copy a:hover {
+.copy a:hover,
+.copy a:active,
+.copy a:focus {
   color: #FFFFFF;
 }

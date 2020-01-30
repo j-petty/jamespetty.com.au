@@ -61,9 +61,12 @@ header h1 {
   color: #888888;
   transition: color 0.3s ease-in-out;
   cursor: pointer;
+  outline: none;
 }
 
-.nudge:hover {
+.nudge:hover,
+.nudge:active,
+.nudge:focus {
   color: #FFFFFF;
 }
 

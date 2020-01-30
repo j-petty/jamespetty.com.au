@@ -12,6 +12,8 @@ import ProjectRow from '../ProjectRow/ProjectRow';
 import TimelineRow from '../TimelineRow/TimelineRow';
 import Form from '../Form/Form';
 import FormField from '../FormField/FormField';
+import SocialList from '../SocialList/SocialList';
+import SocialIcon from '../SocialIcon/SocialIcon';
 import Footer from '../Footer/Footer';
 
 import styles from './App.module.css';
@@ -112,19 +114,22 @@ class App extends React.Component {
               index={1}
               title='First Project'
               themes={['web design', 'development', 'dev']}
-              image={require('../../assets/images/project01.jpg')} />
+              image={require('../../assets/images/project01.jpg')}
+              pageUrl='#' />
 
             <ProjectRow
               index={2}
               title='Second Project'
               description='This is my second project.'
-              image={require('../../assets/images/project01.jpg')} />
+              image={require('../../assets/images/project01.jpg')}
+              pageUrl='#' />
 
             <ProjectRow
               index={3}
               title='Third Project'
               description='This is my third project.'
-              image={require('../../assets/images/project01.jpg')} />
+              image={require('../../assets/images/project01.jpg')}
+              pageUrl='#' />
           </Section>
         </Observer>
 
@@ -205,6 +210,24 @@ class App extends React.Component {
                 name='submit'
                 type='submit' />
             </Form>
+
+            <SocialList>
+              <SocialIcon
+                link='//www.facebook.com/jpetty'
+                image={require('../../assets/images/social-facebook.svg')}
+                imageAlt='Facebook' />
+
+              <SocialIcon
+                link='//www.linkedin.com/in/j-petty'
+                image={require('../../assets/images/social-linkedin.svg')}
+                imageAlt='LinkedIn' />
+
+              <SocialIcon
+                link='//stackoverflow.com/users/5434910/jpetty'
+                image={require('../../assets/images/social-stackoverflow.svg')}
+                imageAlt='StackOverflow' />
+
+            </SocialList>
           </Section>
         </Observer>
 

@@ -9,7 +9,7 @@ function ProjectRow (props) {
   const number = ('0' + index).slice(-2) + '.';
 
   return (
-    <a className={styles.projectContainer} href={pageUrl}>
+    <a className={styles.projectRow} href={pageUrl}>
       <div className={styles.counter}>{number}</div>
 
       <h3>{title}</h3>
