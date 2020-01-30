@@ -45,3 +45,7 @@
   width: 40%;
   background: #000000;
 }
+
+.fieldGroup input[type=submit]:hover {
+  border: 2px solid #555555;
+}

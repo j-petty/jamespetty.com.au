@@ -9,7 +9,7 @@ header {
 
 header h1 {
   margin: auto 0 20vh 0;
-  font-size: 120px;
+  font-size: 100px;
   font-weight: 100;
 }
 
@@ -84,14 +84,17 @@ header h1 {
   transform: rotateZ(45deg) translate(5px, 5px);
 }
 
+/* Medium */
+@media (max-width: 992px) {  
+  header h1 {
+    font-size: 75px;
+  }
+}
+
 /* Tablets */
 @media (max-width: 768px) {
   header {
     width: 85%;
-  }
-  
-  header h1 {
-    font-size: 75px;
   }
 
   .skillLoop {
