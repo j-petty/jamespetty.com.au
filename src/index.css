@@ -6,7 +6,7 @@ body {
   margin: 0;
   background: #141414;
   color: #FFFFFF;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 a {
@@ -52,27 +52,33 @@ a.dark:hover {
 
 
 @font-face {
-  font-family: 'Montserrat';
-  src: url("assets/fonts/Montserrat-Thin.ttf");
+  font-family: 'Poppins';
+  src: url("assets/fonts/Poppins-Thin.ttf");
   font-weight: 100;
 }
 
 @font-face {
-  font-family: 'Montserrat';
-  src: url("assets/fonts/Montserrat-ExtraLight.ttf");
+  font-family: 'Poppins';
+  src: url("assets/fonts/Poppins-ExtraLight.ttf");
   font-weight: 200;
 }
 
 @font-face {
-  font-family: 'Montserrat';
-  src: url("assets/fonts/Montserrat-Regular.ttf");
+  font-family: 'Poppins';
+  src: url("assets/fonts/Poppins-Regular.ttf");
   font-weight: 400;
 }
 
 @font-face {
-  font-family: 'Montserrat';
-  src: url("assets/fonts/Montserrat-Bold.ttf");
+  font-family: 'Poppins';
+  src: url("assets/fonts/Poppins-Bold.ttf");
   font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url("assets/fonts/Poppins-ExtraBold.ttf");
+  font-weight: 800;
 }
 
 
