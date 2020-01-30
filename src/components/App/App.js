@@ -1,6 +1,7 @@
 import React from 'react';
 import 'intersection-observer';
 import Observer from '@researchgate/react-intersection-observer';
+import ReactGA from 'react-ga';
 
 import MenuButton from '../MenuButton/MenuButton';
 import Menu from '../Menu/Menu';
@@ -46,6 +47,27 @@ class App extends React.Component {
     this.setState({
       currentSection: senderLocation
     });
+  }
+
+  initializeAnalytics () {
+    if (!process.env.REACT_APP_ANALYTICS_TRACKING_ID) {
+      return;
+    }
+
+    ReactGA.initialize(process.env.REACT_APP_ANALYTICS_TRACKING_ID);
+
+    // filter pages by environment
+    if (process.env.NODE_ENV === 'production') {
+      ReactGA.pageview('/');
+    }
+    else {
+      ReactGA.pageview(`/${process.env.NODE_ENV}`);
+    }
+  }
+
+  componentDidMount () {
+    // startup Google Analytics
+    this.initializeAnalytics();
   }
 
   render () {
