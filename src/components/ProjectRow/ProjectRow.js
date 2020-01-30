@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import styles from './ProjectRow.module.css';
 
 function ProjectRow (props) {
-  const { index, title, themes, image, pageUrl } = props;
+  const { index, title, description, themes, image, pageUrl } = props;
 
   const number = ('0' + index).slice(-2) + '.';
 
@@ -12,14 +12,20 @@ function ProjectRow (props) {
     <a className={styles.projectRow} href={pageUrl}>
       <div className={styles.counter}>{number}</div>
 
-      <h3>{title}</h3>
+      <div className={styles.titleRow}>
+        <h3>{title}</h3>
 
-      {themes &&
-        <ul className={styles.themeList}>
-          {themes.map((theme) =>
-            <li key={theme}>{theme}</li>
-          )}
-        </ul>
+        {themes &&
+          <ul className={styles.themeList}>
+            {themes.map((theme) =>
+              <li key={theme}>{theme}</li>
+            )}
+          </ul>
+        }
+      </div>
+
+      {description &&
+        <p>{description}</p>
       }
 
       {/* NOTE: using span here, not image so that CSS background-image
@@ -36,6 +42,7 @@ function ProjectRow (props) {
 ProjectRow.propTypes = {
   index: PropTypes.number,
   title: PropTypes.string,
+  description: PropTypes.string,
   themes: PropTypes.array,
   image: PropTypes.string,
   pageUrl: PropTypes.string

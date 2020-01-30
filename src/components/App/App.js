@@ -1,4 +1,5 @@
 import React from 'react';
+import 'intersection-observer';
 import Observer from '@researchgate/react-intersection-observer';
 
 import MenuButton from '../MenuButton/MenuButton';
@@ -112,23 +113,26 @@ class App extends React.Component {
             title='projects'>
             <ProjectRow
               index={1}
-              title='First Project'
-              themes={['web design', 'development']}
+              title='Top Secret'
+              themes={['AWS', 'ReactJS', 'Xamarin']}
+              description="An entrepreneurial endeavor which I'm working towards turning into a startup business."
               image={require('../../assets/images/project01.jpg')}
               pageUrl='#' />
 
             <ProjectRow
               index={2}
-              title='Second Project'
-              description='This is my second project.'
-              image={require('../../assets/images/project01.jpg')}
+              title='Whtspc Digital'
+              themes={['WordPress', 'Web Design', 'ReactJs']}
+              description="A digital design agency of which I'm a co-founder."
+              image={require('../../assets/images/project02.jpg')}
               pageUrl='#' />
 
             <ProjectRow
               index={3}
-              title='Third Project'
-              description='This is my third project.'
-              image={require('../../assets/images/project01.jpg')}
+              title='Personal Portfolio'
+              themes={['ReactJS', 'Web Design']}
+              description="The site you're looking at right now. I built it using ReactJS for a bit of fun."
+              image={require('../../assets/images/project03.jpg')}
               pageUrl='#' />
           </Section>
         </Observer>
@@ -141,38 +145,37 @@ class App extends React.Component {
               date='today'
               image={require('../../assets/images/deloitte-digital-w.png')}
               imageAlt='Deloitte Digital'
-              imageLink='https://www.deloittedigital.com.au/'
-              link='#'
+              imageLink='//www.deloittedigital.com.au/'
+              link=''
               description={`
-                Donec sollicitudin molestie malesuada. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. 
-                Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. 
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget tortor risus.
-                Curabitur non nulla sit amet nisl tempus convallis quis ac lectus.
+                As a Technical Consultant at Deloitte Digital, I've work in several different client environments.
+                From small agile teams, through to large hybrid-agile programs - solving complex problems is BAU.
+                Each project brings a new set skills to learn and a fresh set of challenges to overcome.
+                My time at Deloitte Digital has certainly show me the value of being very dynamic but thorough.
               `} />
 
             <TimelineRow
               date='2018'
               image={require('../../assets/images/spinify-w.png')}
               imageAlt='Spinify'
-              imageLink='https://spinify.com/'
-              link='#'
+              imageLink='//spinify.com/'
+              link=''
               description={`
-                Donec rutrum congue leo eget malesuada. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. 
-                Nulla quis lorem ut libero malesuada feugiat. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. 
-                Donec sollicitudin molestie malesuada. Donec sollicitudin molestie malesuada.
+                Spinify is a gamification startup which focuses on helping businesses better engage their staff.
+                At Spinify I was a critical member of a small but international agile development team.
+                We worked at the forefront of industry best practices to ensure we we're delivering valuable releases timely and efficiently.
+                The experience of coordinating software development activities across timezones gave me an appreciation of the possibilities of agile project management, when done properly.
               `} />
 
             <TimelineRow
               date='2016'
               image={require('../../assets/images/made-for-me-w.png')}
               imageAlt='Made for Me'
-              link='#'
+              link=''
               description={`
-                Donec rutrum congue leo eget malesuada. 
-                Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. 
-                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; 
-                Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. 
-                Cras ultricies ligula sed magna dictum porta.
+                What started as a internship at a 3D Printing startup soon turned into a part-time job whilst I studied at University.
+                I worked as a Web Developer, responsible for designing, building and maintaining a Python based website and online 3D Print Quoting Tool.
+                Working with unfamilar tools meant I had to teach myself new technologies and frameworks in a short timeframe to start delivering value.
               `} />
 
             <TimelineRow

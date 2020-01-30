@@ -12,8 +12,8 @@ class Header extends React.Component {
         <h1>Hi I&apos;m James.</h1>
 
         <ul className={styles.skillLoop}>
-          {skillsArray.map(skill =>
-            <li key={skill}>{skill}</li>
+          {skillsArray.map((skill, index) =>
+            <li key={index}>{skill}</li>
           )}
         </ul>
 

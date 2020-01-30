@@ -4,40 +4,61 @@
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
-  height: 200px;
+  min-height: 200px;
   justify-content: center;
   display: flex;
   flex-direction: column;
   outline: none;
   border: 2px solid transparent;
-  transition: height .5s cubic-bezier(0.68, -0.55, 0.265, 1.55), border .2s ease-in-out;
+  transition: min-height .5s cubic-bezier(0.68, -0.55, 0.265, 1.55), border .2s ease-in-out;
 }
 
 .projectRow:hover,
 .projectRow:active,
 .projectRow:focus {
   text-decoration: none;
-  height: 250px;
+  min-height: 250px;
   border: 2px solid #FFF;
 }
 
-.projectRow h3 {
+.projectRow .titleRow {
   margin: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.projectRow h3 {
   font-weight: 200;
+  margin: 0;
+  display: inline-block;
 }
 
 .projectRow .counter {
   font-weight: 700;
+  font-size: 22px;
+}
+
+.projectRow p {
+  margin: 0;
+  font-weight: 200;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.themeList {
+  margin: 0 15px;
 }
 
 .themeList li {
   vertical-align: middle;
-  padding: 5px 10px;
-  margin: 0px 10px 10px 0;
+  padding: 3px 8px;
+  margin-right: 10px;
   background: #444444;
   border-radius: 6px;
   display: inline-block;
   white-space: nowrap;
+  font-size: 12px;
   font-weight: 200;
   transition: background-color .2s ease-in-out;
 }
@@ -63,13 +84,21 @@
 .projectRow:hover .projectImage,
 .projectRow:active .projectImage,
 .projectRow:focus .projectImage {
-  opacity: 1;
+  opacity: 0.7;
 }
 
 
 /* Tablets */
 @media (max-width: 768px) {
   .projectRow {
+    margin: 0;
+  }
+
+  .projectRow .titleRow {
+    display: block;
+  }
+
+  .themeList {
     margin: 0;
   }
 }
