@@ -30,15 +30,19 @@ a {
   cursor: pointer;
 }
 
-a:hover {
+a:hover,
+a:focus {
   text-decoration: underline;
+  outline: none;
 }
 
 a.dark {
 	color: #888888;
 }
 
-a.dark:hover {
+a.dark:hover,
+a.dark:focus,
+a.dark:active {
 	color: #FFFFFF;
 }
 

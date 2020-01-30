@@ -113,7 +113,7 @@ class App extends React.Component {
             <ProjectRow
               index={1}
               title='First Project'
-              themes={['web design', 'development', 'dev']}
+              themes={['web design', 'development']}
               image={require('../../assets/images/project01.jpg')}
               pageUrl='#' />
 
