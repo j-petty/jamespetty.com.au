@@ -9,6 +9,10 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+::selection {
+  background: #CCC;
+}
+
 a {
   text-decoration: none;
 }

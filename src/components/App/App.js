@@ -139,7 +139,7 @@ class App extends React.Component {
               themes={['AWS', 'ReactJS', 'Xamarin']}
               description="An entrepreneurial endeavor which I'm working towards turning into a startup business."
               image={require('../../assets/images/project01.jpg')}
-              pageUrl='#' />
+              pageUrl='' />
 
             <ProjectRow
               index={2}
@@ -147,7 +147,7 @@ class App extends React.Component {
               themes={['WordPress', 'Web Design', 'ReactJs']}
               description="A digital design agency of which I'm a co-founder."
               image={require('../../assets/images/project02.jpg')}
-              pageUrl='#' />
+              pageUrl='//whtspcdigital.com.au/' />
 
             <ProjectRow
               index={3}
@@ -251,13 +251,12 @@ class App extends React.Component {
                 link='//stackoverflow.com/users/5434910/jpetty'
                 image={require('../../assets/images/social-stackoverflow.svg')}
                 imageAlt='StackOverflow' />
-
             </SocialList>
           </Section>
         </Observer>
 
         <Footer
-          link='#'
+          link='/'
           name='James Petty' />
       </div>
     );
