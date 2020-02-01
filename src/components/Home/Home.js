@@ -149,13 +149,14 @@ class Home extends React.Component {
           <Section
             id='contact'
             title='contact'>
-            <Form>
+            <Form action='contact.php'>
               <FormField
                 name='name'
                 label='name'
                 type='text'
-                maxLength={255}
-                isRequired={false} />
+                pattern={/[^a-zA-Z" "]/}
+                maxLength={30}
+                isRequired={true} />
 
               <FormField
                 name='email'
@@ -168,6 +169,7 @@ class Home extends React.Component {
                 name='message'
                 label='message'
                 type='textarea'
+                pattern={/[^a-zA-Z0-9.,?!\s]/}
                 maxLength={255}
                 isRequired={true} />
 

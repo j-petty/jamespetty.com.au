@@ -5,8 +5,8 @@
 }
 
 
-/* Tablets */
-@media (max-width: 768px) {
+/* Medium */
+@media (max-width: 992px) {  
   .formContainer {
     width: 85%;
   }
