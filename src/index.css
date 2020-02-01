@@ -6,7 +6,7 @@ body {
   margin: 0;
   background: #141414;
   color: #FFFFFF;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
 }
 
 ::selection {
@@ -39,14 +39,20 @@ a:focus {
   outline: none;
 }
 
-a.dark {
+a.simpleLink {
 	color: #888888;
 }
 
-a.dark:hover,
-a.dark:focus,
-a.dark:active {
+a.simpleLink:hover,
+a.simpleLink:focus,
+a.simpleLink:active {
 	color: #FFFFFF;
+}
+
+.light a.simpleLink:hover,
+.light a.simpleLink:focus,
+.light a.simpleLink:active {
+	color: #444444;
 }
 
 .textCenter {
@@ -58,7 +64,6 @@ a.dark:active {
   font-family: 'Poppins';
   src: url("assets/fonts/Poppins-Thin.ttf");
   font-weight: 100;
-  font-display: swap;
 }
 
 @font-face {
@@ -94,5 +99,4 @@ a.dark:active {
   font-family: 'Merriweather';
   src: url("assets/fonts/Merriweather-Light.ttf");
   font-weight: 300;
-  font-display: swap;
 }

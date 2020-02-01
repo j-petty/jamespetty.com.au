@@ -8,7 +8,7 @@ function Footer (props) {
 
   return (
     <footer>
-      <span className={styles.copy}>Created by <a href={link}>{name}</a>.</span>
+      <span className={styles.copy}>Created by <a href={link} className='simpleLink'>{name}</a>.</span>
     </footer>
   );
 }

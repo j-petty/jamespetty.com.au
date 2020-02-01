@@ -26,18 +26,20 @@
 .projectContainer {
   margin: 0 10%;
 }
+
 .projectRow .titleRow {
   margin: 10px 0 5px 0;
   display: flex;
   align-items: center;
+  z-index: 1;
 }
 
 .projectRow h3 {
   font-weight: 200;
   margin: 0;
-  z-index: 0;
   display: inline-block;
   position: relative;
+  z-index: 1;
 }
 
 .projectRow .counter {
@@ -45,7 +47,7 @@
   font-size: 22px;
   position: relative;
   display: inline-block;
-  z-index: 0;
+  z-index: 1;
 }
 
 .projectRow p {
@@ -59,7 +61,7 @@
   position: relative;
   max-width: 100%;
   display: inline-block;
-  z-index: 0;
+  z-index: 1;
 }
 
 .projectRow h3:after,
@@ -74,9 +76,16 @@
   background: #141414;
 }
 
+:global(.light) .projectRow h3:after,
+:global(.light) .projectRow .counter:after,
+:global(.light) .projectRow p:after {
+  background: #FFFFFF;
+}
+
 .themeList {
   margin: 0 15px;
   flex: 1;
+  z-index: 1;
 }
 
 .themeList li {
@@ -92,8 +101,9 @@
   transition: background-color .2s ease-in-out;
 }
 
-.themeList li:hover {
+:global(.light) .themeList li {
   background: #888888;
+  color: #FFFFFF;
 }
 
 .projectImage {
@@ -101,7 +111,7 @@
   top: 0;
   right: 0;
   min-width: 100%;
-  z-index: -1;
+  z-index: 0;
   opacity: 0;
   transition: opacity .2s ease-in-out;
 }

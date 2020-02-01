@@ -29,6 +29,10 @@
   text-decoration: none;
 }
 
+:global(.light) .menuItem a:hover {
+  color: #141414;
+}
+
 .menuItem a:after {
   content: '';
   position: absolute;
@@ -40,6 +44,10 @@
   border-radius: 1px;
   background: #FFFFFF;
   transition: opacity 0.2s ease-in-out, bottom 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+:global(.light) .menuItem a:after {
+  background: #141414;
 }
 
 .menuItem a:hover:after {

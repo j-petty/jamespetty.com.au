@@ -22,6 +22,10 @@
   height: 100%;
 }
 
+:global(.light) .menuItem.active a {
+  background: #141414;
+}
+
 .menuItem:not(.active) a:hover {
   width: 100%;
   height: 100%;

@@ -25,7 +25,7 @@ function TimelineRow (props) {
           <p>{description}</p>
 
           {link &&
-            <a href={link} className='dark'>see more</a>
+            <a href={link} className='simpleLink'>see more</a>
           }
         </div>
       }

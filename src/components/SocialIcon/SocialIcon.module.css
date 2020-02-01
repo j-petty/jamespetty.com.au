@@ -21,6 +21,12 @@
   border: 2px solid #FFFFFF;
 }
 
+:global(.light) .socialIcon a:hover,
+:global(.light) .socialIcon a:focus,
+:global(.light) .socialIcon a:active {
+  border: 2px solid #141414;
+}
+
 .socialIcon img {
   max-width: 100%;
   max-height: 100%;

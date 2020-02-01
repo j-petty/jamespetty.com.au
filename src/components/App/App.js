@@ -19,15 +19,23 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      isMenuOpen: false
+      isMenuOpen: false,
+      colorMode: 'dark'
     };
 
     this.handleMenuOpen = this.handleMenuOpen.bind(this);
+    this.toggleColorMode = this.toggleColorMode.bind(this);
   }
 
   handleMenuOpen () {
     this.setState({
       isMenuOpen: !this.state.isMenuOpen
+    });
+  }
+
+  toggleColorMode () {
+    this.setState({
+      colorMode: this.state.colorMode === 'dark' ? 'light' : 'dark'
     });
   }
 
@@ -53,16 +61,18 @@ class App extends React.Component {
   }
 
   render () {
-    const { isMenuOpen } = this.state;
+    const { isMenuOpen, colorMode } = this.state;
 
     return (
       <Router>
-        <div className={styles.container}>
+        <div className={`${styles.container} ${colorMode}`}>
           <MenuButton
             isOpen={isMenuOpen}
             handleClick={this.handleMenuOpen} />
 
-          <Menu isOpen={isMenuOpen}>
+          <Menu
+            isOpen={isMenuOpen}
+            toggleColorMode={this.toggleColorMode}>
             <MenuItem
               label='home'
               link='/#home'

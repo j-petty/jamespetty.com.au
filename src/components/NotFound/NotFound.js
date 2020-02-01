@@ -7,7 +7,7 @@ function NotFound () {
   return (
     <main className={styles.notFound}>
       <h1>Nothing to see here.</h1>
-      <p>Return to <a className='dark' href='/'>safety</a>.</p>
+      <p>Return to <a className='simpleLink' href='/'>safety</a>.</p>
     </main>
   );
 }

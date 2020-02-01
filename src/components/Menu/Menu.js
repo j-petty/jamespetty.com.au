@@ -26,7 +26,7 @@ class Menu extends React.Component {
 
   render () {
     const { hasOpened } = this.state;
-    const { isOpen, children } = this.props;
+    const { isOpen, toggleColorMode, children } = this.props;
 
     let extraClasses = null;
 
@@ -42,6 +42,12 @@ class Menu extends React.Component {
         <ul className={styles.menuList}>
           {children}
         </ul>
+
+        <button className={styles.colorModeToggle} onClick={toggleColorMode}>
+          <img
+            src={require('../../assets/images/icon-darkmode.svg')}
+            alt='Toggle Dark Mode' />
+        </button>
       </nav>
     );
   }
@@ -49,7 +55,8 @@ class Menu extends React.Component {
 
 Menu.propTypes = {
   isOpen: PropTypes.bool,
-  children: PropTypes.array
+  children: PropTypes.array,
+  toggleColorMode: PropTypes.func
 };
 
 export default Menu;

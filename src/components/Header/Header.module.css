@@ -72,6 +72,12 @@ header h1 {
   color: #FFFFFF;
 }
 
+:global(.light) .nudge:hover,
+:global(.light).nudge:active,
+:global(.light).nudge:focus {
+  color: #141414;
+}
+
 .nudge:after {
   content: '';
   position: absolute;

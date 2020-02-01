@@ -3,10 +3,14 @@ nav {
   width: 100%;
   min-height: 100vh;
   align-items: center;
-  z-index: -1;
+  z-index: -10;
   display: flex;
   opacity: 0;
   background: #0E0E0E;
+}
+
+:global(.light) nav {
+  background: #efefef;
 }
 
 :global(nav.closed) {
@@ -36,25 +40,47 @@ nav {
   max-height: 700px;
 }
 
+.colorModeToggle {
+  position: absolute;
+  right: 85px;
+  width: 20px;
+  height: 20px;
+  top: 38px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  transition: transform .3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+:global(.light) .colorModeToggle {
+  filter: brightness(30%);
+}
+
+.colorModeToggle:hover {
+  transform: scale(1.2);
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
-    z-index: -1;
+    z-index: -10;
   }
   to {
     opacity: 1;
-    z-index: 1;
+    z-index: 10;
   }
 }
 
 @keyframes fadeOut {
   from {
     opacity: 1;
-    z-index: 1;
+    z-index: 10;
   }
   to {
     opacity: 0;
-    z-index: -1;
+    z-index: -10;
   }
 }
 

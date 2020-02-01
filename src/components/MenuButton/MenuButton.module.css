@@ -1,5 +1,5 @@
 .navButton {
-  z-index: 2;
+  z-index: 20;
   position: fixed;
   right: 40px;
   top: 40px;
@@ -30,12 +30,16 @@
   content: '';
   height: 4px;
   width: 100%;
-  background: white;
+  background: #FFFFFF;
   position: absolute;
   border-radius: 1px;
   right: 0;
   top: 0;
   transition: width .2s, transform .3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+:global(.light) .navButton span {
+  background: #444;
 }
 
 .navButton span:last-child {
