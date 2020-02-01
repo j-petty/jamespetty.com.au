@@ -75,27 +75,27 @@ class Home extends React.Component {
             title='projects'>
             <ProjectRow
               index={1}
-              title='Top Secret'
-              themes={['AWS', 'ReactJS', 'Xamarin']}
-              description="An entrepreneurial endeavor which I'm working towards turning into a startup business."
-              image={require('../../assets/images/project01.jpg')}
-              imageAlt='Building better things. To make things better.' />
-
-            <ProjectRow
-              index={2}
               title='Whtspc Digital'
               themes={['WordPress', 'Web Design', 'ReactJs']}
-              description="A local digital creative agency of which I'm a co-founder."
+              description='A local digital creative agency which I co-founded.'
               image={require('../../assets/images/project02.jpg')}
               imageAlt='Whtspc Digital - We Champion the Underdogs.' />
 
             <ProjectRow
-              index={3}
+              index={2}
               title='Personal Portfolio'
               themes={['ReactJS', 'Web Design']}
               description="The page you're looking at right now. Built using ReactJS for a bit of fun."
               image={require('../../assets/images/project03.jpg')}
               imageAlt='Showcasing creative ideas.' />
+
+            <ProjectRow
+              index={3}
+              title='Top Secret'
+              themes={['AWS', 'ReactJS', 'Xamarin']}
+              description="An entrepreneurial endeavor which I'm working towards turning into a startup business."
+              image={require('../../assets/images/project01.jpg')}
+              imageAlt='Building better things. To make things better.' />
           </Section>
         </Observer>
 

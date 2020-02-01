@@ -45,8 +45,8 @@
 	width: 150px;
 }
 
-/* Tablets */
-@media (max-width: 768px) {
+/* Medium */
+@media (max-width: 992px) {  
   .timelineDate {
     margin-bottom: 30px;
     font-size: 18px;
