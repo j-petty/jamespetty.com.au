@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import './Section.module.css';
 
+// NOTE: needs to be a React.Component to support Observer
 class Section extends React.Component {
   render () {
     const { id, title } = this.props;

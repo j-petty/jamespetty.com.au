@@ -1,16 +1,19 @@
 .projectRow {
   width: 100%;
-  padding: 0 10%;
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
   min-height: 200px;
-  justify-content: center;
+  /*justify-content: center;
   display: flex;
-  flex-direction: column;
+  flex-direction: column;*/
   outline: none;
-  border: 2px solid transparent;
-  transition: min-height .5s cubic-bezier(0.68, -0.55, 0.265, 1.55), border .2s ease-in-out;
+  text-align: left;
+  background: none;
+  border: none;
+  color: inherit;
+  font-family: inherit;
+  transition: min-height .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 .projectRow:hover,
@@ -18,11 +21,13 @@
 .projectRow:focus {
   text-decoration: none;
   min-height: 250px;
-  border: 2px solid #FFF;
 }
 
+.projectContainer {
+  margin: 0 10%;
+}
 .projectRow .titleRow {
-  margin: 10px 0;
+  margin: 10px 0 5px 0;
   display: flex;
   align-items: center;
 }
@@ -30,12 +35,17 @@
 .projectRow h3 {
   font-weight: 200;
   margin: 0;
+  z-index: 0;
   display: inline-block;
+  position: relative;
 }
 
 .projectRow .counter {
   font-weight: 700;
   font-size: 22px;
+  position: relative;
+  display: inline-block;
+  z-index: 0;
 }
 
 .projectRow p {
@@ -44,16 +54,35 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  padding: 0 5px;
+  margin: 0 -5px;
+  position: relative;
+  max-width: 100%;
+  display: inline-block;
+  z-index: 0;
+}
+
+.projectRow h3:after,
+.projectRow .counter:after,
+.projectRow p:after {
+  content: '';
+  position: absolute;
+  width: calc(100% + 10px);
+  height: 100%;
+  left: -5px;
+  z-index: -1;
+  background: #141414;
 }
 
 .themeList {
   margin: 0 15px;
+  flex: 1;
 }
 
 .themeList li {
   vertical-align: middle;
   padding: 3px 8px;
-  margin-right: 10px;
+  margin: 5px 10px 3px 0;
   background: #444444;
   border-radius: 6px;
   display: inline-block;
@@ -69,14 +98,10 @@
 
 .projectImage {
   position: absolute;
-  left: 0;
   top: 0;
-  bottom: 0;
   right: 0;
+  min-width: 100%;
   z-index: -1;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
   opacity: 0;
   transition: opacity .2s ease-in-out;
 }
@@ -84,7 +109,7 @@
 .projectRow:hover .projectImage,
 .projectRow:active .projectImage,
 .projectRow:focus .projectImage {
-  opacity: 0.7;
+  opacity: 1;
 }
 
 
@@ -100,6 +125,10 @@
 
   .themeList {
     margin: 0;
+  }
+
+  .themeList li {
+    margin: 10px 10px 5px 0;
   }
 }
 

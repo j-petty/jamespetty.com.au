@@ -3,12 +3,13 @@ import PropTypes from 'prop-types';
 
 import styles from './Header.module.css';
 
+// NOTE: needs to be a React.Component to support Observer
 class Header extends React.Component {
   render () {
     const { skillsArray } = this.props;
 
     return (
-      <header id='home' className='fullHeight textCenter'>
+      <header id='home' className='textCenter'>
         <h1>Hi I&apos;m James.</h1>
 
         <ul className={styles.skillLoop}>
@@ -17,7 +18,7 @@ class Header extends React.Component {
           )}
         </ul>
 
-        <a className={styles.nudge} href='#projects'>see my work</a>
+        <a className={styles.nudge} href='/#projects'>see my work</a>
       </header>
     );
   }

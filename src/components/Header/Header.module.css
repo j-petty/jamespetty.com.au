@@ -4,6 +4,7 @@ header {
   flex-direction: column;
   align-items: center;
   width: 75%;
+  min-height: 100vh;
   margin: auto;
 }
 
@@ -110,7 +111,7 @@ header h1 {
 /* Mobiles */
 @media (max-width: 576px) {
   header {
-    width: 100%;
+    width: 90%;
   }
 
   header h1 {

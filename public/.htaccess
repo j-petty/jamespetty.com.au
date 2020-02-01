@@ -1,4 +1,10 @@
+# redirect HTTP to HTTPS and non www to www
 RewriteCond %{HTTPS} off
 RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 RewriteCond %{HTTP_HOST} !^www\.
 RewriteRule .* https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# cache static directory
+<FilesMatch "\.(jpg|png|ttf|svg)">
+    Header set Cache-Control "max-age=31536000"
+</FilesMatch>

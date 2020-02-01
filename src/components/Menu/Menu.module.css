@@ -1,6 +1,7 @@
-:global(.primaryNav) {
+nav {
   position: fixed;
   width: 100%;
+  min-height: 100vh;
   align-items: center;
   z-index: -1;
   display: flex;
@@ -8,7 +9,7 @@
   background: #0E0E0E;
 }
 
-:global(.primaryNav.closed) {
+:global(nav.closed) {
   animation-name: fadeOut;
   animation-fill-mode: both;
   animation-duration: 0.3s;
@@ -16,7 +17,7 @@
   animation-delay: 0.4s;
 }
 
-:global(.primaryNav.opened) {
+:global(nav.opened) {
   animation-name: fadeIn;
   animation-fill-mode: both;
   animation-duration: 0.3s;
@@ -31,7 +32,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  height: 90vh;
+  height: 80vh;
   max-height: 700px;
 }
 
@@ -62,5 +63,6 @@
 @media (max-width: 576px) {
   .menuList {
     margin: 0 20%;
+    height: 70vh;
   }
 }

@@ -28,7 +28,7 @@ class Menu extends React.Component {
     const { hasOpened } = this.state;
     const { isOpen, children } = this.props;
 
-    let extraClasses = '';
+    let extraClasses = null;
 
     if (isOpen) {
       extraClasses = 'opened';
@@ -38,7 +38,7 @@ class Menu extends React.Component {
     }
 
     return (
-      <nav className={`primaryNav fullHeight ${extraClasses}`}>
+      <nav className={extraClasses}>
         <ul className={styles.menuList}>
           {children}
         </ul>
