@@ -26,6 +26,11 @@
   resize: none;
 }
 
+:global(.light) .fieldGroup input,
+:global(.light) .fieldGroup textarea {
+  background: #888888;
+}
+
 .fieldGroup input:active,
 .fieldGroup input:focus,
 .fieldGroup textarea:active,
@@ -54,7 +59,16 @@
   background: #444444;
 }
 
+:global(.light) .fieldGroup input[type=submit] {
+  background: #888888;
+}
+
 .fieldGroup input[type=submit]:hover {
   border: 2px solid #FFFFFF;
   background: #555555;
+  -webkit-appearance: none;
+}
+
+:global(.light) .fieldGroup input[type=submit]:hover {
+  border: 2px solid #141414;
 }

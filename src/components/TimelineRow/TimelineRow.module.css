@@ -42,11 +42,18 @@
 }
 
 .timelineText img {
-	width: 150px;
+  width: 150px;
+  position: relative;
+}
+
+:global(.light) .timelineText img {
+  background: #141414;
+  padding: 10px;
+  border-radius: 4px;
 }
 
 /* Medium */
-@media (max-width: 992px) {  
+@media (max-width: 992px) { 
   .timelineDate {
     margin-bottom: 30px;
     font-size: 18px;

@@ -154,7 +154,7 @@ class Home extends React.Component {
                 name='name'
                 label='name'
                 type='text'
-                pattern={/[^a-zA-Z" "]/}
+                pattern={/[^a-zA-Z" "'-]/}
                 maxLength={30}
                 isRequired={true} />
 
@@ -169,7 +169,7 @@ class Home extends React.Component {
                 name='message'
                 label='message'
                 type='textarea'
-                pattern={/[^a-zA-Z0-9.,?!\s]/}
+                pattern={/[^a-zA-Z0-9.,?'!\s()-]/}
                 maxLength={255}
                 isRequired={true} />
 
