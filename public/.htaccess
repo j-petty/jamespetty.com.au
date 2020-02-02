@@ -4,6 +4,17 @@ RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 RewriteCond %{HTTP_HOST} !^www\.
 RewriteRule .* https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
+# redirect all URLs to index.html (otherwise 404 page is disabled)
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-l
+  RewriteRule . /index.html [L]
+</IfModule>
+
 # cache static directory
 <FilesMatch "\.(jpg|png|ttf|svg)">
     Header set Cache-Control "max-age=31536000"

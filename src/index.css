@@ -99,4 +99,5 @@ a.simpleLink:active {
   font-family: 'Merriweather';
   src: url("assets/fonts/Merriweather-Light.ttf");
   font-weight: 300;
+  font-display: swap;
 }
