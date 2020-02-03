@@ -28,7 +28,7 @@
 
 .timelineText {
 	align-self: flex-end;
-	width: 35%;
+	width: 40%;
 }
 
 .timelineRow:nth-child(2n+1) .timelineText {

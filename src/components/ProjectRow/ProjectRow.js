@@ -56,6 +56,7 @@ ProjectRow.propTypes = {
   index: PropTypes.number,
   title: PropTypes.string,
   description: PropTypes.string,
+  link: PropTypes.string,
   themes: PropTypes.array,
   image: PropTypes.string,
   imageAlt: PropTypes.string

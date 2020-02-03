@@ -5,6 +5,7 @@ section {
   align-items: center;
   margin: 15vh auto;
   width: 75%;
+  max-width: 980px;
 }
 
 section:last-of-type {
