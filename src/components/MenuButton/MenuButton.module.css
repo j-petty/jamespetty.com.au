@@ -47,7 +47,8 @@
   width: 70%;
 }
 
-.navButton:hover span:last-child {
+.navButton:hover span:last-child,
+.navButton:focus span:last-child {
   width: 100%;
 }
 

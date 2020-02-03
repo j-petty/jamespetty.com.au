@@ -17,7 +17,7 @@ function TimelineRow (props) {
           }
 
           {image &&
-            <a href={imageLink} target='_blank' rel='noopener noreferrer'>
+            <a className={styles.timelineLogo} href={imageLink} target='_blank' rel='noopener noreferrer'>
               <img src={image} alt={imageAlt} />
             </a>
           }

@@ -43,7 +43,10 @@ class Menu extends React.Component {
           {children}
         </ul>
 
-        <button className={styles.colorModeToggle} onClick={toggleColorMode}>
+        <button
+          className={styles.colorModeToggle}
+          onClick={toggleColorMode}
+          aria-label='Toggle Dark Mode'>
           <img
             src={require('../../assets/images/icon-darkmode.svg')}
             alt='Toggle Dark Mode' />

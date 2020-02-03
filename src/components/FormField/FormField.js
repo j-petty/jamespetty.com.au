@@ -46,6 +46,7 @@ class FormField  extends React.Component {
           <div className={styles.fieldGroup}>
             <label htmlFor={name}>{label}</label>
             <textarea
+              id={name}
               name={name}
               type={type}
               required={isRequired}
@@ -63,6 +64,7 @@ class FormField  extends React.Component {
           <div className={styles.fieldGroup}>
             <label htmlFor={name}>{label}</label>
             <input
+              id={name}
               name={name}
               type={type}
               required={isRequired}

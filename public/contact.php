@@ -24,6 +24,20 @@
         die();
     }
 
+    $name_length = strlen($post_data['name']);
+    $email_length = strlen($post_data['email']);
+    $message_length = strlen($post_data['message']);
+
+    if ($name_length > 30 || $email_length > 255 || $message_length > 255) {
+        http_response_code(401);
+        echo json_encode([
+            "success" => false,
+            "statusCode" => 401,
+            "message" => "Invalid fields"
+        ]);
+        die();
+    }
+
     if ($post_data)
 	{
         // return a success status code

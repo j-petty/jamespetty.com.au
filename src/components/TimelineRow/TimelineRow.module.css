@@ -46,10 +46,8 @@
   position: relative;
 }
 
-:global(.light) .timelineText img {
-  background: #141414;
-  padding: 10px;
-  border-radius: 4px;
+.timelineLogo {
+	display: inline-block;
 }
 
 /* Medium */

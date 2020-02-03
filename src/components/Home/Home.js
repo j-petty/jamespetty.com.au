@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import 'intersection-observer';
 import Observer from '@researchgate/react-intersection-observer';
 
@@ -37,6 +38,7 @@ class Home extends React.Component {
   }
 
   render () {
+    const { colorMode } = this.props;
     const { currentSection } = this.state;
 
     return (
@@ -77,23 +79,24 @@ class Home extends React.Component {
               index={1}
               title='Whtspc Digital'
               themes={['WordPress', 'Web Design', 'ReactJs']}
-              description='A local digital creative agency which I co-founded.'
+              description="Started out as freelance web design, now a small digital creative agency I'm co-founding."
               image={require('../../assets/images/project02.jpg')}
-              imageAlt='Whtspc Digital - We Champion the Underdogs.' />
+              imageAlt='Whtspc Digital - We Champion the Underdogs.'
+              link='//whtspcdigital.com.au/' />
 
             <ProjectRow
               index={2}
               title='Personal Portfolio'
               themes={['ReactJS', 'Web Design']}
-              description="The page you're looking at right now. Built using ReactJS for a bit of fun."
+              description="The page you're looking at right now. Built using ReactJS, just for a bit of fun. Feel free to drop any feedback."
               image={require('../../assets/images/project03.jpg')}
               imageAlt='Showcasing creative ideas.' />
 
             <ProjectRow
               index={3}
-              title='Top Secret'
+              title='Startup'
               themes={['AWS', 'ReactJS', 'Xamarin']}
-              description="An entrepreneurial endeavor which I'm working towards turning into a startup business."
+              description="Parallel entrepreneurial endeavors ranging from social networks to native apps. Ask me which idea I'm working on today..."
               image={require('../../assets/images/project01.jpg')}
               imageAlt='Building better things. To make things better.' />
           </Section>
@@ -105,7 +108,9 @@ class Home extends React.Component {
             title='work'>
             <TimelineRow
               date='today'
-              image={require('../../assets/images/deloitte-digital-w.png')}
+              image={colorMode === 'dark'
+                ? require('../../assets/images/deloitte-digital-w.png')
+                : require('../../assets/images/deloitte-digital-b.png')}
               imageAlt='Deloitte Digital'
               imageLink='//www.deloittedigital.com.au/'
               link=''
@@ -113,12 +118,14 @@ class Home extends React.Component {
                 As a Technical Consultant at Deloitte Digital, I've work in several different client environments.
                 From small agile teams, through to large hybrid-agile programs - solving complex problems is BAU.
                 Each project brings a new set skills to learn and a fresh set of challenges to overcome.
-                My time at Deloitte Digital has certainly show me the value of being very dynamic but thorough.
+                If I had to pick one thing, Deloitte Digital has certainly shown me the innate value of being dynamic but thorough.
               `} />
 
             <TimelineRow
               date='2018'
-              image={require('../../assets/images/spinify-w.png')}
+              image={colorMode === 'dark'
+                ? require('../../assets/images/spinify-w.png')
+                : require('../../assets/images/spinify-b.png')}
               imageAlt='Spinify'
               imageLink='//spinify.com/'
               link=''
@@ -131,7 +138,9 @@ class Home extends React.Component {
 
             <TimelineRow
               date='2016'
-              image={require('../../assets/images/made-for-me-w.png')}
+              image={colorMode === 'dark'
+                ? require('../../assets/images/made-for-me-w.png')
+                : require('../../assets/images/made-for-me-b.png')}
               imageAlt='Made for Me'
               link=''
               description={`
@@ -204,5 +213,9 @@ class Home extends React.Component {
     );
   }
 }
+
+Home.propTypes = {
+  colorMode: PropTypes.string
+};
 
 export default Home;

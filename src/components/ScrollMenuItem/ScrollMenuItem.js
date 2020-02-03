@@ -8,7 +8,7 @@ function ScrollMenuItem (props) {
 
   return (
     <li className={inView ? `${styles.menuItem} ${styles.active}` : styles.menuItem}>
-      <a href={link}><span></span></a>
+      <a href={link} aria-label='Page Scroll'><span></span></a>
     </li>
   );
 }

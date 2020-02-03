@@ -1,12 +1,12 @@
 .projectRow {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   width: 100%;
   box-sizing: border-box;
   position: relative;
   overflow: hidden;
   min-height: 200px;
-  /*justify-content: center;
-  display: flex;
-  flex-direction: column;*/
   outline: none;
   text-align: left;
   background: none;
@@ -37,7 +37,7 @@
 .projectRow h3 {
   font-weight: 200;
   margin: 0;
-  display: inline-block;
+  width: max-content;
   position: relative;
   z-index: 1;
 }
@@ -46,7 +46,7 @@
   font-weight: 700;
   font-size: 22px;
   position: relative;
-  display: inline-block;
+  width: max-content;
   z-index: 1;
 }
 
@@ -54,37 +54,45 @@
   margin: 0;
   font-weight: 200;
   text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  padding: 0 5px;
-  margin: 0 -5px;
+  margin-bottom: 2px;
   position: relative;
   max-width: 100%;
-  display: inline-block;
+  width: max-content;
   z-index: 1;
+}
+
+.projectRow a {
+  z-index: 1;
+  position: relative;
+  width: max-content;
+  font-size: 14px;
 }
 
 .projectRow h3:after,
 .projectRow .counter:after,
-.projectRow p:after {
+.projectRow p:after,
+.projectRow a:after {
   content: '';
   position: absolute;
   width: calc(100% + 10px);
   height: 100%;
   left: -5px;
+  top: 0;
   z-index: -1;
   background: #141414;
 }
 
 :global(.light) .projectRow h3:after,
 :global(.light) .projectRow .counter:after,
-:global(.light) .projectRow p:after {
+:global(.light) .projectRow p:after,
+:global(.light) .projectRow a:after {
   background: #FFFFFF;
 }
 
 .themeList {
   margin: 0 15px;
   flex: 1;
+  position: relative;
   z-index: 1;
 }
 
@@ -133,17 +141,6 @@
     display: block;
   }
 
-  .themeList {
-    margin: 0;
-  }
-
-  .themeList li {
-    margin: 10px 10px 5px 0;
-  }
-}
-
-/* Mobiles */
-@media (max-width: 576px) {
   .themeList {
     display: none;
   }

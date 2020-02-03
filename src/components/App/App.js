@@ -96,7 +96,7 @@ class App extends React.Component {
 
           <Switch>
             <Route exact path='/'>
-              <Home />
+              <Home colorMode={colorMode} />
             </Route>
 
             <Route path='*'>

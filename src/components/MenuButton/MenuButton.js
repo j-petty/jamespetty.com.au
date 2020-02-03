@@ -11,7 +11,9 @@ function MenuButton (props) {
       className={isOpen ? `${styles.navButton} ${styles.active}` : `${styles.navButton}`}
       onClick={handleClick
         ? handleClick.bind(this)
-        : this.handleClick.bind(this)}>
+        : this.handleClick.bind(this)}
+      aria-label='Toggle Nav Menu'
+      tabIndex={1}>
       <span />
       <span />
     </button>
