@@ -23,7 +23,8 @@
   color: #FFFFFF;
   border: 2px solid transparent;
   transition: all .3s ease-in-out;
-  resize: none;
+  resize: none;  
+  -webkit-appearance: none;
 }
 
 :global(.light) .fieldGroup input,
@@ -57,6 +58,7 @@
   width: 40%;
   min-width: 150px;
   background: #444444;
+  -webkit-appearance: none;
 }
 
 :global(.light) .fieldGroup input[type=submit] {
@@ -66,7 +68,6 @@
 .fieldGroup input[type=submit]:hover {
   border: 2px solid #FFFFFF;
   background: #555555;
-  -webkit-appearance: none;
 }
 
 :global(.light) .fieldGroup input[type=submit]:hover {

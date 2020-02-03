@@ -94,7 +94,7 @@ class Home extends React.Component {
 
             <ProjectRow
               index={3}
-              title='Startup'
+              title='Startups'
               themes={['AWS', 'ReactJS', 'Xamarin']}
               description="Parallel entrepreneurial endeavors ranging from social networks to native apps. Ask me which idea I'm working on today..."
               image={require('../../assets/images/project01.jpg')}
