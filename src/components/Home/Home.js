@@ -80,7 +80,7 @@ class Home extends React.Component {
               title='Whtspc Digital'
               themes={['WordPress', 'Web Design', 'ReactJS']}
               description="Started as freelance web design, now a small digital creative agency. Visit the site to see our latest work."
-              image={require('../../assets/images/project02.jpg')}
+              image={require('../../assets/images/project01.jpg')}
               imageAlt='Whtspc Digital - We Champion the Underdogs.'
               link='//whtspcdigital.com.au/' />
 
@@ -95,19 +95,27 @@ class Home extends React.Component {
 
             <ProjectRow
               index={3}
+              title='Digital Quiz'
+              themes={['ReactJS', 'AWS']}
+              description="An online quiz powered by a cloud REST API. Built to be scalable and easily customised."
+              image={require('../../assets/images/project05.jpg')}
+              imageAlt='Showcasing creative ideas.' />
+
+            <ProjectRow
+              index={4}
               title='Portfolio'
               themes={['ReactJS', 'Web Design']}
               description="The page you're looking at right now. Built using ReactJS, just for a bit of fun. Feel free to drop any feedback."
               image={require('../../assets/images/project03.jpg')}
               imageAlt='Showcasing creative ideas.' />
 
-            <ProjectRow
-              index={4}
+            {/*<ProjectRow
+              index={5}
               title='Startups'
               themes={['AWS', 'ReactJS', 'Xamarin']}
               description="Parallel entrepreneurial endeavors ranging from social networks to native apps. Ask me which game-changing idea I'm working on today..."
               image={require('../../assets/images/project01.jpg')}
-              imageAlt='Building better things. To make things better.' />
+              imageAlt='Building better things. To make things better.' />*/}
           </Section>
         </Observer>
 
