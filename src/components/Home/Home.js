@@ -78,25 +78,34 @@ class Home extends React.Component {
             <ProjectRow
               index={1}
               title='Whtspc Digital'
-              themes={['WordPress', 'Web Design', 'ReactJs']}
-              description="Started out as freelance web design, now a small digital creative agency I'm co-founding."
+              themes={['WordPress', 'Web Design', 'ReactJS']}
+              description="Started as freelance web design, now a small digital creative agency. Visit the site to see our latest work."
               image={require('../../assets/images/project02.jpg')}
               imageAlt='Whtspc Digital - We Champion the Underdogs.'
               link='//whtspcdigital.com.au/' />
 
             <ProjectRow
               index={2}
-              title='Personal Portfolio'
+              title='Beached'
+              themes={['C#', 'MonoGame', 'Game Design']}
+              description="A small survival game, built using the bare-bones game development toolkit, MonoGame. Featuring a randomly generated island and pesky chickens. Check it out."
+              image={require('../../assets/images/project04.jpg')}
+              imageAlt='Survival RPG.'
+              link='//store.steampowered.com/app/652560/Beached/' />
+
+            <ProjectRow
+              index={3}
+              title='Portfolio'
               themes={['ReactJS', 'Web Design']}
               description="The page you're looking at right now. Built using ReactJS, just for a bit of fun. Feel free to drop any feedback."
               image={require('../../assets/images/project03.jpg')}
               imageAlt='Showcasing creative ideas.' />
 
             <ProjectRow
-              index={3}
+              index={4}
               title='Startups'
               themes={['AWS', 'ReactJS', 'Xamarin']}
-              description="Parallel entrepreneurial endeavors ranging from social networks to native apps. Ask me which idea I'm working on today..."
+              description="Parallel entrepreneurial endeavors ranging from social networks to native apps. Ask me which game-changing idea I'm working on today..."
               image={require('../../assets/images/project01.jpg')}
               imageAlt='Building better things. To make things better.' />
           </Section>
