@@ -97,9 +97,10 @@ class Home extends React.Component {
               index={3}
               title='Digital Quiz'
               themes={['ReactJS', 'AWS']}
-              description="An online quiz powered by a cloud REST API. Built to be scalable and easily customised."
+              description="An online quiz powered by a cloud REST API. Designed to help educate people about Digital Transformation and demystify some common misconceptions."
               image={require('../../assets/images/project05.jpg')}
-              imageAlt='Showcasing creative ideas.' />
+              imageAlt='Showcasing creative ideas.'
+              link='//quiz.d3fhu63w0eoi3r.amplifyapp.com/' />
 
             <ProjectRow
               index={4}
