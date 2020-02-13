@@ -1,46 +1,87 @@
+/* global document */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './TimelineRow.module.css';
 
-function TimelineRow (props) {
-  const { date, title, description, image, imageAlt, imageLink, link } = props;
+class TimelineRow extends React.Component {
+  constructor (props) {
+    super(props);
 
-  return (
-    <div className={styles.timelineRow}>
-      <span className={styles.timelineDate}>{date}</span>
+    this.state = {
+      isToggled: false
+    };
 
-      {description &&
+    this.handleToggle = this.handleToggle.bind(this);
+  }
+
+  handleToggle () {
+    this.setState({
+      isToggled: !this.state.isToggled
+    });
+
+    // remove focus from button
+    document.activeElement.blur();
+  }
+
+
+  render () {
+    const { isToggled } = this.state;
+    const { date, description, skills, image, imageAlt, imageLink, children } = this.props;
+
+    return (
+      <div className={styles.timelineRow}>
+        <span className={styles.timelineDate}>{date}</span>
+
         <div className={styles.timelineText}>
-          {title &&
-            <h3>{title}</h3>
-          }
-
           {image &&
-            <a className={styles.timelineLogo} href={imageLink} target='_blank' rel='noopener noreferrer'>
-              <img src={image} alt={imageAlt} />
-            </a>
+            <h3 className='noMargin'>
+              <a className={styles.timelineLogo} href={imageLink} target='_blank' rel='noopener noreferrer'>
+                <img src={image} alt={imageAlt} />
+              </a>
+            </h3>
           }
 
-          <p>{description}</p>
+          {skills &&
+            <ul className={styles.skillList}>
+              {skills.map((skill) =>
+                <li key={skill} className='boxListItem'>{skill}</li>
+              )}
+            </ul>
+          }
 
-          {link &&
-            <a href={link} className='simpleLink'>see more</a>
+          {description &&
+            <p>{description}</p>
+          }
+
+          {children &&
+            <>
+              <button
+                className={isToggled ? `buttonLink ${styles.contentToggle} toggled` : `buttonLink ${styles.contentToggle}`} 
+                onClick={this.handleToggle}>
+                {isToggled ? 'hide projects' : 'see projects'}
+              </button>
+
+              <div className={isToggled ? `${styles.accordion} open` : styles.accordion}>
+                {children}
+              </div>
+            </>
           }
         </div>
-      }
-    </div>
-  );
+      </div>
+    );
+  }
 }
 
 TimelineRow.propTypes = {
   date: PropTypes.string,
-  title: PropTypes.string,
   description: PropTypes.string,
+  skills: PropTypes.array,
   image: PropTypes.string,
   imageAlt: PropTypes.string,
   imageLink: PropTypes.string,
-  link: PropTypes.string
+  children: PropTypes.array
 };
 
 export default TimelineRow;

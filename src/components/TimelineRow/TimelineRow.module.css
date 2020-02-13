@@ -1,5 +1,4 @@
 .timelineRow {
-	width: 80%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -31,14 +30,51 @@
 	width: 40%;
 }
 
-.timelineRow:nth-child(2n+1) .timelineText {
+.timelineRow:nth-of-type(2n) .timelineText {
 	align-self: flex-start;
 	text-align: right;
 }
 
+.timelineRow:nth-of-type(2n) .skillList li {
+  margin: 5px 0 3px 8px;
+}
+
+.timelineText .accordion {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.8s;
+}
+
+.timelineText .accordion:global(.open) {
+  max-height: 100rem;
+}
+
 .timelineText p {
 	font-weight: 200;
-	font-size: 18px;
+  font-size: 18px;
+}
+
+.contentToggle:after {
+  content: '';
+  border: solid #888888;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 5px;
+  transform: rotateZ(45deg) translate(-3px, -3px);
+  transition: all 0.3s ease-in-out;
+  margin-left: 10px;
+}
+
+.contentToggle:hover:after {
+  transform: rotateZ(45deg) translate(-1px, -1px);
+}
+
+.contentToggle:global(.toggled):after {
+  transform: rotateZ(225deg) translate(-2px, -2px);
+}
+
+.contentToggle:global(.toggled):hover:after {
+  transform: rotateZ(225deg) translate(0, 0);
 }
 
 .timelineText img {
@@ -72,5 +108,16 @@
 
   .timelineText img {
     width: 100px;
+  }
+}
+
+/* Mobiles */
+@media (max-width: 576px) {
+  .timelineRow {
+    width: 85%;
+  }
+
+  .timelineText .skillList {
+    display: none;
   }
 }

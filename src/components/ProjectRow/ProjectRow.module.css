@@ -89,29 +89,11 @@
   background: #FFFFFF;
 }
 
-.themeList {
+.skillList {
   margin: 0 15px;
   flex: 1;
   position: relative;
   z-index: 1;
-}
-
-.themeList li {
-  vertical-align: middle;
-  padding: 3px 8px;
-  margin: 5px 10px 3px 0;
-  background: #444444;
-  border-radius: 6px;
-  display: inline-block;
-  white-space: nowrap;
-  font-size: 12px;
-  font-weight: 200;
-  transition: background-color .2s ease-in-out;
-}
-
-:global(.light) .themeList li {
-  background: #888888;
-  color: #FFFFFF;
 }
 
 .projectImage {
@@ -141,7 +123,7 @@
     display: block;
   }
 
-  .themeList {
+  .skillList {
     display: none;
   }
 }

@@ -1,0 +1,35 @@
+.timelineSubRow {
+  margin: 20px 15px;
+}
+
+.timelineSubRow .head {
+  margin: 0 0 5px 0;
+}
+
+.timelineSubRow h4 {
+  margin: 0;
+  font-weight: 400;
+}
+
+.timelineSubRow h5 {
+  margin: 0;
+  font-weight: 400;
+  color: #888888;
+}
+
+.skillList li {
+  margin: 3px;
+}
+
+.timelineSubRow p {
+	font-weight: 200;
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+/* Mobiles */
+@media (max-width: 576px) {
+  .timelineSubRow .skillList {
+    display: none;
+  }
+}

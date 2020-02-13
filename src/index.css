@@ -28,35 +28,74 @@ ul {
   list-style: none;
 }
 
-a {
+a,
+button.buttonLink {
   color: #FFFFFF;
   transition: color .1s ease-in-out;
   cursor: pointer;
 }
 
+button.buttonLink {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+}
+
 a:hover,
-a:focus {
+a:focus,
+button.buttonLink:hover,
+button.buttonLink:focus {
   outline: none;
 }
 
-a.simpleLink {
+a.simpleLink,
+button.buttonLink {
 	color: #888888;
 }
 
 a.simpleLink:hover,
 a.simpleLink:focus,
-a.simpleLink:active {
+a.simpleLink:active,
+button.buttonLink:hover,
+button.buttonLink:focus,
+button.buttonLink:active {
 	color: #FFFFFF;
 }
 
 .light a.simpleLink:hover,
 .light a.simpleLink:focus,
-.light a.simpleLink:active {
+.light a.simpleLink:active,
+.light button.buttonLink:hover,
+.light button.buttonLink:focus,
+.light button.buttonLink:active {
 	color: #444444;
 }
 
 .textCenter {
   text-align: center;
+}
+
+.noMargin {
+  margin: 0;
+}
+
+.boxListItem {
+  vertical-align: middle;
+  padding: 3px 8px;
+  margin: 5px 8px 3px 0;
+  background: #444444;
+  border-radius: 6px;
+  display: inline-block;
+  white-space: nowrap;
+  font-size: 12px;
+  font-weight: 200;
+}
+
+.light .boxListItem {
+  background: #888888;
+  color: #FFFFFF;
 }
 
 

@@ -9,6 +9,7 @@ import Header from '../Header/Header';
 import Section from '../Section/Section';
 import ProjectRow from '../ProjectRow/ProjectRow';
 import TimelineRow from '../TimelineRow/TimelineRow';
+import TimelineSubRow from '../TimelineSubRow/TimelineSubRow';
 import Form from '../Form/Form';
 import FormField from '../FormField/FormField';
 import SocialList from '../SocialList/SocialList';
@@ -78,7 +79,7 @@ class Home extends React.Component {
             <ProjectRow
               index={1}
               title='Whtspc Digital'
-              themes={['WordPress', 'Web Design', 'ReactJS']}
+              skills={['WordPress', 'Web Design', 'ReactJS']}
               description="Started as freelance web design, now a small digital creative agency. Visit the site to see our latest work."
               image={require('../../assets/images/project01.jpg')}
               imageAlt='Whtspc Digital - We Champion the Underdogs.'
@@ -87,7 +88,7 @@ class Home extends React.Component {
             <ProjectRow
               index={2}
               title='Beached'
-              themes={['C#', 'MonoGame', 'Game Design']}
+              skills={['C#', 'MonoGame', 'Game Design']}
               description="A small survival game, built using the bare-bones game development toolkit, MonoGame. Featuring a randomly generated island and pesky chickens. Check it out."
               image={require('../../assets/images/project04.jpg')}
               imageAlt='Survival RPG.'
@@ -96,7 +97,7 @@ class Home extends React.Component {
             <ProjectRow
               index={3}
               title='Digital Quiz'
-              themes={['ReactJS', 'AWS']}
+              skills={['ReactJS', 'Node.js', 'AWS']}
               description="An online quiz powered by a cloud REST API. Designed to help educate people about Digital Transformation and demystify some common misconceptions."
               image={require('../../assets/images/project05.jpg')}
               imageAlt='Showcasing creative ideas.'
@@ -105,7 +106,7 @@ class Home extends React.Component {
             <ProjectRow
               index={4}
               title='Portfolio'
-              themes={['ReactJS', 'Web Design']}
+              skills={['ReactJS', 'Web Design']}
               description="The page you're looking at right now. Built using ReactJS, just for a bit of fun. Feel free to drop any feedback."
               image={require('../../assets/images/project03.jpg')}
               imageAlt='Showcasing creative ideas.' />
@@ -113,7 +114,7 @@ class Home extends React.Component {
             {/*<ProjectRow
               index={5}
               title='Startups'
-              themes={['AWS', 'ReactJS', 'Xamarin']}
+              skills={['AWS', 'ReactJS', 'Xamarin']}
               description="Parallel entrepreneurial endeavors ranging from social networks to native apps. Ask me which game-changing idea I'm working on today..."
               image={require('../../assets/images/project01.jpg')}
               imageAlt='Building better things. To make things better.' />*/}
@@ -131,13 +132,37 @@ class Home extends React.Component {
                 : require('../../assets/images/deloitte-digital-b.png')}
               imageAlt='Deloitte Digital'
               imageLink='//www.deloittedigital.com.au/'
-              link=''
+              skills={['Client Excellence', 'Teamwork', 'Critical Thinking']}
               description={`
                 As a Technical Consultant at Deloitte Digital, I've work in several different client environments.
                 From small agile teams, through to large hybrid-agile programs - solving complex problems is BAU.
                 Each project brings a new set skills to learn and a fresh set of challenges to overcome.
                 If I had to pick one thing, Deloitte Digital has certainly shown me the innate value of being dynamic but thorough.
-              `} />
+              `}>
+              <>
+                <TimelineSubRow
+                  title='Service Delivery Transformation'
+                  subTitle='Civil Aviation and Safety Authority'
+                  skills={['Dynamics CRM', 'ReactJS']}
+                  description={`
+                    As part of the Solution Design team I coordinated with several project and business teams to gather and define requirements, then produce detailed design documentation. 
+                    During build phases of the project, I was primarily responsible for the development of Microsoft Dynamics CRM components, including workflows and actions which preform complex business logic to process end-user submitted applications. 
+                    My work, along with the rest of the team, helped maintain that the technologies delivered continued to align with both industry best practices as well as the client's business needs.
+                  `} />
+
+                <TimelineSubRow
+                  title='IT Support Redesign'
+                  subTitle='Department of Human Services'
+                  skills={['UX Testing', 'Web Design', 'PHP']}
+                  description={`
+                    The client was introducing a new internal IT Support system so my team was engaged to ensure business and end-user needs were fulfilled. 
+                    I assisted with early stage scope definition including process mapping and user story design. 
+                    We conducted extensive user testing of a Chatbot and Support Portal which were developed by an external vendor. 
+                    During the project I designed and developed an online 'Utterance Capturing Platform' which allowed users to train the chatbot to be more effective at responding to common questions. 
+                    In addition, I designed a 'User Experience Space' which showcased the end product to align perspectives and engage end users, ultimately leading to a successful release and high levels of adoption.
+                  `} />
+              </>
+            </TimelineRow>
 
             <TimelineRow
               date='2018'
@@ -146,7 +171,7 @@ class Home extends React.Component {
                 : require('../../assets/images/spinify-b.png')}
               imageAlt='Spinify'
               imageLink='//spinify.com/'
-              link=''
+              skills={['ReactJS', 'Node.js', 'AWS']}
               description={`
                 Spinify is a gamification startup which focuses on helping businesses better engage their staff.
                 At Spinify I was a critical member of a small but international agile development team.
@@ -160,7 +185,7 @@ class Home extends React.Component {
                 ? require('../../assets/images/made-for-me-w.png')
                 : require('../../assets/images/made-for-me-b.png')}
               imageAlt='Made for Me'
-              link=''
+              skills={['Python', 'DjangoCMS', 'AWS']}
               description={`
                 What started as a internship at a 3D Printing startup soon turned into a part-time job whilst I studied at University.
                 I worked as a Web Developer, responsible for designing, building and maintaining a Python based website and online 3D Print Quoting Tool.

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import styles from './ProjectRow.module.css';
 
 function ProjectRow (props) {
-  const { index, title, description, link, themes, image, imageAlt } = props;
+  const { index, title, description, link, skills, image, imageAlt } = props;
 
   const number = ('0' + index).slice(-2) + '.';
 
@@ -18,10 +18,10 @@ function ProjectRow (props) {
         <div className={styles.titleRow}>
           <h3>{title}</h3>
 
-          {themes &&
-            <ul className={styles.themeList}>
-              {themes.map((theme) =>
-                <li key={theme}>{theme}</li>
+          {skills &&
+            <ul className={styles.skillList}>
+              {skills.map((skill) =>
+                <li key={skill} className='boxListItem'>{skill}</li>
               )}
             </ul>
           }
@@ -57,7 +57,7 @@ ProjectRow.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   link: PropTypes.string,
-  themes: PropTypes.array,
+  skills: PropTypes.array,
   image: PropTypes.string,
   imageAlt: PropTypes.string
 };
