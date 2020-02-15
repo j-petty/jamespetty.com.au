@@ -39,7 +39,6 @@ button.buttonLink {
   background: none;
   border: none;
   padding: 0;
-  margin: 0;
   font-size: 16px;
 }
 
@@ -96,6 +95,16 @@ button.buttonLink:active {
 .light .boxListItem {
   background: #888888;
   color: #FFFFFF;
+}
+
+.accordion {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.8s;
+}
+
+.accordion.open {
+  max-height: 100rem;
 }
 
 

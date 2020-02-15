@@ -3,7 +3,8 @@
 	flex-direction: column;
 	align-items: center;
 	position: relative;
-	margin: 10px 0;
+  margin: 10px 0;
+  width: 100%;
 }
 
 .timelineRow:first-of-type {
@@ -25,71 +26,41 @@
 	top: 40px;
 }
 
+.timelineContainer {
+  display: flex;
+  margin: 30px 0;
+}
+
+.timelineHead {
+  text-align: right;
+	width: 30%;
+  margin-left: 10%;
+}
+
 .timelineText {
-	align-self: flex-end;
+	margin-left: auto;
 	width: 40%;
 }
 
-.timelineRow:nth-of-type(2n) .timelineText {
-	align-self: flex-start;
-	text-align: right;
-}
-
-.timelineRow:nth-of-type(2n) .skillList li {
+.skillList li {
   margin: 5px 0 3px 8px;
-}
-
-.timelineText .accordion {
-  overflow: hidden;
-  max-height: 0;
-  transition: max-height 0.8s;
-}
-
-.timelineText .accordion:global(.open) {
-  max-height: 100rem;
 }
 
 .timelineText p {
 	font-weight: 200;
   font-size: 18px;
-}
-
-.contentToggle:after {
-  content: '';
-  border: solid #888888;
-  border-width: 0 2px 2px 0;
-  display: inline-block;
-  padding: 5px;
-  transform: rotateZ(45deg) translate(-3px, -3px);
-  transition: all 0.3s ease-in-out;
-  margin-left: 10px;
-}
-
-.contentToggle:hover:after {
-  transform: rotateZ(45deg) translate(-1px, -1px);
-}
-
-.contentToggle:global(.toggled):after {
-  transform: rotateZ(225deg) translate(-2px, -2px);
-}
-
-.contentToggle:global(.toggled):hover:after {
-  transform: rotateZ(225deg) translate(0, 0);
+  margin: 0;
 }
 
 .timelineText img {
   width: 150px;
   position: relative;
-}
-
-.timelineLogo {
-	display: inline-block;
+  display: block;
 }
 
 /* Medium */
 @media (max-width: 992px) { 
   .timelineDate {
-    margin-bottom: 30px;
     font-size: 18px;
   }
 
@@ -97,13 +68,23 @@
     content: none;
   }
 
+  .timelineContainer {
+    display: block;
+  }
+
+  .timelineHead {
+    text-align: left;
+    width: auto;
+    margin: 15px 0;
+  }
+
 	.timelineText {
     align-self: center;
     width: 100%;
   }
 
-  .timelineRow:nth-child(2n+1) .timelineText {
-    text-align: left;
+  .skillList li {
+    margin: 5px 8px 3px 0px;
   }
 
   .timelineText img {
@@ -115,9 +96,5 @@
 @media (max-width: 576px) {
   .timelineRow {
     width: 85%;
-  }
-
-  .timelineText .skillList {
-    display: none;
   }
 }
