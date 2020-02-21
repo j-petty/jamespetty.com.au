@@ -52,9 +52,9 @@
         $message = nl2br($message);
 
         // configure data for email
-        $subject = "Portfolio Correspondence | " . $name;
-        $to = "james303petty@hotmail.com";
-        $from = "contact@jamespetty.com.au";
+        $subject = "Portfolio Message: " . $name;
+        $to = "contact@jamespetty.com.au";
+        $from = "noreply@jamespetty.com.au";
         $reply_to = $email;
 
         $headers = "MIME-Version: 1.0\r\n";
@@ -86,7 +86,7 @@
                                     <table border="0" cellpadding="0" cellspacing="0" width="100%">
                                         <tr>
                                             <td style="color: #153643; font-family: Arial, sans-serif; font-size: 24px;">
-                                                <b>' . $name . ' has submitted a message.</b>
+                                                <b>' . $name . '</b> has submitted a message.
                                             </td>
                                         </tr>
                                         <tr>
