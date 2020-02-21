@@ -242,9 +242,14 @@ class Home extends React.Component {
                 imageAlt='LinkedIn' />
 
               <SocialIcon
-                link='//stackoverflow.com/users/5434910/jpetty'
+                link='//stackoverflow.com/users/5434910/j-petty'
                 image={require('../../assets/images/social-stackoverflow.svg')}
-                imageAlt='StackOverflow' />
+                imageAlt='Stack Overflow' />
+
+              <SocialIcon
+                link='//github.com/j-petty'
+                image={require('../../assets/images/social-github.svg')}
+                imageAlt='GitHub' />
             </SocialList>
           </Section>
         </Observer>
