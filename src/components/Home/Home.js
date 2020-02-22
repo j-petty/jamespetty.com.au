@@ -139,29 +139,25 @@ class Home extends React.Component {
                 Each project brings a new set skills to learn and a fresh set of challenges to overcome.
                 If I had to pick one thing, Deloitte Digital has certainly shown me the innate value of being dynamic but thorough.
               `}>
-              <>
-                <TimelineSubRow
-                  title='Service Delivery Transformation'
-                  subTitle='Civil Aviation and Safety Authority'
-                  skills={['Dynamics CRM', 'ReactJS']}
-                  description={`
-                    As part of the Solution Design team I coordinated with several project and business teams to gather and define requirements, then produce detailed design documentation. 
-                    During build phases of the project, I was primarily responsible for the development of Microsoft Dynamics CRM components, including workflows and actions which preform complex business logic to process end-user submitted applications. 
-                    My work, along with the rest of the team, helped maintain that the technologies delivered continued to align with both industry best practices as well as the client's business needs.
-                  `} />
+              <TimelineSubRow
+                title='Service Delivery Transformation'
+                skills={['Dynamics CRM', 'ReactJS']}
+                description={`
+                  As part of the Solution Design team I coordinated with several project and business teams to gather and define requirements, then produce detailed design documentation. 
+                  During build phases of the project, I was primarily responsible for the development of Microsoft Dynamics CRM components, including workflows and actions which preform complex business logic to process end-user submitted applications. 
+                  My work, along with the rest of the team, helped maintain that the technologies delivered continued to align with both industry best practices as well as the client's business needs.
+                `} />
 
-                <TimelineSubRow
-                  title='IT Support Redesign'
-                  subTitle='Department of Human Services'
-                  skills={['UX Testing', 'Web Design', 'PHP']}
-                  description={`
-                    The client was introducing a new internal IT Support system so my team was engaged to ensure business and end-user needs were fulfilled. 
-                    I assisted with early stage scope definition including process mapping and user story design. 
-                    We conducted extensive user testing of a Chatbot and Support Portal which were developed by an external vendor. 
-                    During the project I designed and developed an online 'Utterance Capturing Platform' which allowed users to train the chatbot to be more effective at responding to common questions. 
-                    In addition, I designed a 'User Experience Space' which showcased the end product to align perspectives and engage end users, ultimately leading to a successful release and high levels of adoption.
-                  `} />
-              </>
+              <TimelineSubRow
+                title='IT Support Redesign'
+                skills={['UX Testing', 'Web Design', 'PHP']}
+                description={`
+                  The client was introducing a new internal IT Support system so my team was engaged to ensure business and end-user needs were fulfilled. 
+                  I assisted with early stage scope definition including process mapping and user story design. 
+                  We conducted extensive user testing of a Chatbot and Support Portal which were developed by an external vendor. 
+                  During the project I designed and developed an online 'Utterance Capturing Platform' which allowed users to train the chatbot to be more effective at responding to common questions. 
+                  In addition, I designed a 'User Experience Space' which showcased the end product to align perspectives and engage end users, ultimately leading to a successful release and high levels of adoption.
+                `} />
             </TimelineRow>
 
             <TimelineRow

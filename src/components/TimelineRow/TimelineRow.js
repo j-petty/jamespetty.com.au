@@ -36,9 +36,7 @@ class TimelineRow extends React.Component {
             }
 
             {children &&
-              <>
-                {children}
-              </>
+              children
             }
           </div>
         </div>
