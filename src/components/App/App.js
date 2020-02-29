@@ -1,3 +1,4 @@
+/*global localStorage */
 import React from 'react';
 import ReactGA from 'react-ga';
 import {
@@ -34,9 +35,19 @@ class App extends React.Component {
   }
 
   toggleColorMode () {
+    let newColorMode = this.state.colorMode === 'dark' ? 'light' : 'dark';
+
+    // update color mode in local storage
+    localStorage.setItem(process.env.REACT_APP_COLOR_MODE_KEY, newColorMode);
+
+    // update state
     this.setState({
-      colorMode: this.state.colorMode === 'dark' ? 'light' : 'dark'
+      colorMode: newColorMode
     });
+
+    if (process.env.NODE_ENV !== 'production') {
+      console.log('ColorMode changed', newColorMode);
+    }
   }
 
   initializeAnalytics () {
@@ -58,6 +69,16 @@ class App extends React.Component {
   componentDidMount () {
     // startup Google Analytics
     this.initializeAnalytics();
+
+    // retrieve previous color mode from local storage
+    let initColorMode = localStorage.getItem(process.env.REACT_APP_COLOR_MODE_KEY);
+
+    // set initial color mode
+    if (initColorMode) {
+      this.setState({
+        colorMode: initColorMode
+      });
+    }
   }
 
   render () {

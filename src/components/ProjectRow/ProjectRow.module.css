@@ -42,14 +42,6 @@
   z-index: 1;
 }
 
-.projectRow .counter {
-  font-weight: 700;
-  font-size: 22px;
-  position: relative;
-  width: max-content;
-  z-index: 1;
-}
-
 .projectRow p {
   margin: 0;
   font-weight: 200;
@@ -69,7 +61,6 @@
 }
 
 .projectRow h3:after,
-.projectRow .counter:after,
 .projectRow p:after,
 .projectRow a:after {
   content: '';
@@ -83,7 +74,6 @@
 }
 
 :global(.light) .projectRow h3:after,
-:global(.light) .projectRow .counter:after,
 :global(.light) .projectRow p:after,
 :global(.light) .projectRow a:after {
   background: #FFFFFF;
