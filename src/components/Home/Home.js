@@ -77,16 +77,15 @@ class Home extends React.Component {
             id='projects'
             title='projects'>
             <ProjectRow
-              index={1}
               title='Whtspc Digital'
               skills={['WordPress', 'Web Design', 'ReactJS']}
               description="Started as freelance web design, now a small digital creative agency. Visit the site to see our latest work."
               image={require('../../assets/images/project01.jpg')}
               imageAlt='Whtspc Digital - We Champion the Underdogs.'
-              link='//whtspcdigital.com.au/' />
+              link='//whtspcdigital.com.au/'
+              linkText='coming soon' />
 
             <ProjectRow
-              index={2}
               title='Beached'
               skills={['C#', 'MonoGame', 'Game Design']}
               description="A small survival game, built using the bare-bones game development toolkit, MonoGame. Featuring a randomly generated island and pesky chickens. Check it out."
@@ -95,7 +94,6 @@ class Home extends React.Component {
               link='//store.steampowered.com/app/652560/Beached/' />
 
             <ProjectRow
-              index={3}
               title='Digital Quiz'
               skills={['ReactJS', 'Node.js', 'AWS']}
               description="An online quiz powered by a cloud REST API. Designed to help educate people about Digital Transformation and demystify some common misconceptions."
@@ -104,7 +102,6 @@ class Home extends React.Component {
               link='//quiz.d3fhu63w0eoi3r.amplifyapp.com/' />
 
             <ProjectRow
-              index={4}
               title='Portfolio'
               skills={['ReactJS', 'Web Design']}
               description="The page you're looking at right now. Built using ReactJS, just for a bit of fun. Feel free to drop any feedback."
@@ -112,7 +109,6 @@ class Home extends React.Component {
               imageAlt='Showcasing creative ideas.' />
 
             {/*<ProjectRow
-              index={5}
               title='Startups'
               skills={['AWS', 'ReactJS', 'Xamarin']}
               description="Parallel entrepreneurial endeavors ranging from social networks to native apps. Ask me which game-changing idea I'm working on today..."

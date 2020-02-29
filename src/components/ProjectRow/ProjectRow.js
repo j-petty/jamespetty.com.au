@@ -4,16 +4,13 @@ import PropTypes from 'prop-types';
 import styles from './ProjectRow.module.css';
 
 function ProjectRow (props) {
-  const { index, title, description, link, skills, image, imageAlt } = props;
-
-  const number = ('0' + index).slice(-2) + '.';
+  const { title, description, linkText, link, skills, image, imageAlt } = props;
 
   return (
     <div
       className={styles.projectRow}
       aria-label={title}>
       <div className={styles.projectContainer}>
-        <div className={styles.counter}>{number}</div>
 
         <div className={styles.titleRow}>
           <h3>{title}</h3>
@@ -37,7 +34,10 @@ function ProjectRow (props) {
             className='simpleLink'
             target='_blank'
             rel='noopener noreferrer'>
-            see more
+            {linkText ?
+              linkText
+              : 'see more'
+            }
           </a>
         }
       </div>
@@ -53,9 +53,9 @@ function ProjectRow (props) {
 }
 
 ProjectRow.propTypes = {
-  index: PropTypes.number,
   title: PropTypes.string,
   description: PropTypes.string,
+  linkText: PropTypes.string,
   link: PropTypes.string,
   skills: PropTypes.array,
   image: PropTypes.string,
