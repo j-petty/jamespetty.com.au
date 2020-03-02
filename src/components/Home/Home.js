@@ -16,8 +16,6 @@ import SocialList from '../SocialList/SocialList';
 import SocialIcon from '../SocialIcon/SocialIcon';
 import Footer from '../Footer/Footer';
 
-import styles from './Home.module.css';
-
 class Home extends React.Component {
   constructor (props) {
     super(props);
@@ -33,7 +31,7 @@ class Home extends React.Component {
     const { colorMode } = this.props;
 
     return (
-      <main className={styles.container}>
+      <main>
         <Controller>
           <ScrollMenu>
             <ScrollMenuItem link='home' />
@@ -75,7 +73,7 @@ class Home extends React.Component {
                 <Scene triggerElement='#projects'>
                   {(progress, event) => (
                     <Timeline
-                      duration={1.5}
+                      duration={1}
                       paused
                       playState={
                         event.type === 'enter' && event.scrollDirection === 'FORWARD' ? 'play' :

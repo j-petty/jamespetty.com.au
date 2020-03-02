@@ -5,8 +5,8 @@
   transform: translateY(-50%);
 }
 
-/* Mobiles */
-@media (max-width: 576px) {
+/* Tablets */
+@media (max-width: 768px) {
   .scrollMenu {
     display: none;
   }

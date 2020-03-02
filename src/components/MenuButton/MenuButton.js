@@ -10,8 +10,7 @@ function MenuButton (props) {
     <button
       className={isOpen ? `${styles.navButton} ${styles.active}` : `${styles.navButton}`}
       onClick={handleClick}
-      aria-label='Toggle Nav Menu'
-      tabIndex={1}>
+      aria-label='Toggle Nav Menu'>
       <span />
       <span />
     </button>
