@@ -128,7 +128,10 @@ class Form  extends React.Component {
 }
 
 Form.propTypes = {
-  children: PropTypes.array.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.array,
+    PropTypes.object
+  ]),
   action: PropTypes.string
 };
 

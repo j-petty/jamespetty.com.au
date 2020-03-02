@@ -107,6 +107,14 @@ button.buttonLink:active {
   max-height: 100rem;
 }
 
+.animate {
+  width: 100%;
+}
+
+.inline {
+  display: inline;
+}
+
 
 @font-face {
   font-family: 'Poppins';

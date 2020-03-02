@@ -7,7 +7,7 @@ function Footer (props) {
   const { link, name } = props;
 
   return (
-    <footer>
+    <footer id='footer'>
       <span className={styles.copy}>Created by <a href={link} className='simpleLink'>{name}</a>.</span>
     </footer>
   );

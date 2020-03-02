@@ -3,53 +3,54 @@ import PropTypes from 'prop-types';
 
 import styles from './ProjectRow.module.css';
 
-function ProjectRow (props) {
-  const { title, description, linkText, link, skills, image, imageAlt } = props;
+class ProjectRow extends React.Component {
+  render () {
+    const { title, description, linkText, link, skills, image, imageAlt } = this.props;
 
-  return (
-    <div
-      className={styles.projectRow}
-      aria-label={title}>
-      <div className={styles.projectContainer}>
+    return (
+      <div
+        className={styles.projectRow}
+        aria-label={title}>
+        <div className={styles.projectContainer}>
+          <div className={styles.titleRow}>
+            <h3>{title}</h3>
 
-        <div className={styles.titleRow}>
-          <h3>{title}</h3>
+            {skills &&
+              <ul className={styles.skillList}>
+                {skills.map((skill) =>
+                  <li key={skill} className='boxListItem'>{skill}</li>
+                )}
+              </ul>
+            }
+          </div>
 
-          {skills &&
-            <ul className={styles.skillList}>
-              {skills.map((skill) =>
-                <li key={skill} className='boxListItem'>{skill}</li>
-              )}
-            </ul>
+          {description &&
+            <p>{description}</p>
+          }
+
+          {link &&
+            <a
+              href={link}
+              className='simpleLink'
+              target='_blank'
+              rel='noopener noreferrer'>
+              {linkText ?
+                linkText
+                : 'see more'
+              }
+            </a>
           }
         </div>
 
-        {description &&
-          <p>{description}</p>
-        }
-
-        {link &&
-          <a
-            href={link}
-            className='simpleLink'
-            target='_blank'
-            rel='noopener noreferrer'>
-            {linkText ?
-              linkText
-              : 'see more'
-            }
-          </a>
+        {image &&
+          <img
+            className={styles.projectImage}
+            src={image}
+            alt={imageAlt} />
         }
       </div>
-
-      {image &&
-        <img
-          className={styles.projectImage}
-          src={image}
-          alt={imageAlt} />
-      }
-    </div>
-  );
+    );
+  }
 }
 
 ProjectRow.propTypes = {

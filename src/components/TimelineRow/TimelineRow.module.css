@@ -96,5 +96,6 @@
 @media (max-width: 576px) {
   .timelineRow {
     width: 85%;
+    margin: auto;
   }
 }

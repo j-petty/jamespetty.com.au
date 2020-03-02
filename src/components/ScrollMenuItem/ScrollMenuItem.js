@@ -7,8 +7,8 @@ function ScrollMenuItem (props) {
   const { link, inView } = props;
 
   return (
-    <li className={inView ? `${styles.menuItem} ${styles.active}` : styles.menuItem}>
-      <a href={link} aria-label='Page Scroll'><span></span></a>
+    <li id={`scroll-${link}`} className={inView ? `${styles.menuItem} active` : styles.menuItem}>
+      <a href={`/#${link}`} aria-label='Page Scroll'><span></span></a>
     </li>
   );
 }

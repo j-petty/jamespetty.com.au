@@ -6,10 +6,10 @@ import styles from './Header.module.css';
 // NOTE: needs to be a React.Component to support Observer
 class Header extends React.Component {
   render () {
-    const { skillsArray } = this.props;
+    const { forwardedRef, skillsArray } = this.props;
 
     return (
-      <header id='home' className='textCenter'>
+      <header id='home' className='textCenter' ref={forwardedRef}>
         <h1>Hi I&apos;m James.</h1>
 
         <ul className={styles.skillLoop}>
@@ -25,6 +25,7 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
+  forwardedRef: PropTypes.object,
   skillsArray: PropTypes.array
 };
 
