@@ -89,7 +89,7 @@ class Home extends React.Component {
                           <ProjectRow
                             title='Freelance Web Design'
                             skills={['WordPress', 'Web Design', 'ReactJS']}
-                            description="Started out as freelance web design, slowly growing into a small digital creative agency. Visit the site to checkout our latest work."
+                            description="Started out as freelance web design, slowly growing into a small digital creative agency. Visit the site to check out our latest work."
                             image={require('../../assets/images/project01.jpg')}
                             imageAlt='Whtspc Digital'
                             link='//whtspcdigital.com.au/'
@@ -178,7 +178,7 @@ class Home extends React.Component {
                             description={`
                               As a Technical Consultant at Deloitte Digital, I've worked in several different client environments.
                               From small agile teams, through to large hybrid-agile programs - solving complex problems is BAU.
-                              Each project brings a new set skills to learn and a fresh set of challenges to overcome.
+                              Each project brings a new set of skills to learn and a fresh set of challenges to overcome.
                               If I had to pick one thing, Deloitte Digital has certainly shown me the innate value of being dynamic but thorough.
                             `}>
                             <TimelineSubRow
@@ -186,7 +186,7 @@ class Home extends React.Component {
                               skills={['Dynamics CRM', 'ReactJS']}
                               description={`
                                 As a core part of the Solution Design team I coordinated with several project and business teams to gather and define requirements and produce detailed design documentation. 
-                                During build phases of the project I was primarily responsible for the development of Microsoft Dynamics 365 components, including workflows and actions which preform complex business logic to process end-user submitted applications. 
+                                During build phases of the project I was primarily responsible for the development of Microsoft Dynamics 365 components, including workflows and actions which perform complex business logic to process end-user submitted applications. 
                                 My work, along with the rest of the team, helped maintain that the technologies delivered continued to align with both industry best practices and the client's evolving business needs.
                               `} />
 
@@ -215,7 +215,7 @@ class Home extends React.Component {
                             description={`
                               Spinify is a gamification startup which focuses on helping businesses better engage their staff.
                               At Spinify I was a critical member of a small, international agile development team.
-                              We worked at the forefront of industry best practices to ensure we we're delivering valuable releases timely and efficiently.
+                              We worked at the forefront of industry best practices to ensure we delivered valuable releases timely and efficiently.
                               The experience of coordinating software development activities across timezones gave me an appreciation of the possibilities of agile project management, when done properly.
                             `} />
                         </div>
@@ -231,7 +231,7 @@ class Home extends React.Component {
                             description={`
                               What started as a internship at a 3D Printing startup soon turned into a part-time position whilst I studied at University.
                               I worked as a Web Developer responsible for designing, building and maintaining a Python based website and online 3D Print Quoting Tool.
-                              Working with unfamiliar tools meant I had to pickup new technologies and frameworks in a short time frame to start delivering value.
+                              Working with unfamiliar tools meant I had to pick up new technologies and frameworks in a short time frame to start delivering value.
                             `} />
                         </div>
 
