@@ -308,10 +308,10 @@ class Home extends React.Component {
 
                         <div>
                           <SocialList>
-                            <SocialIcon
+                            {/*<SocialIcon
                               link='//www.facebook.com/jpetty'
                               image={require('../../assets/images/social-facebook.svg')}
-                              imageAlt='Facebook' />
+                              imageAlt='Facebook' />*/}
 
                             <SocialIcon
                               link='//www.linkedin.com/in/j-petty'
