@@ -183,7 +183,7 @@ class Home extends React.Component {
                             `}>
                             <TimelineSubRow
                               title='Service Delivery Transformation'
-                              skills={['Dynamics CRM', 'ReactJS']}
+                              skills={['Dynamics CRM', 'ReactJS', 'Azure']}
                               description={`
                                 As a core part of the Solution Design team I coordinated with several project and business teams to gather and define requirements and produce detailed design documentation. 
                                 During build phases of the project I was primarily responsible for the development of Microsoft Dynamics 365 components, including workflows and actions which perform complex business logic to process end-user submitted applications. 
