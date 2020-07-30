@@ -168,6 +168,7 @@ class Home extends React.Component {
                         ease='Back.easeInOut'>
                         <div className='animate'>
                           <TimelineRow
+                            id='work-deloitte'
                             date='today'
                             image={colorMode === 'dark'
                               ? require('../../assets/images/deloitte-digital-w.png')
@@ -182,6 +183,7 @@ class Home extends React.Component {
                               If I had to pick one thing, Deloitte Digital has certainly shown me the innate value of being dynamic but thorough.
                             `}>
                             <TimelineSubRow
+                              id='work-deloitte-sdt'
                               title='Service Delivery Transformation'
                               skills={['Dynamics CRM', 'ReactJS', 'Azure']}
                               description={`
@@ -191,6 +193,7 @@ class Home extends React.Component {
                               `} />
 
                             <TimelineSubRow
+                              id='work-deloitte-it-redesign'
                               title='IT Support Redesign'
                               skills={['UX Testing', 'Web Design', 'PHP']}
                               description={`
@@ -205,6 +208,7 @@ class Home extends React.Component {
 
                         <div className='animate'>
                           <TimelineRow
+                            id='work-spinify'
                             date='2018'
                             image={colorMode === 'dark'
                               ? require('../../assets/images/spinify-w.png')
@@ -222,6 +226,7 @@ class Home extends React.Component {
 
                         <div className='animate'>
                           <TimelineRow
+                            id='work-made-for-me'
                             date='2016'
                             image={colorMode === 'dark'
                               ? require('../../assets/images/made-for-me-w.png')

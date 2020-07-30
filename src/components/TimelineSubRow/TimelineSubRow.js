@@ -28,13 +28,13 @@ class  TimelineSubRow extends React.Component {
 
   render () {
     const { isToggled } = this.state;
-    const { title, subTitle, description, skills } = this.props;
+    const { id, title, subTitle, description, skills } = this.props;
 
     return (
       <div className={styles.timelineSubRow}>
         <div className={styles.head}>
           {title &&
-            <h4>{title}</h4>
+            <h4 id={id}>{title}</h4>
           }
 
           {subTitle &&
@@ -69,6 +69,7 @@ class  TimelineSubRow extends React.Component {
 }
 
 TimelineSubRow.propTypes = {
+  id: PropTypes.string,
   title: PropTypes.string,
   subTitle: PropTypes.string,
   description: PropTypes.string,
