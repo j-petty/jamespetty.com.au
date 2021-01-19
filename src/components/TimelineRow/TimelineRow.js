@@ -5,7 +5,16 @@ import styles from './TimelineRow.module.css';
 
 class TimelineRow extends React.Component {
   render () {
-    const { id, date, description, skills, image, imageAlt, imageLink, children } = this.props;
+    const {
+      id,
+      date,
+      description,
+      skills,
+      image,
+      imageAlt,
+      imageLink,
+      children
+    } = this.props;
 
     return (
       <div className={styles.timelineRow}>
@@ -23,7 +32,7 @@ class TimelineRow extends React.Component {
 
             {skills &&
               <ul className={styles.skillList}>
-                {skills.map((skill) =>
+                {skills.map(skill =>
                   <li key={skill} className='boxListItem'>{skill}</li>
                 )}
               </ul>

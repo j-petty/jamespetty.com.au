@@ -88,12 +88,29 @@ class Home extends React.Component {
                         <div className='animate'>
                           <ProjectRow
                             title='Freelance Web Design'
-                            skills={['WordPress', 'Web Design', 'ReactJS']}
-                            description="Started out as freelance web design, slowly growing into a small digital creative agency. Visit the site to check out our latest work."
+                            skills={['Web Design', 'eCommerce', 'CMS']}
+                            description="Initially freelance web design, now growing into a small digital creative agency. Visit the site to check out our latest work."
                             image={require('../../assets/images/project01.jpg')}
-                            imageAlt='Whtspc Digital'
-                            link='//whtspcdigital.com.au/'
-                            linkText='coming soon' />
+                            imageAlt='Whtspc'
+                            link='//whtspc.com.au/' />
+                        </div>
+
+                        <div className='animate'>
+                          <ProjectRow
+                            title='Digital Pass Provider'
+                            skills={['Asp.Net', 'Azure', 'Apple', 'Google']}
+                            description="An API first platform which simplifies the process of generating digital Passes for the Apple and Google wallets. Intended to simplify the process of integrating with digital wallet solutions."
+                            image={require('../../assets/images/project06.jpg')}
+                            imageAlt='Simplifying digital wallets.' />
+                        </div>
+
+                        <div className='animate'>
+                          <ProjectRow
+                            title='Digital Quiz'
+                            skills={['ReactJS', 'Node.js', 'AWS']}
+                            description="An online quiz powered by a cloud REST API. Designed to help educate people about Digital Transformation and demystify some common misconceptions."
+                            image={require('../../assets/images/project05.jpg')}
+                            imageAlt='Educating the masses.' />
                         </div>
 
                         <div className='animate'>
@@ -108,29 +125,12 @@ class Home extends React.Component {
 
                         <div className='animate'>
                           <ProjectRow
-                            title='Digital Quiz'
-                            skills={['ReactJS', 'Node.js', 'AWS']}
-                            description="An online quiz powered by a cloud REST API. Designed to help educate people about Digital Transformation and demystify some common misconceptions."
-                            image={require('../../assets/images/project05.jpg')}
-                            imageAlt='Showcasing creative ideas.'
-                            link='//quiz.d3fhu63w0eoi3r.amplifyapp.com/' />
-                        </div>
-
-                        <div className='animate'>
-                          <ProjectRow
                             title='Portfolio'
                             skills={['ReactJS', 'Web Design']}
                             description="The page you're looking at right now. Built using ReactJS, just for a bit of fun. Feel free to drop any feedback below."
                             image={require('../../assets/images/project03.jpg')}
                             imageAlt='Showcasing creative ideas.' />
                         </div>
-
-                        {/*<ProjectRow
-                          title='Startups'
-                          skills={['AWS', 'ReactJS', 'Xamarin']}
-                          description="Parallel entrepreneurial endeavors ranging from social networks to native apps. Ask me which game-changing idea I'm working on today..."
-                          image={require('../../assets/images/project01.jpg')}
-                          imageAlt='Building better things. To make things better.' />*/}
                       </Tween>
                     </Timeline>
                   )}
@@ -176,33 +176,41 @@ class Home extends React.Component {
                             imageAlt='Deloitte Digital'
                             imageLink='//www.deloittedigital.com.au/'
                             skills={['Client Excellence', 'Teamwork', 'Critical Thinking']}
-                            description={`
-                              As a Technical Consultant at Deloitte Digital, I've worked in several different client environments.
-                              From small agile teams, through to large hybrid-agile programs - solving complex problems is BAU.
-                              Each project brings a new set of skills to learn and a fresh set of challenges to overcome.
-                              If I had to pick one thing, Deloitte Digital has certainly shown me the innate value of being dynamic but thorough.
-                            `}>
+                            responsibilities={[
+                              'sample 01'
+                            ]}
+                            description={
+                              <>
+                                As a Senior Technical Consultant at Deloitte Digital, I&apos;ve worked in several different client environments.
+                                From small agile teams, through to large hybrid-agile programs - solving complex problems is BAU.<br /><br />
+                                Each project brings a new set of skills to learn and fresh challenges to overcome.
+                                If I had to pick one thing, Deloitte Digital has certainly shown me the innate value of being highly dynamic but thorough.
+                              </>
+                            }>
                             <TimelineSubRow
                               id='work-deloitte-sdt'
                               title='Service Delivery Transformation'
                               skills={['Dynamics CRM', 'ReactJS', 'Azure']}
-                              description={`
-                                As a core part of the Solution Design team I coordinated with several project and business teams to gather and define requirements and produce detailed design documentation. 
-                                During build phases of the project I was primarily responsible for the development of Microsoft Dynamics 365 components, including workflows and actions which perform complex business logic to process end-user submitted applications. 
-                                My work, along with the rest of the team, helped maintain that the technologies delivered continued to align with both industry best practices and the client's evolving business needs.
-                              `} />
+                              description={<>A multi-year engagement focused on delivering a digital transformation of the client&apos;s existing manual forms based applications.</>}
+                              responsibilities={[
+                                'Designed and developed an Azure API to generate a digital version of Australian Pilot Licences, leveraging Apple Wallet.',
+                                'Responsible for the development of Microsoft Dynamics 365 components, including workflows and actions which perform complex business logic.',
+                                'Coordinated with several project and business teams to gather and define requirements and produce detailed design documentation.',
+                                'Provided effort and impact assessments to support change management decisions.',
+                                'Managed team deliverable timelines and tracked project dependencies.'
+                              ]} />
 
                             <TimelineSubRow
                               id='work-deloitte-it-redesign'
-                              title='IT Support Redesign'
+                              title='ITS System Redesign'
                               skills={['UX Testing', 'Web Design', 'PHP']}
-                              description={`
-                                The client was introducing a new internal IT Support system. My team was engaged to ensure business and end-user needs were fulfilled. 
-                                I supported early discovery scope definition by producing process maps and user stories. 
-                                We conducted extensive user testing of a Chatbot and Support Portal which were developed by an external vendor. 
-                                During the project I designed and developed an online 'Utterance Capturing Platform' which allowed users to train the chatbot to be more effective at responding to common questions. 
-                                In addition, I designed a 'User Experience Space' which showcased the end product to align perspectives and engage end users, ultimately leading to a successful release and high levels of adoption.
-                              `} />
+                              description={<>Supported the client with introducing a new internal IT Support system. My team was engaged to ensure business and end-user needs were fulfilled.</>}
+                              responsibilities={[
+                                'Supported discovery scope definition by producing process maps and user stories.',
+                                'Conducted extensive user testing of a Chatbot and Support Portal which were developed by an external vendor.',
+                                'Designed and developed an online "Utterance Capturing Platform" which allowed users to train the chatbot to be more effective at responding to common questions.',
+                                'Designed a "User Experience Space" which showcased the end product to engage end users, ultimately leading to a successful release and high levels of adoption.'
+                              ]} />
                           </TimelineRow>
                         </div>
 
@@ -216,12 +224,14 @@ class Home extends React.Component {
                             imageAlt='Spinify'
                             imageLink='//spinify.com/'
                             skills={['ReactJS', 'Node.js', 'AWS']}
-                            description={`
-                              Spinify is a gamification startup which focuses on helping businesses better engage their staff.
-                              At Spinify I was a critical member of a small, international agile development team.
-                              We worked at the forefront of industry best practices to ensure we delivered valuable releases timely and efficiently.
-                              The experience of coordinating software development activities across timezones gave me an appreciation of the possibilities of agile project management, when done properly.
-                            `} />
+                            description={
+                              <>
+                                Spinify is a gamification startup which focuses on helping businesses better engage their staff.<br /><br />
+                                At Spinify I was a critical member of a small, international agile development team.
+                                We worked at the forefront of industry best practices to deliver valuable releases timely and efficiently.<br /><br />
+                                The experience of coordinating software development activities across timezones gave me an appreciation of the possibilities of agile project management, when done properly.
+                              </>
+                            } />
                         </div>
 
                         <div className='animate'>
@@ -233,11 +243,13 @@ class Home extends React.Component {
                               : require('../../assets/images/made-for-me-b.png')}
                             imageAlt='Made for Me'
                             skills={['Python', 'DjangoCMS', 'AWS']}
-                            description={`
-                              What started as a internship at a 3D Printing startup soon turned into a part-time position whilst I studied at University.
-                              I worked as a Web Developer responsible for designing, building and maintaining a Python based website and online 3D Print Quoting Tool.
-                              Working with unfamiliar tools meant I had to pick up new technologies and frameworks in a short time frame to start delivering value.
-                            `} />
+                            description={
+                              <>
+                                What started as a internship at a 3D Printing startup soon turned into a part-time position whilst I studied at University.<br /><br />
+                                I worked as a Web Developer responsible for designing, building and maintaining a Python based website and online 3D Print Quoting Tool.<br /><br />
+                                Working with unfamiliar tools meant I had to adopt new technologies and frameworks in a short time frame to start delivering value.
+                              </>
+                            } />
                         </div>
 
                         <div className='animate'>

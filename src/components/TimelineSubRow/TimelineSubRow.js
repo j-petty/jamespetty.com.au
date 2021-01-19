@@ -11,7 +11,7 @@ class  TimelineSubRow extends React.Component {
     super(props);
 
     this.state = {
-      isToggled: false
+      isToggled: true
     };
 
     this.handleToggle = this.handleToggle.bind(this);
@@ -28,7 +28,7 @@ class  TimelineSubRow extends React.Component {
 
   render () {
     const { isToggled } = this.state;
-    const { id, title, subTitle, description, skills } = this.props;
+    const { id, title, subTitle, description, skills, responsibilities } = this.props;
 
     return (
       <div className={styles.timelineSubRow}>
@@ -50,17 +50,25 @@ class  TimelineSubRow extends React.Component {
           </ul>
         }
 
-        {description &&
+        {(description || responsibilities) &&
           <>
             <div className={isToggled ? 'accordion open' : 'accordion'}>
-              <p >{description}</p>
+              <p>{description}</p>
+
+              {responsibilities &&
+                <ul className={styles.responsibilitiesList}>
+                  {responsibilities.map(responsibility =>
+                    <li key={responsibility}>{responsibility}</li>
+                  )}
+                </ul>
+              }
             </div>
 
-            <button
+            {/*<button
               className={isToggled ? `buttonLink ${styles.contentToggle} toggled` : `buttonLink ${styles.contentToggle}`}
               onClick={this.handleToggle}>
               {isToggled ? 'read less' : 'read more'}
-            </button>
+            </button>*/}
           </>
         }
       </div>
@@ -73,7 +81,8 @@ TimelineSubRow.propTypes = {
   title: PropTypes.string,
   subTitle: PropTypes.string,
   description: PropTypes.string,
-  skills: PropTypes.array
+  skills: PropTypes.array,
+  responsibilities: PropTypes.array
 };
 
 export default TimelineSubRow;

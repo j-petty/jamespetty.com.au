@@ -50,6 +50,18 @@
   transform: rotateZ(225deg) translate(0, 0);
 }
 
+.responsibilitiesList {
+  list-style: unset;
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.responsibilitiesList li {
+  font-weight: 200;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
 /* Medium */
 @media (max-width: 992px) { 
   .timelineSubRow p {

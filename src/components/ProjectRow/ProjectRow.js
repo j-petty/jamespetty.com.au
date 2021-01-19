@@ -34,10 +34,7 @@ class ProjectRow extends React.Component {
               className='simpleLink'
               target='_blank'
               rel='noopener noreferrer'>
-              {linkText ?
-                linkText
-                : 'see more'
-              }
+              {linkText ?? 'see more'}
             </a>
           }
         </div>
