@@ -10,8 +10,8 @@ import {
 import MenuButton from '../MenuButton/MenuButton';
 import Menu from '../Menu/Menu';
 import MenuItem from '../MenuItem/MenuItem';
-import Home from '../Home/Home';
-import NotFound from '../NotFound/NotFound';
+import Home from '../../pages/Home/Home';
+import NotFound from '../../pages/NotFound/NotFound';
 
 import styles from './App.module.css';
 

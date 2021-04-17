@@ -11,7 +11,7 @@ class  TimelineSubRow extends React.Component {
     super(props);
 
     this.state = {
-      isToggled: true
+      isToggled: false
     };
 
     this.handleToggle = this.handleToggle.bind(this);
@@ -64,11 +64,11 @@ class  TimelineSubRow extends React.Component {
               }
             </div>
 
-            {/*<button
+            <button
               className={isToggled ? `buttonLink ${styles.contentToggle} toggled` : `buttonLink ${styles.contentToggle}`}
               onClick={this.handleToggle}>
               {isToggled ? 'read less' : 'read more'}
-            </button>*/}
+            </button>
           </>
         }
       </div>
@@ -80,7 +80,7 @@ TimelineSubRow.propTypes = {
   id: PropTypes.string,
   title: PropTypes.string,
   subTitle: PropTypes.string,
-  description: PropTypes.string,
+  description: PropTypes.object,
   skills: PropTypes.array,
   responsibilities: PropTypes.array
 };

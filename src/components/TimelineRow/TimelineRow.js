@@ -8,6 +8,7 @@ class TimelineRow extends React.Component {
     const {
       id,
       date,
+      title,
       description,
       skills,
       image,
@@ -28,6 +29,10 @@ class TimelineRow extends React.Component {
                   <img src={image} alt={imageAlt} />
                 </a>
               </h3>
+            }
+
+            {title &&
+              <p className={styles.timelineTitle}>{title}</p>
             }
 
             {skills &&
@@ -57,7 +62,8 @@ class TimelineRow extends React.Component {
 TimelineRow.propTypes = {
   id: PropTypes.string,
   date: PropTypes.string,
-  description: PropTypes.string,
+  title: PropTypes.string,
+  description: PropTypes.object,
   skills: PropTypes.array,
   image: PropTypes.string,
   imageAlt: PropTypes.string,

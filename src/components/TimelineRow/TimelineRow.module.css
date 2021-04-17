@@ -37,6 +37,13 @@
   margin-left: 10%;
 }
 
+.timelineTitle {
+  font-weight: 200;
+  font-size: 18px;
+  margin-top: 25px;
+  margin-bottom: 5px;
+}
+
 .timelineText {
 	margin-left: auto;
 	width: 40%;

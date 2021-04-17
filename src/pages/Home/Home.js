@@ -3,18 +3,35 @@ import PropTypes from 'prop-types';
 import { Controller, Scene } from 'react-scrollmagic';
 import { Tween, Timeline } from 'react-gsap';
 
-import ScrollMenu from '../ScrollMenu/ScrollMenu';
-import ScrollMenuItem from '../ScrollMenuItem/ScrollMenuItem';
-import Header from '../Header/Header';
-import Section from '../Section/Section';
-import ProjectRow from '../ProjectRow/ProjectRow';
-import TimelineRow from '../TimelineRow/TimelineRow';
-import TimelineSubRow from '../TimelineSubRow/TimelineSubRow';
-import Form from '../Form/Form';
-import FormField from '../FormField/FormField';
-import SocialList from '../SocialList/SocialList';
-import SocialIcon from '../SocialIcon/SocialIcon';
-import Footer from '../Footer/Footer';
+import ScrollMenu from '../../components/ScrollMenu/ScrollMenu';
+import ScrollMenuItem from '../../components/ScrollMenuItem/ScrollMenuItem';
+import Header from '../../components/Header/Header';
+import Section from '../../components/Section/Section';
+import ProjectRow from '../../components/ProjectRow/ProjectRow';
+import TimelineRow from '../../components/TimelineRow/TimelineRow';
+import TimelineSubRow from '../../components/TimelineSubRow/TimelineSubRow';
+import Form from '../../components/Form/Form';
+import FormField from '../../components/FormField/FormField';
+import SocialList from '../../components/SocialList/SocialList';
+import SocialIcon from '../../components/SocialIcon/SocialIcon';
+import Footer from '../../components/Footer/Footer';
+
+import project01Img from '../../assets/images/project01.jpg';
+import project06Img from '../../assets/images/project06.jpg';
+import project05Img from '../../assets/images/project05.jpg';
+import project04Img from '../../assets/images/project04.jpg';
+import project03Img from '../../assets/images/project03.jpg';
+
+import deloitteDigitalW from '../../assets/images/deloitte-digital-w.png';
+import deloitteDigitalB from '../../assets/images/deloitte-digital-b.png';
+import spinifyW from '../../assets/images/spinify-w.png';
+import spinifyB from '../../assets/images/spinify-b.png';
+import madeForMeW from '../../assets/images/made-for-me-w.png';
+import madeForMeB from '../../assets/images/made-for-me-b.png';
+
+import linkedInImg from '../../assets/images/social-linkedin.svg';
+import stackOverflowImg from '../../assets/images/social-stackoverflow.svg';
+import githubImg from '../../assets/images/social-github.svg';
 
 class Home extends React.Component {
   constructor (props) {
@@ -90,7 +107,7 @@ class Home extends React.Component {
                             title='Freelance Web Design'
                             skills={['Web Design', 'eCommerce', 'CMS']}
                             description="Initially freelance web design, now growing into a small digital creative agency. Visit the site to check out our latest work."
-                            image={require('../../assets/images/project01.jpg')}
+                            image={project01Img}
                             imageAlt='Whtspc'
                             link='//whtspc.com.au/' />
                         </div>
@@ -100,25 +117,25 @@ class Home extends React.Component {
                             title='Digital Pass Provider'
                             skills={['Asp.Net', 'Azure', 'Apple', 'Google']}
                             description="An API first platform which simplifies the process of generating digital Passes for the Apple and Google wallets. Intended to simplify the process of integrating with digital wallet solutions."
-                            image={require('../../assets/images/project06.jpg')}
+                            image={project06Img}
                             imageAlt='Simplifying digital wallets.' />
                         </div>
 
                         <div className='animate'>
                           <ProjectRow
                             title='Digital Quiz'
-                            skills={['ReactJS', 'Node.js', 'AWS']}
+                            skills={['React', 'Node.js', 'AWS']}
                             description="An online quiz powered by a cloud REST API. Designed to help educate people about Digital Transformation and demystify some common misconceptions."
-                            image={require('../../assets/images/project05.jpg')}
+                            image={project05Img}
                             imageAlt='Educating the masses.' />
                         </div>
 
                         <div className='animate'>
                           <ProjectRow
                             title='Beached'
-                            skills={['C#', 'MonoGame', 'Game Design']}
+                            skills={['.NET', 'MonoGame', 'Game Design']}
                             description="A small survival game, built using the bare-bones game development toolkit, MonoGame. Featuring a randomly generated island and pesky chickens. Play it now on Steam."
-                            image={require('../../assets/images/project04.jpg')}
+                            image={project04Img}
                             imageAlt='Survival RPG.'
                             link='//store.steampowered.com/app/652560/Beached/' />
                         </div>
@@ -126,9 +143,9 @@ class Home extends React.Component {
                         <div className='animate'>
                           <ProjectRow
                             title='Portfolio'
-                            skills={['ReactJS', 'Web Design']}
-                            description="The page you're looking at right now. Built using ReactJS, just for a bit of fun. Feel free to drop any feedback below."
-                            image={require('../../assets/images/project03.jpg')}
+                            skills={['React', 'Web Design']}
+                            description="The page you're looking at right now. Built using React, just for a bit of fun. Feel free to drop any feedback below."
+                            image={project03Img}
                             imageAlt='Showcasing creative ideas.' />
                         </div>
                       </Tween>
@@ -171,11 +188,12 @@ class Home extends React.Component {
                             id='work-deloitte'
                             date='today'
                             image={colorMode === 'dark'
-                              ? require('../../assets/images/deloitte-digital-w.png')
-                              : require('../../assets/images/deloitte-digital-b.png')}
+                              ? deloitteDigitalW
+                              : deloitteDigitalB}
                             imageAlt='Deloitte Digital'
                             imageLink='//www.deloittedigital.com.au/'
-                            skills={['Client Excellence', 'Teamwork', 'Critical Thinking']}
+                            title='Senior Technical Specialist'
+                            skills={['.NET', 'React', 'Cloud', 'Leadership', 'Teamwork', 'Client Excellence']}
                             responsibilities={[
                               'sample 01'
                             ]}
@@ -190,7 +208,7 @@ class Home extends React.Component {
                             <TimelineSubRow
                               id='work-deloitte-sdt'
                               title='Service Delivery Transformation'
-                              skills={['Dynamics CRM', 'ReactJS', 'Azure']}
+                              skills={['Dynamics CRM', 'React', 'Azure', 'Public Sector']}
                               description={<>A multi-year engagement focused on delivering a digital transformation of the client&apos;s existing manual forms based applications.</>}
                               responsibilities={[
                                 'Designed and developed an Azure API to generate a digital version of Australian Pilot Licences, leveraging Apple Wallet.',
@@ -203,7 +221,7 @@ class Home extends React.Component {
                             <TimelineSubRow
                               id='work-deloitte-it-redesign'
                               title='ITS System Redesign'
-                              skills={['UX Testing', 'Web Design', 'PHP']}
+                              skills={['UX Testing', 'Web Design', 'PHP', 'Public Sector']}
                               description={<>Supported the client with introducing a new internal IT Support system. My team was engaged to ensure business and end-user needs were fulfilled.</>}
                               responsibilities={[
                                 'Supported discovery scope definition by producing process maps and user stories.',
@@ -219,11 +237,12 @@ class Home extends React.Component {
                             id='work-spinify'
                             date='2018'
                             image={colorMode === 'dark'
-                              ? require('../../assets/images/spinify-w.png')
-                              : require('../../assets/images/spinify-b.png')}
+                              ? spinifyW
+                              : spinifyB}
                             imageAlt='Spinify'
                             imageLink='//spinify.com/'
-                            skills={['ReactJS', 'Node.js', 'AWS']}
+                            title='Full Stack Developer'
+                            skills={['React', 'Node.js', 'AWS']}
                             description={
                               <>
                                 Spinify is a gamification startup which focuses on helping businesses better engage their staff.<br /><br />
@@ -239,9 +258,10 @@ class Home extends React.Component {
                             id='work-made-for-me'
                             date='2016'
                             image={colorMode === 'dark'
-                              ? require('../../assets/images/made-for-me-w.png')
-                              : require('../../assets/images/made-for-me-b.png')}
+                              ? madeForMeW
+                              : madeForMeB}
                             imageAlt='Made for Me'
+                            title='Web Developer'
                             skills={['Python', 'DjangoCMS', 'AWS']}
                             description={
                               <>
@@ -325,24 +345,19 @@ class Home extends React.Component {
 
                         <div>
                           <SocialList>
-                            {/*<SocialIcon
-                              link='//www.facebook.com/jpetty'
-                              image={require('../../assets/images/social-facebook.svg')}
-                              imageAlt='Facebook' />*/}
-
                             <SocialIcon
                               link='//www.linkedin.com/in/j-petty'
-                              image={require('../../assets/images/social-linkedin.svg')}
+                              image={linkedInImg}
                               imageAlt='LinkedIn' />
 
                             <SocialIcon
                               link='//stackoverflow.com/users/5434910/j-petty'
-                              image={require('../../assets/images/social-stackoverflow.svg')}
+                              image={stackOverflowImg}
                               imageAlt='Stack Overflow' />
 
                             <SocialIcon
                               link='//github.com/j-petty'
-                              image={require('../../assets/images/social-github.svg')}
+                              image={githubImg}
                               imageAlt='GitHub' />
                           </SocialList>
                         </div>

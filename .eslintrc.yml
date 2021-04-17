@@ -40,5 +40,7 @@ rules:
     - warn
   curly:  # forces use of brackets
     - error
+  no-redeclare: # no spaces in brackets
+    - off
 plugins:
   - react
