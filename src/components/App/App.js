@@ -67,6 +67,8 @@ class App extends React.Component {
   }
 
   componentDidMount () {
+    console.log('Welcome to my portfolio!\n\nPlease take a look around.\n\nUse the contact form to get in touch.');
+
     // startup Google Analytics
     this.initializeAnalytics();
 
