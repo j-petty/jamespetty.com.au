@@ -69,7 +69,7 @@ class Home extends React.Component {
               skillsArray={[
                 'full stack developer',
                 'web designer',
-                'front end developer',
+                'team lead',
                 'technical consultant',
                 'entrepreneur',
                 'full stack developer']} />
@@ -109,6 +109,7 @@ class Home extends React.Component {
                             description="Initially freelance web design, now growing into a small digital creative agency. Visit the site to check out our latest work."
                             image={project01Img}
                             imageAlt='Whtspc'
+                            linkText='whtspc.com.au'
                             link='//whtspc.com.au/' />
                         </div>
 
@@ -133,7 +134,7 @@ class Home extends React.Component {
                         <div className='animate'>
                           <ProjectRow
                             title='Beached'
-                            skills={['.NET', 'MonoGame', 'Game Design']}
+                            skills={['.Net', 'MonoGame', 'Game Design']}
                             description="A small survival game, built using the bare-bones game development toolkit, MonoGame. Featuring a randomly generated island and pesky chickens. Play it now on Steam."
                             image={project04Img}
                             imageAlt='Survival RPG.'
@@ -193,7 +194,7 @@ class Home extends React.Component {
                             imageAlt='Deloitte Digital'
                             imageLink='//www.deloittedigital.com.au/'
                             title='Senior Technical Specialist'
-                            skills={['.NET', 'React', 'Cloud', 'Leadership', 'Teamwork', 'Client Excellence']}
+                            skills={['.Net', 'React', 'Cloud', 'Leadership', 'Teamwork', 'Client Excellence']}
                             responsibilities={[
                               'sample 01'
                             ]}
