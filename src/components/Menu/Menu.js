@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import styles from './Menu.module.css';
 
+import darkModeImg from '../../assets/images/icon-darkmode.svg';
+
 class Menu extends React.Component {
   constructor (props) {
     super(props);
@@ -48,7 +50,7 @@ class Menu extends React.Component {
           onClick={toggleColorMode}
           aria-label='Toggle Dark Mode'>
           <img
-            src={require('../../assets/images/icon-darkmode.svg')}
+            src={darkModeImg}
             alt='Toggle Dark Mode' />
         </button>
       </nav>
