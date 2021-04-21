@@ -22,6 +22,8 @@ import project05Img from '../../assets/images/project05.jpg';
 import project04Img from '../../assets/images/project04.jpg';
 import project03Img from '../../assets/images/project03.jpg';
 
+import cordeltaDigitalW from '../../assets/images/cordelta-digital-w.png';
+import cordeltaDigitalB from '../../assets/images/cordelta-digital-b.png';
 import deloitteDigitalW from '../../assets/images/deloitte-digital-w.png';
 import deloitteDigitalB from '../../assets/images/deloitte-digital-b.png';
 import spinifyW from '../../assets/images/spinify-w.png';
@@ -69,7 +71,7 @@ class Home extends React.Component {
               skillsArray={[
                 'full stack developer',
                 'web designer',
-                'team lead',
+                'tech lead',
                 'technical consultant',
                 'entrepreneur',
                 'full stack developer']} />
@@ -186,8 +188,37 @@ class Home extends React.Component {
                         ease='Back.easeInOut'>
                         <div className='animate'>
                           <TimelineRow
-                            id='work-deloitte'
+                            id='work-cordelta'
                             date='today'
+                            image={colorMode === 'dark'
+                              ? cordeltaDigitalW
+                              : cordeltaDigitalB}
+                            imageAlt='Cordelta Digital'
+                            imageLink='//cordelta.digital/'
+                            title='Senior Full Stack Developer'
+                            skills={['.Net', 'React', 'Azure', 'Agile', 'Contractor']}
+                            description={
+                              <>
+                                Contracting with Cordelta Digital has already offered exposure to more client environments, furthering my experience as a Full Stack Developer.
+                              </>
+                            } >
+                            <TimelineSubRow
+                              id='work-cordelta-doc'
+                              title='Protected Document Sharing Platform'
+                              skills={['React', '.Net', 'Azure', 'Team Lead', 'Public Sector']}
+                              description={<>In my current role as a team lead on a Public Sector engagement I&apos;m leveraging my expertise in Agile project delivery to foster and build upon the clients existing Agile practices.</>}
+                              responsibilities={[
+                                'Continue technical design of a Protected Document Sharing Platform in collaboration with business representatives.',
+                                'Develop an MVP of the system based on extensive Product Backlog.',
+                                'Coordinate development team and lead Agile rituals to efficiently reach client outcomes.'
+                              ]} />
+                          </TimelineRow>
+                        </div>
+
+                        <div className='animate'>
+                          <TimelineRow
+                            id='work-deloitte'
+                            date='2021'
                             image={colorMode === 'dark'
                               ? deloitteDigitalW
                               : deloitteDigitalB}
@@ -195,9 +226,6 @@ class Home extends React.Component {
                             imageLink='//www.deloittedigital.com.au/'
                             title='Senior Technical Specialist'
                             skills={['.Net', 'React', 'Cloud', 'Leadership', 'Teamwork', 'Client Excellence']}
-                            responsibilities={[
-                              'sample 01'
-                            ]}
                             description={
                               <>
                                 As a Senior Technical Consultant at Deloitte Digital, I&apos;ve worked in several different client environments.
@@ -243,7 +271,7 @@ class Home extends React.Component {
                             imageAlt='Spinify'
                             imageLink='//spinify.com/'
                             title='Full Stack Developer'
-                            skills={['React', 'Node.js', 'AWS']}
+                            skills={['React', 'Node.js', 'AWS', 'Start-up']}
                             description={
                               <>
                                 Spinify is a gamification startup which focuses on helping businesses better engage their staff.<br /><br />
@@ -263,7 +291,7 @@ class Home extends React.Component {
                               : madeForMeB}
                             imageAlt='Made for Me'
                             title='Web Developer'
-                            skills={['Python', 'DjangoCMS', 'AWS']}
+                            skills={['Python', 'DjangoCMS', 'AWS', 'Start-up']}
                             description={
                               <>
                                 What started as a internship at a 3D Printing startup soon turned into a part-time position whilst I studied at University.<br /><br />

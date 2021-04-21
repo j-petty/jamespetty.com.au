@@ -37,6 +37,10 @@
   margin-left: 10%;
 }
 
+.timelineHead img {
+  width: 150px;
+}
+
 .timelineTitle {
   font-weight: 200;
   font-size: 18px;
@@ -59,12 +63,6 @@
   margin: 0;
 }
 
-.timelineText img {
-  width: 150px;
-  position: relative;
-  display: block;
-}
-
 /* Medium */
 @media (max-width: 992px) { 
   .timelineDate {
@@ -85,6 +83,10 @@
     margin: 15px 0;
   }
 
+  .timelineHead img {
+    width: 100px;
+  }
+
 	.timelineText {
     align-self: center;
     width: 100%;
@@ -92,10 +94,6 @@
 
   .skillList li {
     margin: 5px 8px 3px 0px;
-  }
-
-  .timelineText img {
-    width: 100px;
   }
 }
 
