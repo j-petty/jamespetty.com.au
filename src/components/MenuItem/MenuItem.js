@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import styles from './MenuItem.module.css';
 
-function MenuItem (props) {
+const MenuItem = (props) => {
   const { label, link, toggleMenu } = props;
 
   return (
@@ -11,7 +11,7 @@ function MenuItem (props) {
       <a href={link} onClick={toggleMenu}>{label}</a>
     </li>
   );
-}
+};
 
 MenuItem.propTypes = {
   label: PropTypes.string,

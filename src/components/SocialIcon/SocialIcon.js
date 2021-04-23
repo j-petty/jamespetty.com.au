@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import styles from './SocialIcon.module.css';
 
-function SocialIcon (props) {
+const SocialIcon = (props) => {
   const { link, image, imageAlt } = props;
 
   return (
@@ -13,7 +13,7 @@ function SocialIcon (props) {
       </a>
     </li>
   );
-}
+};
 
 SocialIcon.propTypes = {
   link: PropTypes.string,

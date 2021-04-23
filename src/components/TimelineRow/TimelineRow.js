@@ -3,61 +3,59 @@ import PropTypes from 'prop-types';
 
 import styles from './TimelineRow.module.css';
 
-class TimelineRow extends React.Component {
-  render () {
-    const {
-      id,
-      date,
-      title,
-      description,
-      skills,
-      image,
-      imageAlt,
-      imageLink,
-      children
-    } = this.props;
+const TimelineRow = (props) => {
+  const {
+    id,
+    date,
+    title,
+    description,
+    skills,
+    image,
+    imageAlt,
+    imageLink,
+    children
+  } = props;
 
-    return (
-      <div className={styles.timelineRow}>
-        <span className={styles.timelineDate}>{date}</span>
+  return (
+    <div className={styles.timelineRow}>
+      <span className={styles.timelineDate}>{date}</span>
 
-        <div className={styles.timelineContainer}>
-          <div className={styles.timelineHead}>
-            {image &&
-              <h3 id={id} className='noMargin'>
-                <a href={imageLink} target='_blank' rel='noopener noreferrer'>
-                  <img src={image} alt={imageAlt} />
-                </a>
-              </h3>
-            }
+      <div className={styles.timelineContainer}>
+        <div className={styles.timelineHead}>
+          {image &&
+            <h3 id={id} className='noMargin'>
+              <a href={imageLink} target='_blank' rel='noopener noreferrer'>
+                <img src={image} alt={imageAlt} />
+              </a>
+            </h3>
+          }
 
-            {title &&
-              <p className={styles.timelineTitle}>{title}</p>
-            }
+          {title &&
+            <p className={styles.timelineTitle}>{title}</p>
+          }
 
-            {skills &&
-              <ul className={styles.skillList}>
-                {skills.map(skill =>
-                  <li key={skill} className='boxListItem'>{skill}</li>
-                )}
-              </ul>
-            }
-          </div>
+          {skills &&
+            <ul className={styles.skillList}>
+              {skills.map(skill =>
+                <li key={skill} className='boxListItem'>{skill}</li>
+              )}
+            </ul>
+          }
+        </div>
 
-          <div className={styles.timelineText}>
-            {description &&
-              <p>{description}</p>
-            }
+        <div className={styles.timelineText}>
+          {description &&
+            <p>{description}</p>
+          }
 
-            {children &&
-              children
-            }
-          </div>
+          {children &&
+            children
+          }
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 TimelineRow.propTypes = {
   id: PropTypes.string,
@@ -68,7 +66,10 @@ TimelineRow.propTypes = {
   image: PropTypes.string,
   imageAlt: PropTypes.string,
   imageLink: PropTypes.string,
-  children: PropTypes.array
+  children: PropTypes.oneOfType([
+    PropTypes.object,
+    PropTypes.array
+  ])
 };
 
 export default TimelineRow;

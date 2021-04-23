@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import styles from './ScrollMenuItem.module.css';
 
-function ScrollMenuItem (props) {
+const ScrollMenuItem = (props) => {
   const { link, inView } = props;
 
   return (
@@ -11,7 +11,7 @@ function ScrollMenuItem (props) {
       <a href={`/#${link}`} aria-label='Page Scroll'><span></span></a>
     </li>
   );
-}
+};
 
 ScrollMenuItem.propTypes = {
   label: PropTypes.string,

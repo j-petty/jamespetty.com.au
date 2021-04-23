@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 
 import styles from './ScrollMenu.module.css';
 
-function ScrollMenu (props) {
+const ScrollMenu = (props) =>{
   return (
     <ul className={styles.scrollMenu}>
       {props.children}
     </ul>
   );
-}
+};
 
 ScrollMenu.propTypes = {
   children: PropTypes.array.isRequired

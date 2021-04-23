@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import styles from './MenuButton.module.css';
 
-function MenuButton (props) {
+const MenuButton = (props) => {
   const { isOpen, handleClick } = props;
 
   return (
@@ -15,7 +15,7 @@ function MenuButton (props) {
       <span />
     </button>
   );
-}
+};
 
 MenuButton.propTypes = {
   isOpen: PropTypes.bool.isRequired,

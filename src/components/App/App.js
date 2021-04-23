@@ -1,5 +1,5 @@
 /*global localStorage */
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactGA from 'react-ga';
 import {
   BrowserRouter as Router,
@@ -15,42 +15,45 @@ import NotFound from '../../pages/NotFound/NotFound';
 
 import styles from './App.module.css';
 
-class App extends React.Component {
-  constructor (props) {
-    super(props);
+const App = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [colorMode, setColorMode] = useState('dark');
 
-    this.state = {
-      isMenuOpen: false,
-      colorMode: 'dark'
-    };
+  // componentDidMount
+  useEffect(() => {
+    console.log('Welcome to my portfolio!\n\nPlease take a look around.\n\nUse the contact form to get in touch.');
 
-    this.handleMenuOpen = this.handleMenuOpen.bind(this);
-    this.toggleColorMode = this.toggleColorMode.bind(this);
-  }
+    // startup Google Analytics
+    initializeAnalytics();
 
-  handleMenuOpen () {
-    this.setState({
-      isMenuOpen: !this.state.isMenuOpen
-    });
-  }
+    // retrieve previous color mode from local storage
+    let initColorMode = localStorage.getItem(process.env.REACT_APP_COLOR_MODE_KEY);
 
-  toggleColorMode () {
-    let newColorMode = this.state.colorMode === 'dark' ? 'light' : 'dark';
+    // set initial color mode
+    if (initColorMode) {
+      setColorMode(initColorMode);
+    }
+  }, []);
+
+  const handleMenuOpen = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const toggleColorMode = () => {
+    let newColorMode = colorMode === 'dark' ? 'light' : 'dark';
 
     // update color mode in local storage
     localStorage.setItem(process.env.REACT_APP_COLOR_MODE_KEY, newColorMode);
 
     // update state
-    this.setState({
-      colorMode: newColorMode
-    });
+    setColorMode(newColorMode);
 
     if (process.env.NODE_ENV !== 'production') {
       console.log('ColorMode changed', newColorMode);
     }
-  }
+  };
 
-  initializeAnalytics () {
+  const initializeAnalytics = () => {
     if (!process.env.REACT_APP_ANALYTICS_TRACKING_ID) {
       return;
     }
@@ -64,72 +67,51 @@ class App extends React.Component {
     else {
       ReactGA.pageview(`/${process.env.NODE_ENV}`);
     }
-  }
+  };
 
-  componentDidMount () {
-    console.log('Welcome to my portfolio!\n\nPlease take a look around.\n\nUse the contact form to get in touch.');
+  return (
+    <Router>
+      <div className={`${styles.container} ${colorMode}`}>
+        <MenuButton
+          isOpen={isMenuOpen}
+          handleClick={handleMenuOpen} />
 
-    // startup Google Analytics
-    this.initializeAnalytics();
+        <Menu
+          isOpen={isMenuOpen}
+          toggleColorMode={toggleColorMode}>
+          <MenuItem
+            label='home'
+            link='/#home'
+            toggleMenu={handleMenuOpen} />
 
-    // retrieve previous color mode from local storage
-    let initColorMode = localStorage.getItem(process.env.REACT_APP_COLOR_MODE_KEY);
+          <MenuItem
+            label='projects'
+            link='/#projects'
+            toggleMenu={handleMenuOpen} />
 
-    // set initial color mode
-    if (initColorMode) {
-      this.setState({
-        colorMode: initColorMode
-      });
-    }
-  }
+          <MenuItem
+            label='work'
+            link='/#work'
+            toggleMenu={handleMenuOpen} />
 
-  render () {
-    const { isMenuOpen, colorMode } = this.state;
+          <MenuItem
+            label='contact'
+            link='/#contact'
+            toggleMenu={handleMenuOpen} />
+        </Menu>
 
-    return (
-      <Router>
-        <div className={`${styles.container} ${colorMode}`}>
-          <MenuButton
-            isOpen={isMenuOpen}
-            handleClick={this.handleMenuOpen} />
+        <Switch>
+          <Route exact path='/'>
+            <Home colorMode={colorMode} />
+          </Route>
 
-          <Menu
-            isOpen={isMenuOpen}
-            toggleColorMode={this.toggleColorMode}>
-            <MenuItem
-              label='home'
-              link='/#home'
-              toggleMenu={this.handleMenuOpen} />
-
-            <MenuItem
-              label='projects'
-              link='/#projects'
-              toggleMenu={this.handleMenuOpen} />
-
-            <MenuItem
-              label='work'
-              link='/#work'
-              toggleMenu={this.handleMenuOpen} />
-
-            <MenuItem
-              label='contact'
-              link='/#contact'
-              toggleMenu={this.handleMenuOpen} />
-          </Menu>
-
-          <Switch>
-            <Route exact path='/'>
-              <Home colorMode={colorMode} />
-            </Route>
-
-            <Route path='*'>
-              <NotFound />
-            </Route>
-          </Switch>
-        </div>
-      </Router>
-    );
-  }
-}
+          <Route path='*'>
+            <NotFound />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+  );
+};
 
 export default App;
