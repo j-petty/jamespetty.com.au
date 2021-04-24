@@ -1,4 +1,4 @@
-/* global document */
+/* global document, window */
 import React, { useEffect, useState, useCallback } from 'react';
 
 import styles from './Cursor.module.css';
@@ -10,13 +10,18 @@ const Cursor = () => {
   const [isLinkHovered, setIsLinkHovered] = useState(false);
 
   // Require state update after all elements have been added to the dom
-  const [hasSetListeners, setHasSetListeners] = useState(false);
+  const [hasWindowLoaded, setHasWindowLoaded] = useState(false);
+
+  useEffect(() => {
+    // Refresh listeners after first load
+    window.addEventListener('load', () => setHasWindowLoaded(true));
+  }, []);
 
   useEffect(() => {
     addEventListeners();
 
     return () => removeEventListeners();
-  }, [hasSetListeners]);
+  }, [hasWindowLoaded]);
 
   const addEventListeners = () => {
     document.addEventListener('mousemove', onMouseMove);
@@ -29,9 +34,6 @@ const Cursor = () => {
       el.addEventListener('mouseover', onMouseOver);
       el.addEventListener('mouseout', onMouseOut);
     });
-
-    // Trigger re-render after first load
-    setHasSetListeners(true);
   };
 
   const removeEventListeners = useCallback(() => {
