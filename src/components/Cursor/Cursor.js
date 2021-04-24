@@ -92,7 +92,8 @@ const Cursor = () => {
   }
 
   return (
-    <div className={classNames}
+    <div
+      className={classNames}
       style={{
         left: `${position.x}px`,
         top: `${position.y}px`
