@@ -1,5 +1,6 @@
 /* global document, window */
 import React, { useEffect, useState, useCallback } from 'react';
+import { isMobile } from 'react-device-detect';
 
 import styles from './Cursor.module.css';
 
@@ -11,6 +12,10 @@ const Cursor = () => {
 
   // Require state update after all elements have been added to the dom
   const [hasWindowLoaded, setHasWindowLoaded] = useState(false);
+
+  if (isMobile) {
+    return null;
+  }
 
   useEffect(() => {
     // Refresh listeners after first load
