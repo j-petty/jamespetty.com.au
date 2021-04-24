@@ -1,5 +1,6 @@
 html {
   scroll-behavior: smooth;
+  cursor: none;
 }
 
 body {
@@ -29,10 +30,17 @@ ul {
 }
 
 a,
+button,
+label,
+input,
+textarea {
+  cursor: none;
+}
+
+a,
 button.buttonLink {
   color: #FFFFFF;
   transition: color .1s ease-in-out;
-  cursor: pointer;
 }
 
 button.buttonLink {

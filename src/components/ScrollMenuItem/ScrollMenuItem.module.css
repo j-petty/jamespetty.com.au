@@ -2,7 +2,7 @@
   width: 10px;
   height: 10px;
   display: flex;
-  margin: 10px;
+  margin: 15px 10px;
 }
 
 .menuItem a {
@@ -10,7 +10,6 @@
   background: #888888;
   width: 60%;
   height: 60%;
-  cursor: pointer;
   text-decoration: none;
   margin: auto;
   transition: all .1s ease-in-out;

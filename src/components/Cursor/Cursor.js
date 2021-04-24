@@ -1,5 +1,5 @@
 /* global document */
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 
 import styles from './Cursor.module.css';
 
@@ -9,12 +9,14 @@ const Cursor = () => {
   const [isClicked, setIsClicked] = useState(false);
   const [isLinkHovered, setIsLinkHovered] = useState(false);
 
+  // Require state update after all elements have been added to the dom
+  const [hasSetListeners, setHasSetListeners] = useState(false);
+
   useEffect(() => {
     addEventListeners();
-    handleLinkHoverEvents();
 
     return () => removeEventListeners();
-  }, []);
+  }, [hasSetListeners]);
 
   const addEventListeners = () => {
     document.addEventListener('mousemove', onMouseMove);
@@ -22,26 +24,31 @@ const Cursor = () => {
     document.addEventListener('mouseleave', onMouseLeave);
     document.addEventListener('mousedown', onMouseDown);
     document.addEventListener('mouseup', onMouseUp);
+
+    document.querySelectorAll('a, button, input, textarea').forEach(el => {
+      el.addEventListener('mouseover', onMouseOver);
+      el.addEventListener('mouseout', onMouseOut);
+    });
+
+    // Trigger re-render after first load
+    setHasSetListeners(true);
   };
 
-  const removeEventListeners = () => {
+  const removeEventListeners = useCallback(() => {
     document.removeEventListener('mousemove', onMouseMove);
     document.removeEventListener('mouseenter', onMouseEnter);
     document.removeEventListener('mouseleave', onMouseLeave);
     document.removeEventListener('mousedown', onMouseDown);
     document.removeEventListener('mouseup', onMouseUp);
-  };
 
-  const handleLinkHoverEvents = () => {
-    console.log(document.getElementsByTagName('a'));
-    Array.from(document.getElementsByTagName('a')).forEach(el => {
-      el.addEventListener('mouseover', onMouseOver);
-      el.addEventListener('mouseout', onMouseOut);
+    document.querySelectorAll('a, button, input, textarea').forEach(el => {
+      el.removeEventListener('mouseover', onMouseOver);
+      el.removeEventListener('mouseout', onMouseOut);
     });
-  };
+  });
 
   const onMouseMove = (e) => {
-    //setPosition({x: e.clientX, y: e.clientY});
+    setPosition({x: e.clientX, y: e.clientY});
   };
 
   const onMouseLeave = () => {
@@ -61,7 +68,6 @@ const Cursor = () => {
   };
 
   const onMouseOver = () => {
-    console.log('called');
     setIsLinkHovered(true);
   };
 

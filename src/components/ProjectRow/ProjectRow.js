@@ -33,7 +33,7 @@ const ProjectRow = (props) => {
             className='simpleLink'
             target='_blank'
             rel='noopener noreferrer'>
-            {linkText ?? 'see more'}
+            {linkText ? linkText : 'see more'}
           </a>
         }
       </div>

@@ -18,7 +18,6 @@
 }
 
 .menuItem a {
-  cursor: pointer;
   color: #888888;
   transition: color 0.2s ease-in-out;
   position: relative;

@@ -7,6 +7,7 @@ import {
   Route
 } from 'react-router-dom';
 
+import Cursor from '../Cursor/Cursor';
 import MenuButton from '../MenuButton/MenuButton';
 import Menu from '../Menu/Menu';
 import MenuItem from '../MenuItem/MenuItem';
@@ -102,13 +103,17 @@ const App = () => {
 
         <Switch>
           <Route exact path='/'>
-            <Home colorMode={colorMode} />
+            <Home
+              colorMode={colorMode} />
           </Route>
 
           <Route path='*'>
             <NotFound />
           </Route>
         </Switch>
+
+        {/* Cursor should be last element added to page */}
+        <Cursor />
       </div>
     </Router>
   );

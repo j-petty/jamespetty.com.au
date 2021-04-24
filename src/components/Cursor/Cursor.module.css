@@ -16,12 +16,12 @@
   opacity: 0;
 }
 
-.cursorClicked {
-  transform: translate(-50%, -50%) scale(0.9);
+.cursorLinkHovered {
+  transform: translate(-50%, -50%) scale(0.8);
   background-color: #fefefe;
 }
 
-.cursorLinkHovered {
-  transform: translate(-50%, -50%) scale(1.25);
+.cursorClicked {
+  transform: translate(-50%, -50%) scale(0.7);
   background-color: #fefefe;
 }

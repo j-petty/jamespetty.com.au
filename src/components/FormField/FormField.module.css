@@ -53,7 +53,6 @@
 }
 
 .fieldGroup input[type=submit] {
-  cursor: pointer;
   font-weight: 400;
   width: 40%;
   min-width: 150px;
