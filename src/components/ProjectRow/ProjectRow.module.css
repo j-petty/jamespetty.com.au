@@ -94,6 +94,7 @@
   z-index: 0;
   opacity: 0;
   transition: opacity .2s ease-in-out;
+  background-position: top;
 }
 
 .projectRow:hover .projectImage,

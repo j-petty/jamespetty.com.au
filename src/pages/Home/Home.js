@@ -17,6 +17,7 @@ import SocialIcon from '../../components/SocialIcon/SocialIcon';
 import Footer from '../../components/Footer/Footer';
 
 import project01Img from '../../assets/images/project01.jpg';
+import project02Img from '../../assets/images/project02.jpg';
 import project06Img from '../../assets/images/project06.jpg';
 import project05Img from '../../assets/images/project05.jpg';
 import project04Img from '../../assets/images/project04.jpg';
@@ -111,6 +112,17 @@ const Home = (props) => {
 
                       <div className='animate'>
                         <ProjectRow
+                          title='MyWay Balance'
+                          skills={['iOS', 'Android', 'Xamarin']}
+                          description="Born out of frustration from using the clunky website to check my public transport card balance. So I built a simple app that lets people check their MyWay card balance right from their phones."
+                          image={project02Img}
+                          imageAlt='MyWay Balance'
+                          linkText='View on App Store'
+                          link='//apps.apple.com/au/app/myway-balance/id1565645760' />
+                      </div>
+
+                      <div className='animate'>
+                        <ProjectRow
                           title='Digital Pass Provider'
                           skills={['Asp.Net', 'Azure', 'Apple', 'Google']}
                           description="An API first platform which simplifies the process of generating digital Passes for the Apple and Google wallets. Intended to simplify the process of integrating with digital wallet solutions."
@@ -134,6 +146,7 @@ const Home = (props) => {
                           description="A small survival game, built using the bare-bones game development toolkit, MonoGame. Featuring a randomly generated island and pesky chickens. Play it now on Steam."
                           image={project04Img}
                           imageAlt='Survival RPG.'
+                          linkText='View on Steam'
                           link='//store.steampowered.com/app/652560/Beached/' />
                       </div>
 
