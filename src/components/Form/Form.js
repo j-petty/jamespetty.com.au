@@ -26,13 +26,13 @@ const Form = (props) => {
     }
     e.persist();
 
-    let formData = formData || {};
+    let data = formData || {};
 
     // URI encode value
-    formData[fieldName] = encodeURIComponent(e.target.value);
+    data[fieldName] = encodeURIComponent(e.target.value);
 
     // Update state
-    setFormData(formData);
+    setFormData(data);
   };
 
   const handleSubmit = async (e) => {
