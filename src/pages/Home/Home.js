@@ -150,14 +150,14 @@ const Home = (props) => {
                           link='//store.steampowered.com/app/652560/Beached/' />
                       </div>
 
-                      <div className='animate'>
+                      {/*<div className='animate'>
                         <ProjectRow
                           title='Portfolio'
                           skills={['React', 'Web Design']}
                           description="The page you're looking at right now. Built using React, just for a bit of fun. Feel free to drop any feedback below."
                           image={project03Img}
                           imageAlt='Showcasing creative ideas.' />
-                      </div>
+                      </div>*/}
                     </Tween>
                   </Timeline>
                 )}
