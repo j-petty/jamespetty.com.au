@@ -21,7 +21,6 @@ import project02Img from '../../assets/images/project02.jpg';
 import project06Img from '../../assets/images/project06.jpg';
 import project05Img from '../../assets/images/project05.jpg';
 import project04Img from '../../assets/images/project04.jpg';
-import project03Img from '../../assets/images/project03.jpg';
 
 import cordeltaDigitalW from '../../assets/images/cordelta-digital-w.png';
 import cordeltaDigitalB from '../../assets/images/cordelta-digital-b.png';
@@ -114,11 +113,9 @@ const Home = (props) => {
                         <ProjectRow
                           title='MyWay Balance'
                           skills={['iOS', 'Android', 'Xamarin']}
-                          description="Born out of frustration from using the clunky website to check my public transport card balance. So I built a simple app that lets people check their MyWay card balance right from their phones."
+                          description="Born out of frustration from using the clunky website to check my public transport card balance. I built a simple app that lets people check their MyWay card balance right from their phones."
                           image={project02Img}
-                          imageAlt='MyWay Balance'
-                          linkText='View on App Store'
-                          link='//apps.apple.com/au/app/myway-balance/id1565645760' />
+                          imageAlt='MyWay Balance' />
                       </div>
 
                       <div className='animate'>
@@ -212,12 +209,12 @@ const Home = (props) => {
                           <TimelineSubRow
                             id='work-cordelta-doc'
                             title='Protected Document Sharing Platform'
-                            skills={['React', '.Net', 'Azure', 'Team Lead', 'Public Sector']}
-                            description={<>In my current role as a team lead on a Public Sector engagement I&apos;m leveraging my expertise in Agile project delivery to foster and build upon the clients existing Agile practices.</>}
+                            skills={['React', '.Net', 'Azure', 'Tech Lead', 'Public Sector']}
+                            description={<>In my current role as a tech lead on a Public Sector engagement I&apos;m leveraging my expertise in Agile project delivery to foster and build upon the clients existing Agile practices.</>}
                             responsibilities={[
-                              'Continue technical design of a Protected Document Sharing Platform in collaboration with business representatives.',
+                              'Continue technical design of a whole of government Protected Document Sharing Platform in collaboration with business representatives.',
                               'Develop an MVP of the system based on extensive Product Backlog.',
-                              'Coordinate development team and lead Agile rituals to efficiently reach client outcomes.'
+                              'Coordinate development team and lead Agile rituals to efficiently reach client milestones.'
                             ]} />
                         </TimelineRow>
                       </div>
