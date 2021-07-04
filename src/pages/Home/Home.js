@@ -22,8 +22,8 @@ import project06Img from '../../assets/images/project06.jpg';
 import project05Img from '../../assets/images/project05.jpg';
 import project04Img from '../../assets/images/project04.jpg';
 
-import cordeltaDigitalW from '../../assets/images/cordelta-digital-w.png';
-import cordeltaDigitalB from '../../assets/images/cordelta-digital-b.png';
+import agdW from '../../assets/images/agd-w.png';
+import agdB from '../../assets/images/agd-b.png';
 import deloitteDigitalW from '../../assets/images/deloitte-digital-w.png';
 import deloitteDigitalB from '../../assets/images/deloitte-digital-b.png';
 import spinifyW from '../../assets/images/spinify-w.png';
@@ -65,7 +65,7 @@ const Home = (props) => {
             skillsArray={[
               'full stack developer',
               'web designer',
-              'tech lead',
+              'project lead',
               'technical consultant',
               'entrepreneur',
               'full stack developer']} />
@@ -192,29 +192,31 @@ const Home = (props) => {
                       ease='Back.easeInOut'>
                       <div className='animate'>
                         <TimelineRow
-                          id='work-cordelta'
+                          id='work-agd'
                           date='today'
                           image={colorMode === 'dark'
-                            ? cordeltaDigitalW
-                            : cordeltaDigitalB}
-                          imageAlt='Cordelta Digital'
-                          imageLink='//cordelta.digital/'
-                          title='Senior Full Stack Developer'
-                          skills={['.Net', 'React', 'Azure', 'Agile', 'Contractor']}
+                            ? agdW
+                            : agdB}
+                          imageAlt="Attorney-General's Department"
+                          imageLink='//www.ag.gov.au/'
+                          title='Senior Full-stack Developer'
+                          skills={['.Net', 'React', 'Azure', 'Agile', 'Public Sector', 'Contractor']}
                           description={
                             <>
-                              Contracting with Cordelta Digital has already offered exposure to more client environments, furthering my experience as a Full Stack Developer.
+                              Contracting with the Attorney-General&apos;s department as a full-stack developer and project technical lead offered exposure to new technologies and personal growth opportunities.
+                              The client&apos;s strict security posture required creative solutions to some typically simple technical challenges.
                             </>
                           } >
                           <TimelineSubRow
-                            id='work-cordelta-doc'
-                            title='Protected Document Sharing Platform'
-                            skills={['React', '.Net', 'Azure', 'Tech Lead', 'Public Sector']}
-                            description={<>In my current role as a tech lead on a Public Sector engagement I&apos;m leveraging my expertise in Agile project delivery to foster and build upon the clients existing Agile practices.</>}
+                            id='work-agd-doc'
+                            title='Secure Document Sharing Platform'
+                            skills={['Technical Lead', 'React', '.Net', 'Azure']}
+                            description={<>As project technical lead, I leveraged my expertise in Agile software delivery to foster and build upon the client&apos;s existing Agile practices and successfully deliver a working MVP (minimum viable product).</>}
                             responsibilities={[
-                              'Continue technical design of a whole of government Protected Document Sharing Platform in collaboration with business representatives.',
-                              'Develop an MVP of the system based on extensive Product Backlog.',
-                              'Coordinate development team and lead Agile rituals to efficiently reach client milestones.'
+                              'Continued technical design of a whole of government Secure Document Sharing Platform.',
+                              'Coordinated collaboration with business representatives to ensure desired outcomes were being achieved.',
+                              'Developed a working MVP of the system based on extensive Product Backlog.',
+                              'Coordinate development team and led Agile rituals to efficiently achieve milestones on time.'
                             ]} />
                         </TimelineRow>
                       </div>
@@ -232,15 +234,15 @@ const Home = (props) => {
                           skills={['.Net', 'React', 'Cloud', 'Leadership', 'Teamwork', 'Client Excellence']}
                           description={
                             <>
-                              As a Senior Technical Consultant at Deloitte Digital, I&apos;ve worked in several different client environments.
-                              From small agile teams, through to large hybrid-agile programs - solving complex problems is BAU.<br /><br />
-                              Each project brings a new set of skills to learn and fresh challenges to overcome.
-                              If I had to pick one thing, Deloitte Digital has certainly shown me the innate value of being highly dynamic but thorough.
+                              As a Senior Technical Consultant at Deloitte Digital, I worked in several challenging client environments.
+                              From small agile teams, through to large hybrid-agile programs - solving complex problems was BAU.<br /><br />
+                              Each project brought a new set of skills to learn and fresh challenges to overcome.
+                              My time at Deloitte Digital certainly taught me the value of being highly dynamic and flexible but with a strong attention to detail.
                             </>
                           }>
                           <TimelineSubRow
                             id='work-deloitte-sdt'
-                            title='Service Delivery Transformation'
+                            title='Civil Aviation Safety Authority'
                             skills={['Dynamics CRM', 'React', 'Azure', 'Public Sector']}
                             description={<>A multi-year engagement focused on delivering a digital transformation of the client&apos;s existing manual forms based applications.</>}
                             responsibilities={[
@@ -253,7 +255,7 @@ const Home = (props) => {
 
                           <TimelineSubRow
                             id='work-deloitte-it-redesign'
-                            title='ITS System Redesign'
+                            title='Services Australia'
                             skills={['UX Testing', 'Web Design', 'PHP', 'Public Sector']}
                             description={<>Supported the client with introducing a new internal IT Support system. My team was engaged to ensure business and end-user needs were fulfilled.</>}
                             responsibilities={[
@@ -262,6 +264,13 @@ const Home = (props) => {
                               'Designed and developed an online "Utterance Capturing Platform" which allowed users to train the chatbot to be more effective at responding to common questions.',
                               'Designed a "User Experience Space" which showcased the end product to engage end users, ultimately leading to a successful release and high levels of adoption.'
                             ]} />
+
+                          <TimelineSubRow
+                            id='work-deloitte-ozharvest'
+                            title='OzHarvest'
+                            skills={['App Design', 'UX Design', 'Private Sector']}
+                            description={<>Designed a mobile application aimed at helping OzHarvest generate revenue, enabling them to continue their mission within communities around Australia.
+                            The final prototype can be found <a className='simpleLink' href="//xd.adobe.com/view/fbf72286-7ea3-410d-aa7e-db324d523b8b-aea4/?fullscreen" target="_blank" rel="noreferrer">here</a>.</>} />
                         </TimelineRow>
                       </div>
 
