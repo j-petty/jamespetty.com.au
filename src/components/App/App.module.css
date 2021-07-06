@@ -2,6 +2,14 @@
   position: relative;
 }
 
+.fullPageLoader {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 :global(.dark).container {
   color: #FFFFFF;
   background: #141414;
