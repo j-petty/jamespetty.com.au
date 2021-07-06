@@ -9,7 +9,7 @@ const SocialIcon = (props) => {
   return (
     <li className={styles.socialIcon}>
       <a href={link} target='_blank' rel='noopener noreferrer'>
-        <img src={image} alt={imageAlt} />
+        <img src={image} alt={imageAlt} width='25' height='25' />
       </a>
     </li>
   );

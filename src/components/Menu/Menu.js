@@ -40,7 +40,9 @@ const Menu = (props) => {
         aria-label='Toggle Dark Mode'>
         <img
           src={darkModeImg}
-          alt='Toggle Dark Mode' />
+          alt='Toggle Dark Mode'
+          width='20'
+          height='20' />
       </button>
     </nav>
   );
