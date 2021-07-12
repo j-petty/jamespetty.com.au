@@ -8,6 +8,7 @@ const TimelineRow = (props) => {
     id,
     date,
     title,
+    duration,
     description,
     skills,
     image,
@@ -28,6 +29,10 @@ const TimelineRow = (props) => {
                 <img src={image} alt={imageAlt} />
               </a>
             </h3>
+          }
+
+          {duration &&
+            <p className={styles.timelineSubTitle}>{duration}</p>
           }
 
           {title &&
@@ -61,6 +66,7 @@ TimelineRow.propTypes = {
   id: PropTypes.string,
   date: PropTypes.string,
   title: PropTypes.string,
+  duration: PropTypes.string,
   description: PropTypes.object,
   skills: PropTypes.array,
   image: PropTypes.string,

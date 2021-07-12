@@ -231,6 +231,7 @@ const Home = (props) => {
                           imageAlt='Deloitte Digital'
                           imageLink='//www.deloittedigital.com.au/'
                           title='Senior Technical Specialist'
+                          duration='3y 2m'
                           skills={['.Net', 'React', 'Cloud', 'Leadership', 'Teamwork', 'Client Excellence']}
                           description={
                             <>
@@ -284,6 +285,7 @@ const Home = (props) => {
                           imageAlt='Spinify'
                           imageLink='//spinify.com/'
                           title='Full Stack Developer'
+                          duration='1y 5m'
                           skills={['React', 'Node.js', 'AWS', 'Start-up']}
                           description={
                             <>
@@ -304,6 +306,7 @@ const Home = (props) => {
                             : madeForMeB}
                           imageAlt='Made for Me'
                           title='Web Developer'
+                          duration='1y 2m'
                           skills={['Python', 'DjangoCMS', 'AWS', 'Start-up']}
                           description={
                             <>

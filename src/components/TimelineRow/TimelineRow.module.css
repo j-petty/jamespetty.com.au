@@ -33,8 +33,7 @@
 
 .timelineHead {
   text-align: right;
-	width: 30%;
-  margin-left: 10%;
+	width: 40%;
 }
 
 .timelineHead img {
@@ -44,8 +43,17 @@
 .timelineTitle {
   font-weight: 200;
   font-size: 18px;
-  margin-top: 25px;
-  margin-bottom: 5px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.timelineSubTitle {
+  font-weight: 200;
+  font-size: 15px;
+  margin-top: 5px;
+  margin-bottom: 0;
+  color: #888888;
+  white-space: nowrap;
 }
 
 .timelineText {
