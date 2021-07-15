@@ -1,5 +1,5 @@
 /*global localStorage */
-import React, { useState, useEffect, lazy, Suspense } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactGA from 'react-ga';
 import {
   BrowserRouter as Router,
@@ -7,14 +7,13 @@ import {
   Route
 } from 'react-router-dom';
 
-import Loader from '../Loader/Loader';
 import Cursor from '../Cursor/Cursor';
 import MenuButton from '../MenuButton/MenuButton';
 import Menu from '../Menu/Menu';
 import MenuItem from '../MenuItem/MenuItem';
 
-const Home = lazy(() => import('../../pages/Home/Home'));
-const NotFound = lazy(() => ('../../pages/NotFound/NotFound'));
+import Home from '../../pages/Home/Home';
+import NotFound from '../../pages/NotFound/NotFound';
 
 import styles from './App.module.css';
 
@@ -72,14 +71,6 @@ const App = () => {
     }
   };
 
-  const renderLoader = () => {
-    return (
-      <div className={styles.fullPageLoader}>
-        <Loader />
-      </div>
-    );
-  };
-
   return (
     <Router>
       <div className={`${styles.container} ${colorMode}`}>
@@ -111,18 +102,16 @@ const App = () => {
             toggleMenu={handleMenuOpen} />
         </Menu>
 
-        <Suspense fallback={renderLoader()}>
-          <Switch>
-            <Route exact path='/'>
-              <Home
-                colorMode={colorMode} />
-            </Route>
+        <Switch>
+          <Route exact path='/'>
+            <Home
+              colorMode={colorMode} />
+          </Route>
 
-            <Route path='*'>
-              <NotFound />
-            </Route>
-          </Switch>
-        </Suspense>
+          <Route path='*'>
+            <NotFound />
+          </Route>
+        </Switch>
 
         {/* Cursor should be last element added to page */}
         <Cursor />
