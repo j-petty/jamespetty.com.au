@@ -1,8 +1,7 @@
 .loader {
-  display: inline-block;
-  position: relative;
   width: 44px;
   height: 44px;
+  margin: auto;
 }
 .loader div {
   box-sizing: border-box;

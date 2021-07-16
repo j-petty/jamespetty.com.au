@@ -4,6 +4,8 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
 
+import Loader from '../Loader/Loader';
+
 import styles from './Form.module.css';
 
 const Form = (props) => {
@@ -85,6 +87,12 @@ const Form = (props) => {
       setIsSubmitting(false);
     }
   };
+
+  if (isSubmitting) {
+    return (
+      <Loader />
+    );
+  }
 
   if (hasSubmitted) {
     return (
