@@ -1,0 +1,61 @@
+.navButton {
+  z-index: 20;
+  position: fixed;
+  right: 40px;
+  top: 40px;
+  width: 25px;
+  height: 14px;
+  padding: 0;
+  background: none;
+  border: none;
+  outline: none;
+
+  :global(.light) & span {
+    background-color: #444;
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+  }
+
+  &.active {
+    height: 14px;
+    transition: transform .3s cubic-bezier(0.68, -0.55, 0.265, 1.55); 
+  }
+
+  &.active:hover {
+    transform: scale(1.2);
+  }
+
+  & span {
+    content: '';
+    height: 4px;
+    width: 100%;
+    background: #FFFFFF;
+    position: absolute;
+    border-radius: 1px;
+    right: 0;
+    top: 0;
+    transition: width .2s, transform .3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  span:last-child {
+    top: calc(100% - 4px);
+    width: 70%;
+  }
+
+  &:hover span:last-child,
+  &:focus span:last-child {
+    width: 100%;
+  }
+
+  &.active span:first-child {
+    transform: translateY(5px) rotateZ(-45deg);
+  }
+
+  &.active span:last-child {
+    transform: translateY(-5px) rotateZ(45deg);
+    width: 100%;
+  }
+}

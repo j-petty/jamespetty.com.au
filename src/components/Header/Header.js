@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import Icon from '../../components/Icon/Icon';
 
-import styles from './Header.module.css';
+import styles from './Header.module.scss';
 
 // NOTE: needs to be a React.Component to support Observer
 class Header extends React.Component {

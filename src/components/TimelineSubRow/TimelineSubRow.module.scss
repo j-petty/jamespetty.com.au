@@ -1,0 +1,70 @@
+.timelineSubRow {
+  margin: 20px 15px;
+
+  .head {
+    margin: 0 0 5px 0;
+  }
+
+  h4 {
+    margin: 0;
+    font-weight: 400;
+  }
+
+  h5 {
+    margin: 0;
+    font-weight: 400;
+    color: #888888;
+  }
+
+  p {
+    font-weight: 200;
+    font-size: 16px;
+    margin: 5px 0;
+  }
+}
+
+.contentToggle {
+  margin: 10px 0;
+
+  &:after {
+    content: '';
+    border: solid #888888;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 5px;
+    transform: rotateZ(45deg) translate(-3px, -3px);
+    transition: all 0.3s ease-in-out;
+    margin-left: 10px;
+  }
+
+  &:hover:after {
+    transform: rotateZ(45deg) translate(-1px, -1px);
+  }
+
+  &:global(.toggled):after {
+    transform: rotateZ(225deg) translate(-2px, -2px);
+  }
+
+  &:global(.toggled):hover:after {
+    transform: rotateZ(225deg) translate(0, 0);
+  }
+}
+
+.responsibilitiesList {
+  list-style: unset;
+  padding-left: 20px;
+  margin-top: 10px;
+
+  li {
+    font-weight: 200;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+}
+
+/* Medium */
+@media (max-width: 992px) { 
+  .timelineSubRow p {
+    margin: 10px 0;
+  }
+}

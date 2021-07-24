@@ -6,7 +6,7 @@ import axios from 'axios';
 
 import Loader from '../Loader/Loader';
 
-import styles from './Form.module.css';
+import styles from './Form.module.scss';
 
 const Form = (props) => {
   const [formData, setFormData] = useState({});

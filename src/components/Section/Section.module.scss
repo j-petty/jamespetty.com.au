@@ -8,20 +8,20 @@ section {
   width: 75%;
   max-width: 980px;
   position: relative;
-}
 
-section h2 {
-  margin: 50px 0;
-  font-size: 50px;
-  font-weight: 700;
-  background: #FFFFFF;
-  color: #141414;
-  padding: 5px 20px;
-}
+  h2 {
+    margin: 50px 0;
+    font-size: 50px;
+    font-weight: 700;
+    background: #FFFFFF;
+    color: #141414;
+    padding: 5px 20px;
+  }
 
-:global(.light) section h2 {
-  background: #141414;
-  color: #FFFFFF;
+  :global(.light) h2 {
+    background: #141414;
+    color: #FFFFFF;
+  }
 }
 
 /* Tablets */

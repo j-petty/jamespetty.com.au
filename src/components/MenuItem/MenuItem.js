@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './MenuItem.module.css';
+import styles from './MenuItem.module.scss';
 
 const MenuItem = (props) => {
   const { label, link, toggleMenu } = props;

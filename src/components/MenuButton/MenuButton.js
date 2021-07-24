@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './MenuButton.module.css';
+import styles from './MenuButton.module.scss';
 
 const MenuButton = (props) => {
   const { isOpen, handleClick } = props;

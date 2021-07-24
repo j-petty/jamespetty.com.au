@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './Menu.module.css';
+import styles from './Menu.module.scss';
 
 import darkModeImg from '../../assets/images/icon-darkmode.svg';
 

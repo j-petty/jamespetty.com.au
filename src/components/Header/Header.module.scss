@@ -6,13 +6,13 @@ header {
   width: 75%;
   min-height: 100vh;
   margin: auto;
-}
-
-header h1 {
-  margin-top: 15vh;
-  margin-bottom: 0;
-  font-size: 120px;
-  font-weight: 100;
+  
+  h1 {
+    margin-top: 15vh;
+    margin-bottom: 0;
+    font-size: 120px;
+    font-weight: 100;
+  }
 }
 
 .skillLoop {
@@ -22,13 +22,13 @@ header h1 {
   overflow: hidden;
   height: 58px;
   white-space: nowrap;
-}
 
-.skillLoop li {
-  animation: vertLoop 8s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
-  animation-fill-mode: both;
-  padding: 10px;
-  color: #888888;
+  li {
+    animation: vertLoop 8s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+    animation-fill-mode: both;
+    padding: 10px;
+    color: #888888;
+  }
 }
 
 .skills {
@@ -93,35 +93,35 @@ header h1 {
   transition: color 0.3s ease-in-out;
   outline: none;
   font-weight: 200;
-}
 
-.nudge:hover,
-.nudge:active,
-.nudge:focus {
-  color: #FFFFFF;
-}
+  &:hover,
+  &:active,
+  &:focus {
+    color: #FFFFFF;
+  }
 
-:global(.light) .nudge:hover,
-:global(.light).nudge:active,
-:global(.light).nudge:focus {
-  color: #141414;
-}
+  :global(.light) &:hover,
+  :global(.light) &:active,
+  :global(.light) &:focus {
+    color: #141414;
+  }
 
-.nudge:after {
-  content: '';
-  position: absolute;
-  border: solid #888888;
-  border-width: 0 2px 2px 0;
-  display: inline-block;
-  padding: 8px;
-  transform: rotateZ(45deg) translate(0, 0);
-  top: 100%;
-  left: calc(50% - 12px);
-  transition: transform 0.3s ease-in-out;
-}
+  &:after {
+    content: '';
+    position: absolute;
+    border: solid #888888;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 8px;
+    transform: rotateZ(45deg) translate(0, 0);
+    top: 100%;
+    left: calc(50% - 12px);
+    transition: transform 0.3s ease-in-out;
+  }
 
-.nudge:hover:after {
-  transform: rotateZ(45deg) translate(5px, 5px);
+  &:hover:after {
+    transform: rotateZ(45deg) translate(5px, 5px);
+  }
 }
 
 /* Medium */

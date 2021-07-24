@@ -15,7 +15,7 @@ import MenuItem from '../MenuItem/MenuItem';
 import Home from '../../pages/Home/Home';
 import NotFound from '../../pages/NotFound/NotFound';
 
-import styles from './App.module.css';
+import styles from './App.module.scss';
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

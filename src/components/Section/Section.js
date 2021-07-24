@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Controller, Scene } from 'react-scrollmagic';
 import { Tween, Timeline } from 'react-gsap';
 
-import './Section.module.css';
+import './Section.module.scss';
 
 // NOTE: needs to be a React.Component to support Observer
 class Section extends React.Component {

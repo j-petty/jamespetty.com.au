@@ -10,18 +10,18 @@
   mix-blend-mode: difference;
   transition: all 150ms ease;
   transition-property: opacity, background-color, transform, mix-blend-mode;
-}
 
-.cursorHidden {
-  opacity: 0;
-}
+  &.hidden {
+    opacity: 0;
+  }
 
-.cursorLinkHovered {
-  transform: translate(-50%, -50%) scale(0.8);
-  background-color: #fefefe;
-}
+  &.linkHovered {
+    transform: translate(-50%, -50%) scale(0.8);
+    background-color: #fefefe;
+  }
 
-.cursorClicked {
-  transform: translate(-50%, -50%) scale(0.7);
-  background-color: #fefefe;
+  &.clicked {
+    transform: translate(-50%, -50%) scale(0.7);
+    background-color: #fefefe;
+  }
 }

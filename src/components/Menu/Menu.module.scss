@@ -51,14 +51,15 @@ nav {
   border: none;
   outline: none;
   transition: transform .3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
 
-:global(.light) .colorModeToggle {
-  filter: brightness(30%);
-}
 
-.colorModeToggle:hover {
-  transform: scale(1.2);
+  :global(.light) & {
+    filter: brightness(30%);
+  }
+
+  &:hover {
+    transform: scale(1.2);
+  }
 }
 
 @keyframes fadeIn {

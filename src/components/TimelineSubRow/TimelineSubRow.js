@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './TimelineSubRow.module.css';
+import styles from './TimelineSubRow.module.scss';
 
 
 const TimelineSubRow = (props) => {

@@ -1,0 +1,31 @@
+.menuItem {
+  width: 10px;
+  height: 10px;
+  display: flex;
+  padding: 10px;
+
+  a {
+    border-radius: 50%;
+    background: #888888;
+    width: 60%;
+    height: 60%;
+    text-decoration: none;
+    margin: auto;
+    transition: all .1s ease-in-out;
+  }
+  
+  &:global(.active) a {
+    background: #FFFFFF;
+    width: 100%;
+    height: 100%;
+  }
+  
+  :global(.light) &:global(.active) a {
+    background: #141414;
+  }
+  
+  &:not(:global(.active)) a:hover {
+    width: 100%;
+    height: 100%;
+  }
+}

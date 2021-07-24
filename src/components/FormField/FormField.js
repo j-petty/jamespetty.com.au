@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './FormField.module.css';
+import styles from './FormField.module.scss';
 
 const FormField = (props) => {
   const [value, setValue] = useState('');

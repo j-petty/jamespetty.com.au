@@ -2,7 +2,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { isMobile } from 'react-device-detect';
 
-import styles from './Cursor.module.css';
+import styles from './Cursor.module.scss';
 
 const Cursor = () => {
   const [position, setPosition] = useState({x: -50, y: -50});
@@ -85,15 +85,15 @@ const Cursor = () => {
   let classNames = styles.cursor;
 
   if (isHidden) {
-    classNames += ` ${styles.cursorHidden} `;
+    classNames += ` ${styles.hidden} `;
   }
 
   if (isClicked) {
-    classNames += ` ${styles.cursorClicked} `;
+    classNames += ` ${styles.clicked} `;
   }
 
   if (isLinkHovered) {
-    classNames += ` ${styles.cursorLinkHovered} `;
+    classNames += ` ${styles.linkHovered} `;
   }
 
   return (

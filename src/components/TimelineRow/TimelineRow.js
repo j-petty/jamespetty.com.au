@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './TimelineRow.module.css';
+import styles from './TimelineRow.module.scss';
 
 const TimelineRow = (props) => {
   const {

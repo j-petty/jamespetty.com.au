@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './ProjectRow.module.css';
+import styles from './ProjectRow.module.scss';
 
 const ProjectRow = (props) => {
   const { title, description, linkText, link, skills, image, imageAlt } = props;

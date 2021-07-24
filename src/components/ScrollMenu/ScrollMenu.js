@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './ScrollMenu.module.css';
+import styles from './ScrollMenu.module.scss';
 
 const ScrollMenu = (props) =>{
   return (

@@ -5,25 +5,25 @@
 	position: relative;
   margin: 10px 0;
   width: 100%;
-}
 
-.timelineRow:first-of-type {
-	margin-top: 30px;
+  &:first-of-type {
+    margin-top: 30px;
+  }
 }
 
 .timelineDate {
 	text-align: center;
 	color: #888888;
-}
 
-.timelineDate:after {
-	content: '';
-	position: absolute;
-	width: 1px;
-	left: 50%;
-	background: #888888;
-	bottom: 0;
-	top: 40px;
+  &:after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    left: 50%;
+    background: #888888;
+    bottom: 0;
+    top: 40px;
+  }
 }
 
 .timelineContainer {
@@ -34,10 +34,10 @@
 .timelineHead {
   text-align: right;
 	width: 40%;
-}
 
-.timelineHead img {
-  width: 200px;
+  img {
+    width: 200px;
+  }
 }
 
 .timelineTitle {
@@ -59,26 +59,26 @@
 .timelineText {
 	margin-left: auto;
 	width: 40%;
+
+  p {
+    font-weight: 200;
+    font-size: 18px;
+    margin: 0;
+  }
 }
 
 .skillList li {
   margin: 5px 0 3px 8px;
 }
 
-.timelineText p {
-	font-weight: 200;
-  font-size: 18px;
-  margin: 0;
-}
-
 /* Medium */
 @media (max-width: 992px) { 
   .timelineDate {
     font-size: 18px;
-  }
 
-  .timelineDate:after {
-    content: none;
+    &:after {
+      content: none;
+    }
   }
 
   .timelineContainer {
@@ -89,10 +89,10 @@
     text-align: center;
     width: auto;
     margin: 15px 0;
-  }
 
-  .timelineHead img {
-    width: 100px;
+    img {
+      width: 100px;
+    }
   }
 
 	.timelineText {

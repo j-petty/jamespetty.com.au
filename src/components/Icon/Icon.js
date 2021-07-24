@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './Icon.module.css';
+import styles from './Icon.module.scss';
 
 const Icon = (props) => {
   const { link, image, imageAlt } = props;

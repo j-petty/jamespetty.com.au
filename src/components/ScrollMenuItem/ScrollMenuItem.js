@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 
-import styles from './ScrollMenuItem.module.css';
+import styles from './ScrollMenuItem.module.scss';
 
 const ScrollMenuItem = (props) => {
   const { link, inView } = props;
