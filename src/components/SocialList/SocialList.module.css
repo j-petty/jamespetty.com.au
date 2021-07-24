@@ -1,3 +1,7 @@
 .socialList {
   margin-top: 20px;
 }
+
+.socialList li {
+  display: inline-block;
+}

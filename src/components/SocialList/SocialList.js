@@ -3,10 +3,14 @@ import PropTypes from 'prop-types';
 
 import styles from './SocialList.module.css';
 
-const SocialList = (props) => {
+const SocialList = ({ children }) => {
   return (
     <ul className={styles.socialList}>
-      {props.children}
+      {children.map((item, index) =>
+        <li key={index}>
+          {item}
+        </li>
+      )}
     </ul>
   );
 };

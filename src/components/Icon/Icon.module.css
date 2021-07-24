@@ -1,11 +1,7 @@
 .socialIcon {
-  margin: 15px 25px;
-  display: inline-block;
-}
-
-.socialIcon a {
   outline: none;
   display: block;
+  margin: 15px 25px;
   width: 25px;
   height: 25px;
   padding: 9px;
@@ -15,20 +11,20 @@
   transition: border .2s ease-in-out;
 }
 
-:global(.light) .socialIcon a {
+:global(.light) .socialIcon {
   background: #888888;
 }
 
-.socialIcon a:hover,
-.socialIcon a:focus,
-.socialIcon a:active {
+.socialIcon:hover,
+.socialIcon:focus,
+.socialIcon:active {
   background: #555555;
   border: 2px solid #FFFFFF;
 }
 
-:global(.light) .socialIcon a:hover,
-:global(.light) .socialIcon a:focus,
-:global(.light) .socialIcon a:active {
+:global(.light) .socialIcon:hover,
+:global(.light) .socialIcon:focus,
+:global(.light) .socialIcon:active {
   border: 2px solid #141414;
 }
 

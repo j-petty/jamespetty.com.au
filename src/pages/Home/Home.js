@@ -13,7 +13,7 @@ import TimelineSubRow from '../../components/TimelineSubRow/TimelineSubRow';
 import Form from '../../components/Form/Form';
 import FormField from '../../components/FormField/FormField';
 import SocialList from '../../components/SocialList/SocialList';
-import SocialIcon from '../../components/SocialIcon/SocialIcon';
+import Icon from '../../components/Icon/Icon';
 import Footer from '../../components/Footer/Footer';
 
 import project01Img from '../../assets/images/project01.jpg';
@@ -31,9 +31,14 @@ import spinifyB from '../../assets/images/spinify-b.png';
 import madeForMeW from '../../assets/images/made-for-me-w.png';
 import madeForMeB from '../../assets/images/made-for-me-b.png';
 
-import linkedInImg from '../../assets/images/social-linkedin.svg';
-import stackOverflowImg from '../../assets/images/social-stackoverflow.svg';
-import githubImg from '../../assets/images/social-github.svg';
+import linkedInImg from '../../assets/icons/social-linkedin.svg';
+import stackOverflowImg from '../../assets/icons/social-stackoverflow.svg';
+import githubImg from '../../assets/icons/social-github.svg';
+
+import reactImg from '../../assets/icons/react.svg';
+import dotNetImg from '../../assets/icons/dot-net.svg';
+import cloudImg from '../../assets/icons/cloud.svg';
+import devOpsImg from '../../assets/icons/devops.svg';
 
 const Home = (props) => {
   const homeRef = useRef(null);
@@ -68,7 +73,30 @@ const Home = (props) => {
               'project lead',
               'technical consultant',
               'entrepreneur',
-              'full stack developer']} />
+              'full stack developer'
+            ]}
+            stackArray={[
+              {
+                icon: reactImg,
+                text: 'React.JS',
+                link: '//reactjs.org/'
+              },
+              {
+                icon: dotNetImg,
+                text: '.Net',
+                link: '//dotnet.microsoft.com/learn/aspnet/what-is-aspnet-core'
+              },
+              {
+                icon: cloudImg,
+                text: 'Cloud First',
+                link: '//azure.microsoft.com/en-au/'
+              },
+              {
+                icon: devOpsImg,
+                text: 'CI/CD',
+                link: '//azure.microsoft.com/en-au/services/devops/'
+              }
+            ]}/>
         </Scene>
 
         {/* PROJECTS */}
@@ -390,17 +418,17 @@ const Home = (props) => {
 
                       <div>
                         <SocialList>
-                          <SocialIcon
+                          <Icon
                             link='//www.linkedin.com/in/j-petty'
                             image={linkedInImg}
                             imageAlt='LinkedIn' />
 
-                          <SocialIcon
+                          <Icon
                             link='//stackoverflow.com/users/5434910/j-petty'
                             image={stackOverflowImg}
                             imageAlt='Stack Overflow' />
 
-                          <SocialIcon
+                          <Icon
                             link='//github.com/j-petty'
                             image={githubImg}
                             imageAlt='GitHub' />
