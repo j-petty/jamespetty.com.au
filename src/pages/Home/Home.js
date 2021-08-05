@@ -291,7 +291,7 @@ const Home = (props) => {
                               'Supported discovery scope definition by producing process maps and user stories.',
                               'Conducted extensive user testing of a Chatbot and Support Portal which were developed by an external vendor.',
                               'Designed and developed an online "Utterance Capturing Platform" which allowed users to train the chatbot to be more effective at responding to common questions.',
-                              'Designed a "User Experience Space" which showcased the end product to engage end users, ultimately leading to a successful release and high levels of adoption.'
+                              'Designed a "User Experience Space" which showcased the product to engage end users, ultimately leading to a successful release and high levels of adoption.'
                             ]} />
 
                           <TimelineSubRow
@@ -320,7 +320,7 @@ const Home = (props) => {
                               Spinify is a gamification startup which focuses on helping businesses better engage their staff.<br /><br />
                               At Spinify I was a critical member of a small, international agile development team.
                               We worked at the forefront of industry best practices to deliver valuable releases timely and efficiently.<br /><br />
-                              The experience of coordinating software development activities across timezones gave me an appreciation of the possibilities of agile project management, when done properly.
+                              The experience of coordinating software development activities across time zones gave me an appreciation of the possibilities of agile project management, when done properly.
                             </>
                           } />
                       </div>
