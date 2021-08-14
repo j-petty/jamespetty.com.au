@@ -128,11 +128,11 @@ const Home = (props) => {
                       ease='Back.easeInOut'>
                       <div className='animate'>
                         <ProjectRow
-                          title='Freelance Web Design'
+                          title='whtspc'
                           skills={['Web Design', 'eCommerce', 'CMS']}
-                          description="Initially freelance web design, now growing into a small digital creative agency. Visit the site to check out our latest work."
+                          description="A small development agency which I co-founded. We specalise in boutique software applications. Visit the site to check out our latest work."
                           image={project01Img}
-                          imageAlt='Whtspc'
+                          imageAlt='whtspc'
                           linkText='whtspc.com.au'
                           link='//whtspc.com.au/' />
                       </div>
@@ -143,7 +143,9 @@ const Home = (props) => {
                           skills={['iOS', 'Android', 'Xamarin']}
                           description="Born out of frustration from using the clunky website to check my public transport card balance. I built a simple app that lets people check their MyWay card balance right from their phones."
                           image={project02Img}
-                          imageAlt='MyWay Balance' />
+                          imageAlt='MyWay Balance'
+                          linkText='Join Beta'
+                          link='//testflight.apple.com/join/bubQRw24' />
                       </div>
 
                       <div className='animate'>
