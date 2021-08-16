@@ -21,6 +21,7 @@ import project02Img from '../../assets/images/project02.jpg';
 import project06Img from '../../assets/images/project06.jpg';
 import project05Img from '../../assets/images/project05.jpg';
 import project04Img from '../../assets/images/project04.jpg';
+import project07Img from '../../assets/images/project07.jpg';
 
 import agdW from '../../assets/images/agd-w.png';
 import agdB from '../../assets/images/agd-b.png';
@@ -146,6 +147,17 @@ const Home = (props) => {
                           imageAlt='MyWay Balance'
                           linkText='Join Beta'
                           link='//testflight.apple.com/join/bubQRw24' />
+                      </div>
+
+                      <div className='animate'>
+                        <ProjectRow
+                          title='Shuffle: Bites'
+                          skills={['iOS', 'Android', 'Xamarin']}
+                          description="A simple app which randomly chooses a nearby venue. A fun way of deciding what to eat when you just can't pick."
+                          image={project07Img}
+                          imageAlt='Shuffle: Bites'
+                          linkText='Open on App Store'
+                          link='//apps.apple.com/au/app/shuffle-bites/id1581269954' />
                       </div>
 
                       <div className='animate'>
