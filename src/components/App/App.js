@@ -6,7 +6,7 @@ import {
   Route
 } from 'react-router-dom';
 
-import Cursor from '../Cursor/Cursor';
+//import Cursor from '../Cursor/Cursor';
 import MenuButton from '../MenuButton/MenuButton';
 import Menu from '../Menu/Menu';
 import MenuItem from '../MenuItem/MenuItem';
@@ -110,7 +110,8 @@ const App = () => {
         </Switch>
 
         {/* Cursor should be last element added to page */}
-        <Cursor />
+        {/* Disabling cursor effects due to performance on large screens */}
+        {/*<Cursor />*/}
       </div>
     </Router>
   );
