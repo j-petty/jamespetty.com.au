@@ -1,4 +1,3 @@
-/*global localStorage */
 import React, { useState, useEffect } from 'react';
 import ReactGA from 'react-ga';
 import {
@@ -23,6 +22,7 @@ const App = () => {
 
   // componentDidMount
   useEffect(() => {
+    // eslint-disable-next-line no-console
     console.log('Welcome to my portfolio!\n\nPlease take a look around.\n\nUse the contact form to get in touch.');
 
     // startup Google Analytics
@@ -49,10 +49,6 @@ const App = () => {
 
     // update state
     setColorMode(newColorMode);
-
-    if (process.env.NODE_ENV !== 'production') {
-      console.log('ColorMode changed', newColorMode);
-    }
   };
 
   const initializeAnalytics = () => {

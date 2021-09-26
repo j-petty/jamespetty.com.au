@@ -1,4 +1,3 @@
-/* global document, window */
 import React, { useEffect, useState, useCallback } from 'react';
 import { isMobile } from 'react-device-detect';
 

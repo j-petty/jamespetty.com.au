@@ -1,5 +1,3 @@
-/*global localStorage */
-
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
@@ -49,6 +47,7 @@ const Form = (props) => {
     let requestUrl = `https://${process.env.REACT_APP_DOMAIN}/${action}`;
 
     if (process.env.NODE_ENV !== 'production') {
+      // eslint-disable-next-line no-console
       console.log('SENT', requestUrl, formData);
     }
 
@@ -68,6 +67,7 @@ const Form = (props) => {
       });
 
       if (process.env.NODE_ENV !== 'production') {
+        // eslint-disable-next-line no-console
         console.log('RESPONSE', requestUrl, response);
       }
 
@@ -77,6 +77,7 @@ const Form = (props) => {
       }
     }
     catch (error) {
+      // eslint-disable-next-line no-console
       console.error(error);
       _errorMessage = 'Something went wrong. Please try again.';
     }

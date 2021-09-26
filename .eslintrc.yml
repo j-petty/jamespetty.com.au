@@ -1,47 +1,5 @@
+root: true
 env:
-  es6: true
-  node: true
-  mocha: true
+  browser: true
 extends:
-  - 'eslint:recommended'
-  - 'plugin:react/recommended'
-parser: 'babel-eslint'
-parserOptions:
-  sourceType: module
-  ecmaVersion: 2018
-  ecmaFeatures:
-    jsx: true
-rules:
-  indent: # two spaces for indents
-    - error
-    - 2
-    - "SwitchCase": 1
-  quotes: # use single quotes
-    - error
-    - single
-  semi: # force semicolons
-    - error
-    - always
-  no-console: # console is enabled
-    - off
-  no-trailing-spaces: # trailing spaces not allowed
-    - error
-  keyword-spacing: # space after keywords
-    - error
-  space-before-function-paren: # space before function brackets
-    - error
-  space-before-blocks: # space after function brackets
-    - error
-    - always
-  space-in-parens: # no spaces in brackets
-    - error
-    - never
-  no-multiple-empty-lines: [error, {max: 2, maxEOF: 0, maxBOF: 0}]  # no multiple empty lines
-  no-unused-vars: # warns for unused vars
-    - warn
-  curly:  # forces use of brackets
-    - error
-  no-redeclare: # no spaces in brackets
-    - off
-plugins:
-  - react
+  - 'eslint-config-petty'
