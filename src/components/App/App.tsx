@@ -16,9 +16,9 @@ import NotFound from '../../pages/NotFound/NotFound';
 
 import styles from './App.module.scss';
 
-const App = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [colorMode, setColorMode] = useState('dark');
+const App: React.FC = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const [colorMode, setColorMode] = useState<string>('dark');
 
   // componentDidMount
   useEffect(() => {
@@ -29,7 +29,7 @@ const App = () => {
     initializeAnalytics();
 
     // retrieve previous color mode from local storage
-    let initColorMode = localStorage.getItem(process.env.REACT_APP_COLOR_MODE_KEY);
+    const initColorMode = localStorage.getItem(process.env.REACT_APP_COLOR_MODE_KEY || '');
 
     // set initial color mode
     if (initColorMode) {
@@ -42,10 +42,10 @@ const App = () => {
   };
 
   const toggleColorMode = () => {
-    let newColorMode = colorMode === 'dark' ? 'light' : 'dark';
+    const newColorMode = colorMode === 'dark' ? 'light' : 'dark';
 
     // update color mode in local storage
-    localStorage.setItem(process.env.REACT_APP_COLOR_MODE_KEY, newColorMode);
+    localStorage.setItem(process.env.REACT_APP_COLOR_MODE_KEY || '', newColorMode);
 
     // update state
     setColorMode(newColorMode);

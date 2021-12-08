@@ -70,7 +70,7 @@ const ScrollMenuItem = (props) => {
         style={{
           transform: `translate(${offset.x}px, ${offset.y}px)`
         }}
-        href={`/#${link}`} aria-label='Page Scroll'><span></span></a>
+        href={`/#${link}`} aria-label='Page Scroll'><span /></a>
     </li>
   );
 };

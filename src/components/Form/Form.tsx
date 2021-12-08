@@ -1,32 +1,35 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import axios from 'axios';
 
 import Loader from '../Loader/Loader';
 
 import styles from './Form.module.scss';
 
-const Form = (props) => {
+interface IFormProps {
+  action: string;
+}
+
+const Form: React.FC<IFormProps> = ({ action, children }) => {
   const [formData, setFormData] = useState({});
-  const [hasSubmitted, setHasSubmitted] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [errorMessage, setErrorMessage] = useState(null);
+  const [hasSubmitted, setHasSubmitted] = useState<boolean>(false);
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   // componentDidMount
   useEffect(() => {
     // Disable submit if already done
-    if (localStorage.getItem(process.env.REACT_APP_MAIL_KEY)) {
+    if (localStorage.getItem(process.env.REACT_APP_MAIL_KEY || '')) {
       setHasSubmitted(true);
     }
   }, []);
 
-  const handleFieldChanged = (e, fieldName) => {
+  const handleFieldChanged = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, fieldName: string) => {
     if (!e || !e.target || !fieldName) {
       return;
     }
     e.persist();
 
-    let data = formData || {};
+    const data: any = formData || {};
 
     // URI encode value
     data[fieldName] = encodeURIComponent(e.target.value);
@@ -35,16 +38,14 @@ const Form = (props) => {
     setFormData(data);
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
-    const { action } = props;
 
     if (isSubmitting) {
       return;
     }
 
-    let requestUrl = `https://${process.env.REACT_APP_DOMAIN}/${action}`;
+    const requestUrl = `https://${process.env.REACT_APP_DOMAIN}/${action}`;
 
     if (process.env.NODE_ENV !== 'production') {
       // eslint-disable-next-line no-console
@@ -59,7 +60,7 @@ const Form = (props) => {
     let _errorMessage = errorMessage;
 
     try {
-      let response = await axios({
+      const response = await axios({
         method: 'post',
         url: requestUrl,
         headers: { 'content-type': 'application/json' },
@@ -73,7 +74,7 @@ const Form = (props) => {
 
       if (response.status === 200 && response.data.success) {
         _hasSubmitted = true;
-        localStorage.setItem(process.env.REACT_APP_MAIL_KEY, new Date().toISOString());
+        localStorage.setItem(process.env.REACT_APP_MAIL_KEY || '', new Date().toISOString());
       }
     }
     catch (error) {
@@ -110,19 +111,11 @@ const Form = (props) => {
         <p>{errorMessage}</p>
       }
 
-      {React.Children.map(props.children, child =>
-        React.cloneElement(child, { handleChange: handleFieldChanged })
+      {React.Children.map(children, child =>
+        React.cloneElement(child as React.ReactElement, { handleChange: handleFieldChanged })
       )}
     </form>
   );
-};
-
-Form.propTypes = {
-  children: PropTypes.oneOfType([
-    PropTypes.array,
-    PropTypes.object
-  ]),
-  action: PropTypes.string
 };
 
 export default Form;

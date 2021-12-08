@@ -1,24 +1,40 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 
 import styles from './FormField.module.scss';
 
-const FormField = (props) => {
+interface IFormFieldProps {
+  name: string;
+  label?: string;
+  type: string;
+  isRequired?: boolean;
+  maxLength?: number;
+  pattern?: RegExp;
+  // eslint-disable-next-line no-unused-vars
+  handleChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>, fieldName: string) => void;
+}
+
+const FormField: React.FC<IFormFieldProps> = ({
+  name,
+  label,
+  type,
+  isRequired,
+  maxLength,
+  handleChange,
+  pattern
+}) => {
   const [value, setValue] = useState('');
 
-  const handleChange = (e) => {
-    const { handleChange, name, pattern } = props;
-
+  const onChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     // validate if field matches pattern
     if (e.target.value === '' || !pattern || !pattern.test(e.target.value)) {
       setValue(e.target.value);
 
       // send change to Form
-      handleChange(e, name);
+      if (handleChange) {
+        handleChange(e, name);
+      }
     }
   };
-
-  const { name, label, type, isRequired, maxLength } = props;
 
   switch (type) {
     case 'submit':
@@ -37,11 +53,10 @@ const FormField = (props) => {
           <textarea
             id={name}
             name={name}
-            type={type}
             required={isRequired}
             rows={4}
             maxLength={maxLength}
-            onChange={handleChange}
+            onChange={onChange}
             value={value} />
         </div>
       );
@@ -58,21 +73,11 @@ const FormField = (props) => {
             type={type}
             required={isRequired}
             maxLength={maxLength}
-            onChange={handleChange}
+            onChange={onChange}
             value={value} />
         </div>
       );
   }
-};
-
-FormField.propTypes = {
-  type: PropTypes.string.isRequired,
-  name: PropTypes.string,
-  label: PropTypes.string,
-  isRequired: PropTypes.bool,
-  maxLength: PropTypes.number,
-  pattern: PropTypes.instanceOf(RegExp),
-  handleChange: PropTypes.func
 };
 
 export default FormField;

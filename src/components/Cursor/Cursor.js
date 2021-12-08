@@ -101,7 +101,7 @@ const Cursor = () => {
       style={{
         left: `${position.x}px`,
         top: `${position.y}px`
-      }}/>
+      }} />
   );
 };
 

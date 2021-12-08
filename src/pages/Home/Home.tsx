@@ -1,7 +1,6 @@
-import React, { useRef } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState, useCallback } from 'react';
 import { Controller, Scene } from 'react-scrollmagic';
-import { Tween, Timeline } from 'react-gsap';
+import { Tween, Timeline, PlayState } from 'react-gsap';
 
 import ScrollMenu from '../../components/ScrollMenu/ScrollMenu';
 import ScrollMenuItem from '../../components/ScrollMenuItem/ScrollMenuItem';
@@ -16,58 +15,89 @@ import SocialList from '../../components/SocialList/SocialList';
 import Icon from '../../components/Icon/Icon';
 import Footer from '../../components/Footer/Footer';
 
-import project01Img from '../../assets/images/project01.jpg';
-import project02Img from '../../assets/images/project02.jpg';
-import project06Img from '../../assets/images/project06.jpg';
-import project05Img from '../../assets/images/project05.jpg';
-import project04Img from '../../assets/images/project04.jpg';
-import project07Img from '../../assets/images/project07.jpg';
+import {
+  project01Img,
+  project02Img,
+  project06Img,
+  project05Img,
+  project04Img,
+  project07Img,
 
-import agdW from '../../assets/images/agd-w.png';
-import agdB from '../../assets/images/agd-b.png';
-import deloitteDigitalW from '../../assets/images/deloitte-digital-w.png';
-import deloitteDigitalB from '../../assets/images/deloitte-digital-b.png';
-import spinifyW from '../../assets/images/spinify-w.png';
-import spinifyB from '../../assets/images/spinify-b.png';
-import madeForMeW from '../../assets/images/made-for-me-w.png';
-import madeForMeB from '../../assets/images/made-for-me-b.png';
+  agdW,
+  agdB,
+  deloitteDigitalW,
+  deloitteDigitalB,
+  spinifyW,
+  spinifyB,
+  madeForMeW,
+  madeForMeB
+} from 'assets/images';
 
-import linkedInImg from '../../assets/icons/social-linkedin.svg';
-import stackOverflowImg from '../../assets/icons/social-stackoverflow.svg';
-import githubImg from '../../assets/icons/social-github.svg';
+import {
+  linkedInImg,
+  stackOverflowImg,
+  githubImg,
 
-import reactImg from '../../assets/icons/react.svg';
-import dotNetImg from '../../assets/icons/dot-net.svg';
-import cloudImg from '../../assets/icons/cloud.svg';
-import devOpsImg from '../../assets/icons/devops.svg';
+  reactImg,
+  dotNetImg,
+  cloudImg,
+  devOpsImg
+} from 'assets/icons';
 
-const Home = (props) => {
-  const homeRef = useRef(null);
-  const projectsRef = useRef(null);
-  const workRef = useRef(null);
-  const contactRef = useRef(null);
+import './Home.module.scss';
 
-  const { colorMode } = props;
+interface IHomeProps {
+  colorMode: string;
+}
+
+const Home: React.FC<IHomeProps> = ({ colorMode }) => {
+  const [homeHeight, setHomeHeight] = useState<number>();
+  const [projectsHeight, setProjectsHeight] = useState<number>();
+  const [workHeight, setWorkHeight] = useState<number>();
+  const [contactHeight, setContactHeight] = useState<number>();
+
+  const homeRef = useCallback(node => {
+    if (node !== null) {
+      setHomeHeight(node.getBoundingClientRect().height);
+    }
+  }, []);
+
+  const projectsRef = useCallback(node => {
+    if (node !== null) {
+      setProjectsHeight(node.getBoundingClientRect().height);
+    }
+  }, []);
+
+  const workRef = useCallback(node => {
+    if (node !== null) {
+      setWorkHeight(node.getBoundingClientRect().height);
+    }
+  }, []);
+
+  const contactRef = useCallback(node => {
+    if (node !== null) {
+      setContactHeight(node.getBoundingClientRect().height);
+    }
+  }, []);
 
   return (
     <main>
       <Controller>
         <ScrollMenu>
           <ScrollMenuItem link='home' />
-          <ScrollMenuItem link='projects'  />
-          <ScrollMenuItem link='work'  />
+          <ScrollMenuItem link='projects' />
+          <ScrollMenuItem link='work' />
           <ScrollMenuItem link='contact' />
         </ScrollMenu>
 
         {/* HOME */}
         <Scene
+          indicators
           classToggle={['#scroll-home', 'active']}
           triggerElement='#home'
-          duration={() =>
-            homeRef.current.clientHeight
-          }>
+          duration={homeHeight}>
           <Header
-            forwardedRef={homeRef}
+            ref={homeRef}
             skillsArray={[
               'full stack developer',
               'web designer',
@@ -97,30 +127,29 @@ const Home = (props) => {
                 text: 'CI/CD',
                 link: '//azure.microsoft.com/en-au/services/devops/'
               }
-            ]}/>
+            ]} />
         </Scene>
 
         {/* PROJECTS */}
         <Scene
+          indicators
           classToggle={['#scroll-projects', 'active']}
           triggerElement='#projects'
-          duration={() =>
-            projectsRef.current.clientHeight
-          }>
+          duration={projectsHeight}>
           <Section
             id='projects'
             title='projects'
-            forwardedRef={projectsRef}>
+            ref={projectsRef}>
             <Controller>
               <Scene triggerElement='#projects'>
-                {(progress, event) => (
+                {(progress: any, event: any) => (
                   <Timeline
                     duration={1}
                     paused
                     playState={
-                      event.type === 'enter' && event.scrollDirection === 'FORWARD' ? 'play' :
-                        event.type === 'leave' && event.scrollDirection === 'REVERSE' ? 'reverse' :
-                          null
+                      event.type === 'enter' && event.scrollDirection === 'FORWARD' ? PlayState.play :
+                        event.type === 'leave' && event.scrollDirection === 'REVERSE' ? PlayState.reverse :
+                          undefined
                     }>
                     <Tween
                       from={{ opacity: 0, y: 15 }}
@@ -207,25 +236,24 @@ const Home = (props) => {
 
         {/* WORK */}
         <Scene
+          indicators
           classToggle={['#scroll-work', 'active']}
           triggerElement='#work'
-          duration={() =>
-            workRef.current.clientHeight
-          }>
+          duration={workHeight}>
           <Section
             id='work'
             title='work'
-            forwardedRef={workRef}>
+            ref={workRef}>
             <Controller>
               <Scene triggerElement='#work'>
-                {(progress, event) => (
+                {(progress: any, event: any) => (
                   <Timeline
                     duration={2}
                     paused
                     playState={
-                      event.type === 'enter' && event.scrollDirection === 'FORWARD' ? 'play' :
-                        event.type === 'leave' && event.scrollDirection === 'REVERSE' ? 'reverse' :
-                          null
+                      event.type === 'enter' && event.scrollDirection === 'FORWARD' ? PlayState.play :
+                        event.type === 'leave' && event.scrollDirection === 'REVERSE' ? PlayState.reverse :
+                          undefined
                     }>
                     <Tween
                       from={{ opacity: 0, y: 15 }}
@@ -373,26 +401,25 @@ const Home = (props) => {
 
         {/* CONTACT */}
         <Scene
+          indicators
           classToggle={['#scroll-contact', 'active']}
           triggerElement='#contact'
-          duration={() =>
-            contactRef.current.clientHeight
-          }>
+          duration={contactHeight}>
           <Section
             id='contact'
             title='contact'
-            forwardedRef={contactRef}>
+            ref={contactRef}>
             <Controller>
               <Scene
                 triggerElement='#contact'>
-                {(progress, event) => (
+                {(progress: any, event: any) => (
                   <Timeline
                     duration={1}
                     paused
                     playState={
-                      event.type === 'enter' && event.scrollDirection === 'FORWARD' ? 'play' :
-                        event.type === 'leave' && event.scrollDirection === 'REVERSE' ? 'reverse' :
-                          null
+                      event.type === 'enter' && event.scrollDirection === 'FORWARD' ? PlayState.play :
+                        event.type === 'leave' && event.scrollDirection === 'REVERSE' ? PlayState.reverse :
+                          undefined
                     }>
                     <Tween
                       from={{ opacity: 0, y: 15 }}
@@ -407,14 +434,14 @@ const Home = (props) => {
                             type='text'
                             pattern={/[^a-zA-Z" "'-]/}
                             maxLength={30}
-                            isRequired={true} />
+                            isRequired />
 
                           <FormField
                             name='email'
                             label='email'
                             type='email'
                             maxLength={255}
-                            isRequired={true} />
+                            isRequired />
 
                           <FormField
                             name='message'
@@ -422,7 +449,7 @@ const Home = (props) => {
                             type='textarea'
                             pattern={/[^a-zA-Z0-9.,?'!\s()-]/}
                             maxLength={255}
-                            isRequired={true} />
+                            isRequired />
 
                           <FormField
                             name='submit'
@@ -457,15 +484,15 @@ const Home = (props) => {
         </Scene>
 
         {/* FOOTER */}
-        <Scene triggerElement='#contact'>
-          {(progress, event) => (
+        <Scene indicators triggerElement='#contact'>
+          {(progress: any, event: any) => (
             <Timeline
               duration={1}
               paused
               playState={
-                event.type === 'enter' && event.scrollDirection === 'FORWARD' ? 'play' :
-                  event.type === 'leave' && event.scrollDirection === 'REVERSE' ? 'reverse' :
-                    null
+                event.type === 'enter' && event.scrollDirection === 'FORWARD' ? PlayState.play :
+                  event.type === 'leave' && event.scrollDirection === 'REVERSE' ? PlayState.reverse :
+                    undefined
               }>
               <Tween
                 from={{ opacity: 0 }}
@@ -483,10 +510,6 @@ const Home = (props) => {
       </Controller>
     </main>
   );
-};
-
-Home.propTypes = {
-  colorMode: PropTypes.string
 };
 
 export default Home;

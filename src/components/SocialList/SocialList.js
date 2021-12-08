@@ -6,11 +6,11 @@ import styles from './SocialList.module.scss';
 const SocialList = ({ children }) => {
   return (
     <ul className={styles.socialList}>
-      {children.map((item, index) =>
+      {children.map((item, index) => (
         <li key={index}>
           {item}
         </li>
-      )}
+      ))}
     </ul>
   );
 };
