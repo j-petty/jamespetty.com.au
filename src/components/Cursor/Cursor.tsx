@@ -3,7 +3,7 @@ import { isMobile } from 'react-device-detect';
 
 import styles from './Cursor.module.scss';
 
-const Cursor = () => {
+const Cursor: React.FC = () => {
   const [position, setPosition] = useState({x: -50, y: -50});
   const [isHidden, setIsHidden] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
@@ -51,9 +51,9 @@ const Cursor = () => {
       el.removeEventListener('mouseover', onMouseOver);
       el.removeEventListener('mouseout', onMouseOut);
     });
-  });
+  }, []);
 
-  const onMouseMove = (e) => {
+  const onMouseMove = (e: MouseEvent) => {
     setPosition({x: e.clientX, y: e.clientY});
   };
 

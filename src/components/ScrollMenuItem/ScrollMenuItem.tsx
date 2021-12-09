@@ -1,21 +1,23 @@
-import React, { useEffect, useState, useRef } from 'react';
-import PropTypes from 'prop-types';
+import React, { useEffect, useState, createRef } from 'react';
 
 import styles from './ScrollMenuItem.module.scss';
 
-const ScrollMenuItem = (props) => {
-  const { link, inView } = props;
+interface IScrollMenuItemProps {
+  link: string;
+  inView: boolean;
+}
 
+const ScrollMenuItem: React.FC<IScrollMenuItemProps> = ({ link, inView }) => {
   const [containerPosition, setContainerPosition] = useState({x: 0, y: 0, w: 0, h: 0});
   const [initPosition, setInitPosition] = useState({x: 0, y: 0, w: 0, h: 0});
   const [offset, setOffset] = useState({x: 0, y: 0});
   const [isMouseOver, setIsMouseOver] = useState(false);
 
   // Use refs to get initial position
-  const container = useRef();
-  const element = useRef();
+  const container = createRef<HTMLLIElement>();
+  const element = createRef<HTMLAnchorElement>();
 
-  const onMouseMove = (e) => {
+  const onMouseMove = (e: React.MouseEvent) => {
     if (!container || !element || !isMouseOver) {
       return;
     }
@@ -49,6 +51,10 @@ const ScrollMenuItem = (props) => {
   };
 
   useEffect(() => {
+    if (!container.current || !element.current) {
+      return;
+    }
+
     const containerRect = container.current.getBoundingClientRect();
     const rect = element.current.getBoundingClientRect();
 
@@ -73,12 +79,6 @@ const ScrollMenuItem = (props) => {
         href={`/#${link}`} aria-label='Page Scroll'><span /></a>
     </li>
   );
-};
-
-ScrollMenuItem.propTypes = {
-  label: PropTypes.string,
-  link: PropTypes.string,
-  inView: PropTypes.bool
 };
 
 export default ScrollMenuItem;

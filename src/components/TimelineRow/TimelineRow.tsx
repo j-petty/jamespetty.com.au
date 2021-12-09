@@ -1,22 +1,32 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { ReactElement } from 'react';
 
 import styles from './TimelineRow.module.scss';
 
-const TimelineRow = (props) => {
-  const {
-    id,
-    date,
-    title,
-    duration,
-    description,
-    skills,
-    image,
-    imageAlt,
-    imageLink,
-    children
-  } = props;
 
+interface ITimelineRowProps {
+  id?: string;
+  date: string;
+  title?: string;
+  duration?: string;
+  description?: string | ReactElement;
+  skills?: Array<string>;
+  image?: string;
+  imageAlt?: string;
+  imageLink?: string;
+}
+
+const TimelineRow: React.FC<ITimelineRowProps> = ({
+  id,
+  date,
+  title,
+  duration,
+  description,
+  skills,
+  image,
+  imageAlt,
+  imageLink,
+  children
+}) => {
   return (
     <div className={styles.timelineRow}>
       <span className={styles.timelineDate}>{date}</span>
@@ -60,22 +70,6 @@ const TimelineRow = (props) => {
       </div>
     </div>
   );
-};
-
-TimelineRow.propTypes = {
-  id: PropTypes.string,
-  date: PropTypes.string,
-  title: PropTypes.string,
-  duration: PropTypes.string,
-  description: PropTypes.object,
-  skills: PropTypes.array,
-  image: PropTypes.string,
-  imageAlt: PropTypes.string,
-  imageLink: PropTypes.string,
-  children: PropTypes.oneOfType([
-    PropTypes.object,
-    PropTypes.array
-  ])
 };
 
 export default TimelineRow;

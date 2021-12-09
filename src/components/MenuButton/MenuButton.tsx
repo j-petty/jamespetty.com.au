@@ -1,11 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import styles from './MenuButton.module.scss';
 
-const MenuButton = (props) => {
-  const { isOpen, handleClick } = props;
+interface IMenuButtonProps {
+  isOpen: boolean;
+  handleClick: () => void;
+}
 
+const MenuButton: React.FC<IMenuButtonProps> = ({ isOpen, handleClick }) => {
   return (
     <button
       className={isOpen ? `${styles.navButton} ${styles.active}` : `${styles.navButton}`}
@@ -15,11 +17,6 @@ const MenuButton = (props) => {
       <span />
     </button>
   );
-};
-
-MenuButton.propTypes = {
-  isOpen: PropTypes.bool.isRequired,
-  handleClick: PropTypes.func.isRequired
 };
 
 export default MenuButton;

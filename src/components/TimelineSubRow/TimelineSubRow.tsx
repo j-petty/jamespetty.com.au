@@ -1,10 +1,18 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { ReactElement, useState } from 'react';
 
 import styles from './TimelineSubRow.module.scss';
 
 
-const TimelineSubRow = (props) => {
+interface ITimelineSubRowProps {
+  id: string;
+  title: string;
+  subTitle?: string;
+  description: string | ReactElement;
+  skills: Array<string>;
+  responsibilities?: Array<string>;
+}
+
+const TimelineSubRow: React.FC<ITimelineSubRowProps> = ({ id, title, subTitle, description, skills, responsibilities }) => {
   const [isToggled, setIsToggled] = useState(false);
 
   const handleToggle = () => {
@@ -12,10 +20,8 @@ const TimelineSubRow = (props) => {
     setIsToggled(!isToggled);
 
     // remove focus from button
-    document.activeElement.blur();
+    //document.activeElement?.blur();
   };
-
-  const { id, title, subTitle, description, skills, responsibilities } = props;
 
   return (
     <div className={styles.timelineSubRow}>
@@ -60,15 +66,6 @@ const TimelineSubRow = (props) => {
       }
     </div>
   );
-};
-
-TimelineSubRow.propTypes = {
-  id: PropTypes.string,
-  title: PropTypes.string,
-  subTitle: PropTypes.string,
-  description: PropTypes.object,
-  skills: PropTypes.array,
-  responsibilities: PropTypes.array
 };
 
 export default TimelineSubRow;

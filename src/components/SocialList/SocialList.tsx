@@ -1,22 +1,17 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { ReactElement } from 'react';
 
 import styles from './SocialList.module.scss';
 
-const SocialList = ({ children }) => {
+const SocialList: React.FC = ({ children }) => {
   return (
     <ul className={styles.socialList}>
-      {children.map((item, index) => (
+      {(children as Array<ReactElement>)?.map((item, index) => (
         <li key={index}>
           {item}
         </li>
       ))}
     </ul>
   );
-};
-
-SocialList.propTypes = {
-  children: PropTypes.array.isRequired
 };
 
 export default SocialList;

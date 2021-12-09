@@ -11,7 +11,7 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 // register GSAP plugin
 gsap.registerPlugin(ScrollTrigger);
 
-//import Cursor from '../Cursor/Cursor';
+import Cursor from '../Cursor/Cursor';
 import MenuButton from '../MenuButton/MenuButton';
 import Menu from '../Menu/Menu';
 import MenuItem from '../MenuItem/MenuItem';
@@ -116,7 +116,7 @@ const App: React.FC = () => {
 
         {/* Cursor should be last element added to page */}
         {/* Disabling cursor effects due to performance on large screens */}
-        {/*<Cursor />*/}
+        <Cursor />
       </div>
     </Router>
   );

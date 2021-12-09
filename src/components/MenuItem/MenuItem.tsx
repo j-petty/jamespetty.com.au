@@ -1,22 +1,19 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import styles from './MenuItem.module.scss';
 
-const MenuItem = (props) => {
-  const { label, link, toggleMenu } = props;
+interface IMenuItemProps {
+  label: string;
+  link: string;
+  toggleMenu: () => void;
+}
 
+const MenuItem: React.FC<IMenuItemProps> = ({ label, link, toggleMenu }) => {
   return (
     <li className={styles.menuItem}>
       <a href={link} onClick={toggleMenu}>{label}</a>
     </li>
   );
-};
-
-MenuItem.propTypes = {
-  label: PropTypes.string,
-  link: PropTypes.string,
-  toggleMenu: PropTypes.func
 };
 
 export default MenuItem;

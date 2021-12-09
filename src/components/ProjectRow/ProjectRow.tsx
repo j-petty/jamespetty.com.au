@@ -1,11 +1,18 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import styles from './ProjectRow.module.scss';
 
-const ProjectRow = (props) => {
-  const { title, description, linkText, link, skills, image, imageAlt } = props;
+interface IProjectRowProps {
+  title: string;
+  description: string;
+  linkText?: string;
+  link?: string;
+  skills: Array<string>;
+  image: string;
+  imageAlt: string;
+}
 
+const ProjectRow: React.FC<IProjectRowProps> = ({ title, description, linkText, link, skills, image, imageAlt }) => {
   return (
     <div
       className={styles.projectRow}
@@ -46,16 +53,6 @@ const ProjectRow = (props) => {
       }
     </div>
   );
-};
-
-ProjectRow.propTypes = {
-  title: PropTypes.string,
-  description: PropTypes.string,
-  linkText: PropTypes.string,
-  link: PropTypes.string,
-  skills: PropTypes.array,
-  image: PropTypes.string,
-  imageAlt: PropTypes.string
 };
 
 export default ProjectRow;
