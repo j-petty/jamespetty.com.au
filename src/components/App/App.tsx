@@ -5,6 +5,11 @@ import {
   Switch,
   Route
 } from 'react-router-dom';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+
+// register GSAP plugin
+gsap.registerPlugin(ScrollTrigger);
 
 //import Cursor from '../Cursor/Cursor';
 import MenuButton from '../MenuButton/MenuButton';
