@@ -180,7 +180,7 @@ const Home: React.FC<IHomeProps> = ({ colorMode }) => {
           <ProjectRow
             title='whtspc'
             skills={['Web Design', 'eCommerce', 'CMS']}
-            description="A small development agency which I co-founded. We specalise in boutique software applications. Visit the site to check out our latest work."
+            description="A Canberra based development studio I've co-founded. We specalise in boutique web applications. Visit the site to check out our latest work."
             image={project01Img}
             imageAlt='whtspc'
             linkText='whtspc.com.au'
@@ -191,7 +191,7 @@ const Home: React.FC<IHomeProps> = ({ colorMode }) => {
           <ProjectRow
             title='MyWay Balance'
             skills={['iOS', 'Android', 'Xamarin']}
-            description="Born out of frustration from using the clunky website to check my public transport card balance. I built a simple app that lets people check their MyWay card balance right from their phones."
+            description="Born out of frustration from using the clunky website to check my public transport card balance. I built an app that lets people check their MyWay card balance right from their phones."
             image={project02Img}
             imageAlt='MyWay Balance'
             linkText='Join Beta'
@@ -231,7 +231,7 @@ const Home: React.FC<IHomeProps> = ({ colorMode }) => {
           <ProjectRow
             title='Beached'
             skills={['.Net', 'MonoGame', 'Game Design']}
-            description="A small survival game, built using the bare-bones game development toolkit, MonoGame. Featuring a randomly generated island and pesky chickens. Play it now on Steam."
+            description="A top-down survival game, built using the bare-bones game development toolkit, MonoGame. Featuring a randomly generated island and pesky chickens. Play it now on Steam."
             image={project04Img}
             imageAlt='Survival RPG.'
             linkText='View on Steam'
@@ -270,7 +270,7 @@ const Home: React.FC<IHomeProps> = ({ colorMode }) => {
                 'Continued technical design of a whole of government Secure Document Sharing Platform.',
                 'Coordinated collaboration with business representatives to ensure desired outcomes were being achieved.',
                 'Developed a working MVP of the system based on extensive Product Backlog.',
-                'Coordinate development team and led Agile rituals to efficiently achieve milestones on time.'
+                'Coordinated development team and led Agile rituals to efficiently achieve milestones on time.'
               ]} />
           </TimelineRow>
         </div>
