@@ -40,7 +40,8 @@ import {
   reactImg,
   dotNetImg,
   cloudImg,
-  devOpsImg
+  devOpsImg,
+  downloadImg
 } from 'assets/icons';
 
 import './Home.module.scss';
@@ -437,6 +438,18 @@ const Home: React.FC<IHomeProps> = ({ colorMode }) => {
       <Footer
         link='/'
         name='James Petty' />
+
+      <Icon
+        link='/downloads/james-petty-cv-2021.pdf'
+        image={downloadImg}
+        imageAlt='Download'
+        style={{
+          position: 'fixed',
+          bottom: '40px',
+          right: '40px',
+          margin: '0'
+        }}
+        title='Download CV' />
     </main>
   );
 };

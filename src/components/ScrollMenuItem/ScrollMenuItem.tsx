@@ -1,4 +1,4 @@
-import React, { useEffect, useState, createRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 
 import styles from './ScrollMenuItem.module.scss';
 
@@ -14,8 +14,8 @@ const ScrollMenuItem: React.FC<IScrollMenuItemProps> = ({ link, inView }) => {
   const [isMouseOver, setIsMouseOver] = useState(false);
 
   // Use refs to get initial position
-  const container = createRef<HTMLLIElement>();
-  const element = createRef<HTMLAnchorElement>();
+  const container = useRef<HTMLLIElement>(null);
+  const element = useRef<HTMLAnchorElement>(null);
 
   const onMouseMove = (e: React.MouseEvent) => {
     if (!container || !element || !isMouseOver) {
@@ -67,7 +67,7 @@ const ScrollMenuItem: React.FC<IScrollMenuItemProps> = ({ link, inView }) => {
     <li
       id={`scroll-${link}`}
       className={inView ? `${styles.menuItem} active scrollItem` : `${styles.menuItem} scrollItem`}
-      ref={container}
+      ref={container ?? null}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
       onMouseMove={onMouseMove}>

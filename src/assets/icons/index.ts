@@ -6,3 +6,4 @@ export { default as reactImg} from 'assets/icons/react.svg';
 export { default as dotNetImg} from 'assets/icons/dot-net.svg';
 export { default as cloudImg} from 'assets/icons/cloud.svg';
 export { default as devOpsImg} from 'assets/icons/devops.svg';
+export { default as downloadImg} from 'assets/icons/download.svg';
