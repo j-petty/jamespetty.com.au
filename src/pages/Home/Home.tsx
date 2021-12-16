@@ -181,7 +181,7 @@ const Home: React.FC<IHomeProps> = ({ colorMode }) => {
           <ProjectRow
             title='whtspc'
             skills={['Web Design', 'eCommerce', 'CMS']}
-            description="A Canberra based development studio I've co-founded. We specalise in boutique web applications. Visit the site to check out our latest work."
+            description="Co-founder of a Canberra based development studio, whtspc. We specialise in boutique web applications. Check out or latest work and get in touch to learn how we can help your business."
             image={project01Img}
             imageAlt='whtspc'
             linkText='whtspc.com.au'
@@ -192,7 +192,7 @@ const Home: React.FC<IHomeProps> = ({ colorMode }) => {
           <ProjectRow
             title='MyWay Balance'
             skills={['iOS', 'Android', 'Xamarin']}
-            description="Born out of frustration from using the clunky website to check my public transport card balance. I built an app that lets people check their MyWay card balance right from their phones."
+            description="Born out of frustration from using the dated website to check my public transport card balance. I built an app that lets people check their MyWay card balance right from their phones."
             image={project02Img}
             imageAlt='MyWay Balance'
             linkText='Join Beta'
@@ -203,7 +203,7 @@ const Home: React.FC<IHomeProps> = ({ colorMode }) => {
           <ProjectRow
             title='Shuffle: Bites'
             skills={['iOS', 'Android', 'Xamarin']}
-            description="A simple app which randomly chooses a nearby venue. A fun way of deciding what to eat when you just can't pick."
+            description="A fun way of deciding what to eat when you just can't pick. The app chooses a nearby venue for you."
             image={project07Img}
             imageAlt='Shuffle: Bites'
             linkText='Open on App Store'
@@ -258,20 +258,21 @@ const Home: React.FC<IHomeProps> = ({ colorMode }) => {
             skills={['.Net', 'React', 'Azure', 'Agile', 'Public Sector', 'Contractor']}
             description={
               <>
-                Contracting with the Attorney-General&apos;s department as a full-stack developer and project technical lead offered exposure to new technologies and personal growth opportunities.
-                The client&apos;s strict security posture required creative solutions to some typically simple technical challenges.
+                Contracting with the Attorney-General&apos;s Department as a senior full-stack developer and technical lead offered exposure to a suite of new technologies and personal growth opportunities.
+                The client&apos;s stringent security posture required creative solutions to some otherwise simplistic technical challenges.
               </>
             } >
             <TimelineSubRow
               id='work-agd-doc'
               title='Secure Document Sharing Platform'
               skills={['Technical Lead', 'React', '.Net', 'Azure']}
-              description={<>As project technical lead, I leveraged my expertise in Agile software delivery to foster and build upon the client&apos;s existing Agile practices and successfully deliver a working MVP (minimum viable product).</>}
+              description={<>I was engaged to carry on development of a whole-of-government Secure Document Sharing Platform. As project technical lead, I leveraged my expertise in agile software delivery to foster and build upon the client&apos;s existing agile practices and successfully deliver a production ready MVP (minimum viable product).</>}
               responsibilities={[
                 'Continued technical design of a whole of government Secure Document Sharing Platform.',
-                'Coordinated collaboration with business representatives to ensure desired outcomes were being achieved.',
-                'Developed a working MVP of the system based on extensive Product Backlog.',
-                'Coordinated development team and led Agile rituals to efficiently achieve milestones on time.'
+                'Coordinated collaboration with business representatives to ensure desired outcomes were being achieved by the product backlog.',
+                'Coordinated development team and led agile rituals to efficiently achieve time critical milestones.',
+                'Guided junior team members to foster their personal development while still maintaining team\'s momentum.',
+                'Developed a working MVP of the system which is now used by employees from eligible departments.'
               ]} />
           </TimelineRow>
         </div>
