@@ -8,6 +8,7 @@ interface IIconProps {
   imageAlt: string;
   style?: any;
   title?: string;
+  onClick?: () => void;
 }
 
 const Icon: React.FC<IIconProps> = ({ link, image, imageAlt, ...props }) => {

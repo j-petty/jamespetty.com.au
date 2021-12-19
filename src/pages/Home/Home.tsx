@@ -1,5 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import gsap from 'gsap';
+import ReactGA from 'react-ga';
 
 import ScrollMenu from '../../components/ScrollMenu/ScrollMenu';
 import ScrollMenuItem from '../../components/ScrollMenuItem/ScrollMenuItem';
@@ -450,7 +451,14 @@ const Home: React.FC<IHomeProps> = ({ colorMode }) => {
           right: '40px',
           margin: '0'
         }}
-        title='Download CV' />
+        title='Download CV'
+        onClick={() => {
+          // Trigger analytics event for CV download
+          ReactGA.event({
+            category: 'Download',
+            action: 'CV Downloaded'
+          });
+        }} />
     </main>
   );
 };
