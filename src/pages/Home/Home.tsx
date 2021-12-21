@@ -182,7 +182,7 @@ const Home: React.FC<IHomeProps> = ({ colorMode }) => {
           <ProjectRow
             title='whtspc'
             skills={['Web Design', 'eCommerce', 'CMS']}
-            description="Co-founder of a Canberra based development studio, whtspc. We specialise in boutique web applications. Check out or latest work and get in touch to learn how we can help your business."
+            description="Co-founder of a Canberra based development studio, whtspc. We specialise in boutique web applications. Check out our latest work and get in touch to learn how we can help your business."
             image={project01Img}
             imageAlt='whtspc'
             linkText='whtspc.com.au'
