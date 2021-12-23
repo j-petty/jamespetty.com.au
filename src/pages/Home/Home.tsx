@@ -2,18 +2,18 @@ import React, { useState, useCallback } from 'react';
 import gsap from 'gsap';
 import ReactGA from 'react-ga';
 
-import ScrollMenu from '../../components/ScrollMenu/ScrollMenu';
-import ScrollMenuItem from '../../components/ScrollMenuItem/ScrollMenuItem';
-import Header from '../../components/Header/Header';
-import Section from '../../components/Section/Section';
-import ProjectRow from '../../components/ProjectRow/ProjectRow';
-import TimelineRow from '../../components/TimelineRow/TimelineRow';
-import TimelineSubRow from '../../components/TimelineSubRow/TimelineSubRow';
-import Form from '../../components/Form/Form';
-import FormField from '../../components/FormField/FormField';
-import SocialList from '../../components/SocialList/SocialList';
-import Icon from '../../components/Icon/Icon';
-import Footer from '../../components/Footer/Footer';
+import ScrollMenu from 'components/ScrollMenu/ScrollMenu';
+import ScrollMenuItem from 'components/ScrollMenuItem/ScrollMenuItem';
+import Header from 'components/Header/Header';
+import Section from 'components/Section/Section';
+import ProjectRow from 'components/ProjectRow/ProjectRow';
+import TimelineRow from 'components/TimelineRow/TimelineRow';
+import TimelineSubRow from 'components/TimelineSubRow/TimelineSubRow';
+import Form from 'components/Form/Form';
+import FormField from 'components/FormField/FormField';
+import SocialList from 'components/SocialList/SocialList';
+import Icon from 'components/Icon/Icon';
+import Footer from 'components/Footer/Footer';
 
 import {
   project01Img,

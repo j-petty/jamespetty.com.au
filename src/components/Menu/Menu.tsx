@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './Menu.module.scss';
 
-import darkModeImg from '../../assets/images/icon-darkmode.svg';
+import darkModeImg from 'assets/images/icon-darkmode.svg';
 
 interface IMenuProps {
   isOpen: boolean;

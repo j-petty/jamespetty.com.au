@@ -11,13 +11,13 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 // register GSAP plugin
 gsap.registerPlugin(ScrollTrigger);
 
-import Cursor from '../Cursor/Cursor';
-import MenuButton from '../MenuButton/MenuButton';
-import Menu from '../Menu/Menu';
-import MenuItem from '../MenuItem/MenuItem';
+import Cursor from 'components/Cursor/Cursor';
+import MenuButton from 'components/MenuButton/MenuButton';
+import Menu from 'components/Menu/Menu';
+import MenuItem from 'components/MenuItem/MenuItem';
 
-import Home from '../../pages/Home/Home';
-import NotFound from '../../pages/NotFound/NotFound';
+import Home from 'pages/Home/Home';
+import NotFound from 'pages/NotFound/NotFound';
 
 import styles from './App.module.scss';
 

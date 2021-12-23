@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react';
 
 import { IIconLink } from 'types/IconLink';
 
-import Icon from '../Icon/Icon';
+import Icon from 'components/Icon/Icon';
 
 import styles from './Header.module.scss';
 
