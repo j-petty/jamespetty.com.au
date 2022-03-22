@@ -21,7 +21,10 @@
     "@types/react-dom": "^17.0.9",
     "@types/react-router-dom": "^5.3.0",
     "eslint": "^7.24.0",
-    "eslint-config-petty": "^1.0.7"
+    "eslint-config-petty": "^1.0.15",
+    "stylelint": "^14.2.0",
+    "stylelint-config-standard": "^24.0.0",
+    "stylelint-scss": "^4.1.0"
   },
   "scripts": {
     "start": "react-scripts start",

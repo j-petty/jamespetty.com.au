@@ -1,0 +1,15 @@
+{
+  "extends": "stylelint-config-standard",
+  "syntax": "scss",
+  "rules": {
+    "at-rule-no-unknown": null,
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": ["global"]
+      }
+    ],
+    "length-zero-no-unit": null,
+    "color-hex-case": "upper"
+  }
+}
