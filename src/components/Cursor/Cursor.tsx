@@ -1,10 +1,14 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useCallback, useRef } from 'react';
 import { isMobile } from 'react-device-detect';
 
 import styles from './Cursor.module.scss';
 
 const Cursor: React.FC = () => {
-  const [position, setPosition] = useState({x: -50, y: -50});
+  const mouseRef = useRef<HTMLDivElement>(null);
+  const mouseX = useRef(-50);
+  const mouseY = useRef(-50);
+  const animRequestRef = useRef<number | null>(null);
+
   const [isHidden, setIsHidden] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
   const [isLinkHovered, setIsLinkHovered] = useState(false);
@@ -23,8 +27,14 @@ const Cursor: React.FC = () => {
 
   useEffect(() => {
     addEventListeners();
+    animateCursor();
 
-    return () => removeEventListeners();
+    return () => {
+      removeEventListeners();
+      if (animRequestRef.current !== null) {
+        cancelAnimationFrame(animRequestRef.current);
+      }
+    };
   }, [hasWindowLoaded]);
 
   const addEventListeners = () => {
@@ -54,7 +64,20 @@ const Cursor: React.FC = () => {
   }, []);
 
   const onMouseMove = (e: MouseEvent) => {
-    setPosition({x: e.clientX, y: e.clientY});
+    mouseX.current = e.clientX;
+    mouseY.current = e.clientY;
+  };
+
+  const animateCursor = () => {
+    if (!mouseRef.current) {
+      return;
+    }
+
+    mouseRef.current.style.top = `${mouseY.current}px`;
+    mouseRef.current.style.left = `${mouseX.current}px`;
+
+    // NOTE: using animation frame performs a lot better on bigger screen rather than using state updates
+    animRequestRef.current = requestAnimationFrame(animateCursor);
   };
 
   const onMouseLeave = () => {
@@ -97,11 +120,8 @@ const Cursor: React.FC = () => {
 
   return (
     <div
-      className={classNames}
-      style={{
-        left: `${position.x}px`,
-        top: `${position.y}px`
-      }} />
+      ref={mouseRef}
+      className={classNames} />
   );
 };
 

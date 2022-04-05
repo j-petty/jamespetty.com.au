@@ -182,7 +182,7 @@ const Home: React.FC<IHomeProps> = ({ colorMode }) => {
           <ProjectRow
             title='whtspc'
             skills={['Web Design', 'eCommerce', 'CMS']}
-            description="Co-founder of a Canberra based development studio, whtspc. We specialise in boutique web applications. Check out our latest work and get in touch to learn how we can help your business."
+            description='Co-founder of a Canberra based development studio, whtspc. We specialise in boutique web applications. Check out our latest work and get in touch to learn how we can help your business.'
             image={project01Img}
             imageAlt='whtspc'
             linkText='whtspc.com.au'
@@ -193,7 +193,7 @@ const Home: React.FC<IHomeProps> = ({ colorMode }) => {
           <ProjectRow
             title='MyWay Balance'
             skills={['iOS', 'Android', 'Xamarin']}
-            description="Born out of frustration from using the dated website to check my public transport card balance. I built an app that lets people check their MyWay card balance right from their phones."
+            description='Born out of frustration from using the dated website to check my public transport card balance. I built an app that lets people check their MyWay card balance right from their phones.'
             image={project02Img}
             imageAlt='MyWay Balance'
             linkText='Join Beta'
@@ -215,7 +215,7 @@ const Home: React.FC<IHomeProps> = ({ colorMode }) => {
           <ProjectRow
             title='Digital Pass Provider'
             skills={['Asp.Net', 'Azure', 'Apple', 'Google']}
-            description="An API first platform which simplifies the process of generating digital Passes for the Apple and Google wallets. Intended to simplify the process of integrating with digital wallet solutions."
+            description='An API first platform which simplifies the process of generating digital Passes for the Apple and Google wallets. Intended to simplify the process of integrating with digital wallet solutions.'
             image={project06Img}
             imageAlt='Simplifying digital wallets.' />
         </div>
@@ -224,7 +224,7 @@ const Home: React.FC<IHomeProps> = ({ colorMode }) => {
           <ProjectRow
             title='Digital Quiz'
             skills={['React', 'Node.js', 'AWS']}
-            description="An online quiz powered by a cloud REST API. Designed to help educate people about Digital Transformation and demystify some common misconceptions."
+            description='An online quiz powered by a cloud REST API. Designed to help educate people about Digital Transformation and demystify some common misconceptions.'
             image={project05Img}
             imageAlt='Educating the masses.' />
         </div>
@@ -233,7 +233,7 @@ const Home: React.FC<IHomeProps> = ({ colorMode }) => {
           <ProjectRow
             title='Beached'
             skills={['.Net', 'MonoGame', 'Game Design']}
-            description="A top-down survival game, built using the bare-bones game development toolkit, MonoGame. Featuring a randomly generated island and pesky chickens. Play it now on Steam."
+            description='A top-down survival game, built using the bare-bones game development toolkit, MonoGame. Featuring a randomly generated island and pesky chickens. Play it now on Steam.'
             image={project04Img}
             imageAlt='Survival RPG.'
             linkText='View on Steam'
@@ -328,7 +328,7 @@ const Home: React.FC<IHomeProps> = ({ colorMode }) => {
               title='OzHarvest'
               skills={['App Design', 'UX Design', 'Private Sector']}
               description={<>Designed a mobile application aimed at helping OzHarvest generate revenue, enabling them to continue their mission within communities around Australia.
-              The final prototype can be found <a className='simpleLink' href="//xd.adobe.com/view/fbf72286-7ea3-410d-aa7e-db324d523b8b-aea4/?fullscreen" target="_blank" rel="noreferrer">here</a>.</>} />
+              The final prototype can be found <a className='simpleLink' href='//xd.adobe.com/view/fbf72286-7ea3-410d-aa7e-db324d523b8b-aea4/?fullscreen' target='_blank' rel='noreferrer'>here</a>.</>} />
           </TimelineRow>
         </div>
 
