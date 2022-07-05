@@ -4,9 +4,12 @@ export { default as project06Img } from 'assets/images/project06.jpg';
 export { default as project05Img } from 'assets/images/project05.jpg';
 export { default as project04Img } from 'assets/images/project04.jpg';
 export { default as project07Img } from 'assets/images/project07.jpg';
+export { default as project08Img } from 'assets/images/project08.jpg';
 
 export { default as agdW } from 'assets/images/agd-w.png';
 export { default as agdB } from 'assets/images/agd-b.png';
+export { default as aphW } from 'assets/images/aph-w.png';
+export { default as aphB } from 'assets/images/aph-b.png';
 export { default as deloitteDigitalW } from 'assets/images/deloitte-digital-w.png';
 export { default as deloitteDigitalB } from 'assets/images/deloitte-digital-b.png';
 export { default as spinifyW } from 'assets/images/spinify-w.png';

@@ -22,9 +22,12 @@ import {
   project05Img,
   project04Img,
   project07Img,
+  project08Img,
 
   agdW,
   agdB,
+  aphW,
+  aphB,
   deloitteDigitalW,
   deloitteDigitalB,
   spinifyW,
@@ -180,13 +183,24 @@ const Home: React.FC<IHomeProps> = ({ colorMode }) => {
         ref={projectsRef}>
         <div className='animate'>
           <ProjectRow
-            title='whtspc'
+            title='Web Development Studio: whtspc'
             skills={['Web Design', 'eCommerce', 'CMS']}
-            description='Co-founder of a Canberra based development studio, whtspc. We specialise in boutique web applications. Check out our latest work and get in touch to learn how we can help your business.'
+            description='Co-founder of a Canberra based software development studio, whtspc. We specialise in boutique web applications. Check out our latest work and get in touch to learn how we can help your business.'
             image={project01Img}
             imageAlt='whtspc'
             linkText='whtspc.com.au'
             link='//whtspc.com.au/' />
+        </div>
+
+        <div className='animate'>
+          <ProjectRow
+            title='SaaS Product: whttime'
+            skills={['SaaS', 'Start-up']}
+            description='One of the projects we are working on at whtspc is a new contract management tool aimed at improving the contracting experience for everyone involved.'
+            image={project08Img}
+            imageAlt='whttime'
+            linkText='whttime.com.au'
+            link='//whttime.com.au/' />
         </div>
 
         <div className='animate'>
@@ -239,6 +253,8 @@ const Home: React.FC<IHomeProps> = ({ colorMode }) => {
             linkText='View on Steam'
             link='//store.steampowered.com/app/652560/Beached/' />
         </div>
+
+        <p style={{marginTop: '60px', fontWeight: 200}}>Want to know more? <a href='#contact' className='simpleLink'>Just ask</a>.</p>
       </Section>
 
       {/* WORK */}
@@ -248,8 +264,46 @@ const Home: React.FC<IHomeProps> = ({ colorMode }) => {
         ref={workRef}>
         <div className='animate'>
           <TimelineRow
-            id='work-agd'
+            id='work-dps'
             date='today'
+            image={colorMode === 'dark'
+              ? aphW
+              : aphB}
+            imageAlt="Attorney-General's Department"
+            imageLink='//www.aph.gov.au/'
+            title='Senior Full-stack Developer'
+            skills={['.Net', 'React', 'Azure', 'Agile', 'Public Sector', 'Contractor']}
+            description={
+              <>
+                Each new client presents an array of new challenges to overcome. In the case of DPS, project dependency management has been a crucial part of my role as techncial lead.
+                The department was undergoing a Cloud migration at the time which meant a lot of new learnings for the teams involved. I worked closely with the migration team and was able to offer
+                advice based on experience working with Cloud on other clients and projects.
+              </>
+            } >
+            <TimelineSubRow
+              id='work-dps-report-builder'
+              title='Committee Report Builder'
+              skills={['Technical Lead', 'React', '.Net', 'Azure']}
+              description={
+                <>
+                  <p>I was embedded into an existing BAU technical support team as well as being tasked as technical lead of an existing project. Initially I attempted to absorb as much information about the project&apos;s context, before beginning work to improve quality assurance bu implementing CI/CD, Linting, PR enforcement and improved work practices.</p>
+                  <p>Throughout the project I worked on every aspect of the technical design and delivery and provided guidance to other team members, input into project planning and resourcing and dependency management.</p>
+                </>
+              }
+              responsibilities={[
+                'Represented project as tech lead at board meetings and AGILE rituals.',
+                'Managed project risks and dependencies with PM and stakeholders.',
+                'Collaborated with solution architects on system design and implementation approach.',
+                'Coordinated development team in delivering a high quality product which meets end user requirements.',
+                'Assisted with ongoing BAU support of legacy systems.'
+              ]} />
+          </TimelineRow>
+        </div>
+
+        <div className='animate'>
+          <TimelineRow
+            id='work-agd'
+            date='2022'
             image={colorMode === 'dark'
               ? agdW
               : agdB}
