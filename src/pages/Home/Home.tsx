@@ -269,15 +269,14 @@ const Home: React.FC<IHomeProps> = ({ colorMode }) => {
             image={colorMode === 'dark'
               ? aphW
               : aphB}
-            imageAlt="Attorney-General's Department"
+            imageAlt='Department of Parliamentary Services'
             imageLink='//www.aph.gov.au/'
             title='Senior Full-stack Developer'
             skills={['.Net', 'React', 'Azure', 'Agile', 'Public Sector', 'Contractor']}
             description={
               <>
-                Each new client presents an array of new challenges to overcome. In the case of DPS, project dependency management has been a crucial part of my role as techncial lead.
-                The department was undergoing a Cloud migration at the time which meant a lot of new learnings for the teams involved. I worked closely with the migration team and was able to offer
-                advice based on experience working with Cloud on other clients and projects.
+                <p>Each new client presents an array of new challenges to overcome. In the case of DPS, project dependency management has been a crucial part of my role as techncial lead.</p>
+                <br /><p>The department was undergoing a Cloud migration at the time which meant a lot of new learnings for the teams involved. I worked closely with the migration team and was able to offer advice based on experience working with Cloud on other clients and projects.</p>
               </>
             } >
             <TimelineSubRow
