@@ -1,4 +1,5 @@
 import React, { forwardRef } from 'react';
+import TypeAnimation from 'react-type-animation';
 
 import { IIconLink } from 'types/IconLink';
 
@@ -12,14 +13,28 @@ interface IHeaderProps {
 }
 
 const Header: React.ForwardRefRenderFunction<HTMLElement, IHeaderProps> = ({ skillsArray, stackArray }: IHeaderProps, ref: React.ForwardedRef<HTMLElement>) => {
+  const getSkills = (): Array<string | number> => {
+    const skillsAnimation: Array<string | number> = [];
+
+    skillsArray.forEach(skill => {
+      skillsAnimation.push(skill);
+
+      skillsAnimation.push(2500);
+    });
+
+    return skillsAnimation;
+  };
+
   return (
     <header id='home' className='textCenter' ref={ref}>
       <h1>Hi I&apos;m James.</h1>
 
       <ul className={styles.skillLoop}>
-        {skillsArray.map((skill, index) =>
-          <li key={index}>{skill}</li>
-        )}
+        <TypeAnimation
+          wrapper='li'
+          cursor
+          repeat={Infinity}
+          sequence={getSkills()} />
       </ul>
 
       <div className={styles.stackList}>
