@@ -41,12 +41,8 @@ const TimelineRow: React.FC<ITimelineRowProps> = ({
             </h3>
           }
 
-          {duration &&
-            <p className={styles.timelineSubTitle}>{duration}</p>
-          }
-
           {title &&
-            <p className={styles.timelineTitle}>{title}</p>
+            <p className={styles.timelineTitle}>{title} {duration && <span className={styles.timelineSubTitle}>&#183; {duration}</span>}</p>
           }
 
           {skills &&

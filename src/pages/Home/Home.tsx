@@ -151,7 +151,7 @@ const Home: React.FC<IHomeProps> = ({ colorMode }) => {
           'project lead',
           'technical consultant',
           'entrepreneur',
-          'full stack developer'
+          'army reservist'
         ]}
         stackArray={[
           {
@@ -183,7 +183,7 @@ const Home: React.FC<IHomeProps> = ({ colorMode }) => {
         ref={projectsRef}>
         <div className='animate'>
           <ProjectRow
-            title='Web Development Studio: whtspc'
+            title='Web Development Studio'
             skills={['Web Design', 'eCommerce', 'CMS']}
             description='Co-founder of a Canberra based software development studio, whtspc. We specialise in boutique web applications. Check out our latest work and get in touch to learn how we can help your business.'
             image={project01Img}
@@ -194,8 +194,8 @@ const Home: React.FC<IHomeProps> = ({ colorMode }) => {
 
         <div className='animate'>
           <ProjectRow
-            title='SaaS Product: whttime'
-            skills={['SaaS', 'Start-up']}
+            title='Contract Management System'
+            skills={['SaaS', 'Start-up', 'Business']}
             description='One of the projects we are working on at whtspc is a new contract management tool aimed at improving the contracting experience for everyone involved.'
             image={project08Img}
             imageAlt='whttime'
@@ -272,6 +272,7 @@ const Home: React.FC<IHomeProps> = ({ colorMode }) => {
             imageAlt='Department of Parliamentary Services'
             imageLink='//www.aph.gov.au/'
             title='Senior Full-stack Developer'
+            duration='current'
             skills={['.Net', 'React', 'Azure', 'Agile', 'Public Sector', 'Contractor']}
             description={
               <>
@@ -309,6 +310,7 @@ const Home: React.FC<IHomeProps> = ({ colorMode }) => {
             imageAlt="Attorney-General's Department"
             imageLink='//www.ag.gov.au/'
             title='Senior Full-stack Developer'
+            duration='1 year'
             skills={['.Net', 'React', 'Azure', 'Agile', 'Public Sector', 'Contractor']}
             description={
               <>
@@ -341,7 +343,7 @@ const Home: React.FC<IHomeProps> = ({ colorMode }) => {
             imageAlt='Deloitte Digital'
             imageLink='//www.deloittedigital.com.au/'
             title='Senior Technical Specialist'
-            duration='3y 2m'
+            duration='3 years'
             skills={['.Net', 'React', 'Cloud', 'Leadership', 'Teamwork', 'Client Excellence']}
             description={
               <>
@@ -395,7 +397,7 @@ const Home: React.FC<IHomeProps> = ({ colorMode }) => {
             imageAlt='Spinify'
             imageLink='//spinify.com/'
             title='Full Stack Developer'
-            duration='1y 5m'
+            duration='1.5 years'
             skills={['React', 'Node.js', 'AWS', 'Start-up']}
             description={
               <>
@@ -416,7 +418,7 @@ const Home: React.FC<IHomeProps> = ({ colorMode }) => {
               : madeForMeB}
             imageAlt='Made for Me'
             title='Web Developer'
-            duration='1y 2m'
+            duration='1 year'
             skills={['Python', 'DjangoCMS', 'AWS', 'Start-up']}
             description={
               <>
