@@ -96,11 +96,12 @@ const Form: React.FC<IFormProps> = ({ action, children }) => {
     );
   }
 
-  if (hasSubmitted) {
+  // NOTE: not disabling submitted form but can be done if spam occurs
+  /*if (hasSubmitted) {
     return (
       <p className={`${styles.formContainer} textCenter`}>Thank&apos;s for reaching out. I&apos;ll get back to you shortly.</p>
     );
-  }
+  }*/
 
   return (
     <form

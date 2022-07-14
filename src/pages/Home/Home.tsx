@@ -48,7 +48,7 @@ import {
   downloadImg
 } from 'assets/icons';
 
-import './Home.module.scss';
+import styles from './Home.module.scss';
 
 interface IHomeProps {
   colorMode: string;
@@ -254,7 +254,7 @@ const Home: React.FC<IHomeProps> = ({ colorMode }) => {
             link='//store.steampowered.com/app/652560/Beached/' />
         </div>
 
-        <p style={{marginTop: '60px', fontWeight: 200}}>Want to know more? <a href='#contact' className='simpleLink'>Just ask</a>.</p>
+        <p className={styles.para__light} style={{marginTop: '60px'}}>Want to know more? <a href='#contact' className='simpleLink'>Just ask</a>.</p>
       </Section>
 
       {/* WORK */}
@@ -441,6 +441,7 @@ const Home: React.FC<IHomeProps> = ({ colorMode }) => {
         title='contact'
         ref={contactRef}>
         <div className='animate'>
+          <p className={styles.para__light} style={{marginBottom: '60px'}}>Reach out with any questions! I typically respond within 2 business days.</p>
           <Form action='contact.php'>
             <FormField
               name='name'
