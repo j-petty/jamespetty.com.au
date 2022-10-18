@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useMemo } from 'react';
 import gsap from 'gsap';
 import ReactGA from 'react-ga';
 
@@ -16,7 +16,6 @@ import Icon from 'components/Icon/Icon';
 import Footer from 'components/Footer/Footer';
 
 import {
-  project01Img,
   project02Img,
   project06Img,
   project05Img,
@@ -57,9 +56,19 @@ interface IHomeProps {
 const Home: React.FC<IHomeProps> = ({ colorMode }) => {
   const [currentSection, setCurrentSection] = useState<string>('home');
 
+  // Memorise skills to prevent rerenders
+  const skills = useMemo(() => [
+    'full stack developer',
+    'web designer',
+    'project lead',
+    'technical consultant',
+    'entrepreneur',
+    'army reservist'
+  ], []);
+
   const homeRef = useCallback(node => {
     if (node !== null) {
-      // control Home scroll indicator
+      // Control Home scroll indicator
       gsap.to(
         '#home',
         {
@@ -75,7 +84,7 @@ const Home: React.FC<IHomeProps> = ({ colorMode }) => {
 
   const projectsRef = useCallback(node => {
     if (node !== null) {
-      // control Projects scroll indicator
+      // Control Projects scroll indicator
       gsap.from(
         node,
         {
@@ -95,7 +104,7 @@ const Home: React.FC<IHomeProps> = ({ colorMode }) => {
 
   const workRef = useCallback(node => {
     if (node !== null) {
-      // control Projects scroll indicator
+      // Control Projects scroll indicator
       gsap.from(
         node,
         {
@@ -115,7 +124,7 @@ const Home: React.FC<IHomeProps> = ({ colorMode }) => {
 
   const contactRef = useCallback(node => {
     if (node !== null) {
-      // control Contact scroll indicator
+      // Control Contact scroll indicator
       gsap.from(
         node,
         {
@@ -145,14 +154,7 @@ const Home: React.FC<IHomeProps> = ({ colorMode }) => {
       {/* HOME */}
       <Header
         ref={homeRef}
-        skillsArray={[
-          'full stack developer',
-          'web designer',
-          'project lead',
-          'technical consultant',
-          'entrepreneur',
-          'army reservist'
-        ]}
+        skillsArray={skills}
         stackArray={[
           {
             icon: reactImg,
@@ -181,7 +183,7 @@ const Home: React.FC<IHomeProps> = ({ colorMode }) => {
         id='projects'
         title='projects'
         ref={projectsRef}>
-        <div className='animate'>
+        {/*<div className='animate'>
           <ProjectRow
             title='Web Development Studio'
             skills={['Web Design', 'eCommerce', 'CMS']}
@@ -190,17 +192,17 @@ const Home: React.FC<IHomeProps> = ({ colorMode }) => {
             imageAlt='whtspc'
             linkText='whtspc.com.au'
             link='//whtspc.com.au/' />
-        </div>
+        </div>*/}
 
         <div className='animate'>
           <ProjectRow
             title='Contract Management System'
             skills={['SaaS', 'Start-up', 'Business']}
-            description='One of the projects we are working on at whtspc is a new contract management tool aimed at improving the contracting experience for everyone involved.'
+            description='My side hustle and passion, we are building a new contract management tool aimed at improving the contracting experience for everyone involved.'
             image={project08Img}
-            imageAlt='whttime'
-            linkText='whttime.com.au'
-            link='//whttime.com.au/' />
+            imageAlt='Recruithero'
+            linkText='recruithero.com.au'
+            link='//recruithero.com.au/' />
         </div>
 
         <div className='animate'>
@@ -276,8 +278,8 @@ const Home: React.FC<IHomeProps> = ({ colorMode }) => {
             skills={['.Net', 'React', 'Azure', 'Agile', 'Public Sector', 'Contractor']}
             description={
               <>
-                <p>Each new client presents an array of new challenges to overcome. In the case of DPS, project dependency management has been a crucial part of my role as techncial lead.</p>
-                <br /><p>The department was undergoing a Cloud migration at the time which meant a lot of new learnings for the teams involved. I worked closely with the migration team and was able to offer advice based on experience working with Cloud on other clients and projects.</p>
+                <p>Each new client presents an array of new challenges to overcome. In the case of DPS, project dependency management has been a crucial part of my role as technical lead.</p>
+                <br /><p>The department was undergoing a Cloud migration at the time which meant a lot of changes and lack of established patterns. I worked closely with the migration team and was able to offer advice based on experience working with Cloud on other clients and projects.</p>
               </>
             } >
             <TimelineSubRow
@@ -286,12 +288,12 @@ const Home: React.FC<IHomeProps> = ({ colorMode }) => {
               skills={['Technical Lead', 'React', '.Net', 'Azure']}
               description={
                 <>
-                  <p>I was embedded into an existing BAU technical support team as well as being tasked as technical lead of an existing project. Initially I attempted to absorb as much information about the project&apos;s context, before beginning work to improve quality assurance bu implementing CI/CD, Linting, PR enforcement and improved work practices.</p>
-                  <p>Throughout the project I worked on every aspect of the technical design and delivery and provided guidance to other team members, input into project planning and resourcing and dependency management.</p>
+                  <p>I was tasked as technical lead of an already well in-flight project. Initially I attempted to absorb as much information about the project&apos;s context, before beginning work to improve quality assurance by implementing CI/CD, code linting, PR enforcement and improved work practices.</p>
+                  <p>Throughout the project I worked on every aspect of the technical design and delivery and provided guidance to other team members, as well as offering vital input into project planning, resourcing and dependency management.</p>
                 </>
               }
               responsibilities={[
-                'Represented project as tech lead at board meetings and AGILE rituals.',
+                'Represented project as tech lead at board meetings and agile rituals.',
                 'Managed project risks and dependencies with PM and stakeholders.',
                 'Collaborated with solution architects on system design and implementation approach.',
                 'Coordinated development team in delivering a high quality product which meets end user requirements.',
