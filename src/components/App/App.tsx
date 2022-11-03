@@ -115,7 +115,6 @@ const App: React.FC = () => {
         </Switch>
 
         {/* Cursor should be last element added to page */}
-        {/* Disabling cursor effects due to performance on large screens */}
         <Cursor />
       </div>
     </Router>

@@ -2,6 +2,12 @@ import React from 'react';
 
 import styles from './MenuButton.module.scss';
 
+/**
+ * IMenuButtonProps
+ *
+ * @param isOpen Whether the menu is open.
+ * @param handleClick Handles menu click event.
+ */
 interface IMenuButtonProps {
   isOpen: boolean;
   handleClick: () => void;

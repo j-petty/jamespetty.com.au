@@ -1,27 +1,61 @@
-.cursor {
-  width: 30px;
-  height: 30px;
-  border: 2px solid #fefefe;
-  border-radius: 100%;
+.cursorRing {
   position: fixed;
+  top: 0;
+  left: 0;
+  width: 22px;
+  height: 22px;
+  border: 2px solid rgba(254, 254, 254, 0.808);
+  border-radius: 100%;
   transform: translate(-50%, -50%);
+  -webkit-transition-duration: 100ms;
+  transition-duration: 100ms;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  will-change: width, height, transform, border;
+  z-index: 999;
   pointer-events: none;
-  z-index: 9999;
-  mix-blend-mode: difference;
-  transition: all 150ms ease;
-  transition-property: opacity, background-color, transform, mix-blend-mode;
 
+  :global(.light) & {
+    border-color: #444;
+  }
+  
   &.hidden {
     opacity: 0;
   }
 
-  &.linkHovered {
-    transform: translate(-50%, -50%) scale(0.8);
-    background-color: #fefefe;
+  &.hovered {
+    width: 50px;
+    height: 50px;
+    border-width: 3px;
+    border-color: lightgray;
   }
 
   &.clicked {
     transform: translate(-50%, -50%) scale(0.7);
-    background-color: #fefefe;
+  }
+}
+
+.cursor {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background-color: #fefefe;
+  border-radius: 100%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+  pointer-events: none;
+
+  :global(.light) & {
+    background-color: #444;
+  }
+  
+  &.hidden {
+    opacity: 0;
+  }
+
+  &.hovered {
+    display: none;
   }
 }
