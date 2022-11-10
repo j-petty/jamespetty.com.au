@@ -1,15 +1,16 @@
 import React, { forwardRef, ReactElement, useEffect } from 'react';
 import gsap from 'gsap';
 
-import './Section.module.scss';
+import styles from './Section.module.scss';
 
 interface ISectionProps {
   id: string;
   title: string;
+  subTitle?: string;
   children?: ReactElement | Array<ReactElement>;
 }
 
-const Section: React.ForwardRefRenderFunction<HTMLElement, ISectionProps> = ({ id, title, children }: ISectionProps, ref: React.ForwardedRef<HTMLElement>) => {
+const Section: React.ForwardRefRenderFunction<HTMLElement, ISectionProps> = ({ id, title, subTitle, children }: ISectionProps, ref: React.ForwardedRef<HTMLElement>) => {
   // animate section elements appearing as they are scrolled into view
   useEffect(() => {
     const query = gsap.utils.selector(`#${id}`);
@@ -39,7 +40,11 @@ const Section: React.ForwardRefRenderFunction<HTMLElement, ISectionProps> = ({ i
   return (
     <section id={id} ref={ref}>
       {title &&
-        <h2>{title}</h2>
+        <h2 className={subTitle ? styles.small : ''}>{title}</h2>
+      }
+
+      {subTitle &&
+        <p className='para--light'>{subTitle}</p>
       }
 
       {children}

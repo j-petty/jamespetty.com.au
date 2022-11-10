@@ -198,7 +198,7 @@ const Home: React.FC<IHomeProps> = ({ colorMode }) => {
           <ProjectRow
             title='Contract Management System'
             skills={['SaaS', 'Start-up', 'Business']}
-            description='My side hustle and passion, we are building a new contract management tool aimed at improving the contracting experience for everyone involved.'
+            description='My side hustle and passion project, we are building a new contract management tool aimed at improving the contracting experience for everyone involved.'
             image={project08Img}
             imageAlt='Recruithero'
             linkText='recruithero.com.au'
@@ -256,7 +256,7 @@ const Home: React.FC<IHomeProps> = ({ colorMode }) => {
             link='//store.steampowered.com/app/652560/Beached/' />
         </div>
 
-        <p className={styles.para__light} style={{marginTop: '60px'}}>Want to know more? <a href='#contact' className='simpleLink'>Just ask</a>.</p>
+        <p className='para--light' style={{marginTop: '60px'}}>Want to know more? <a href='#contact' className='simpleLink'>Just ask</a>.</p>
       </Section>
 
       {/* WORK */}
@@ -346,7 +346,7 @@ const Home: React.FC<IHomeProps> = ({ colorMode }) => {
             imageLink='//www.deloittedigital.com.au/'
             title='Senior Technical Specialist'
             duration='3 years'
-            skills={['.Net', 'React', 'Cloud', 'Leadership', 'Teamwork', 'Client Excellence']}
+            skills={['.Net', 'React', 'Cloud', 'Teamwork', 'Client Excellence']}
             description={
               <>
                 As a Senior Technical Consultant at Deloitte Digital, I worked in several challenging client environments.

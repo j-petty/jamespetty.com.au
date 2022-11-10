@@ -16,6 +16,14 @@ section {
     background: #FFFFFF;
     color: #141414;
     padding: 5px 20px;
+
+    &.small {
+      margin-bottom: 25px;
+    }
+  }
+
+  h2 + :global(.para--light) {    
+    margin-bottom: 25px;
   }
 
   :global(.light) h2 {
