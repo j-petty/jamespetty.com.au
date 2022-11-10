@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
+
+import { ColourContext } from 'contexts/ColourContext';
 
 import styles from './Menu.module.scss';
 
@@ -6,10 +8,11 @@ import darkModeImg from 'assets/images/icon-darkmode.svg';
 
 interface IMenuProps {
   isOpen: boolean;
-  toggleColorMode: () => void;
 }
 
-const Menu: React.FC<IMenuProps> = ({ isOpen, toggleColorMode, children }) => {
+const Menu: React.FC<IMenuProps> = ({ isOpen, children }) => {
+  const { toggleColourMode } = useContext(ColourContext);
+
   let extraClasses = '';
 
   if (isOpen) {
@@ -24,7 +27,7 @@ const Menu: React.FC<IMenuProps> = ({ isOpen, toggleColorMode, children }) => {
 
       <button
         className={styles.colorModeToggle}
-        onClick={() => toggleColorMode()}
+        onClick={() => toggleColourMode()}
         aria-label='Toggle Dark Mode'>
         <img
           src={darkModeImg}

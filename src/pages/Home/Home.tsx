@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useMemo } from 'react';
+import React, { useState, useCallback, useMemo, useContext } from 'react';
 import gsap from 'gsap';
 import ReactGA from 'react-ga';
 
@@ -14,6 +14,8 @@ import FormField from 'components/FormField/FormField';
 import SocialList from 'components/SocialList/SocialList';
 import Icon from 'components/Icon/Icon';
 import Footer from 'components/Footer/Footer';
+
+import { ColourContext } from 'contexts/ColourContext';
 
 import {
   project02Img,
@@ -48,12 +50,10 @@ import {
 } from 'assets/icons';
 
 import styles from './Home.module.scss';
+import { ColourMode } from 'types/enums';
 
-interface IHomeProps {
-  colorMode: string;
-}
-
-const Home: React.FC<IHomeProps> = ({ colorMode }) => {
+const Home: React.FC = () => {
+  const { colourMode } = useContext(ColourContext);
   const [currentSection, setCurrentSection] = useState<string>('home');
 
   // Memorise skills to prevent rerenders
@@ -268,7 +268,7 @@ const Home: React.FC<IHomeProps> = ({ colorMode }) => {
           <TimelineRow
             id='work-dps'
             date='today'
-            image={colorMode === 'dark'
+            image={colourMode === ColourMode.Dark
               ? aphW
               : aphB}
             imageAlt='Department of Parliamentary Services'
@@ -306,7 +306,7 @@ const Home: React.FC<IHomeProps> = ({ colorMode }) => {
           <TimelineRow
             id='work-agd'
             date='2022'
-            image={colorMode === 'dark'
+            image={colourMode === ColourMode.Dark
               ? agdW
               : agdB}
             imageAlt="Attorney-General's Department"
@@ -339,7 +339,7 @@ const Home: React.FC<IHomeProps> = ({ colorMode }) => {
           <TimelineRow
             id='work-deloitte'
             date='2021'
-            image={colorMode === 'dark'
+            image={colourMode === ColourMode.Dark
               ? deloitteDigitalW
               : deloitteDigitalB}
             imageAlt='Deloitte Digital'
@@ -393,7 +393,7 @@ const Home: React.FC<IHomeProps> = ({ colorMode }) => {
           <TimelineRow
             id='work-spinify'
             date='2018'
-            image={colorMode === 'dark'
+            image={colourMode === ColourMode.Dark
               ? spinifyW
               : spinifyB}
             imageAlt='Spinify'
@@ -415,7 +415,7 @@ const Home: React.FC<IHomeProps> = ({ colorMode }) => {
           <TimelineRow
             id='work-made-for-me'
             date='2016'
-            image={colorMode === 'dark'
+            image={colourMode === ColourMode.Dark
               ? madeForMeW
               : madeForMeB}
             imageAlt='Made for Me'
