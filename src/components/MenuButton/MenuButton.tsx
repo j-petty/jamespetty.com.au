@@ -16,7 +16,7 @@ interface IMenuButtonProps {
 const MenuButton: React.FC<IMenuButtonProps> = ({ isOpen, handleClick }) => {
   return (
     <button
-      className={isOpen ? `${styles.navButton} ${styles.active}` : `${styles.navButton}`}
+      className={isOpen ? `${styles.navigationButton} ${styles.active}` : `${styles.navigationButton}`}
       onClick={handleClick}
       aria-label='Toggle Nav Menu'>
       <span />

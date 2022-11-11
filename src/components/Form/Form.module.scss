@@ -1,14 +1,15 @@
-.formContainer {
+@import 'assets/styles/variables';
+
+.container {
   width: 50%;
   max-width: 512px;
   margin: auto;
   position: relative;
 }
 
-
 /* Medium */
-@media (max-width: 992px) {  
-  .formContainer {
+@media (max-width: $breakpoint-medium) {  
+  .container {
     width: 85%;
   }
 }

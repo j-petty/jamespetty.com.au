@@ -1,10 +1,12 @@
+@import 'assets/styles/variables';
+
 .cursorRing {
   position: fixed;
   top: 0;
   left: 0;
   width: 22px;
   height: 22px;
-  border: 2px solid rgba(254, 254, 254, 0.808);
+  border: 2px solid $colour-cursor-dark;
   border-radius: 100%;
   transform: translate(-50%, -50%);
   -webkit-transition-duration: 100ms;
@@ -18,7 +20,7 @@
   /*mix-blend-mode: difference;*/
 
   :global(.light) & {
-    border-color: #444;
+    border-color: $colour-cursor-light;
   }
   
   &.hidden {
@@ -52,7 +54,7 @@
   /*mix-blend-mode: difference;*/
 
   :global(.light) & {
-    background-color: #444;
+    background-color: $colour-cursor-light;
   }
   
   &.hidden {

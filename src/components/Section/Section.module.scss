@@ -1,3 +1,5 @@
+@import 'assets/styles/variables';
+
 section {
   display: flex;
   justify-content: center;
@@ -33,14 +35,14 @@ section {
 }
 
 /* Tablets */
-@media (max-width: 768px) {
+@media (max-width: $breakpoint-tablet) {
   section {
     width: 85%;
   }
 }
 
 /* Mobiles */
-@media (max-width: 576px) {
+@media (max-width: $breakpoint-mobile) {
   section {
     width: 100%;
   }

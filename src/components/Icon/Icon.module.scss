@@ -1,4 +1,4 @@
-.socialIcon {
+.icon {
   outline: none;
   display: block;
   margin: 15px 25px;
@@ -11,31 +11,31 @@
   transition: border .2s ease-in-out;
 }
 
-:global(.light) .socialIcon {
+:global(.light) .icon {
   background: #888888;
 }
 
-.socialIcon:hover,
-.socialIcon:focus,
-.socialIcon:active {
+.icon:hover,
+.icon:focus,
+.icon:active {
   background: #555555;
   border: 2px solid #FFFFFF;
 }
 
-:global(.light) .socialIcon:hover,
-:global(.light) .socialIcon:focus,
-:global(.light) .socialIcon:active {
+:global(.light) .icon:hover,
+:global(.light) .icon:focus,
+:global(.light) .icon:active {
   border: 2px solid #141414;
 }
 
-.socialIcon img {
+.icon img {
   max-width: 100%;
   max-height: 100%;
 }
 
 /* Mobiles */
 @media (max-width: 576px) {
-  .socialIcon {
+  .icon {
     margin: 15px;
   }
 }

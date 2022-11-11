@@ -105,7 +105,7 @@ const Form: React.FC<IFormProps> = ({ action, children }) => {
 
   return (
     <form
-      className={styles.formContainer}
+      className={styles.container}
       onSubmit={handleSubmit}
       onKeyDown={(e) => e.key !== 'Enter'}>
       {errorMessage &&

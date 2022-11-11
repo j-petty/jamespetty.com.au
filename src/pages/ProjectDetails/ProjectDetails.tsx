@@ -28,7 +28,8 @@ const ProjectDetails: React.FC = () => {
     <main>
       <BackButton
         className={styles.backButton}
-        link='/#work' />
+        link='/#work'
+        label='back to home' />
 
       <Section
         id='projects'

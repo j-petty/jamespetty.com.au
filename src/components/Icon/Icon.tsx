@@ -14,7 +14,7 @@ interface IIconProps {
 const Icon: React.FC<IIconProps> = ({ link, image, imageAlt, ...props }) => {
   return (
     <a
-      className={styles.socialIcon}
+      className={styles.icon}
       href={link}
       target='_blank'
       rel='noopener noreferrer'

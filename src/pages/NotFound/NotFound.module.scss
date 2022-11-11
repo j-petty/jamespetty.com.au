@@ -1,3 +1,5 @@
+@import 'assets/styles/variables';
+
 .notFound {
   display: flex;
   justify-content: center;
@@ -20,14 +22,14 @@
 }
 
 /* Medium */
-@media (max-width: 992px) {  
+@media (max-width: $breakpoint-medium) {  
   .notFound h1 {
     font-size: 70px;
   }
 }
 
 /* Mobiles */
-@media (max-width: 576px) {
+@media (max-width: $breakpoint-mobile) {
   .notFound h1 {
     font-size: 45px;
   }
