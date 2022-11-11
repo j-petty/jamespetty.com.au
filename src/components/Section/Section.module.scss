@@ -26,7 +26,7 @@ section {
     margin-bottom: 25px;
   }
 
-  :global(.light) h2 {
+  :global(.light) & h2 {
     background: #141414;
     color: #FFFFFF;
   }

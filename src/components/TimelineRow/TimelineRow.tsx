@@ -1,3 +1,4 @@
+import SkillList from 'components/SkillList/SkillList';
 import React, { ReactElement } from 'react';
 
 import styles from './TimelineRow.module.scss';
@@ -46,11 +47,9 @@ const TimelineRow: React.FC<ITimelineRowProps> = ({
           }
 
           {skills &&
-            <ul className={styles.skillList}>
-              {skills.map(skill =>
-                <li key={skill} className='boxListItem'>{skill}</li>
-              )}
-            </ul>
+            <SkillList
+              items={skills}
+              className={styles.skillList} />
           }
         </div>
 

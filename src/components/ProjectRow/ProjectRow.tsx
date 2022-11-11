@@ -1,5 +1,7 @@
 import React from 'react';
 
+import SkillList from 'components/SkillList/SkillList';
+
 import styles from './ProjectRow.module.scss';
 
 interface IProjectRowProps {
@@ -22,11 +24,9 @@ const ProjectRow: React.FC<IProjectRowProps> = ({ title, description, linkText, 
           <h3>{title}</h3>
 
           {skills &&
-            <ul className={styles.skillList}>
-              {skills.map((skill) =>
-                <li key={skill} className='boxListItem'>{skill}</li>
-              )}
-            </ul>
+            <SkillList
+              items={skills}
+              className={styles.skillList} />
           }
         </div>
 

@@ -1,7 +1,8 @@
 import React, { ReactElement, useState } from 'react';
 
-import styles from './TimelineSubRow.module.scss';
+import SkillList from 'components/SkillList/SkillList';
 
+import styles from './TimelineSubRow.module.scss';
 
 interface ITimelineSubRowProps {
   id: string;
@@ -18,9 +19,6 @@ const TimelineSubRow: React.FC<ITimelineSubRowProps> = ({ id, title, subTitle, d
   const handleToggle = () => {
     // Update state
     setIsToggled(!isToggled);
-
-    // remove focus from button
-    //document.activeElement?.blur();
   };
 
   return (
@@ -36,11 +34,9 @@ const TimelineSubRow: React.FC<ITimelineSubRowProps> = ({ id, title, subTitle, d
       </div>
 
       {skills &&
-        <ul className={styles.skillList}>
-          {skills.map((skill) =>
-            <li key={skill} className='boxListItem'>{skill}</li>
-          )}
-        </ul>
+        <SkillList
+          items={skills}
+          className={styles.skillList} />
       }
 
       {(description || responsibilities) &&

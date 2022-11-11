@@ -11,7 +11,6 @@ import TimelineRow from 'components/TimelineRow/TimelineRow';
 import TimelineSubRow from 'components/TimelineSubRow/TimelineSubRow';
 import Form from 'components/Form/Form';
 import FormField from 'components/FormField/FormField';
-import SocialList from 'components/SocialList/SocialList';
 import Icon from 'components/Icon/Icon';
 import Footer from 'components/Footer/Footer';
 
@@ -38,10 +37,6 @@ import {
 } from 'assets/images';
 
 import {
-  linkedInImg,
-  stackOverflowImg,
-  githubImg,
-
   reactImg,
   dotNetImg,
   cloudImg,
@@ -49,7 +44,6 @@ import {
   downloadImg
 } from 'assets/icons';
 
-import styles from './Home.module.scss';
 import { ColourMode } from 'types/enums';
 
 const Home: React.FC = () => {
@@ -182,6 +176,7 @@ const Home: React.FC = () => {
       <Section
         id='projects'
         title='projects'
+        subTitle={<>Because it&apos;s not work when you love it.</>}
         ref={projectsRef}>
         {/*<div className='animate'>
           <ProjectRow
@@ -197,7 +192,7 @@ const Home: React.FC = () => {
         <div className='animate'>
           <ProjectRow
             title='Contract Management System'
-            skills={['SaaS', 'Start-up', 'Business']}
+            skills={['SaaS', '.Net', 'React', 'Cloud']}
             description='My side hustle and passion project, we are building a new contract management tool aimed at improving the contracting experience for everyone involved.'
             image={project08Img}
             imageAlt='Recruithero'
@@ -230,7 +225,7 @@ const Home: React.FC = () => {
         <div className='animate'>
           <ProjectRow
             title='Digital Pass Provider'
-            skills={['Asp.Net', 'Azure', 'Apple', 'Google']}
+            skills={['.Net', 'Azure', 'Apple', 'Google']}
             description='An API first platform which simplifies the process of generating digital Passes for the Apple and Google wallets. Intended to simplify the process of integrating with digital wallet solutions.'
             image={project06Img}
             imageAlt='Simplifying digital wallets.' />
@@ -263,6 +258,7 @@ const Home: React.FC = () => {
       <Section
         id='work'
         title='work'
+        subTitle='Each project brings with it a new set of challenges and opportunities for growth.'
         ref={workRef}>
         <div className='animate'>
           <TimelineRow
@@ -275,12 +271,9 @@ const Home: React.FC = () => {
             imageLink='//www.aph.gov.au/'
             title='Senior Full-stack Developer'
             duration='current'
-            skills={['.Net', 'React', 'Azure', 'Agile', 'Public Sector', 'Contractor']}
+            skills={['.Net', 'React', 'Azure', 'Agile', 'Public Sector']}
             description={
-              <>
-                <p>Each new client presents an array of new challenges to overcome. In the case of DPS, project dependency management has been a crucial part of my role as technical lead.</p>
-                <br /><p>The department was undergoing a Cloud migration at the time which meant a lot of changes and lack of established patterns. I worked closely with the migration team and was able to offer advice based on experience working with Cloud on other clients and projects.</p>
-              </>
+              <p>The department was undergoing a Cloud migration in parallel to multiple development projects which resulted in a lack of established patterns. I worked closely with the migration team and was able to offer advice based on experience working with Cloud on other clients and projects.</p>
             } >
             <TimelineSubRow
               id='work-dps-report-builder'
@@ -313,7 +306,7 @@ const Home: React.FC = () => {
             imageLink='//www.ag.gov.au/'
             title='Senior Full-stack Developer'
             duration='1 year'
-            skills={['.Net', 'React', 'Azure', 'Agile', 'Public Sector', 'Contractor']}
+            skills={['.Net', 'React', 'Azure', 'Agile', 'Public Sector']}
             description={
               <>
                 Contracting with the Attorney-General&apos;s Department as a senior full-stack developer and technical lead offered exposure to a suite of new technologies and personal growth opportunities.
@@ -441,9 +434,9 @@ const Home: React.FC = () => {
       <Section
         id='contact'
         title='contact'
+        subTitle='Reach out with any questions! I typically respond within 2 business days.'
         ref={contactRef}>
         <div className='animate'>
-          <p className={styles.para__light} style={{marginBottom: '60px'}}>Reach out with any questions! I typically respond within 2 business days.</p>
           <Form action='contact.php'>
             <FormField
               name='name'
@@ -472,25 +465,6 @@ const Home: React.FC = () => {
               name='submit'
               type='submit' />
           </Form>
-        </div>
-
-        <div>
-          <SocialList>
-            <Icon
-              link='//www.linkedin.com/in/j-petty'
-              image={linkedInImg}
-              imageAlt='LinkedIn' />
-
-            <Icon
-              link='//stackoverflow.com/users/5434910/j-petty'
-              image={stackOverflowImg}
-              imageAlt='Stack Overflow' />
-
-            <Icon
-              link='//github.com/j-petty'
-              image={githubImg}
-              imageAlt='GitHub' />
-          </SocialList>
         </div>
       </Section>
 

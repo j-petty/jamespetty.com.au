@@ -22,6 +22,7 @@ import NotFound from 'pages/NotFound/NotFound';
 import { ColourContext } from 'contexts/ColourContext';
 
 import styles from './App.module.scss';
+import ProjectDetails from 'pages/ProjectDetails/ProjectDetails';
 
 const App: React.FC = () => {
   const { colourMode } = useContext(ColourContext);
@@ -88,6 +89,10 @@ const App: React.FC = () => {
         <Switch>
           <Route exact path='/'>
             <Home />
+          </Route>
+
+          <Route exact path='/project/:projectId'>
+            <ProjectDetails />
           </Route>
 
           <Route path='*'>

@@ -1,0 +1,48 @@
+.detailsContainer {
+  display: flex;
+  gap: 10%;
+}
+
+.description {
+  font-weight: 200;
+}
+
+.detailsColumn {
+  flex: 1;
+}
+
+.projectMetric {
+  h3 {
+    font-weight: 200;
+    margin-bottom: 10px;
+    margin-top: 16px;
+  }
+}
+
+.responsibilitiesList {
+  list-style: initial;
+  padding-left: 20px;
+  font-weight: 200;
+
+  li {
+    margin-bottom: 8px;
+  }
+}
+
+.backButton {
+  margin: 0px auto;
+  width: 75%;
+  padding-top: 40px;
+}
+
+.skillsList {
+  text-align: center;
+}
+
+/* Mobiles */
+@media (max-width: 576px) {
+  .detailsContainer {
+    display: initial;
+    padding: 0px 40px;
+  }
+}

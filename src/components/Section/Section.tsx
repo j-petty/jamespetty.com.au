@@ -6,7 +6,7 @@ import styles from './Section.module.scss';
 interface ISectionProps {
   id: string;
   title: string;
-  subTitle?: string;
+  subTitle?: string | ReactElement;
   children?: ReactElement | Array<ReactElement>;
 }
 

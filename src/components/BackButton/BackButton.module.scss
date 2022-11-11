@@ -1,0 +1,30 @@
+.button {
+  display: flex;
+  align-items: center;
+  font-weight: 200;
+  align-self: start;
+  font-size: 15px;
+  color: #888888;
+
+  &:hover,
+  &:active,
+  &:focus {
+    color: #FFFFFF;
+
+    svg {
+      transform: translateX(-10px);
+    }
+  }
+
+  :global(.light) &:hover,
+  :global(.light) &:active,
+  :global(.light) &:focus {
+    color: #141414;
+  }
+
+  svg {
+    font-size: 30px;
+    margin-right: 20px;
+    transition: .3s transform ease-out;
+  }
+}
