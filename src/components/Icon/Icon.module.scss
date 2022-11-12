@@ -11,6 +11,15 @@
   border: 2px solid transparent;
   background: $colour-dark;
   transition: border .2s ease-in-out;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  svg {
+    font-size: 25px;
+  }
 }
 
 :global(.light) .icon {
@@ -30,10 +39,6 @@
   border: 2px solid #141414;
 }
 
-.icon img {
-  max-width: 100%;
-  max-height: 100%;
-}
 
 /* Mobiles */
 @media (max-width: 576px) {

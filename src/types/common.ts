@@ -1,5 +1,7 @@
+import { ReactElement } from 'react';
+
 export interface IIconLink {
-  icon: any;
+  icon: string | ReactElement;
   text: string;
   link: string;
 }

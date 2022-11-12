@@ -20,6 +20,7 @@ import Loader from 'components/Loader/Loader';
 import Home from 'pages/Home/Home';
 import NotFound from 'pages/NotFound/NotFound';
 
+import MouseContextProvider from 'contexts/MouseContext';
 import { ColourContext } from 'contexts/ColourContext';
 import { ContentContext } from 'contexts/ContentContext';
 
@@ -34,7 +35,11 @@ const App: React.FC = () => {
 
   useEffect(() => {
     // eslint-disable-next-line no-console
-    console.log('Welcome to my portfolio!\n\nPlease take a look around.\n\nUse the contact form to get in touch.');
+    console.log(`
+Welcome to my portfolio!\n\n
+Built with React using TypeScript, no themes or templates; integrated with Contentful as a headless CMS.\n\n
+Take a look around! Use the contact form to get in touch and let me know what you think.
+    `);
 
     // Startup Google Analytics
     initializeAnalytics();
@@ -68,54 +73,57 @@ const App: React.FC = () => {
     );
   }
 
+  // NOTE: mouse context provider can't be rendered before the page content is loaded
   return (
-    <Router>
-      <div className={`${styles.container} ${colourMode}`}>
-        <MenuButton
-          isOpen={isMenuOpen}
-          handleClick={handleMenuOpen} />
+    <MouseContextProvider>
+      <Router>
+        <div className={`${styles.container} ${colourMode}`}>
+          <MenuButton
+            isOpen={isMenuOpen}
+            handleClick={handleMenuOpen} />
 
-        <Menu
-          isOpen={isMenuOpen}>
-          <MenuItem
-            label='home'
-            link='/#home'
-            toggleMenu={handleMenuOpen} />
+          <Menu
+            isOpen={isMenuOpen}>
+            <MenuItem
+              label='home'
+              link='/#home'
+              toggleMenu={handleMenuOpen} />
 
-          <MenuItem
-            label='projects'
-            link='/#projects'
-            toggleMenu={handleMenuOpen} />
+            <MenuItem
+              label='projects'
+              link='/#projects'
+              toggleMenu={handleMenuOpen} />
 
-          <MenuItem
-            label='work'
-            link='/#work'
-            toggleMenu={handleMenuOpen} />
+            <MenuItem
+              label='work'
+              link='/#work'
+              toggleMenu={handleMenuOpen} />
 
-          <MenuItem
-            label='contact'
-            link='/#contact'
-            toggleMenu={handleMenuOpen} />
-        </Menu>
+            <MenuItem
+              label='contact'
+              link='/#contact'
+              toggleMenu={handleMenuOpen} />
+          </Menu>
 
-        <Switch>
-          <Route exact path='/'>
-            <Home />
-          </Route>
+          <Switch>
+            <Route exact path='/'>
+              <Home />
+            </Route>
 
-          <Route exact path='/project/:projectId'>
-            <ProjectDetails />
-          </Route>
+            <Route exact path='/project/:projectId'>
+              <ProjectDetails />
+            </Route>
 
-          <Route path='*'>
-            <NotFound />
-          </Route>
-        </Switch>
+            <Route path='*'>
+              <NotFound />
+            </Route>
+          </Switch>
 
-        {/* Cursor should be last element added to page */}
-        <Cursor />
-      </div>
-    </Router>
+          {/* Cursor should be last element added to page */}
+          <Cursor />
+        </div>
+      </Router>
+    </MouseContextProvider>
   );
 };
 

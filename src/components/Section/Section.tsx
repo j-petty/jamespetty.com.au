@@ -11,7 +11,7 @@ interface ISectionProps {
 }
 
 const Section: React.ForwardRefRenderFunction<HTMLElement, ISectionProps> = ({ id, title, subTitle, children }: ISectionProps, ref: React.ForwardedRef<HTMLElement>) => {
-  // animate section elements appearing as they are scrolled into view
+  // Animate section elements appearing as they are scrolled into view
   useEffect(() => {
     const query = gsap.utils.selector(`#${id}`);
 

@@ -3,3 +3,5 @@ env:
   browser: true
 extends:
   - 'eslint-config-petty'
+rules:
+  jsdoc/require-jsdoc: off

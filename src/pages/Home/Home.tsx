@@ -3,6 +3,8 @@ import gsap from 'gsap';
 import ReactGA from 'react-ga';
 import dayjs from 'dayjs';
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+import { BsFillCloudCheckFill, BsDownload } from 'react-icons/bs';
+import { SiAzuredevops, SiReact, SiDotnet } from 'react-icons/si';
 
 import ScrollMenu from 'components/ScrollMenu/ScrollMenu';
 import ScrollMenuItem from 'components/ScrollMenuItem/ScrollMenuItem';
@@ -19,39 +21,14 @@ import Footer from 'components/Footer/Footer';
 import { ColourContext } from 'contexts/ColourContext';
 import { ContentContext } from 'contexts/ContentContext';
 
-import {
-  project02Img,
-  project06Img,
-  project05Img,
-  project04Img,
-  project07Img,
-  project08Img,
-
-  agdW,
-  agdB,
-  aphW,
-  aphB,
-  deloitteDigitalW,
-  deloitteDigitalB,
-  spinifyW,
-  spinifyB,
-  madeForMeW,
-  madeForMeB
-} from 'assets/images';
-
-import {
-  reactImg,
-  dotNetImg,
-  cloudImg,
-  devOpsImg,
-  downloadImg
-} from 'assets/icons';
-
 import { ColourMode } from 'types/enums';
 
 const Home: React.FC = () => {
   const { colourMode } = useContext(ColourContext);
-  const { employmentEntries, projectEntries } = useContext(ContentContext);
+  const {
+    employmentEntries, projectEntries,
+    isEmploymentError, isProjectsError
+  } = useContext(ContentContext);
 
   const [currentSection, setCurrentSection] = useState<string>('home');
 
@@ -134,7 +111,7 @@ const Home: React.FC = () => {
         }
       );
     }
-  }, []);
+  }, [isProjectsError]);
 
   const workRef = useCallback(node => {
     if (node !== null) {
@@ -154,7 +131,7 @@ const Home: React.FC = () => {
         }
       );
     }
-  }, []);
+  }, [isEmploymentError]);
 
   const contactRef = useCallback(node => {
     if (node !== null) {
@@ -191,24 +168,24 @@ const Home: React.FC = () => {
         skillsArray={skills}
         stackArray={[
           {
-            icon: reactImg,
+            icon: <SiReact />,
             text: 'React.JS',
-            link: '//reactjs.org/'
+            link: 'https://reactjs.org/'
           },
           {
-            icon: dotNetImg,
+            icon: <SiDotnet />,
             text: '.Net',
-            link: '//dotnet.microsoft.com/learn/aspnet/what-is-aspnet-core'
+            link: 'https://dotnet.microsoft.com/learn/aspnet/what-is-aspnet-core'
           },
           {
-            icon: cloudImg,
+            icon: <BsFillCloudCheckFill />,
             text: 'Cloud First',
-            link: '//azure.microsoft.com/en-au/'
+            link: 'https://azure.microsoft.com/en-au/'
           },
           {
-            icon: devOpsImg,
+            icon: <SiAzuredevops />,
             text: 'CI/CD',
-            link: '//azure.microsoft.com/en-au/services/devops/'
+            link: 'https://azure.microsoft.com/en-au/services/devops/'
           }
         ]} />
 
@@ -218,22 +195,27 @@ const Home: React.FC = () => {
         title='projects'
         subTitle={<>Because it&apos;s not work when you love it.</>}
         ref={projectsRef}>
-        <>
-          {sortedProjectEntries && sortedProjectEntries?.map(project => (
-            <div key={project.sys.id} className='animate'>
-              <ProjectRow
-                title={project.fields.name}
-                skills={project.fields.skills}
-                description={project.fields.description && documentToHtmlString(project.fields.description)}
-                image={project.fields.image?.fields.file.url}
-                imageAlt={project.fields.image?.fields.title}
-                linkText={project.fields.linkText}
-                link={project.fields.link} />
-            </div>
-          ))}
-        </>
+        {isProjectsError
+          ? <p className='para--error'>Whoops! You shouldn&apos;t be seeing this, please reach out using the <a href='/#contact'>contact form</a> below and I&apos;ll get the projects list working again.</p>
+          : <>
+            <>
+              {sortedProjectEntries && sortedProjectEntries?.map(project => (
+                <div key={project.sys.id} className='animate'>
+                  <ProjectRow
+                    title={project.fields.name}
+                    skills={project.fields.skills}
+                    description={project.fields.description && documentToHtmlString(project.fields.description)}
+                    image={project.fields.image?.fields.file.url}
+                    imageAlt={project.fields.image?.fields.title}
+                    linkText={project.fields.linkText}
+                    link={project.fields.link} />
+                </div>
+              ))}
+            </>
 
-        <p className='para--light' style={{marginTop: '60px'}}>Want to know more? <a href='#contact' className='simpleLink'>Just ask</a>.</p>
+            <p className='para--light' style={{marginTop: '60px'}}>Want to know more? <a href='#contact' className='simpleLink'>Just ask</a>.</p>
+          </>
+        }
       </Section>
 
       {/* WORK */}
@@ -242,38 +224,43 @@ const Home: React.FC = () => {
         title='work'
         subTitle='Each project brings with it a new set of challenges and opportunities for growth.'
         ref={workRef}>
-        <>
-          {sortedEmploymentEntries?.map(employment => (
-            <div key={employment.sys.id} className='animate'>
-              <TimelineRow
-                id={employment.fields.slug}
-                date={`${!employment.fields.endDate ? 'today' : dayjs(employment.fields.endDate).year()}`}
-                image={colourMode === ColourMode.Dark
-                  ? employment.fields.logoLight?.fields.file.url
-                  : employment.fields.logoDark?.fields.file.url}
-                imageAlt={employment.fields.company}
-                imageLink={employment.fields.link}
-                title={employment.fields.jobTitle}
-                duration={!employment.fields.endDate ? 'current' : dayjs(employment.fields.startDate).from(employment.fields.endDate, true)}
-                skills={employment.fields.skills}
-                description={employment.fields.description && documentToHtmlString(employment.fields.description)}>
-                {employment.fields.projects && employment.fields.projects.map(project => (
-                  <TimelineSubRow
-                    key={project.sys.id}
-                    id='work-dps-report-builder'
-                    title={project.fields.name}
-                    skills={project.fields.skills}
-                    description={project.fields.description && documentToHtmlString(project.fields.description)} />
-                ))}
-              </TimelineRow>
-            </div>
-          ))}
-        </>
+        {isEmploymentError
+          ? <p className='para--error'>Whoops! You shouldn&apos;t be seeing this, please reach out using the <a href='/#contact'>contact form</a> below and I&apos;ll get employment history working again.</p>
+          : <>
+            <>
+              {sortedEmploymentEntries?.map(employment => (
+                <div key={employment.sys.id} className='animate'>
+                  <TimelineRow
+                    id={employment.fields.slug}
+                    date={`${!employment.fields.endDate ? 'today' : dayjs(employment.fields.endDate).year()}`}
+                    image={colourMode === ColourMode.Dark
+                      ? employment.fields.logoLight?.fields.file.url
+                      : employment.fields.logoDark?.fields.file.url}
+                    imageAlt={employment.fields.company}
+                    imageLink={employment.fields.link}
+                    title={employment.fields.jobTitle}
+                    duration={!employment.fields.endDate ? 'current' : dayjs(employment.fields.startDate).from(employment.fields.endDate, true)}
+                    skills={employment.fields.skills}
+                    description={employment.fields.description && documentToHtmlString(employment.fields.description)}>
+                    {employment.fields.projects && employment.fields.projects.map(project => (
+                      <TimelineSubRow
+                        key={project.sys.id}
+                        id='work-dps-report-builder'
+                        title={project.fields.name}
+                        skills={project.fields.skills}
+                        description={project.fields.description && documentToHtmlString(project.fields.description)} />
+                    ))}
+                  </TimelineRow>
+                </div>
+              ))}
+            </>
 
-        <div className='animate'>
-          <TimelineRow
-            date='2015' />
-        </div>
+            <div className='animate'>
+              <TimelineRow
+                date='2015' />
+            </div>
+          </>
+        }
       </Section>
 
       {/* CONTACT */}
@@ -321,7 +308,7 @@ const Home: React.FC = () => {
 
       <Icon
         link='/downloads/james-petty-cv-2021.pdf'
-        image={downloadImg}
+        image={<BsDownload />}
         imageAlt='Download'
         style={{
           position: 'fixed',

@@ -9,6 +9,8 @@ import { Employment, Project } from 'types/content';
  */
 export interface IContentContext {
   isLoading: boolean;
+  isEmploymentError: boolean;
+  isProjectsError: boolean;
   employmentEntries?: Array<contentful.Entry<Employment>>;
   projectEntries?: Array<contentful.Entry<Project>>;
 }
@@ -22,9 +24,11 @@ export const ContentContext = createContext<IContentContext>({} as IContentConte
 
 const ContentContextProvider: React.FC = ({ children }) => {
   const [isLoadingEmployment, setIsLoadingEmployment] = useState<boolean>(true);
+  const [isEmploymentError, setIsEmploymentError] = useState<boolean>(false);
   const [employmentEntries, setEmploymentEntries] = useState<Array<contentful.Entry<Employment>>>();
 
   const [isLoadingProjects, setIsLoadingProjects] = useState<boolean>(true);
+  const [isProjectsError, setIsProjectsError] = useState<boolean>(false);
   const [projectEntries, setProjectEntries] = useState<Array<contentful.Entry<Project>>>();
 
   /**
@@ -43,6 +47,7 @@ const ContentContextProvider: React.FC = ({ children }) => {
   const getEmploymentEntries = async () => {
     try {
       setIsLoadingEmployment(true);
+      setIsEmploymentError(false);
 
       // Retrieve employment entries
       const employmentEntries = await contentfulClient.getEntries<Employment>({
@@ -52,9 +57,11 @@ const ContentContextProvider: React.FC = ({ children }) => {
       // Store returned employment records
       setEmploymentEntries(employmentEntries?.items);
       setIsLoadingEmployment(false);
-    } catch (error) {
+    }
+    catch (error) {
+      // eslint-disable-next-line no-console
       console.error('Failed to retrieve employment history');
-      // TODO: error handling
+      setIsEmploymentError(true);
     }
   };
 
@@ -64,6 +71,7 @@ const ContentContextProvider: React.FC = ({ children }) => {
   const getProjectEntries = async () => {
     try {
       setIsLoadingProjects(true);
+      setIsProjectsError(false);
 
       // Retrieve project entries
       const projectEntries = await contentfulClient.getEntries<Project>({
@@ -73,9 +81,11 @@ const ContentContextProvider: React.FC = ({ children }) => {
       // Store returned project records
       setProjectEntries(projectEntries?.items);
       setIsLoadingProjects(false);
-    } catch (error) {
+    }
+    catch (error) {
+      // eslint-disable-next-line no-console
       console.error('Failed to retrieve projects');
-      // TODO: error handling
+      setIsProjectsError(true);
     }
   };
 
@@ -92,6 +102,8 @@ const ContentContextProvider: React.FC = ({ children }) => {
     <ContentContext.Provider
       value={{
         isLoading: isLoadingEmployment || isLoadingProjects,
+        isEmploymentError,
+        isProjectsError,
         employmentEntries,
         projectEntries
       }}>

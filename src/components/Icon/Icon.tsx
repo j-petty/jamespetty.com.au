@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 
 import styles from './Icon.module.scss';
 
 interface IIconProps {
   link: string;
-  image: string;
+  image: string | ReactElement;
   imageAlt: string;
   style?: any;
   title?: string;
@@ -19,7 +19,10 @@ const Icon: React.FC<IIconProps> = ({ link, image, imageAlt, ...props }) => {
       target='_blank'
       rel='noopener noreferrer'
       {...props}>
-      <img src={image} alt={imageAlt} width='25' height='25' />
+      {typeof image === 'string'
+        ? <img src={image} alt={imageAlt} width='25' height='25' />
+        : image
+      }
     </a>
   );
 };

@@ -1,13 +1,12 @@
 import React from 'react';
+import {
+  SiLinkedin,
+  SiStackoverflow,
+  SiGithub
+} from 'react-icons/si';
 
 import Icon from 'components/Icon/Icon';
 import SocialList from 'components/SocialList/SocialList';
-
-import {
-  linkedInImg,
-  stackOverflowImg,
-  githubImg
-} from 'assets/icons';
 
 import styles from './Footer.module.scss';
 
@@ -22,17 +21,17 @@ const Footer: React.FC<IFooterProps> = ({ link, name }) => {
       <SocialList>
         <Icon
           link='//www.linkedin.com/in/j-petty'
-          image={linkedInImg}
+          image={<SiLinkedin />}
           imageAlt='LinkedIn' />
 
         <Icon
           link='//stackoverflow.com/users/5434910/j-petty'
-          image={stackOverflowImg}
+          image={<SiStackoverflow />}
           imageAlt='Stack Overflow' />
 
         <Icon
           link='//github.com/j-petty'
-          image={githubImg}
+          image={<SiGithub />}
           imageAlt='GitHub' />
       </SocialList>
 

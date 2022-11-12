@@ -1,15 +1,12 @@
 import React, { useMemo } from 'react';
 import ReactGA from 'react-ga';
+import { BsDownload } from 'react-icons/bs';
 
 import Section from 'components/Section/Section';
 import Icon from 'components/Icon/Icon';
 import Footer from 'components/Footer/Footer';
 import SkillList from 'components/SkillList/SkillList';
 import BackButton from 'components/BackButton/BackButton';
-
-import {
-  downloadImg
-} from 'assets/icons';
 
 import styles from './ProjectDetails.module.scss';
 
@@ -93,7 +90,7 @@ const ProjectDetails: React.FC = () => {
 
       <Icon
         link='/downloads/james-petty-cv-2021.pdf'
-        image={downloadImg}
+        image={<BsDownload />}
         imageAlt='Download'
         style={{
           position: 'fixed',

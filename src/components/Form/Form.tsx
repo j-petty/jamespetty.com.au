@@ -15,7 +15,6 @@ const Form: React.FC<IFormProps> = ({ action, children }) => {
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  // componentDidMount
   useEffect(() => {
     // Disable submit if already done
     if (localStorage.getItem(process.env.REACT_APP_MAIL_KEY || '')) {
@@ -97,11 +96,11 @@ const Form: React.FC<IFormProps> = ({ action, children }) => {
   }
 
   // NOTE: not disabling submitted form but can be done if spam occurs
-  /*if (hasSubmitted) {
+  /* if (hasSubmitted) {
     return (
       <p className={`${styles.formContainer} textCenter`}>Thank&apos;s for reaching out. I&apos;ll get back to you shortly.</p>
     );
-  }*/
+  } */
 
   return (
     <form

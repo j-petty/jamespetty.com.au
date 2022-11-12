@@ -113,6 +113,12 @@ button.buttonLink:active {
   text-align: center;
 }
 
+.para--error {
+  font-weight: 200;
+  text-align: center;
+  color: #888888;
+}
+
 @font-face {
   font-family: 'Poppins';
   src: url("assets/fonts/Poppins-Thin.ttf");

@@ -6,7 +6,6 @@ import relativeTime from 'dayjs/plugin/relativeTime';
 
 import App from 'components/App/App';
 
-import MouseContextProvider from 'contexts/MouseContext';
 import ColourContextProvider from 'contexts/ColourContext';
 import ContentContextProvider from 'contexts/ContentContext';
 
@@ -18,11 +17,9 @@ dayjs.extend(relativeTime);
 ReactDOM.render(
   <React.StrictMode>
     <ColourContextProvider>
-      <MouseContextProvider>
-        <ContentContextProvider>
-          <App />
-        </ContentContextProvider>
-      </MouseContextProvider>
+      <ContentContextProvider>
+        <App />
+      </ContentContextProvider>
     </ColourContextProvider>
   </React.StrictMode>
   , document.getElementById('root'));
