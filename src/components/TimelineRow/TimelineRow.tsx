@@ -55,7 +55,12 @@ const TimelineRow: React.FC<ITimelineRowProps> = ({
 
         <div className={styles.timelineText}>
           {description &&
-            <p>{description}</p>
+            <>
+              {typeof description === 'string'
+                ? <div dangerouslySetInnerHTML={{ __html: description}} />
+                : <p>{description}</p>
+              }
+            </>
           }
 
           {children &&

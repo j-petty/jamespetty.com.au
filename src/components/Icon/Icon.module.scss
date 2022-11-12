@@ -1,3 +1,5 @@
+@import 'assets/styles/variables';
+
 .icon {
   outline: none;
   display: block;
@@ -7,7 +9,7 @@
   padding: 9px;
   text-align: center;
   border: 2px solid transparent;
-  background: #444444;
+  background: $colour-dark;
   transition: border .2s ease-in-out;
 }
 
@@ -19,7 +21,7 @@
 .icon:focus,
 .icon:active {
   background: #555555;
-  border: 2px solid #FFFFFF;
+  border: 2px solid $colour-light;
 }
 
 :global(.light) .icon:hover,

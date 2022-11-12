@@ -1,3 +1,5 @@
+@import 'assets/styles/variables';
+
 .projectRow {
   display: flex;
   flex-direction: column;
@@ -71,7 +73,7 @@
   :global(.light) & h3:after,
   :global(.light) & p:after,
   :global(.light) & a:after {
-    background-color: #FFFFFF;
+    background-color: $colour-light;
   }
 
   .skillList {

@@ -1,13 +1,21 @@
+@import 'assets/styles/variables';
+
 .container {
   position: relative;
 }
 
 :global(.dark).container {
-  color: #FFFFFF;
-  background: #141414;
+  color: $colour-light;
+  background: $colour-background-dark;
 }
 
 :global(.light).container {
   color: #141414;
-  background: #FFFFFF;
+  background: $colour-background-light;
+}
+
+.loaderContainer {
+  display: flex;
+  align-items: center;
+  height: 100vh;
 }

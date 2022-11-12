@@ -1,3 +1,5 @@
+@import 'assets/styles/variables';
+
 .menuItem {
   width: 10px;
   height: 10px;
@@ -15,7 +17,7 @@
   }
   
   &:global(.active) a {
-    background: #FFFFFF;
+    background: $colour-light;
     width: 100%;
     height: 100%;
   }

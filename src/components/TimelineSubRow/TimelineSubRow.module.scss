@@ -52,15 +52,17 @@
   }
 }
 
-.responsibilitiesList {
-  list-style: unset;
-  padding-left: 20px;
-  margin-top: 10px;
+.description {
+  ul {
+    list-style: unset;
+    padding-left: 20px;
+    margin-top: 10px;
 
-  li {
-    font-weight: 200;
-    font-size: 16px;
-    margin-bottom: 10px;
+    li {
+      font-weight: 200;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
   }
 }
 

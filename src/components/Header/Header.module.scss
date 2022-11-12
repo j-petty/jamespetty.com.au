@@ -101,7 +101,7 @@ header {
   &:hover,
   &:active,
   &:focus {
-    color: #FFFFFF;
+    color: $colour-light;
   }
 
   :global(.light) &:hover,

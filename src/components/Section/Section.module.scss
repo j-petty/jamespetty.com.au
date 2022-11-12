@@ -15,7 +15,7 @@ section {
     margin: 50px 0;
     font-size: 50px;
     font-weight: 700;
-    background: #FFFFFF;
+    background: $colour-light;
     color: #141414;
     padding: 5px 20px;
 
@@ -30,7 +30,7 @@ section {
 
   :global(.light) & h2 {
     background: #141414;
-    color: #FFFFFF;
+    color: $colour-light;
   }
 }
 

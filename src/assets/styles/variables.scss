@@ -1,6 +1,13 @@
 /* COLOURS */
-$colour-cursor-light: #444;
+$colour-dark: #444;
+$colour-light: #FFF;
+
+$colour-cursor-light: $colour-dark;
 $colour-cursor-dark: rgba(254, 254, 254, 0.808);
+
+$colour-background-light: #FFFFFF;
+$colour-background-dark: #141414;
+
 
 /* BREAKPOINTS */
 $breakpoint-medium: 992px;

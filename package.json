@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@contentful/rich-text-html-renderer": "^15.13.1",
     "axios": "^0.21.4",
+    "contentful": "^9.2.11",
+    "dayjs": "^1.11.6",
     "gsap": "^3.8.0",
     "node-sass": "^7.0.3",
     "react": "^17.0.2",

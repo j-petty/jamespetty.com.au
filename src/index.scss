@@ -1,3 +1,5 @@
+@import 'assets/styles/variables';
+
 html {
   scroll-behavior: smooth;
   cursor: none;
@@ -39,7 +41,7 @@ textarea {
 
 a,
 button.buttonLink {
-  color: #FFFFFF;
+  color: $colour-light;
   transition: color .1s ease-in-out;
 }
 
@@ -68,7 +70,7 @@ a.simpleLink:active,
 button.buttonLink:hover,
 button.buttonLink:focus,
 button.buttonLink:active {
-	color: #FFFFFF;
+	color: $colour-light;
 }
 
 .light a.simpleLink:hover,
@@ -77,7 +79,7 @@ button.buttonLink:active {
 .light button.buttonLink:hover,
 .light button.buttonLink:focus,
 .light button.buttonLink:active {
-	color: #444444;
+	color: $colour-dark;
 }
 
 .textCenter {

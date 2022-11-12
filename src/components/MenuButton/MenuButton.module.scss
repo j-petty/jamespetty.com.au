@@ -1,3 +1,5 @@
+@import 'assets/styles/variables';
+
 .navigationButton {
   z-index: 20;
   position: fixed;
@@ -11,7 +13,7 @@
   outline: none;
 
   :global(.light) & span {
-    background-color: #444;
+    background-color: $colour-dark;
   }
 
   &:active,
@@ -32,7 +34,7 @@
     content: '';
     height: 4px;
     width: 100%;
-    background: #FFFFFF;
+    background: $colour-light;
     position: absolute;
     border-radius: 1px;
     right: 0;

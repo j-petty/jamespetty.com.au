@@ -15,17 +15,21 @@ import Cursor from 'components/Cursor/Cursor';
 import MenuButton from 'components/MenuButton/MenuButton';
 import Menu from 'components/Menu/Menu';
 import MenuItem from 'components/MenuItem/MenuItem';
+import Loader from 'components/Loader/Loader';
 
 import Home from 'pages/Home/Home';
 import NotFound from 'pages/NotFound/NotFound';
 
 import { ColourContext } from 'contexts/ColourContext';
+import { ContentContext } from 'contexts/ContentContext';
 
 import styles from './App.module.scss';
 import ProjectDetails from 'pages/ProjectDetails/ProjectDetails';
 
 const App: React.FC = () => {
   const { colourMode } = useContext(ColourContext);
+  const { isLoading } = useContext(ContentContext);
+
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 
   useEffect(() => {
@@ -55,6 +59,14 @@ const App: React.FC = () => {
       ReactGA.pageview(`/${process.env.NODE_ENV}`);
     }
   };
+
+  if (isLoading) {
+    return (
+      <div className={styles.loaderContainer}>
+        <Loader />
+      </div>
+    );
+  }
 
   return (
     <Router>

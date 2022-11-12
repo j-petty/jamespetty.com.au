@@ -9,11 +9,10 @@ interface ITimelineSubRowProps {
   title: string;
   subTitle?: string;
   description: string | ReactElement;
-  skills: Array<string>;
-  responsibilities?: Array<string>;
+  skills?: Array<string>;
 }
 
-const TimelineSubRow: React.FC<ITimelineSubRowProps> = ({ id, title, subTitle, description, skills, responsibilities }) => {
+const TimelineSubRow: React.FC<ITimelineSubRowProps> = ({ id, title, subTitle, description, skills }) => {
   const [isToggled, setIsToggled] = useState(false);
 
   const handleToggle = () => {
@@ -39,17 +38,16 @@ const TimelineSubRow: React.FC<ITimelineSubRowProps> = ({ id, title, subTitle, d
           className={styles.skillList} />
       }
 
-      {(description || responsibilities) &&
+      {description &&
         <>
-          <div className={isToggled ? 'accordion open' : 'accordion'}>
-            <p>{description}</p>
-
-            {responsibilities &&
-              <ul className={styles.responsibilitiesList}>
-                {responsibilities.map(responsibility =>
-                  <li key={responsibility}>{responsibility}</li>
-                )}
-              </ul>
+          <div className={`${styles.description} ${isToggled ? 'accordion open' : 'accordion'}`}>
+            {description &&
+              <>
+                {typeof description === 'string'
+                  ? <div dangerouslySetInnerHTML={{ __html: description}} />
+                  : <p>{description}</p>
+                }
+              </>
             }
           </div>
 

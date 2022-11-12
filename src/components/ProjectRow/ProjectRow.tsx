@@ -9,9 +9,9 @@ interface IProjectRowProps {
   description: string;
   linkText?: string;
   link?: string;
-  skills: Array<string>;
-  image: string;
-  imageAlt: string;
+  skills?: Array<string>;
+  image?: string;
+  imageAlt?: string;
 }
 
 const ProjectRow: React.FC<IProjectRowProps> = ({ title, description, linkText, link, skills, image, imageAlt }) => {
@@ -31,7 +31,7 @@ const ProjectRow: React.FC<IProjectRowProps> = ({ title, description, linkText, 
         </div>
 
         {description &&
-          <p>{description}</p>
+          <div dangerouslySetInnerHTML={{__html: description}} />
         }
 
         {link &&

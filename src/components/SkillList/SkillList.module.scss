@@ -1,3 +1,4 @@
+@import 'assets/styles/variables';
 
 .list {
   margin-bottom: 10px;
@@ -7,7 +8,7 @@
   vertical-align: middle;
   padding: 3px 8px;
   margin: 5px 8px 3px 0;
-  background: #444444;
+  background: $colour-dark;
   border-radius: 6px;
   display: inline-block;
   white-space: nowrap;
@@ -16,6 +17,6 @@
 
   :global(.light) & {
     background: #888888;
-    color: #FFFFFF;
+    color: $colour-light;
   }
 }
