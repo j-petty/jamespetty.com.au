@@ -119,6 +119,12 @@ button.buttonLink:active {
   color: #888888;
 }
 
+.loaderContainer {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
 @font-face {
   font-family: 'Poppins';
   src: url("assets/fonts/Poppins-Thin.ttf");

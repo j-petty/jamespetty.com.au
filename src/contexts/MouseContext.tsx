@@ -1,4 +1,5 @@
 import React, { createContext, useState, useCallback, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 /**
  * IMouseContext
@@ -23,6 +24,8 @@ export interface IMouseContext {
 export const MouseContext = createContext<IMouseContext>({} as IMouseContext);
 
 const MouseContextProvider: React.FC = ({ children }) => {
+  const location = useLocation();
+
   const [isHidden, setIsHidden] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
@@ -35,11 +38,17 @@ const MouseContextProvider: React.FC = ({ children }) => {
     setIsHidden(true);
   }, []);
 
-  const onMouseDown = useCallback(() => {
+  const onMouseDown = useCallback((e: MouseEvent) => {
+    if (e.button !== 0) {
+      return;
+    }
     setIsClicked(true);
   }, []);
 
-  const onMouseUp = useCallback(() => {
+  const onMouseUp = useCallback((e: MouseEvent) => {
+    if (e.button !== 0) {
+      return;
+    }
     setIsClicked(false);
   }, []);
 
@@ -88,6 +97,15 @@ const MouseContextProvider: React.FC = ({ children }) => {
       removeEventListeners();
     };
   }, []);
+
+  // Reset state when route changes
+  useEffect(() => {
+    setIsClicked(false);
+    setIsHovered(false);
+
+    // Re-add event listeners for the current page
+    addEventListeners();
+  }, [location.pathname]);
 
   return (
     <MouseContext.Provider

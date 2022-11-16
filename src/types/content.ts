@@ -2,7 +2,9 @@ import { Asset, Entry } from 'contentful';
 
 export interface WorkProject {
   name: string;
+  slug: string;
   skills?: Array<string>;
+  shortDescription?: any;
   description?: any;
   challenges?: any;
   approach?: any;

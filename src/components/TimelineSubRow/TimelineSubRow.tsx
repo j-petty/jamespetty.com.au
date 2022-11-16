@@ -1,30 +1,30 @@
-import React, { ReactElement, useState } from 'react';
+import React, { ReactElement } from 'react';
+import { Link } from 'react-router-dom';
+import { BsArrowRight } from 'react-icons/bs';
 
 import SkillList from 'components/SkillList/SkillList';
 
 import styles from './TimelineSubRow.module.scss';
 
 interface ITimelineSubRowProps {
-  id: string;
+  employmentId: string;
+  projectId: string;
+  slug: string;
   title: string;
   subTitle?: string;
   description: string | ReactElement;
   skills?: Array<string>;
 }
 
-const TimelineSubRow: React.FC<ITimelineSubRowProps> = ({ id, title, subTitle, description, skills }) => {
-  const [isToggled, setIsToggled] = useState(false);
-
-  const handleToggle = () => {
-    // Update state
-    setIsToggled(!isToggled);
-  };
-
+const TimelineSubRow: React.FC<ITimelineSubRowProps> = ({ employmentId, projectId, slug, title, subTitle, description, skills }) => {
   return (
     <div className={styles.timelineSubRow}>
       <div className={styles.head}>
         {title &&
-          <h4 id={id}>{title}</h4>
+          <Link
+            to={`/work/${employmentId}/project/${projectId}`}>
+            <h4 id={slug}>{title}</h4>
+          </Link>
         }
 
         {subTitle &&
@@ -40,7 +40,7 @@ const TimelineSubRow: React.FC<ITimelineSubRowProps> = ({ id, title, subTitle, d
 
       {description &&
         <>
-          <div className={`${styles.description} ${isToggled ? 'accordion open' : 'accordion'}`}>
+          <div className={styles.description}>
             {description &&
               <>
                 {typeof description === 'string'
@@ -51,11 +51,12 @@ const TimelineSubRow: React.FC<ITimelineSubRowProps> = ({ id, title, subTitle, d
             }
           </div>
 
-          <button
-            className={isToggled ? `buttonLink ${styles.contentToggle} toggled` : `buttonLink ${styles.contentToggle}`}
-            onClick={handleToggle}>
-            {isToggled ? 'read less' : 'read more'}
-          </button>
+          <Link
+            className={styles.projectLink}
+            to={`/work/${employmentId}/project/${projectId}`}>
+            See project details
+            <BsArrowRight />
+          </Link>
         </>
       }
     </div>

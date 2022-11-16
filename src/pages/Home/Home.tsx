@@ -245,10 +245,12 @@ const Home: React.FC = () => {
                     {employment.fields.projects && employment.fields.projects.map(project => (
                       <TimelineSubRow
                         key={project.sys.id}
-                        id='work-dps-report-builder'
+                        employmentId={employment.sys.id}
+                        projectId={project.sys.id}
+                        slug={project.fields.slug}
                         title={project.fields.name}
                         skills={project.fields.skills}
-                        description={project.fields.description && documentToHtmlString(project.fields.description)} />
+                        description={project.fields.shortDescription && documentToHtmlString(project.fields.shortDescription)} />
                     ))}
                   </TimelineRow>
                 </div>
@@ -302,9 +304,7 @@ const Home: React.FC = () => {
       </Section>
 
       {/* FOOTER */}
-      <Footer
-        link='/'
-        name='James Petty' />
+      <Footer />
 
       <Icon
         link='/downloads/james-petty-cv-2021.pdf'

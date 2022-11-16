@@ -5,6 +5,18 @@
 
 .description {
   font-weight: 200;
+
+  ul {
+    list-style: initial;
+    padding-left: 20px;
+    margin-top: 10px;
+
+    li {
+      font-weight: 200;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+  }
 }
 
 .detailsColumn {
@@ -20,12 +32,14 @@
 }
 
 .responsibilitiesList {
-  list-style: initial;
-  padding-left: 20px;
-  font-weight: 200;
-
-  li {
-    margin-bottom: 8px;
+  ul {
+    list-style: initial;
+    padding-left: 20px;
+    font-weight: 200;
+  
+    li {
+      margin-bottom: 8px;
+    }
   }
 }
 

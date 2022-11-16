@@ -67,7 +67,7 @@ Take a look around! Use the contact form to get in touch and let me know what yo
 
   if (isLoading) {
     return (
-      <div className={styles.loaderContainer}>
+      <div className='loaderContainer'>
         <Loader />
       </div>
     );
@@ -75,8 +75,8 @@ Take a look around! Use the contact form to get in touch and let me know what yo
 
   // NOTE: mouse context provider can't be rendered before the page content is loaded
   return (
-    <MouseContextProvider>
-      <Router>
+    <Router>
+      <MouseContextProvider>
         <div className={`${styles.container} ${colourMode}`}>
           <MenuButton
             isOpen={isMenuOpen}
@@ -110,7 +110,7 @@ Take a look around! Use the contact form to get in touch and let me know what yo
               <Home />
             </Route>
 
-            <Route exact path='/project/:projectId'>
+            <Route exact path='/work/:employmentId/project/:projectId'>
               <ProjectDetails />
             </Route>
 
@@ -122,8 +122,8 @@ Take a look around! Use the contact form to get in touch and let me know what yo
           {/* Cursor should be last element added to page */}
           <Cursor />
         </div>
-      </Router>
-    </MouseContextProvider>
+      </MouseContextProvider>
+    </Router>
   );
 };
 

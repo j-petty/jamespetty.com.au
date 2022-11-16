@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { BsArrowLeft } from 'react-icons/bs';
 
 import styles from './BackButton.module.scss';
@@ -11,10 +12,10 @@ interface IBackButtonProps {
 
 const BackButton: React.FC<IBackButtonProps> = ({ label, link, className }) => {
   return (
-    <a href={link} className={`${styles.button} ${className ? className : ''}`}>
+    <Link to={link} className={`${styles.button} ${className ? className : ''}`}>
       <BsArrowLeft />
       {label}
-    </a>
+    </Link>
   );
 };
 
