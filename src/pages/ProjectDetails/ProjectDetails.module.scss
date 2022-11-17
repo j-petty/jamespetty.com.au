@@ -1,3 +1,14 @@
+.employmentLogo {
+  margin: 5vh auto;
+  margin-bottom: -15px;
+  display: flex;
+  justify-content: center;
+}
+
+.detailsSection {
+  padding-top: 0;
+}
+
 .detailsContainer {
   display: flex;
   gap: 10%;
@@ -6,7 +17,7 @@
 .description {
   font-weight: 200;
 
-  ul {
+  ul, ol {
     list-style: initial;
     padding-left: 20px;
     margin-top: 10px;
@@ -32,7 +43,7 @@
 }
 
 .responsibilitiesList {
-  ul {
+  ul, ol {
     list-style: initial;
     padding-left: 20px;
     font-weight: 200;
@@ -51,6 +62,8 @@
 
 .skillsList {
   text-align: center;
+  margin-top: -30px;
+  margin-bottom: 25px;
 }
 
 /* Mobiles */

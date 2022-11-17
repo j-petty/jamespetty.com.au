@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
           imageAlt='GitHub' />
       </SocialList>
 
-      <span className={styles.copy}>Made by <Link to='/' className='simpleLink'>James Petty</Link> with <a href='https://reactjs.org/' target='_blank' rel='noreferrer'>React</a> and <a href='https://www.contentful.com/' target='_blank' rel='noreferrer'>Contentful</a>.</span>
+      <span className={styles.copy}>Made with <a href='https://reactjs.org/' target='_blank' rel='noreferrer'>React</a> and <a href='https://www.contentful.com/' target='_blank' rel='noreferrer'>Contentful</a>.</span>
     </footer>
   );
 };

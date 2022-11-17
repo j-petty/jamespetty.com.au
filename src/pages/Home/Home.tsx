@@ -193,7 +193,7 @@ const Home: React.FC = () => {
       <Section
         id='projects'
         title='projects'
-        subTitle={<>Because it&apos;s not work when you love it.</>}
+        subTitle={<>My passion projects - because it&apos;s not work when you love it.</>}
         ref={projectsRef}>
         {isProjectsError
           ? <p className='para--error'>Whoops! You shouldn&apos;t be seeing this, please reach out using the <a href='/#contact'>contact form</a> below and I&apos;ll get the projects list working again.</p>

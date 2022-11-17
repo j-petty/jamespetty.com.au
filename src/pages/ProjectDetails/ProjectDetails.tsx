@@ -12,6 +12,9 @@ import BackButton from 'components/BackButton/BackButton';
 import Loader from 'components/Loader/Loader';
 
 import { ContentContext } from 'contexts/ContentContext';
+import { ColourContext } from 'contexts/ColourContext';
+
+import { ColourMode } from 'types/enums';
 
 import styles from './ProjectDetails.module.scss';
 
@@ -23,7 +26,9 @@ interface IProjectDetailsParams {
 const ProjectDetails: React.FC = () => {
   const { employmentId, projectId } = useParams<IProjectDetailsParams>();
 
+  const { colourMode } = useContext(ColourContext);
   const {
+    isLoading,
     employmentEntries,
     isEmploymentError
   } = useContext(ContentContext);
@@ -40,11 +45,17 @@ const ProjectDetails: React.FC = () => {
     );
   }
 
-  if (!currentEmployment || !currentProject) {
+  if (isLoading) {
     return (
       <div className='loaderContainer'>
         <Loader />
       </div>
+    );
+  }
+
+  if (!currentEmployment || !currentProject) {
+    return (
+      <Redirect to='/404' />
     );
   }
 
@@ -55,10 +66,23 @@ const ProjectDetails: React.FC = () => {
         link='/#work'
         label='back to home' />
 
+      <div className={styles.employmentLogo}>
+        <a
+          target='_blank'
+          rel='noreferrer'
+          href={currentEmployment.fields.link}>
+          <img
+            alt={currentEmployment.fields.company}
+            src={colourMode === ColourMode.Dark
+              ? currentEmployment.fields.logoLight?.fields.file.url
+              : currentEmployment.fields.logoDark?.fields.file.url} />
+        </a>
+      </div>
+
       <Section
         id='projects'
         title={currentProject.fields.name}
-        subTitle={currentEmployment.fields.company}>
+        className={styles.detailsSection}>
         <>
           {currentProject.fields.skills &&
             <SkillList
@@ -77,38 +101,42 @@ const ProjectDetails: React.FC = () => {
             </div>
 
             <div className={styles.detailsColumn}>
-              <div className={`${styles.projectMetric} animate`}>
-                <h3>Challenges</h3>
-                <div
-                  className={styles.responsibilitiesList}
-                  dangerouslySetInnerHTML={{ __html: documentToHtmlString(currentProject.fields.challenges)}} />
-              </div>
+              {currentProject.fields.challenges &&
+                <div className={`${styles.projectMetric} animate`}>
+                  <h3>Challenges</h3>
+                  <div
+                    className={styles.responsibilitiesList}
+                    dangerouslySetInnerHTML={{ __html: documentToHtmlString(currentProject.fields.challenges)}} />
+                </div>
+              }
 
-              <div className={`${styles.projectMetric} animate`}>
-                <h3>Approach</h3>
-                <div
-                  className={styles.responsibilitiesList}
-                  dangerouslySetInnerHTML={{ __html: documentToHtmlString(currentProject.fields.approach)}} />
-              </div>
+              {currentProject.fields.approach &&
 
-              <div className={`${styles.projectMetric} animate`}>
-                <h3>Lessons</h3>
-                <div
-                  className={styles.responsibilitiesList}
-                  dangerouslySetInnerHTML={{ __html: documentToHtmlString(currentProject.fields.lessons)}} />
-              </div>
+                <div className={`${styles.projectMetric} animate`}>
+                  <h3>Approach</h3>
+                  <div
+                    className={styles.responsibilitiesList}
+                    dangerouslySetInnerHTML={{ __html: documentToHtmlString(currentProject.fields.approach)}} />
+                </div>
+              }
 
-              <div className={`${styles.projectMetric} animate`}>
-                <h3>Outcomes</h3>
-                <div
-                  className={styles.responsibilitiesList}
-                  dangerouslySetInnerHTML={{ __html: documentToHtmlString(currentProject.fields.outcomes)}} />
-                <ul className={styles.responsibilitiesList}>
-                  <li>Outcomes 1</li>
-                  <li>Outcomes 2</li>
-                  <li>Outcomes 3</li>
-                </ul>
-              </div>
+              {currentProject.fields.lessons &&
+                <div className={`${styles.projectMetric} animate`}>
+                  <h3>Lessons</h3>
+                  <div
+                    className={styles.responsibilitiesList}
+                    dangerouslySetInnerHTML={{ __html: documentToHtmlString(currentProject.fields.lessons)}} />
+                </div>
+              }
+
+              {currentProject.fields.outcomes &&
+                <div className={`${styles.projectMetric} animate`}>
+                  <h3>Outcomes</h3>
+                  <div
+                    className={styles.responsibilitiesList}
+                    dangerouslySetInnerHTML={{ __html: documentToHtmlString(currentProject.fields.outcomes)}} />
+                </div>
+              }
             </div>
           </div>
         </>

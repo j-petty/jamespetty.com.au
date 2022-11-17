@@ -7,10 +7,11 @@ interface ISectionProps {
   id: string;
   title: string;
   subTitle?: string | ReactElement;
+  className?: string;
   children?: ReactElement | Array<ReactElement>;
 }
 
-const Section: React.ForwardRefRenderFunction<HTMLElement, ISectionProps> = ({ id, title, subTitle, children }: ISectionProps, ref: React.ForwardedRef<HTMLElement>) => {
+const Section: React.ForwardRefRenderFunction<HTMLElement, ISectionProps> = ({ id, title, subTitle, className, children }: ISectionProps, ref: React.ForwardedRef<HTMLElement>) => {
   // Animate section elements appearing as they are scrolled into view
   useEffect(() => {
     const query = gsap.utils.selector(`#${id}`);
@@ -38,7 +39,7 @@ const Section: React.ForwardRefRenderFunction<HTMLElement, ISectionProps> = ({ i
   }, []);
 
   return (
-    <section id={id} ref={ref}>
+    <section id={id} ref={ref} className={className}>
       {title &&
         <h2 className={subTitle ? styles.small : ''}>{title}</h2>
       }
