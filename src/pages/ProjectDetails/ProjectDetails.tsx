@@ -1,7 +1,7 @@
-import React, { useMemo, useContext } from 'react';
+import React, { useMemo, useContext, useEffect } from 'react';
 import ReactGA from 'react-ga';
 import { BsDownload } from 'react-icons/bs';
-import { useParams, Redirect } from 'react-router-dom';
+import { useParams, Redirect, useLocation } from 'react-router-dom';
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 
 import Section from 'components/Section/Section';
@@ -24,6 +24,7 @@ interface IProjectDetailsParams {
 }
 
 const ProjectDetails: React.FC = () => {
+  const { pathname } = useLocation();
   const { employmentId, projectId } = useParams<IProjectDetailsParams>();
 
   const { colourMode } = useContext(ColourContext);
@@ -38,6 +39,11 @@ const ProjectDetails: React.FC = () => {
 
   // Find selected employment project record
   const currentProject = useMemo(() => currentEmployment?.fields?.projects?.find(project => project.sys.id === projectId), [currentEmployment]);
+
+  // Scroll to top when navigating between pages
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   if (isEmploymentError) {
     return (
