@@ -99,6 +99,19 @@
   &:focus .projectImage {
     opacity: 1;
   }
+
+  :global(.simpleLink) {
+    display: inline-flex;
+    align-items: center;
+
+    &:last-of-type:not(:first-of-type) {
+
+      margin-left: 20px;
+    }
+    svg {
+      margin-left: 5px;
+    }
+  }
 }
 
 .projectContainer {

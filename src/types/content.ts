@@ -35,6 +35,7 @@ export interface Project {
   skills?: Array<string>;
   linkText?: string;
   link?: string;
+  sourceLink?: string;
 
   image?: Asset;
 }

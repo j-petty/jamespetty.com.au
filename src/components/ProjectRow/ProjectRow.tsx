@@ -1,4 +1,5 @@
 import React from 'react';
+import { BsLink45Deg, BsCodeSlash } from 'react-icons/bs';
 
 import SkillList from 'components/SkillList/SkillList';
 
@@ -9,12 +10,13 @@ interface IProjectRowProps {
   description: string;
   linkText?: string;
   link?: string;
+  sourceLink?: string;
   skills?: Array<string>;
   image?: string;
   imageAlt?: string;
 }
 
-const ProjectRow: React.FC<IProjectRowProps> = ({ title, description, linkText, link, skills, image, imageAlt }) => {
+const ProjectRow: React.FC<IProjectRowProps> = ({ title, description, linkText, link, sourceLink, skills, image, imageAlt }) => {
   return (
     <div
       className={styles.projectRow}
@@ -40,7 +42,19 @@ const ProjectRow: React.FC<IProjectRowProps> = ({ title, description, linkText, 
             className='simpleLink'
             target='_blank'
             rel='noopener noreferrer'>
-            {linkText ? linkText : 'see more'}
+            <span>{linkText ? linkText : 'see more'}</span>
+            <BsLink45Deg />
+          </a>
+        }
+
+        {sourceLink &&
+          <a
+            href={sourceLink}
+            className='simpleLink'
+            target='_blank'
+            rel='noopener noreferrer'>
+            <span>see the code</span>
+            <BsCodeSlash />
           </a>
         }
       </div>
