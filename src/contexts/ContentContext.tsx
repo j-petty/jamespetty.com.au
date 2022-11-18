@@ -98,8 +98,6 @@ const ContentContextProvider: React.FC = ({ children }) => {
     getProjectEntries();
   }, [contentfulClient]);
 
-  console.log(isEmploymentError);
-
   return (
     <ContentContext.Provider
       value={{

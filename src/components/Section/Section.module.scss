@@ -26,6 +26,7 @@ section {
 
   h2 + :global(.para--light) {    
     margin-bottom: 25px;
+    color: #888888;
   }
 
   :global(.light) & h2 {

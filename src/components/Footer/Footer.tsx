@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import {
   SiLinkedin,
   SiStackoverflow,
@@ -32,6 +31,7 @@ const Footer: React.FC = () => {
       </SocialList>
 
       <span className={styles.copy}>Made with <a href='https://reactjs.org/' target='_blank' rel='noreferrer'>React</a> and <a href='https://www.contentful.com/' target='_blank' rel='noreferrer'>Contentful</a>.</span>
+      <span className={styles.copy}> See the <a href='https://github.com/j-petty/jamespetty.com.au' target='_blank' rel='noreferrer'>source code</a>.</span>
     </footer>
   );
 };
