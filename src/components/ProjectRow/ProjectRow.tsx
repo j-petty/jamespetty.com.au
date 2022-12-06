@@ -53,7 +53,7 @@ const ProjectRow: React.FC<IProjectRowProps> = ({ title, description, linkText, 
             className='simpleLink'
             target='_blank'
             rel='noopener noreferrer'>
-            <span>see the code</span>
+            <span>See the code</span>
             <BsCodeSlash />
           </a>
         }

@@ -24,14 +24,16 @@ section {
     }
   }
 
-  h2 + :global(.para--light) {    
-    margin-bottom: 25px;
-    color: #888888;
-  }
-
   :global(.light) & h2 {
     background: #141414;
     color: $colour-light;
+  }
+
+  .subTitle {
+    font-family: 'Romie', serif;
+    font-size: 22px;
+    margin-bottom: 25px;
+    color: #888888;
   }
 }
 

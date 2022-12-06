@@ -45,7 +45,7 @@ const Section: React.ForwardRefRenderFunction<HTMLElement, ISectionProps> = ({ i
       }
 
       {subTitle &&
-        <p className='para--light'>{subTitle}</p>
+        <p className={styles.subTitle}>{subTitle}</p>
       }
 
       {children}

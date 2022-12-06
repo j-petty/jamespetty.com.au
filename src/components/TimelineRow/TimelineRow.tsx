@@ -36,14 +36,22 @@ const TimelineRow: React.FC<ITimelineRowProps> = ({
         <div className={styles.timelineHead}>
           {image &&
             <h3 id={id} className='noMargin'>
-              <a href={imageLink} target='_blank' rel='noopener noreferrer'>
-                <img src={image} alt={imageAlt} />
-              </a>
+              {imageLink
+                ?
+                <a href={imageLink} target='_blank' rel='noopener noreferrer'>
+                  <img src={image} alt={imageAlt} />
+                </a>
+                : <img src={image} alt={imageAlt} />
+              }
             </h3>
           }
 
           {title &&
-            <p className={styles.timelineTitle}>{title} {duration && <span className={styles.timelineSubTitle}>&#183; {duration}</span>}</p>
+            <div className={styles.timelineTitle}>{title}</div>
+          }
+
+          {duration &&
+            <div className={styles.timelineSubTitle}>{duration}</div>
           }
 
           {skills &&
