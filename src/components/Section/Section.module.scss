@@ -48,5 +48,10 @@ section {
 @media (max-width: $breakpoint-mobile) {
   section {
     width: 100%;
+
+    .subTitle {
+      margin: 0 10%;
+      margin-bottom: 25px;
+    }
   }
 }
