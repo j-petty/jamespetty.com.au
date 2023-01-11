@@ -59,6 +59,7 @@
     min-width: 150px;
     background: $colour-dark;
     -webkit-appearance: none;
+    text-transform: lowercase;
   }
 
   :global(.light) input[type=submit] {

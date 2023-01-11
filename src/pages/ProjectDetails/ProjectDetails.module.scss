@@ -3,6 +3,11 @@
   margin-bottom: -15px;
   display: flex;
   justify-content: center;
+
+  img {
+    max-width: 350px;
+    width: 80%;
+  }
 }
 
 .detailsSection {
