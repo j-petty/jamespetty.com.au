@@ -3,8 +3,6 @@ import TypeAnimation from 'react-type-animation';
 
 import { IIconLink } from 'types/common';
 
-import Icon from 'components/Icon/Icon';
-
 import styles from './Header.module.scss';
 
 interface IHeaderProps {

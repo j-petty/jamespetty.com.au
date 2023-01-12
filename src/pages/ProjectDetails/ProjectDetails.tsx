@@ -1,11 +1,8 @@
 import React, { useMemo, useContext, useEffect } from 'react';
-import ReactGA from 'react-ga';
-import { BsDownload } from 'react-icons/bs';
 import { useParams, Redirect, useLocation } from 'react-router-dom';
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 
 import Section from 'components/Section/Section';
-import Icon from 'components/Icon/Icon';
 import Footer from 'components/Footer/Footer';
 import SkillList from 'components/SkillList/SkillList';
 import BackButton from 'components/BackButton/BackButton';
@@ -150,25 +147,6 @@ const ProjectDetails: React.FC = () => {
 
       {/* FOOTER */}
       <Footer />
-
-      <Icon
-        link='/downloads/james-petty-cv-2021.pdf'
-        image={<BsDownload />}
-        imageAlt='Download'
-        style={{
-          position: 'fixed',
-          bottom: '40px',
-          right: '40px',
-          margin: '0'
-        }}
-        title='Download CV'
-        onClick={() => {
-          // Trigger analytics event for CV download
-          ReactGA.event({
-            category: 'Download',
-            action: 'CV Downloaded'
-          });
-        }} />
     </main>
   );
 };

@@ -308,7 +308,7 @@ const Home: React.FC = () => {
       <Footer />
 
       <Icon
-        link='/downloads/james-petty-cv-2021.pdf'
+        link='/downloads/james-petty-cv.pdf'
         image={<BsDownload />}
         imageAlt='Download'
         style={{
