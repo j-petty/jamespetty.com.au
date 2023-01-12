@@ -37,6 +37,7 @@ const Header: React.ForwardRefRenderFunction<HTMLElement, IHeaderProps> = ({ ski
           sequence={skills} />
       </ul>
 
+      {/* NOTE: disabled dream stack as it may suggest I'm not open to other technologies
       <div className={styles.stackList}>
         <h2>dream stack</h2>
         <ul>
@@ -52,6 +53,7 @@ const Header: React.ForwardRefRenderFunction<HTMLElement, IHeaderProps> = ({ ski
           ))}
         </ul>
       </div>
+      */}
 
       <a className={styles.nudge} href='/#projects'>see my work</a>
     </header>
